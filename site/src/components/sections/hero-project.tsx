@@ -40,7 +40,12 @@ export function HeroProject({ project }: { project: Project | undefined }) {
         <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/50 to-background/10" />
       </div>
 
-      <Container className="relative flex min-h-[60svh] flex-col justify-end md:min-h-[75svh]">
+      {/* No min-height. The section's `rhythm="lg"` and the content decide
+          how tall this is, so the block is described entirely in the
+          system's own spacing. If it ever needs a floor, that is a project
+          decision and belongs in globals.css as a declared value, not as a
+          number invented in a component. */}
+      <Container className="relative">
         <Reveal>
           {project.tags?.length ? (
             <p className="text-meta text-muted-foreground">

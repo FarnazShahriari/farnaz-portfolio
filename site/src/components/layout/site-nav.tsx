@@ -42,7 +42,7 @@ export function SiteNav() {
   const isCurrent = (href: string) => !href.includes("#") && pathname === href
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-sm">
       <Container>
         <nav
           aria-label="Main"
