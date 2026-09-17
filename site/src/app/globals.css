@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@farnazshahriari/design-system/theme.css";
+
+/* Load-bearing. Tailwind only generates the utilities it can see used, and
+   it does not scan node_modules by default — without this the design
+   system's components arrive completely unstyled. */
+@source "../../node_modules/@farnazshahriari/design-system";
+
+/* Departures from the design system belong below this line, as a token
+   redeclaration — never as a hard-coded value in a component.
+   e.g.  :root { --accent: #b4531f; }   this project runs warm
+   Nothing is redeclared yet. */
