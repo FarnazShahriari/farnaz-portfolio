@@ -51,7 +51,7 @@ export function SkillsList({ skills }: { skills: Skill[] }) {
                   <span className="text-h3">{skill.title}</span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-8">
-                  <p className="max-w-prose text-lead text-muted-foreground">
+                  <p className="max-w-[46ch] text-lead text-muted-foreground">
                     {skill.description}
                   </p>
                   <Button asChild variant="outline" className="mt-6 rounded-pill">

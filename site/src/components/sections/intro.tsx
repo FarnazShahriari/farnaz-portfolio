@@ -23,7 +23,7 @@ export function Intro() {
       <Container>
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
           <Reveal className="md:col-span-7">
-            <h1 className="text-h1 text-balance">{intro.statement}</h1>
+            <h1 className="max-w-[24ch] text-h1 text-balance">{intro.statement}</h1>
             <Button asChild className="mt-8 rounded-pill" size="lg">
               <Link href={intro.cta.href}>{intro.cta.label}</Link>
             </Button>

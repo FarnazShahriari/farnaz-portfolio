@@ -1,4 +1,5 @@
 import { Container } from "@farnazshahriari/design-system/ui/container"
+import { LinkUnderline } from "@farnazshahriari/design-system/ui/link-underline"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 
 import { site } from "@/content/site"
@@ -12,6 +13,9 @@ import { site } from "@/content/site"
  * page-patterns rule. `id="contact"` is what the nav's Contact link
  * resolves to, and it is a real target on every page because the footer
  * lives in the root layout.
+ *
+ * The email uses `LinkUnderline` at `text-h3`, which is the shape the
+ * design system's own archetypes end on.
  */
 export function SiteFooter() {
   return (
@@ -19,24 +23,23 @@ export function SiteFooter() {
       <Section theme="dark" rhythm="default">
         <Container>
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <a
+            <LinkUnderline
               href={`mailto:${site.footer.email}`}
-              className="text-h3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+              className="w-fit text-h3"
             >
               {site.footer.email}
-            </a>
+            </LinkUnderline>
 
-            <ul className="flex list-none flex-wrap gap-x-8 gap-y-2 p-0">
+            <ul className="flex list-none flex-wrap gap-x-8 gap-y-3 p-0">
               {site.footer.links.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <LinkUnderline
                     href={link.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
                   >
                     {link.label}
-                  </a>
+                  </LinkUnderline>
                 </li>
               ))}
             </ul>

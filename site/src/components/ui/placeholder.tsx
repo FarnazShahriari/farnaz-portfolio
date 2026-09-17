@@ -5,23 +5,27 @@ import type { MediaPlaceholder } from "@/content/types"
 /**
  * A stand-in for an image that has not been chosen yet.
  *
- * It holds the real aspect ratio, so the page is laid out at its true
- * proportions and nothing reflows when the picture arrives. The caption
- * names what belongs there — a blank grey box tells whoever fills it in
- * nothing, and by then the intent has usually been forgotten.
+ * Deliberately the same shape as the `Media` helper the design system's own
+ * archetype pages use — `bg-muted` with a `text-meta text-muted-foreground`
+ * label — so the placeholders read as part of the system rather than as
+ * scaffolding bolted onto it. The one thing it adds is the caption naming
+ * what belongs there; a blank grey box tells whoever fills it in nothing,
+ * and by then the intent has usually been forgotten.
  *
- * The ground is `bg-muted` so it inverts with the section it sits in, and
- * it carries a border because a muted block on a `theme="muted"` section
- * would otherwise be nearly invisible — which is exactly where the hero
- * image sits.
+ * `fill` drops the aspect ratio and lets it stretch to its container, which
+ * is what the hero needs when the media is the background rather than a
+ * block in the flow.
  */
 export function Placeholder({
   media,
   className,
+  fill,
   priority,
 }: {
   media: MediaPlaceholder
   className?: string
+  /** Stretch to the parent instead of holding `media.ratio`. */
+  fill?: boolean
   /** Marks the one image that will eventually be the LCP element. */
   priority?: boolean
 }) {
@@ -32,14 +36,13 @@ export function Placeholder({
       role="img"
       aria-label={`Image placeholder: ${media.caption}`}
       className={cn(
-        "flex w-full items-center justify-center overflow-hidden border border-border bg-muted p-6",
+        "flex w-full items-center justify-center overflow-hidden bg-muted p-6 text-meta text-muted-foreground",
+        fill && "h-full",
         className
       )}
-      style={{ aspectRatio: media.ratio }}
+      style={fill ? undefined : { aspectRatio: media.ratio }}
     >
-      <span className="max-w-[28ch] text-center text-meta text-muted-foreground">
-        {media.caption}
-      </span>
+      <span className="max-w-[28ch] text-center">{media.caption}</span>
     </div>
   )
 }

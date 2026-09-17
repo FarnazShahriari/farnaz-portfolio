@@ -7,6 +7,7 @@ import { MenuIcon } from "lucide-react"
 
 import { Button } from "@farnazshahriari/design-system/ui/button"
 import { Container } from "@farnazshahriari/design-system/ui/container"
+import { LinkUnderline } from "@farnazshahriari/design-system/ui/link-underline"
 import {
   Sheet,
   SheetContent,
@@ -22,6 +23,13 @@ import { site } from "@/content/site"
  * to a sheet below `md` — the one breakpoint where this system changes
  * layout.
  *
+ * The links are `LinkUnderline`, which is the system's workhorse link: full
+ * `--foreground`, a permanent muted rule underneath and a currentColor rule
+ * that wipes in on hover. An earlier version of this file hand-rolled
+ * `text-sm text-muted-foreground hover:text-foreground` instead, which is
+ * why the nav read as pale and weightless next to the rest of the system —
+ * muted-foreground is for captions and meta, not for the primary navigation.
+ *
  * Client-side only because of the sheet's open state and because the
  * current route decides which link is marked current.
  */
@@ -31,8 +39,7 @@ export function SiteNav() {
 
   // Anchors like "/#work" are never "the current page" — only real routes
   // are, and only on an exact match.
-  const isCurrent = (href: string) =>
-    !href.includes("#") && pathname === href
+  const isCurrent = (href: string) => !href.includes("#") && pathname === href
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
@@ -52,13 +59,12 @@ export function SiteNav() {
           <ul className="hidden list-none items-center gap-8 p-0 md:flex">
             {site.nav.map((item) => (
               <li key={item.href}>
-                <Link
+                <LinkUnderline
                   href={item.href}
                   aria-current={isCurrent(item.href) ? "page" : undefined}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
                 >
                   {item.label}
-                </Link>
+                </LinkUnderline>
               </li>
             ))}
           </ul>
@@ -74,17 +80,17 @@ export function SiteNav() {
               <SheetHeader>
                 <SheetTitle>{site.name}</SheetTitle>
               </SheetHeader>
-              <ul className="flex list-none flex-col gap-1 p-4 pt-0">
+              <ul className="flex list-none flex-col gap-6 p-6 pt-2">
                 {site.nav.map((item) => (
                   <li key={item.href}>
-                    <Link
+                    <LinkUnderline
                       href={item.href}
                       onClick={() => setOpen(false)}
                       aria-current={isCurrent(item.href) ? "page" : undefined}
-                      className="block py-3 text-h4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+                      className="text-h4"
                     >
                       {item.label}
-                    </Link>
+                    </LinkUnderline>
                   </li>
                 ))}
               </ul>

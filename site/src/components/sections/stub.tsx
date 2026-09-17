@@ -27,7 +27,7 @@ export function Stub({
     <Section rhythm="lg">
       <Container width="narrow">
         <h1 className="text-h1 text-balance">{title}</h1>
-        <p className="mt-6 text-lead text-muted-foreground">{note}</p>
+        <p className="mt-6 max-w-[46ch] text-lead text-muted-foreground">{note}</p>
         <Button asChild variant="outline" className="mt-8 rounded-pill">
           <Link href={backHref}>{backLabel}</Link>
         </Button>
