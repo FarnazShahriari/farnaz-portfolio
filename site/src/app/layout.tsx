@@ -28,8 +28,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    // The font variables go on <html>, not <body>. The theme computes
+    // --font-sans at :root, and a custom property only inherits downward —
+    // declared on <body> it is invisible to :root, so --font-sans resolved
+    // to nothing and the page rendered in the browser's default sans
+    // instead of the system's typeface. Silent, and easy to miss.
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
           <MotionProvider>
             <TooltipProvider>
