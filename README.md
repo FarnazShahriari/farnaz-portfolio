@@ -10,9 +10,11 @@ decisions, build specs, and the live site code all live here.
 2. **`project-docs/decisions/`** — design decisions, one dated file per decision,
    with the reasoning and alternatives considered.
 3. **`project-docs/specs/`** — concrete build/feature specs, ready to implement.
-4. **`site/`** — the actual portfolio website code.
-5. **`assets/`** — design exports (from Claude Design), images, icons.
-6. **`CHANGELOG.md`** — chronological log of what changed and why. Newest entry on top.
+4. **`project-docs/parking-lot.md`** — ideas and inspiration deliberately deferred
+   to the end of the project. Nothing here is a commitment.
+5. **`site/`** — the actual portfolio website code.
+6. **`assets/`** — design exports (from Claude Design), images, icons.
+7. **`CHANGELOG.md`** — chronological log of what changed and why. Newest entry on top.
 
 ## Workflow
 
