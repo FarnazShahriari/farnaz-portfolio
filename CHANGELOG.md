@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-09-21 — Design system 2.0.0: Inter and a larger type scale
+Upgraded to @farnazshahriari/design-system 2.0.0, which changes the typeface to
+Inter and raises every heading ceiling roughly midway toward the Clay reference
+(h1 64->92px, display 90->110px, and text-meta from a fixed 13px to fluid 17px).
+Also fixed a bug where the font variables sat on <body>, which made them
+invisible to :root and left the site rendering in the browser default sans.
+Related: project-docs/specs/homepage.md
+
 ## 2026-09-17 — Homepage structure built
 The homepage exists as seven blocks in the order the IA decision fixed, built
 on @farnazshahriari/design-system with nothing from it reimplemented locally.

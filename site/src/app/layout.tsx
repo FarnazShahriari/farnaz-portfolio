@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist_Mono, Inter } from "next/font/google"
 
 import { ThemeProvider } from "@farnazshahriari/design-system"
 import { MotionProvider } from "@farnazshahriari/design-system/motion/motion-provider"
@@ -12,11 +12,11 @@ import { site } from "@/content/site"
 import "./globals.css"
 
 /**
- * The design system's type scale reads --font-geist-sans and
- * --font-geist-mono, so the variables have to be on <html> for its
- * utilities to resolve to anything.
+ * The design system's --font-sans reads --font-inter as of 2.0.0. Inter is
+ * a variable font, so the two weights the system uses — 500 for body, 700
+ * for headings — cost one file rather than two.
  */
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] })
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${inter.variable} ${geistMono.variable}`}
     >
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light">
