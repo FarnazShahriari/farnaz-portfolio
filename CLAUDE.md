@@ -43,11 +43,11 @@ cp -r site/node_modules/@farnazshahriari/design-system/skills/. .claude/skills/
   on top) and a file to the right `project-docs/` folder.
 - Decisions are dated files in `project-docs/decisions/`; specs are
   build-ready and live in `project-docs/specs/`.
-- **Ideas that are not for now go in `project-docs/parking-lot.md`**, with
-  whatever inspiration prompted them and any known collision with a
-  decision already made. They are revisited as the last phase, not
-  picked up when they arrive. Promote one to `decisions/` or `specs/` if
-  it turns out to matter sooner, and delete it from the list.
+- **Ideas that are not for now go in `project-docs/parking-lot.md`** — a
+  title, a short description, and any inspiration links. Keep entries
+  short: it is a notebook, not a spec. Do not analyse feasibility or work
+  out how to build them; that happens in the last phase, when they are
+  picked up.
 - Branch off `main`, commit with a clear message, push.
 
 ## Setup notes
