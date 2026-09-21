@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-09-21 — Design system 2.1.0: bolder icons, shorter intro placeholder
+Upgraded to 2.1.0, which adds a --stroke-icon token applied to every icon in
+the system and enlarges the accordion chevron — 2.0.0's larger type had left
+the icons looking undersized and faint beside it. Also halved the intro
+statement placeholder, which at 92px was filling most of the first screen.
+Related: site/src/content/TODO.md
+
 ## 2026-09-21 — Design system 2.0.0: Inter and a larger type scale
 Upgraded to @farnazshahriari/design-system 2.0.0, which changes the typeface to
 Inter and raises every heading ceiling roughly midway toward the Clay reference

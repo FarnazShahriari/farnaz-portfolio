@@ -30,7 +30,7 @@ export const site = {
     },
     /** One sentence. Positioning, not a biography. */
     statement:
-      "[Intro statement — one sentence that says what she does and who for, in her own words rather than a job title. Around 20 words, long enough to wrap onto two lines here.]",
+      "[Intro statement — what she does and who for, in her own words. ~10 words.]",
     cta: { label: "[More about me]", href: "/about" },
   },
 
