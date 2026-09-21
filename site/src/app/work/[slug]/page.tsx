@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
+import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
+
 import { Stub } from "@/components/sections/stub"
 import { projects } from "@/content/projects"
 import { stubs } from "@/content/stubs"
@@ -34,6 +36,7 @@ export default async function ProjectPage({
   return (
     <Stub
       title={project.title}
+      transitionName={projectTitleTransition(project.slug)}
       note={stubs.project.note}
       backLabel={stubs.backToWorkLabel}
       backHref="/#work"

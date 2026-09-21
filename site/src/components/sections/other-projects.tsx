@@ -6,6 +6,8 @@ import {
   ProjectGrid,
 } from "@farnazshahriari/design-system/patterns/project-grid"
 
+import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
+
 import { Placeholder } from "@/components/ui/placeholder"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
@@ -38,6 +40,11 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
               key={project.slug}
               href={`/work/${project.slug}`}
               title={project.title}
+              // Pairs this title with the same-named one on the project
+              // page, so the word travels and scales into place instead of
+              // one fading out while another fades in. Both sides must use
+              // the same name or it silently falls back to a crossfade.
+              transitionName={projectTitleTransition(project.slug)}
               description={project.summary}
               tags={project.tags ? [...project.tags] : undefined}
               ratio={project.image.ratio}

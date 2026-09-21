@@ -4,6 +4,8 @@ import { Button } from "@farnazshahriari/design-system/ui/button"
 import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
+import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
+import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
 import { Placeholder } from "@/components/ui/placeholder"
 import { site } from "@/content/site"
@@ -53,12 +55,20 @@ export function HeroProject({ project }: { project: Project | undefined }) {
             </p>
           ) : null}
 
-          <h2
-            id="hero-project-title"
-            className="mt-4 max-w-[24ch] text-display text-balance"
+          {/* The title is the shared element. Clicking through morphs this
+              word into the project page's h1 rather than crossfading it. */}
+          <ViewTransition
+            name={projectTitleTransition(project.slug)}
+            share="morph"
+            default="none"
           >
-            {project.title}
-          </h2>
+            <h2
+              id="hero-project-title"
+              className="mt-4 max-w-[24ch] text-display text-balance"
+            >
+              {project.title}
+            </h2>
+          </ViewTransition>
 
           <p className="mt-6 max-w-[46ch] text-lead text-muted-foreground">
             {project.blurb ?? project.summary}
