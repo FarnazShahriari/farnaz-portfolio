@@ -39,6 +39,8 @@ export const site = {
     title: "[Section title for the rest of the work]",
     /** The hero project's single call to action. */
     heroCtaLabel: "[View this project]",
+    /** Sits above the next project's name at the foot of a project page. */
+    nextLabel: "[Next project]",
   },
 
   skills: {

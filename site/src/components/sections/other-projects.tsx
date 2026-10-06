@@ -6,7 +6,10 @@ import {
   ProjectGrid,
 } from "@farnazshahriari/design-system/patterns/project-grid"
 
+import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
+
+import { projectMediaTransition } from "@/lib/view-transitions"
 
 import { Placeholder } from "@/components/ui/placeholder"
 import { site } from "@/content/site"
@@ -48,7 +51,15 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
               description={project.summary}
               tags={project.tags ? [...project.tags] : undefined}
               ratio={project.image.ratio}
-              media={<Placeholder media={project.image} />}
+              media={
+                <ViewTransition
+                  name={projectMediaTransition(project.slug)}
+                  share="morph"
+                  default="none"
+                >
+                  <Placeholder media={project.image} fill />
+                </ViewTransition>
+              }
             />
           ))}
         </ProjectGrid>

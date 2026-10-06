@@ -59,3 +59,14 @@ export const heroProject = projects.find((p) => p.hero)
 
 /** Everything that is not the hero, in source order. */
 export const otherProjects = projects.filter((p) => !p.hero)
+
+/**
+ * The project after this one, wrapping at the end so every project page has
+ * somewhere to go next. Source order is the running order: the hero leads to
+ * the second project, and the last leads back to the hero.
+ */
+export function nextProject(slug: string): Project | undefined {
+  const i = projects.findIndex((p) => p.slug === slug)
+  if (i === -1 || projects.length < 2) return undefined
+  return projects[(i + 1) % projects.length]
+}

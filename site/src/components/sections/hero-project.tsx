@@ -7,6 +7,8 @@ import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
+import { projectMediaTransition } from "@/lib/view-transitions"
+
 import { Placeholder } from "@/components/ui/placeholder"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
@@ -36,7 +38,13 @@ export function HeroProject({ project }: { project: Project | undefined }) {
     >
       {/* The ground. Decorative — the title below is the accessible name. */}
       <div aria-hidden="true" className="absolute inset-0">
-        <Placeholder media={project.image} fill priority />
+        <ViewTransition
+          name={projectMediaTransition(project.slug)}
+          share="morph"
+          default="none"
+        >
+          <Placeholder media={project.image} fill priority />
+        </ViewTransition>
         {/* Keeps the words legible once this is a photograph rather than a
             flat block. Token-based, so it follows the theme. */}
         <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/50 to-background/10" />

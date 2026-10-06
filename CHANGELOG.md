@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-06 — Next-project navigation, and the media joins the morph
+Project pages now end with a next-project teaser — label, name and image on an
+accent band — and the way back moved above the title with a back arrow. Clicking
+the teaser morphs both the name and the image into the next page's title and
+hero media, where only the title travelled before. Order wraps, so the last
+project leads back to the hero.
+Related: project-docs/specs/homepage.md
+
 ## 2026-09-21 — Design system 2.1.0: bolder icons, shorter intro placeholder
 Upgraded to 2.1.0, which adds a --stroke-icon token applied to every icon in
 the system and enlarges the accordion chevron — 2.0.0's larger type had left
