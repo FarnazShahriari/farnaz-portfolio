@@ -10,17 +10,19 @@ import type { Project } from "./types"
 
 export const projects: Project[] = [
   {
-    slug: "project-one",
-    title: "[Hero project title]",
-    summary: "[One line on what it was. ~12 words.]",
+    slug: "ksl",
+    title: "Redesigning KSL around how audits really happen",
+    summary:
+      "How Norwegian farms are audited for food safety, animal welfare and HMS.",
     blurb:
-      "[Hero summary — two sentences on what the project was and what changed because of it. This is the only project that gets room to explain itself on the homepage, so it runs to about 35 words and wraps to three lines at this width.]",
+      "How I redesigned the way Norwegian farms are audited for food safety, animal welfare and HMS, and how AI helped ship it fast.",
     hero: true,
     image: {
       ratio: "16 / 9",
-      caption: "Hero image — full-bleed, 16:9, at least 2400px wide",
+      caption:
+        "Revisor and farmer at the barn fence — full-bleed, at least 2400px wide",
     },
-    tags: ["[Role]", "[Year]"],
+    tags: ["Case study", "KSL", "Norsk Mat"],
   },
   {
     slug: "project-two",

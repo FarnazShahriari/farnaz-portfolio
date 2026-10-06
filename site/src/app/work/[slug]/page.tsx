@@ -8,9 +8,12 @@ import { Section } from "@farnazshahriari/design-system/ui/section"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
+import { CaseStudyBody } from "@/components/case-study/case-study-body"
+import { Eyebrow } from "@/components/case-study/parts"
 import { NextProject } from "@/components/sections/next-project"
-import { Placeholder } from "@/components/ui/placeholder"
+import { Media } from "@/components/ui/media"
 import { projectMediaTransition } from "@/lib/view-transitions"
+import { getCaseStudy } from "@/content/case-studies"
 import { nextProject, projects } from "@/content/projects"
 import { stubs } from "@/content/stubs"
 
@@ -29,10 +32,13 @@ export async function generateMetadata({
 }
 
 /**
- * A project page. Still a stub in its middle — the problem, the process and
- * the outcome are not written yet — but the shape around that is real: the
- * way back sits above the title rather than below the text, and the page
- * ends by handing the reader the next project.
+ * A project page: the hero, the image it morphed in with, the case study's
+ * sections, then the way onward.
+ *
+ * The sections come from `content/case-studies/` and are drawn by the
+ * reusable blocks in `components/case-study/`. A project with no case study
+ * written yet keeps the same hero and ending, with a note in place of the
+ * story, so every project link still lands somewhere real.
  *
  * The title and the media carry this project's transition names, which is
  * the receiving half of the morph started by a card on the homepage or by
@@ -49,10 +55,15 @@ export default async function ProjectPage({
   // A slug that is not in the content is a genuine 404, not an empty page.
   if (!project) notFound()
 
+  const caseStudy = getCaseStudy(project.slug)
+  const lead = caseStudy
+    ? (project.blurb ?? project.summary)
+    : stubs.project.note
+
   return (
     <>
-      <Section rhythm="lg">
-        <Container width="narrow">
+      <Section theme="light" rhythm="lg">
+        <Container>
           {/* Above the title and sharing its left edge: the way out of a
               page should be the first thing found, not the last. */}
           <Link
@@ -63,33 +74,40 @@ export default async function ProjectPage({
             {stubs.backToWorkLabel}
           </Link>
 
+          {project.tags?.length ? (
+            <Eyebrow className="mt-10">{project.tags.join(" · ")}</Eyebrow>
+          ) : null}
+
           <ViewTransition
             name={projectTitleTransition(project.slug)}
             share="morph"
             default="none"
           >
-            <h1 className="mt-6 text-h1 text-balance">{project.title}</h1>
+            <h1 className="mt-4 max-w-[18ch] text-display text-balance">
+              {project.title}
+            </h1>
           </ViewTransition>
 
-          <p className="mt-6 max-w-[46ch] text-lead text-muted-foreground">
-            {stubs.project.note}
+          <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
+            {lead}
           </p>
         </Container>
       </Section>
 
-      {/* The media the teaser's image travels into. `rhythm="none"` because
-          the section above has already paid for the gap. */}
-      <Section rhythm="none">
-        <Container width="wide">
-          <ViewTransition
-            name={projectMediaTransition(project.slug)}
-            share="morph"
-            default="none"
-          >
-            <Placeholder media={project.image} priority />
-          </ViewTransition>
-        </Container>
+      {/* Full-bleed: no Container, so the image runs edge to edge. The same
+          picture as the homepage hero, cropped wider. `rhythm="none"`
+          because the section above has already paid for the gap. */}
+      <Section theme="light" rhythm="none">
+        <ViewTransition
+          name={projectMediaTransition(project.slug)}
+          share="morph"
+          default="none"
+        >
+          <Media media={{ ...project.image, ratio: "21 / 9" }} priority />
+        </ViewTransition>
       </Section>
+
+      {caseStudy ? <CaseStudyBody sections={caseStudy.sections} /> : null}
 
       <NextProject project={nextProject(project.slug)} />
     </>

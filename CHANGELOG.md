@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-06 — KSL case study, and reusable case-study sections
+The hero project is now KSL, with its full case study built from the Claude
+Design layout. The layout became two reusable section types (story, insights)
+plus parts (facts, quote, steps, media, statement), all made from
+design-system components and tokens; a new case study is a new content file.
+Images stay placeholders until `src` is added to each slot.
+Related: project-docs/specs/case-study-sections.md, project-docs/decisions/2026-10-06-case-study-sections-live-in-the-portfolio.md
+
 ## 2026-10-06 — Next-project navigation, and the media joins the morph
 Project pages now end with a next-project teaser — label, name and image on an
 accent band — and the way back moved above the title with a back arrow. Clicking
