@@ -4,6 +4,7 @@ import { Badge } from "@farnazshahriari/design-system/ui/badge"
 import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
+import { Blueprint } from "@/components/case-study/blueprint"
 import { Media } from "@/components/ui/media"
 import type { Fact, Quote, StoryPart } from "@/content/types"
 
@@ -140,6 +141,9 @@ export function StoryPartView({
       break
     case "statement":
       content = <p className="max-w-[22ch] text-h2">{part.text}</p>
+      break
+    case "blueprint":
+      content = <Blueprint blueprint={part.blueprint} />
       break
   }
 

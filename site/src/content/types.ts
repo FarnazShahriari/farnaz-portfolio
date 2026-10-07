@@ -1,4 +1,5 @@
 import type { ComponentProps } from "react"
+import type { LucideIcon } from "lucide-react"
 
 import type { Section } from "@farnazshahriari/design-system/ui/section"
 
@@ -105,6 +106,73 @@ export type StoryPart =
   | { kind: "mediaPair"; main: MediaPlaceholder; side: MediaPlaceholder }
   /** One large line, set as a heading. */
   | { kind: "statement"; text: string }
+  /** A service blueprint drawn in HTML. Use it in `below`, at full width. */
+  | { kind: "blueprint"; blueprint: Blueprint }
+
+/* ------------------------------------------------------------------ */
+/* Blueprint                                                           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * How finished a step was in this round of work.
+ * - `active`   designed and tested — the default
+ * - `inactive` part of the flow, but nothing to design (greyed text)
+ * - `deferred` left for a later round (dashed outline)
+ */
+export type BlueprintStepState = "active" | "inactive" | "deferred"
+
+export type BlueprintLane = {
+  /** The role, e.g. "Farmer". */
+  name: string
+  /** One short line under the name, e.g. "Runs the farm". */
+  description?: string
+  icon?: LucideIcon
+  /** A small badge under the name, e.g. "In scope, 1st". */
+  tag?: { label: string; tone: "strong" | "soft" | "deferred" }
+  /** Greys out the whole lane, and makes every step `deferred`. */
+  deferred?: boolean
+  /** What this role does in each stage — one entry per stage, in order. */
+  steps: { text: string; state?: BlueprintStepState }[]
+}
+
+/** Where a step sits: `lane` and `stage` count from 0. */
+export type BlueprintCell = { lane: number; stage: number }
+
+/**
+ * An arrow between two steps. Same lane means the same person carries on
+ * (solid, accent); another lane means a handoff (muted). The arrow is drawn
+ * at the target step.
+ */
+export type BlueprintFlow = {
+  from: BlueprintCell
+  to: BlueprintCell
+  /** Shown next to a handoff arrow. */
+  label?: string
+}
+
+export type Blueprint = {
+  /** Read aloud by screen readers in place of the picture's title. */
+  title: string
+  /** Column headings, left to right, e.g. "Carry out the audit". */
+  stages: string[]
+  /** Rows, top to bottom. */
+  lanes: BlueprintLane[]
+  /**
+   * The lines between lanes — `dividers[0]` sits between lanes 0 and 1.
+   * `strong` draws it in the accent, otherwise it is dashed and quiet.
+   */
+  dividers?: { label: string; strong?: boolean }[]
+  flows?: BlueprintFlow[]
+  /** Overrides the legend's wording. Leave out for the defaults. */
+  legend?: {
+    active?: string
+    deferred?: string
+    continues?: string
+    handoff?: string
+  }
+  /** A sentence under the diagram. */
+  note?: string
+}
 
 /**
  * Label on the left (it stays in view while the column scrolls), text on

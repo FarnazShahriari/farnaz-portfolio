@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — Blueprints drawn in HTML, not pictures
+The KSL planning blueprint is now built in HTML from a reusable `blueprint`
+part: the text is searchable and every colour is a design-system token. From
+768px it is the usual roles × stages matrix; below that it becomes a
+stage-by-stage sequence, because three columns at phone width are too narrow
+to read.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-06 — KSL case study, and reusable case-study sections
 The hero project is now KSL, with its full case study built from the Claude
 Design layout. The layout became two reusable section types (story, insights)

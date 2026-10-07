@@ -41,7 +41,7 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## KSL case study — `case-studies/ksl.ts`
 
-- [ ] 12 section images — each slot's `caption` says what goes there; add `src` + `alt`
+- [ ] 11 section images — each slot's `caption` says what goes there; add `src` + `alt`
 - [ ] `/skills/[slug]` — skill detail template and content
 
 ## Open structural questions

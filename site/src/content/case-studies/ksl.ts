@@ -10,6 +10,8 @@
  * slot. To drop a real one in, add `src` and `alt` next to the caption.
  */
 
+import { ClipboardCheckIcon, LandmarkIcon, SproutIcon } from "lucide-react"
+
 import type { CaseStudy } from "../types"
 
 export const ksl: CaseStudy = {
@@ -108,11 +110,83 @@ export const ksl: CaseStudy = {
       ],
       below: [
         {
-          kind: "media",
-          media: {
-            ratio: "21 / 9",
-            caption:
-              "Service blueprint, three roles across three stages, with scope and priority marked",
+          kind: "blueprint",
+          blueprint: {
+            title:
+              "Service blueprint: three roles across three stages, with scope and priority marked",
+            stages: [
+              "Carry out the audit",
+              "Report the deviation",
+              "Close the deviation",
+            ],
+            lanes: [
+              {
+                name: "Farmer",
+                description: "Runs the farm",
+                icon: SproutIcon,
+                tag: { label: "In scope, 2nd", tone: "soft" },
+                steps: [
+                  { text: "Runs the yearly self audit" },
+                  { text: "Reads the result", state: "inactive" },
+                  {
+                    text: "Fixes the deviation and confirms the requirement is met",
+                  },
+                ],
+              },
+              {
+                name: "Revisor",
+                description: "Audits the farm",
+                icon: ClipboardCheckIcon,
+                tag: { label: "In scope, 1st", tone: "strong" },
+                steps: [
+                  { text: "Audits the farm on site, question by question" },
+                  {
+                    text: "Fills in the deviation with the unmet requirement, evidence and severity",
+                  },
+                  { text: "Approves or rejects the closing" },
+                ],
+              },
+              {
+                name: "Norsk Mat admin",
+                description: "Sets the rules",
+                icon: LandmarkIcon,
+                tag: { label: "Later", tone: "deferred" },
+                deferred: true,
+                steps: [
+                  {
+                    text: "Builds the checklists with requirements, guidance and severity levels",
+                  },
+                  { text: "Keeps grading fair and consistent across farms" },
+                  {
+                    text: "Keeps oversight of the closing process, steps in on problems or disputes",
+                  },
+                ],
+              },
+            ],
+            dividers: [
+              { label: "Interaction line", strong: true },
+              { label: "Visibility line" },
+            ],
+            flows: [
+              {
+                from: { lane: 0, stage: 0 },
+                to: { lane: 1, stage: 0 },
+                label: "answers checked on site",
+              },
+              { from: { lane: 1, stage: 0 }, to: { lane: 1, stage: 1 } },
+              {
+                from: { lane: 1, stage: 1 },
+                to: { lane: 0, stage: 2 },
+                label: "deviation sent to the farmer",
+              },
+              {
+                from: { lane: 0, stage: 2 },
+                to: { lane: 1, stage: 2 },
+                label: "sent for approval",
+              },
+            ],
+            legend: { handoff: "Handed to the other side of the audit" },
+            note: "Revisor and farmer were designed and tested with equal depth. The revisor was tested first, so those findings could inform the farmer side.",
           },
         },
       ],

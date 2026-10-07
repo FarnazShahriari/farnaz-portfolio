@@ -43,6 +43,31 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 | `{ kind: "media" }` | One image. |
 | `{ kind: "mediaPair" }` | A large image with a smaller one beside it. |
 | `{ kind: "statement" }` | One large line, `text-h2`. |
+| `{ kind: "blueprint" }` | A service blueprint in HTML. Use in `below`. See below. |
+
+## Blueprints (and other diagrams)
+
+Diagrams that are mostly words — blueprints, process maps, journeys — are
+built in HTML, not exported as pictures. The words stay searchable and
+readable by screen readers, and every colour is a theme token.
+
+`blueprint` takes `stages` (columns), `lanes` (one per role, each with one
+step per stage), optional `dividers` (the lines between lanes), `flows`
+(arrows between steps), a `legend` override and a `note`.
+
+- **From 768px:** the matrix — roles down the side, stages across.
+- **Below 768px:** the same content as a sequence — the roles as a key,
+  then each stage as a heading with its steps top to bottom and the
+  handoffs between them. A 3-column matrix at phone width would be ~100px
+  per column, too narrow to read.
+- A flow within one lane is "same person continues" (accent arrow, desktop
+  only). A flow between lanes is a handoff, drawn on the line next to the
+  step it arrives at, with its label.
+- Step `state`: `active` (default), `inactive` (greyed), `deferred`
+  (dashed). A lane marked `deferred` makes all its steps deferred.
+
+Use a picture instead only when the diagram's meaning is in its geometry
+(a chart, a floor plan, a hand sketch) rather than in its words.
 
 ## Rules
 
