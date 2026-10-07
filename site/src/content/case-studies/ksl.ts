@@ -6,8 +6,10 @@
  * edit to this file; how a section looks is decided there, from the design
  * system, and never here.
  *
- * Images are still placeholders: each `caption` says what belongs in the
- * slot. To drop a real one in, add `src` and `alt` next to the caption.
+ * Every image has a `caption`. While the slot is a placeholder it says what
+ * belongs there; once `src` is set it becomes the line under the image —
+ * the context (who, where, why). `alt` describes what is visible, so the
+ * two don't repeat each other for screen readers.
  */
 
 import { ClipboardCheckIcon, LandmarkIcon, SproutIcon } from "lucide-react"
@@ -54,7 +56,14 @@ export const ksl: CaseStudy = {
         "In the old KSL every deviation was equal. A missing signature and a serious animal welfare finding were registered the same way, and the farmer closed either one alone by uploading a document. Norsk Mat wanted severity to decide what happens instead, which brought in grading, and with it a whole new stage for following deviations through to closing.",
         "Nearly everything in the process was new. So we put sketches and prototypes in front of real revisors and farmers early, rather than waiting for a finished build, because mistakes were going to happen and that is where they cost the least.",
       ],
-      below: [{ kind: "diagram", id: "ksl-design-process" }],
+      below: [
+        {
+          kind: "diagram",
+          id: "ksl-design-process",
+          caption:
+            "How the work ran, from kickoff to launch. The design loop ran twice: once with revisors, once with farmers.",
+        },
+      ],
     },
     {
       type: "insights",
@@ -65,9 +74,9 @@ export const ksl: CaseStudy = {
       media: {
         // Square, as shot — a 4:5 crop would cut off the sheep on the right.
         ratio: "1 / 1",
-        caption: "Revisor Kristen on an audit at a sheep farm in Gjesdal",
+        caption: "Revisor Kristen on an audit at a sheep farm in Gjesdal.",
         src: "/work/ksl/revisor-kristen-audit-sheep-farm-gjesdal.webp",
-        alt: "Revisor Kristen on an audit at a sheep farm in Gjesdal: two people in work clothes look over the sheep pens from the feeding aisle of the barn.",
+        alt: "Two people in work clothes look over the sheep pens from the feeding aisle of a barn.",
       },
       insightsLabel: "What the farm showed us",
       insights: [
@@ -214,9 +223,10 @@ export const ksl: CaseStudy = {
         // The collage's own shape; its white ground was made transparent so
         // the section shows between the tiles.
         ratio: "1565 / 1928",
-        caption: "Screens from the user tests with revisors",
+        caption:
+          "The Figma Make prototype in the revisor tests: farm scenes set up each task, and revisors registered what they found in the KSL checklist.",
         src: "/work/ksl/revisor-user-tests-figma-make-prototype.webp",
-        alt: "Collage of screens from the user tests with revisors on the Figma Make prototype: the opening farm scene, where an illustrated farmer welcomes the revisor; a task to photograph the chemicals cabinet; and the KSL audit checklist for Haugseter Gård, with the answer 'Nei' and a deviation graded 'Lite avvik' on question 1.5.5, whether pesticides are stored locked and labelled. Participants' video is blurred.",
+        alt: "Collage of six screenshots: an illustrated farmer welcoming the revisor to the farm; a task to photograph the chemicals cabinet; and the KSL audit checklist for Haugseter Gård, with the answer 'Nei' and a deviation graded 'Lite avvik' on question 1.5.5, whether pesticides are stored locked and labelled. Participants' video is blurred.",
       },
       insightsLabel: "What the revisors showed us",
       insights: [
@@ -293,7 +303,13 @@ export const ksl: CaseStudy = {
         "Twenty one how might we questions were written, clustered into six themes, and voted on. Making notes more effective won: faster to capture in the field, easier to find afterwards. References were gathered from outside the industry, veterinary journals, note apps, speech to text, smart pens, then each person sketched one idea and presented it.",
         {
           kind: "media",
-          media: { ratio: "16 / 10", caption: "FigJam sprint tavle overview" },
+          media: {
+            ratio: "1809 / 1169",
+            caption:
+              "The workshop board in FigJam, from the core problem to the ideas Norsk Mat voted on.",
+            src: "/work/ksl/norsk-mat-workshop-figjam-board.webp",
+            alt: "FigJam board in five areas: an icebreaker; problem understanding, with the core problem — deviations are rarely filled in during the audit, revisors jot notes instead and write the report later — and the planned audit flow set against the real one, with sticky notes from the tests; 'how might we' questions, with the one chosen to take forward; lightning demos of outside references such as Evernote, Goodnotes, speech recognition and smart pens; and idea presentations with hand-drawn sketches and voting.",
+          },
         },
       ],
     },

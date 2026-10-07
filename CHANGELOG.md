@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — Captions under images, and the workshop board
+Every real image and diagram on a case study now has a one-line caption
+under it, giving the context, while the alt text describes what is visible.
+The workshop section shows the FigJam board from the Norsk Mat workshop,
+saved as norsk-mat-workshop-figjam-board.webp.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-07 — Revisor user-test collage
 The "Testing with revisors" section now shows a collage of screens from the
 sessions, saved as revisor-user-tests-figma-make-prototype.webp with alt text

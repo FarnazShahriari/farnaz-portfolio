@@ -11,7 +11,7 @@ import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-
 import { CaseStudyBody } from "@/components/case-study/case-study-body"
 import { Eyebrow } from "@/components/case-study/parts"
 import { NextProject } from "@/components/sections/next-project"
-import { Media } from "@/components/ui/media"
+import { captionStyle, Media } from "@/components/ui/media"
 import { projectMediaTransition } from "@/lib/view-transitions"
 import { getCaseStudy } from "@/content/case-studies"
 import { nextProject, projects } from "@/content/projects"
@@ -98,13 +98,23 @@ export default async function ProjectPage({
           picture as the homepage hero, cropped wider. `rhythm="none"`
           because the section above has already paid for the gap. */}
       <Section theme="light" rhythm="none">
-        <ViewTransition
-          name={projectMediaTransition(project.slug)}
-          share="morph"
-          default="none"
-        >
-          <Media media={{ ...project.image, ratio: "21 / 9" }} priority />
-        </ViewTransition>
+        <figure>
+          <ViewTransition
+            name={projectMediaTransition(project.slug)}
+            share="morph"
+            default="none"
+          >
+            <Media media={{ ...project.image, ratio: "21 / 9" }} priority hideCaption />
+          </ViewTransition>
+          {/* Only once there is a real picture: until then the caption is
+              the note inside the placeholder. In a Container, so it lines
+              up with the text rather than the screen edge. */}
+          {project.image.src ? (
+            <figcaption>
+              <Container className={captionStyle}>{project.image.caption}</Container>
+            </figcaption>
+          ) : null}
+        </figure>
       </Section>
 
       {caseStudy ? <CaseStudyBody sections={caseStudy.sections} /> : null}

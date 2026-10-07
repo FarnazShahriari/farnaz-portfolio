@@ -148,7 +148,7 @@ export function StoryPartView({
       break
     case "diagram": {
       const Diagram = diagrams[part.id]
-      content = <Diagram />
+      content = <Diagram caption={part.caption} />
       break
     }
   }

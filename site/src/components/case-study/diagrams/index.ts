@@ -9,6 +9,6 @@ import { KslDesignProcess } from "./ksl-design-process"
  * drawing. Content files refer to them by id; adding one is a new file
  * here and a new id in `DiagramId`.
  */
-export const diagrams: Record<DiagramId, ComponentType> = {
+export const diagrams: Record<DiagramId, ComponentType<{ caption?: string }>> = {
   "ksl-design-process": KslDesignProcess,
 }

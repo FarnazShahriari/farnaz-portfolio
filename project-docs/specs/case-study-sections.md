@@ -116,6 +116,14 @@ Use a picture instead only when the diagram's meaning is in its geometry
 - Images: every slot has a fixed `ratio` and a `caption` saying what goes
   there. To use a real image, put the file under `site/public/` and add
   `src` and `alt` to that slot. Nothing else changes.
+- Once `src` is set, the `caption` shows under the image as its context —
+  who, where, why ("Revisor Kristen on an audit at a sheep farm in
+  Gjesdal."). The `alt` describes what is visible ("Two people in work
+  clothes look over the sheep pens…"), so the two don't repeat each other.
+  One short sentence, ending in a full stop. Diagrams take a `caption` too;
+  a blueprint's `note` is its caption.
+- Name image files for what they show: `site/public/work/<project>/
+  <who-or-what>-<where-or-context>.webp`.
 - No raw colours, sizes or spacing in the content file or the sections. A
   new kind of block is a new part or section type, built from the design
   system.

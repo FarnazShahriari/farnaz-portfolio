@@ -25,6 +25,8 @@
  * grows with the screen up to `max-w-md`.
  */
 
+import { captionStyle } from "@/components/ui/media"
+
 const TITLE = "The KSL design process, from kickoff to launch"
 const DESCRIPTION =
   "Kickoff with the client, then a field study, then scope and priority. " +
@@ -258,11 +260,12 @@ function Tall() {
   )
 }
 
-export function KslDesignProcess() {
+export function KslDesignProcess({ caption }: { caption?: string }) {
   return (
     <figure data-slot="diagram" data-diagram="ksl-design-process" className="@container">
       <Wide />
       <Tall />
+      {caption ? <figcaption className={captionStyle}>{caption}</figcaption> : null}
     </figure>
   )
 }

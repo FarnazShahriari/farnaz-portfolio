@@ -109,7 +109,7 @@ export type StoryPart =
   /** A service blueprint drawn in HTML. Use it in `below`, at full width. */
   | { kind: "blueprint"; blueprint: Blueprint }
   /** A hand-drawn inline-SVG diagram, by id. Use it in `below`. */
-  | { kind: "diagram"; id: DiagramId }
+  | { kind: "diagram"; id: DiagramId; caption?: string }
 
 /**
  * The inline-SVG diagrams that exist, one per file in
