@@ -202,9 +202,11 @@ export const ksl: CaseStudy = {
         {
           kind: "media",
           media: {
-            ratio: "16 / 10",
+            ratio: "1943 / 1234",
             caption:
-              "Sketch alternatives with written tradeoffs, Skissealternativ series",
+              "A Figma Make sketch brought to a weekly session: registering a deviation, with its severity set on a scale and the level worked out by the system.",
+            src: "/work/ksl/deviation-registration-sketch-figma-make.webp",
+            alt: "Sketch of the KSL audit screen: the checklist on the left; question 1.1.4, on whether equipment that requires it is inspected and certified, answered 'Nei'; and a 'Register avvik' form with the observation, the requirement, an evidence upload, a deadline and who is responsible for closing it. A pop-up asks how far the deviation is from the requirement, with a slider from 'a little' to 'very far', and shows the level the system calculated, 'Lite avvik'. Guidance text runs down the right, and numbered markers 1 to 4 sit over parts of the screen.",
           },
         },
       ],
