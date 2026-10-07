@@ -56,10 +56,14 @@ step per stage), optional `dividers` (the lines between lanes), `flows`
 (arrows between steps), a `legend` override and a `note`.
 
 - **From 768px:** the matrix — roles down the side, stages across.
-- **Below 768px:** the same content as a sequence — the roles as a key,
-  then each stage as a heading with its steps top to bottom and the
-  handoffs between them. A 3-column matrix at phone width would be ~100px
-  per column, too narrow to read.
+- **Below 768px:** the matrix turned on its side — one column per role,
+  one row per stage, dividers as vertical lines between the columns. About
+  one screen tall instead of three. Text drops to `text-xs` (12px, the floor
+  of the scale) and long words wrap. Handoff labels move into the step they
+  arrive at, and the line names move into the legend.
+- **Limit:** this holds for up to 3 roles with short sentences (one line
+  each, ~70 characters). A wordier blueprint, or 4+ roles, is too narrow
+  as columns on a phone — split it, or shorten the steps.
 - A flow within one lane is "same person continues" (accent arrow, desktop
   only). A flow between lanes is a handoff, drawn on the line next to the
   step it arrives at, with its label.
