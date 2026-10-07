@@ -372,7 +372,14 @@ export const ksl: CaseStudy = {
       title: "Five farmers, the self audit and the deviations they have to close",
       intro:
         "Everything learned on the revisor side was tested again with farmers. Five users, four sessions, 101 insights.",
-      media: { ratio: "4 / 5", caption: "Mobile screen from the farmer prototype" },
+      media: {
+        // As with the revisor collage, the white ground is transparent.
+        ratio: "1882 / 1914",
+        caption:
+          "The farmer prototype in the tests: the overview of open deviations and deadlines, the self audit, and the farm's documents.",
+        src: "/work/ksl/farmer-user-tests-figma-make-prototype.webp",
+        alt: "Collage of five screenshots: the farmer's start page with open deviations and an overdue self audit; a list of deviations with their severity, deadline and status; a self-audit question with yes, no and not-relevant answers; the farm's uploaded documents; and the farm profile for Haugseter Gård with a map and contact details. Participants' video is blurred.",
+      },
       insightsLabel: "What the test showed us",
       insights: [
         {

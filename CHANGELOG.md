@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — Farmer user-test collage
+"Testing with farmers" now shows a collage of the farmer prototype from the
+sessions, saved as farmer-user-tests-figma-make-prototype.webp with the same
+transparent-ground treatment, caption and alt text as the revisor collage.
+Related: site/src/content/case-studies/ksl.ts
+
 ## 2026-10-07 — The notes field as built, five screens in a row
 "The idea" now shows the five tablet screens of the notes field in the order a
 revisor meets them — new note, dictation, suggested question, deviation, all
