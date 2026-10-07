@@ -131,7 +131,10 @@ export type BlueprintLane = {
   tag?: { label: string; tone: "strong" | "soft" | "deferred" }
   /** Greys out the whole lane, and makes every step `deferred`. */
   deferred?: boolean
-  /** What this role does in each stage — one entry per stage, in order. */
+  /**
+   * What this role does in each stage — one entry per stage, in order. An
+   * empty `text` leaves that cell blank.
+   */
   steps: { text: string; state?: BlueprintStepState }[]
 }
 
@@ -144,6 +147,9 @@ export type BlueprintCell = { lane: number; stage: number }
  * at the target step.
  */
 export type BlueprintFlow = {
+  // Keep handoffs between neighbouring lanes: the arrow is drawn on the
+  // line next to the target, so a flow that skips a lane looks like it
+  // starts in the lane between.
   from: BlueprintCell
   to: BlueprintCell
   /** Shown next to a handoff arrow. */
@@ -166,6 +172,7 @@ export type Blueprint = {
   /** Overrides the legend's wording. Leave out for the defaults. */
   legend?: {
     active?: string
+    inactive?: string
     deferred?: string
     continues?: string
     handoff?: string

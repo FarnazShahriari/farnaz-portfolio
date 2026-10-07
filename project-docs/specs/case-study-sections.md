@@ -55,12 +55,23 @@ readable by screen readers, and every colour is a theme token.
 step per stage), optional `dividers` (the lines between lanes), `flows`
 (arrows between steps), a `legend` override and a `note`.
 
-- **From 768px:** the matrix — roles down the side, stages across.
-- **Below 768px:** the matrix turned on its side — one column per role,
-  one row per stage, dividers as vertical lines between the columns. About
-  one screen tall instead of three. Text drops to `text-xs` (12px, the floor
-  of the scale) and long words wrap. Handoff labels move into the step they
-  arrive at, and the line names move into the legend.
+- **When the diagram is ~900px wide or more** (a container query on the
+  figure, so desktop from ~1024px): the matrix — roles down the side,
+  stages across. Narrower than that the matrix's columns get too thin, so
+  tablets get the next layout too.
+- **Narrower:** the matrix turned on its side — one column per role, one
+  row per stage, dividers as vertical lines between the columns. About one
+  screen tall on a phone. Text is `text-xs` (12px, the floor of the scale)
+  on phones and `text-sm` once the figure is ~576px wide. Handoff labels
+  move into the step they arrive at, and the line names into the legend.
+- **Text for screen readers:** every step is announced with its role, its
+  state (deferred, nothing to design) and what arrives into it, in order.
+- Keep handoffs between neighbouring lanes; in development a warning names
+  any flow that skips a lane, points outside the grid, or a lane with the
+  wrong number of steps. An empty step `text` leaves that cell blank.
+- Built for light and muted sections. In dark or accent sections the
+  accent pieces lose contrast until the design system declares an accent
+  for those grounds (an upstream change).
 - **Limit:** this holds for up to 3 roles with short sentences (one line
   each, ~70 characters). A wordier blueprint, or 4+ roles, is too narrow
   as columns on a phone — split it, or shorten the steps.
