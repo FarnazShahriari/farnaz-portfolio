@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — First real photo: the field study
+The field study section now shows Revisor Kristen on an audit at a sheep farm
+in Gjesdal, in place of its placeholder. The photo's rounded transparent
+corners were trimmed off, it is saved as a descriptively named WebP under
+site/public/work/ksl/, and the slot is square to match it instead of a 4:5
+crop that would cut the scene.
+Related: site/src/content/case-studies/ksl.ts
+
 ## 2026-10-07 — KSL design process as an inline SVG
 The process map in "The process" is now an inline SVG component
 (`ksl-design-process`) instead of a placeholder: token colours, searchable

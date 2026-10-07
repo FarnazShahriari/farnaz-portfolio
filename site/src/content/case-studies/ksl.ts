@@ -62,7 +62,13 @@ export const ksl: CaseStudy = {
       title: "We Started on the Farm, Not in Figma",
       intro:
         "Before any screen existed, I joined a revisor on real farm visits and just watched.",
-      media: { ratio: "4 / 5", caption: "Candid field-research photo" },
+      media: {
+        // Square, as shot — a 4:5 crop would cut off the sheep on the right.
+        ratio: "1 / 1",
+        caption: "Revisor Kristen on an audit at a sheep farm in Gjesdal",
+        src: "/work/ksl/revisor-kristen-audit-sheep-farm-gjesdal.webp",
+        alt: "Revisor Kristen on an audit at a sheep farm in Gjesdal: two people in work clothes look over the sheep pens from the feeding aisle of the barn.",
+      },
       insightsLabel: "What the farm showed us",
       insights: [
         {
