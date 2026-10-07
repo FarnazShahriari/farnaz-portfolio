@@ -213,7 +213,7 @@ export const ksl: CaseStudy = {
       media: {
         // The collage's own shape; its white ground was made transparent so
         // the section shows between the tiles.
-        ratio: "978 / 1203",
+        ratio: "1565 / 1928",
         caption: "Screens from the user tests with revisors",
         src: "/work/ksl/revisor-user-tests-figma-make-prototype.webp",
         alt: "Collage of screens from the user tests with revisors on the Figma Make prototype: the opening farm scene, where an illustrated farmer welcomes the revisor; a task to photograph the chemicals cabinet; and the KSL audit checklist for Haugseter Gård, with the answer 'Nei' and a deviation graded 'Lite avvik' on question 1.5.5, whether pesticides are stored locked and labelled. Participants' video is blurred.",
