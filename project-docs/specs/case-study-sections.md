@@ -42,6 +42,7 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 | `{ kind: "steps" }` | Badges joined by arrows. |
 | `{ kind: "media" }` | One image. |
 | `{ kind: "mediaPair" }` | A large image with a smaller one beside it. |
+| `{ kind: "gallery" }` | Screens of a flow in order: one row when wide, rows of three (last row centred) below that. Use in `below`. |
 | `{ kind: "statement" }` | One large line, `text-h2`. |
 | `{ kind: "blueprint" }` | A service blueprint in HTML. Use in `below`. See below. |
 | `{ kind: "diagram" }` | A hand-drawn inline-SVG diagram, by id. Use in `below`. See below. |

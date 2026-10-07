@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react"
 import { ArrowRightIcon } from "lucide-react"
 
 import { Badge } from "@farnazshahriari/design-system/ui/badge"
@@ -7,7 +8,7 @@ import { cn } from "@farnazshahriari/design-system/lib/utils"
 import { Blueprint } from "@/components/case-study/blueprint"
 import { diagrams } from "@/components/case-study/diagrams"
 import { Media } from "@/components/ui/media"
-import type { Fact, Quote, StoryPart } from "@/content/types"
+import type { Fact, MediaPlaceholder, Quote, StoryPart } from "@/content/types"
 
 /**
  * The small pieces every case-study section is built from.
@@ -97,6 +98,40 @@ export function Steps({ items }: { items: string[] }) {
 }
 
 /**
+ * Screens of a flow, in order, at one size. One row once the gallery has
+ * room (the same `@4xl` container switch as the diagrams); below that the
+ * items wrap into rows of three, and a short last row is centred rather
+ * than left hanging. That is done on a six-column grid where each item
+ * spans two, so the leftover one or two can start one column in.
+ */
+export function Gallery({ items }: { items: MediaPlaceholder[] }) {
+  const n = items.length
+  const rest = n % 3
+
+  return (
+    <div className="@container">
+      <ul
+        className="grid grid-cols-6 gap-x-4 gap-y-8 @4xl:grid-cols-[repeat(var(--n),minmax(0,1fr))] @4xl:gap-x-6"
+        style={{ "--n": n } as CSSProperties}
+      >
+        {items.map((media, i) => (
+          <li
+            key={media.src ?? i}
+            className={cn(
+              "col-span-2 @4xl:col-span-1 @4xl:col-start-auto",
+              rest === 2 && i === n - 2 && "col-start-2",
+              rest === 1 && i === n - 1 && "col-start-3"
+            )}
+          >
+            <Media media={media} sizes="(min-width: 1024px) 20vw, 33vw" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+/**
  * Renders one StoryPart. `inColumn` is true for the narrow right-hand
  * column, where anything that is not a paragraph gets extra room above it
  * so it does not read as part of the text.
@@ -139,6 +174,9 @@ export function StoryPartView({
           </div>
         </Grid>
       )
+      break
+    case "gallery":
+      content = <Gallery items={part.items} />
       break
     case "statement":
       content = <p className="max-w-[22ch] text-h2">{part.text}</p>

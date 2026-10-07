@@ -104,6 +104,11 @@ export type StoryPart =
   | { kind: "media"; media: MediaPlaceholder }
   /** A large image with a smaller one beside it, bottom-aligned. */
   | { kind: "mediaPair"; main: MediaPlaceholder; side: MediaPlaceholder }
+  /**
+   * Several images of the same kind side by side — screens of a flow, in
+   * order. One row on wide screens, two rows below that. Use in `below`.
+   */
+  | { kind: "gallery"; items: MediaPlaceholder[] }
   /** One large line, set as a heading. */
   | { kind: "statement"; text: string }
   /** A service blueprint drawn in HTML. Use it in `below`, at full width. */

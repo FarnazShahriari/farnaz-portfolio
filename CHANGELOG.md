@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — The notes field as built, five screens in a row
+"The idea" now shows the five tablet screens of the notes field in the order a
+revisor meets them — new note, dictation, suggested question, deviation, all
+notes — each with a caption. A new `gallery` part lays them out in one row on
+wide screens and two centred rows below that.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-07 — Captions under images, and the workshop board
 Every real image and diagram on a case study now has a one-line caption
 under it, giving the context, while the alt text describes what is visible.

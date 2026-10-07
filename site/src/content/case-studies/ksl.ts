@@ -325,12 +325,44 @@ export const ksl: CaseStudy = {
       ],
       below: [
         {
-          kind: "mediaPair",
-          main: { ratio: "16 / 10", caption: "The notes field as built" },
-          side: {
-            ratio: "4 / 3",
-            caption: "Workshop sketch, the idea as first drawn",
-          },
+          // The notes field as built, in the order a revisor meets it.
+          kind: "gallery",
+          items: [
+            {
+              ratio: "1255 / 1783",
+              caption:
+                "Start a note during the visit: speak it, take the text from a photo, or type.",
+              src: "/work/ksl/notes-field-new-note.webp",
+              alt: "Tablet screen: a 'Nytt notat' panel over the farm's document list, with buttons to dictate a note ('Snakk inn notat') or take text from a photo ('Hent tekst fra bilde'), a text field, and a switch marking the note as a deviation.",
+            },
+            {
+              ratio: "1255 / 1783",
+              caption: "Dictating a note: what the revisor says becomes text.",
+              src: "/work/ksl/notes-field-dictation.webp",
+              alt: "Tablet screen: the note panel listening, with a microphone button, a sound wave and the prompt 'Lytter… Snakk inn notatet ditt', and Cancel and Done buttons.",
+            },
+            {
+              ratio: "1255 / 1783",
+              caption:
+                "The system suggests which checklist question the note belongs to. The revisor picks one.",
+              src: "/work/ksl/notes-field-suggested-question.webp",
+              alt: "Tablet screen: a note reading 'plantevern', with the checklist questions it may belong to listed below: the best match, 1.5.1, on whether pesticides are only used by authorised staff, then three other matches.",
+            },
+            {
+              ratio: "1255 / 1783",
+              caption:
+                "If the note is a deviation, the grading, evidence and krav fields open in the same place.",
+              src: "/work/ksl/notes-field-register-deviation.webp",
+              alt: "Tablet screen: the same note switched to a deviation, with the deviation fields open below it: severity set to 'Stor avvik', the shortfall, evidence with a photo upload, and the requirement, linked to question 1.5.1.",
+            },
+            {
+              ratio: "1255 / 1783",
+              caption:
+                "All notes in one place, each linked to its question, ready for writing the report.",
+              src: "/work/ksl/notes-field-all-notes.webp",
+              alt: "Tablet screen: the list of all notes from the audit, each tagged with its checklist question, with warning icons on the notes that describe deviations, one of them marked critical.",
+            },
+          ],
         },
       ],
     },
