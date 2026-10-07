@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — The notes insights board in "The real problem"
+The evidence-wall placeholder is now the FigJam frame of the sixteen
+note-taking insights from the revisor tests, cropped to the frame (no label)
+and saved as revisor-notes-insights-figjam.webp, with caption and alt text.
+Related: site/src/content/case-studies/ksl.ts
+
 ## 2026-10-07 — Farmer user-test collage
 "Testing with farmers" now shows a collage of the farmer prototype from the
 sessions, saved as farmer-user-tests-figma-make-prototype.webp with the same

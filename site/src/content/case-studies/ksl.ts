@@ -280,8 +280,11 @@ export const ksl: CaseStudy = {
         {
           kind: "media",
           media: {
-            ratio: "21 / 9",
-            caption: "Bevisvegg, B1 to B16 evidence wall, full width",
+            ratio: "1950 / 795",
+            caption:
+              "Every note-taking insight from the revisor tests, clustered in FigJam: quotes, with who said them and when in the session.",
+            src: "/work/ksl/revisor-notes-insights-figjam.webp",
+            alt: "A dark FigJam frame holding sixteen white sticky notes in Norwegian. Each quotes a revisor from the tests, with a timestamp, on how they take notes: jotting reminders during the audit, keeping a separate notebook, writing the report later from those notes, and needing all notes in one place.",
           },
         },
         {
