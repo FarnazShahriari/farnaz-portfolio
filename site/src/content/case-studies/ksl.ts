@@ -42,10 +42,6 @@ export const ksl: CaseStudy = {
             },
           ],
         },
-        {
-          kind: "media",
-          media: { ratio: "4 / 3", caption: "Service blueprint, 3 roles × 3 stages" },
-        },
       ],
     },
     {
