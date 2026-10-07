@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — Revisor user-test collage
+The "Testing with revisors" section now shows a collage of screens from the
+sessions, saved as revisor-user-tests-figma-make-prototype.webp with alt text
+naming each screen. Its white ground was made transparent so the section
+shows between the tiles, and image slots no longer paint a grey backdrop
+behind real images.
+Related: site/src/content/case-studies/ksl.ts
+
 ## 2026-10-07 — First real photo: the field study
 The field study section now shows Revisor Kristen on an audit at a sheep farm
 in Gjesdal, in place of its placeholder. The photo's rounded transparent

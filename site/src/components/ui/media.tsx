@@ -33,7 +33,9 @@ export function Media({
   return (
     <div
       data-slot="media"
-      className={cn("relative w-full overflow-hidden bg-muted", className)}
+      // No backdrop: an image with transparent areas should show the
+      // section through them, not a grey box.
+      className={cn("relative w-full overflow-hidden", className)}
       style={{ aspectRatio: media.ratio }}
     >
       <Image

@@ -210,7 +210,14 @@ export const ksl: CaseStudy = {
       title: "A prototype real enough to test",
       intro:
         "Once most of the revisor and farmer flows were in place, Figma Make gave us a prototype realistic enough to put in front of real users. Five revisors, five sessions.",
-      media: { ratio: "4 / 5", caption: "Prototype screen tested with revisors" },
+      media: {
+        // The collage's own shape; its white ground was made transparent so
+        // the section shows between the tiles.
+        ratio: "978 / 1203",
+        caption: "Screens from the user tests with revisors",
+        src: "/work/ksl/revisor-user-tests-figma-make-prototype.webp",
+        alt: "Collage of screens from the user tests with revisors on the Figma Make prototype: the opening farm scene, where an illustrated farmer welcomes the revisor; a task to photograph the chemicals cabinet; and the KSL audit checklist for Haugseter Gård, with the answer 'Nei' and a deviation graded 'Lite avvik' on question 1.5.5, whether pesticides are stored locked and labelled. Participants' video is blurred.",
+      },
       insightsLabel: "What the revisors showed us",
       insights: [
         {
