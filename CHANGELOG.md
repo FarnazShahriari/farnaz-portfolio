@@ -22,9 +22,10 @@ Related: site/src/content/case-studies/ksl.ts
 ## 2026-10-07 — KSL design process as an inline SVG
 The process map in "The process" is now an inline SVG component
 (`ksl-design-process`) instead of a placeholder: token colours, searchable
-text, a full text description for screen readers, no shadows. A tall redraw
-replaces it below 56rem, since the wide drawing would be unreadable on a
-phone. The designer's source SVGs are kept in assets/ksl/.
+text set in the type scale, a full text description for screen readers, no
+shadows. A tall redraw replaces it below a 64rem-wide figure, since the wide
+drawing would be unreadable on a phone. The designer's source SVGs are kept
+in assets/ksl/.
 Related: project-docs/specs/case-study-sections.md
 
 ## 2026-10-07 — Blueprints drawn in HTML, not pictures

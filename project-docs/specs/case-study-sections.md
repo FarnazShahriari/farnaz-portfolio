@@ -92,14 +92,17 @@ original export stays in `assets/<project>/` under the same name.
 
 - Colours become token classes (`fill-accent`, `stroke-border`,
   `fill-muted-foreground`…); no hex, no white background rect, no drop
-  shadows. Text uses `font-sans`.
+  shadows. Text uses `font-sans` and the type scale — `text-sm` for steps,
+  `text-xs` for the rest. Inside an SVG a CSS pixel is a unit of the
+  drawing, so those sizes scale with it. Panels take `--radius`; nodes are
+  pills.
 - `role="img"`, a `<title>` (what it is) and a `<desc>` (the whole process
   in sentences) — that is the alt text. The SVG text stays searchable.
-- **Two drawings:** the wide one from a 56rem-wide figure; below that a
-  tall redraw, capped at `max-w-sm`. A 1200-unit-wide drawing scaled to a
-  phone would set its text at ~4px.
-- Font sizes are in the drawing's units, so they scale with it: about
-  13px on a 390px phone, 12px at 1024px, 17px at 1440px.
+- **Two drawings:** the wide one from a 64rem-wide figure (~1100px
+  screens), where it draws at about full size; below that a tall redraw
+  that grows with the screen up to `max-w-md`. A 1200-unit-wide drawing
+  scaled to a phone would set its text at ~4px.
+- Built for light and muted sections, like the blueprint.
 
 KSL: `ksl-design-process` (the design process, kickoff to launch).
 
