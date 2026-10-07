@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="1200" height="700" fill="#FFFFFF"/>
+  <defs>
+    <marker id="a1" markerWidth="7" markerHeight="7" refX="5.5" refY="2.75" orient="auto">
+      <path d="M0 0 L5.5 2.75 L0 5.5 z" fill="#2F6690"/>
+    </marker>
+    <marker id="a2" markerWidth="7" markerHeight="7" refX="5.5" refY="2.75" orient="auto">
+      <path d="M0 0 L5.5 2.75 L0 5.5 z" fill="#A9B4BF"/>
+    </marker>
+  </defs>
+
+  <!-- ===== STAGE HEADERS ===== -->
+  <g>
+    <rect x="286" y="22" width="292" height="40" rx="5" fill="#2F6690"/>
+    <text x="304" y="47" font-size="13.5" font-weight="600" fill="#FFFFFF">01 &#160;Carry out the audit</text>
+
+    <rect x="590" y="22" width="292" height="40" rx="5" fill="#2F6690"/>
+    <text x="608" y="47" font-size="13.5" font-weight="600" fill="#FFFFFF">02 &#160;Report the deviation</text>
+
+    <rect x="894" y="22" width="292" height="40" rx="5" fill="#2F6690"/>
+    <text x="912" y="47" font-size="13.5" font-weight="600" fill="#FFFFFF">03 &#160;Close the deviation</text>
+  </g>
+
+  <!-- ===== FARMER LANE ===== -->
+  <g>
+    <!-- icon: person with plant, no neck line -->
+    <circle cx="46" cy="130" r="21" fill="#E8EFF4"/>
+    <circle cx="42" cy="124" r="5" fill="none" stroke="#2F6690" stroke-width="1.7"/>
+    <path d="M32 142 a10 10 0 0 1 20 0" fill="none" stroke="#2F6690" stroke-width="1.7"/>
+    <path d="M58 142 V128" stroke="#2F6690" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M58 133 c-5 -1 -6 -5 -6 -7 c4 0 6 3 6 7 z" fill="#2F6690"/>
+    <path d="M58 136 c5 -1 6 -5 6 -8 c-4 0 -6 4 -6 8 z" fill="#2F6690" opacity="0.55"/>
+
+    <text x="80" y="124" font-size="15.5" font-weight="600" fill="#1A1A1A">Farmer</text>
+    <text x="80" y="143" font-size="12" fill="#6B7280">Runs the farm</text>
+    <rect x="80" y="152" width="112" height="21" rx="10.5" fill="#E8EFF4"/>
+    <text x="91" y="166.5" font-size="11" font-weight="600" fill="#2F6690">IN SCOPE, 2ND</text>
+
+    <rect x="286" y="92" width="292" height="92" rx="6" fill="#F4F8FB" stroke="#B9CEDC"/>
+    <text x="306" y="124" font-size="13.5" fill="#1A1A1A">Runs the yearly</text>
+    <text x="306" y="143" font-size="13.5" fill="#1A1A1A">self audit</text>
+
+    <rect x="590" y="92" width="292" height="92" rx="6" fill="#FBFCFD" stroke="#E5E7EB"/>
+    <text x="610" y="134" font-size="13.5" fill="#9CA3AF">Reads the result</text>
+
+    <rect x="894" y="92" width="292" height="92" rx="6" fill="#F4F8FB" stroke="#B9CEDC"/>
+    <text x="914" y="124" font-size="13.5" fill="#1A1A1A">Fixes the deviation and</text>
+    <text x="914" y="143" font-size="13.5" fill="#1A1A1A">confirms the requirement</text>
+    <text x="914" y="162" font-size="13.5" fill="#1A1A1A">is met</text>
+  </g>
+
+  <!-- interaction line -->
+  <line x1="32" y1="214" x2="1186" y2="214" stroke="#2F6690" stroke-width="1.1"/>
+  <rect x="32" y="204" width="118" height="19" rx="3" fill="#FFFFFF"/>
+  <text x="32" y="218" font-size="10.5" letter-spacing="0.7" fill="#2F6690">INTERACTION LINE</text>
+
+  <!-- ===== REVISOR LANE ===== -->
+  <g>
+    <circle cx="46" cy="294" r="21" fill="#E8EFF4"/>
+    <circle cx="42" cy="288" r="5" fill="none" stroke="#2F6690" stroke-width="1.7"/>
+    <path d="M32 306 a10 10 0 0 1 20 0" fill="none" stroke="#2F6690" stroke-width="1.7"/>
+    <rect x="55" y="289" width="9" height="12" rx="1.5" fill="none" stroke="#2F6690" stroke-width="1.7"/>
+
+    <text x="80" y="288" font-size="15.5" font-weight="600" fill="#1A1A1A">Revisor</text>
+    <text x="80" y="307" font-size="12" fill="#6B7280">Audits the farm</text>
+    <rect x="80" y="316" width="112" height="21" rx="10.5" fill="#2F6690"/>
+    <text x="91" y="330.5" font-size="11" font-weight="600" fill="#FFFFFF">IN SCOPE, 1ST</text>
+
+    <rect x="286" y="256" width="292" height="92" rx="6" fill="#F4F8FB" stroke="#B9CEDC"/>
+    <text x="306" y="288" font-size="13.5" fill="#1A1A1A">Audits the farm on site,</text>
+    <text x="306" y="307" font-size="13.5" fill="#1A1A1A">question by question</text>
+
+    <rect x="590" y="256" width="292" height="92" rx="6" fill="#F4F8FB" stroke="#B9CEDC"/>
+    <text x="610" y="288" font-size="13.5" fill="#1A1A1A">Fills in the deviation with</text>
+    <text x="610" y="307" font-size="13.5" fill="#1A1A1A">the unmet requirement,</text>
+    <text x="610" y="326" font-size="13.5" fill="#1A1A1A">evidence and severity</text>
+
+    <rect x="894" y="256" width="292" height="92" rx="6" fill="#F4F8FB" stroke="#B9CEDC"/>
+    <text x="914" y="288" font-size="13.5" fill="#1A1A1A">Approves or rejects</text>
+    <text x="914" y="307" font-size="13.5" fill="#1A1A1A">the closing</text>
+  </g>
+
+  <!-- handoff arrows -->
+  <!-- stage 01: farmer's self audit goes to the revisor, who checks the answers on site -->
+  <path d="M400 186 V250" stroke="#A9B4BF" stroke-width="1.3" fill="none" marker-end="url(#a2)" stroke-dasharray="4 4"/>
+  <rect x="408" y="206" width="150" height="17" rx="3" fill="#FFFFFF"/>
+  <text x="412" y="218" font-size="11" fill="#9CA3AF">answers checked on site</text>
+
+  <!-- revisor continues from audit to report -->
+  <path d="M578 302 H590" stroke="#2F6690" stroke-width="1.4" marker-end="url(#a1)" fill="none"/>
+
+  <!-- stage 02 to 03: the reported deviation goes to the farmer to fix -->
+  <path d="M882 302 C892 302 892 240 912 240 C932 240 932 186 932 182" stroke="#A9B4BF" stroke-width="1.3" fill="none" marker-end="url(#a2)" stroke-dasharray="4 4"/>
+
+  <!-- stage 03: the fixed deviation goes back to the revisor to approve or reject -->
+  <path d="M1110 186 V250" stroke="#A9B4BF" stroke-width="1.3" fill="none" marker-end="url(#a2)" stroke-dasharray="4 4"/>
+  <rect x="1000" y="206" width="104" height="17" rx="3" fill="#FFFFFF"/>
+  <text x="1004" y="218" font-size="11" fill="#9CA3AF" text-anchor="start">sent for approval</text>
+
+  <!-- visibility line -->
+  <line x1="32" y1="378" x2="1186" y2="378" stroke="#A9B4BF" stroke-width="1.1" stroke-dasharray="6 5"/>
+  <rect x="32" y="368" width="110" height="19" rx="3" fill="#FFFFFF"/>
+  <text x="32" y="382" font-size="10.5" letter-spacing="0.7" fill="#9CA3AF">VISIBILITY LINE</text>
+
+  <!-- ===== ADMIN LANE ===== -->
+  <g>
+    <circle cx="46" cy="466" r="21" fill="#F2F3F5"/>
+    <circle cx="46" cy="459" r="5" fill="none" stroke="#9CA3AF" stroke-width="1.7"/>
+    <path d="M36 478 a10 10 0 0 1 20 0" fill="none" stroke="#9CA3AF" stroke-width="1.7"/>
+    <rect x="33" y="481" width="26" height="3" rx="1.5" fill="#9CA3AF"/>
+
+    <text x="80" y="456" font-size="15.5" font-weight="600" fill="#4B5563">Norsk Mat admin</text>
+    <text x="80" y="475" font-size="12" fill="#9CA3AF">Sets the rules</text>
+    <rect x="80" y="484" width="78" height="21" rx="10.5" fill="#FFFFFF" stroke="#D1D5DB" stroke-dasharray="3 3"/>
+    <text x="91" y="498.5" font-size="11" font-weight="600" fill="#9CA3AF">LATER</text>
+
+    <rect x="286" y="420" width="292" height="104" rx="6" fill="#FFFFFF" stroke="#E0E2E6" stroke-dasharray="5 4"/>
+    <text x="306" y="452" font-size="13.5" fill="#6B7280">Builds the checklists with</text>
+    <text x="306" y="471" font-size="13.5" fill="#6B7280">requirements, guidance</text>
+    <text x="306" y="490" font-size="13.5" fill="#6B7280">and severity levels</text>
+
+    <rect x="590" y="420" width="292" height="104" rx="6" fill="#FFFFFF" stroke="#E0E2E6" stroke-dasharray="5 4"/>
+    <text x="610" y="462" font-size="13.5" fill="#6B7280">Keeps grading fair and</text>
+    <text x="610" y="481" font-size="13.5" fill="#6B7280">consistent across farms</text>
+
+    <rect x="894" y="420" width="292" height="104" rx="6" fill="#FFFFFF" stroke="#E0E2E6" stroke-dasharray="5 4"/>
+    <text x="914" y="452" font-size="13.5" fill="#6B7280">Keeps oversight of the</text>
+    <text x="914" y="471" font-size="13.5" fill="#6B7280">closing process, steps in</text>
+    <text x="914" y="490" font-size="13.5" fill="#6B7280">on problems or disputes</text>
+  </g>
+
+  <!-- ===== LEGEND ===== -->
+  <line x1="32" y1="570" x2="1186" y2="570" stroke="#EDEFF2"/>
+  <g>
+    <rect x="32" y="596" width="11" height="11" rx="2" fill="#F4F8FB" stroke="#B9CEDC"/>
+    <text x="52" y="605.5" font-size="12" fill="#6B7280">Designed and tested in this round</text>
+
+    <rect x="330" y="596" width="11" height="11" rx="2" fill="#FFFFFF" stroke="#D1D5DB" stroke-dasharray="3 3"/>
+    <text x="350" y="605.5" font-size="12" fill="#6B7280">Deferred to a later round</text>
+
+    <line x1="590" y1="601.5" x2="614" y2="601.5" stroke="#2F6690" stroke-width="1.4" marker-end="url(#a1)"/>
+    <text x="628" y="605.5" font-size="12" fill="#6B7280">Same person continues</text>
+
+    <line x1="820" y1="601.5" x2="844" y2="601.5" stroke="#A9B4BF" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#a2)"/>
+    <text x="858" y="605.5" font-size="12" fill="#6B7280">Handed to the other side of the audit</text>
+  </g>
+
+  <text x="32" y="648" font-size="12" fill="#9CA3AF">Revisor and farmer were designed and tested with equal depth. The revisor was tested first, so those findings could inform the farmer side.</text>
+</svg>

@@ -5,6 +5,7 @@ import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { Blueprint } from "@/components/case-study/blueprint"
+import { diagrams } from "@/components/case-study/diagrams"
 import { Media } from "@/components/ui/media"
 import type { Fact, Quote, StoryPart } from "@/content/types"
 
@@ -145,6 +146,11 @@ export function StoryPartView({
     case "blueprint":
       content = <Blueprint blueprint={part.blueprint} />
       break
+    case "diagram": {
+      const Diagram = diagrams[part.id]
+      content = <Diagram />
+      break
+    }
   }
 
   return inColumn ? <div className="mt-4">{content}</div> : content

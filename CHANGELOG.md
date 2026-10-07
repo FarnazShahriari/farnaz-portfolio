@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-07 — KSL design process as an inline SVG
+The process map in "The process" is now an inline SVG component
+(`ksl-design-process`) instead of a placeholder: token colours, searchable
+text, a full text description for screen readers, no shadows. A tall redraw
+replaces it below 56rem, since the wide drawing would be unreadable on a
+phone. The designer's source SVGs are kept in assets/ksl/.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-07 — Blueprints drawn in HTML, not pictures
 The KSL planning blueprint is now built in HTML from a reusable `blueprint`
 part: the text is searchable and every colour is a design-system token. From

@@ -108,6 +108,14 @@ export type StoryPart =
   | { kind: "statement"; text: string }
   /** A service blueprint drawn in HTML. Use it in `below`, at full width. */
   | { kind: "blueprint"; blueprint: Blueprint }
+  /** A hand-drawn inline-SVG diagram, by id. Use it in `below`. */
+  | { kind: "diagram"; id: DiagramId }
+
+/**
+ * The inline-SVG diagrams that exist, one per file in
+ * `components/case-study/diagrams/`.
+ */
+export type DiagramId = "ksl-design-process"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

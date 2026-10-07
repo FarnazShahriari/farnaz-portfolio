@@ -44,6 +44,7 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 | `{ kind: "mediaPair" }` | A large image with a smaller one beside it. |
 | `{ kind: "statement" }` | One large line, `text-h2`. |
 | `{ kind: "blueprint" }` | A service blueprint in HTML. Use in `below`. See below. |
+| `{ kind: "diagram" }` | A hand-drawn inline-SVG diagram, by id. Use in `below`. See below. |
 
 ## Blueprints (and other diagrams)
 
@@ -80,6 +81,27 @@ step per stage), optional `dividers` (the lines between lanes), `flows`
   step it arrives at, with its label.
 - Step `state`: `active` (default), `inactive` (greyed), `deferred`
   (dashed). A lane marked `deferred` makes all its steps deferred.
+
+## Inline-SVG diagrams
+
+When a diagram's meaning is in its drawing (a loop, a branching flow), keep
+it as SVG — but inline, as a component in
+`site/src/components/case-study/diagrams/<project>-<what-it-shows>.tsx`,
+registered in `diagrams/index.ts` and referenced by id. The designer's
+original export stays in `assets/<project>/` under the same name.
+
+- Colours become token classes (`fill-accent`, `stroke-border`,
+  `fill-muted-foreground`…); no hex, no white background rect, no drop
+  shadows. Text uses `font-sans`.
+- `role="img"`, a `<title>` (what it is) and a `<desc>` (the whole process
+  in sentences) — that is the alt text. The SVG text stays searchable.
+- **Two drawings:** the wide one from a 56rem-wide figure; below that a
+  tall redraw, capped at `max-w-sm`. A 1200-unit-wide drawing scaled to a
+  phone would set its text at ~4px.
+- Font sizes are in the drawing's units, so they scale with it: about
+  13px on a 390px phone, 12px at 1024px, 17px at 1440px.
+
+KSL: `ksl-design-process` (the design process, kickoff to launch).
 
 Use a picture instead only when the diagram's meaning is in its geometry
 (a chart, a floor plan, a hand sketch) rather than in its words.

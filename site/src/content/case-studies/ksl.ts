@@ -54,16 +54,7 @@ export const ksl: CaseStudy = {
         "In the old KSL every deviation was equal. A missing signature and a serious animal welfare finding were registered the same way, and the farmer closed either one alone by uploading a document. Norsk Mat wanted severity to decide what happens instead, which brought in grading, and with it a whole new stage for following deviations through to closing.",
         "Nearly everything in the process was new. So we put sketches and prototypes in front of real revisors and farmers early, rather than waiting for a finished build, because mistakes were going to happen and that is where they cost the least.",
       ],
-      below: [
-        {
-          kind: "media",
-          media: {
-            ratio: "21 / 5",
-            caption:
-              "Horizontal process map, 7 steps + producer test, spans full container",
-          },
-        },
-      ],
+      below: [{ kind: "diagram", id: "ksl-design-process" }],
     },
     {
       type: "insights",
