@@ -79,7 +79,8 @@ const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
  * screens, two on tablets, one on phones, each with the next one peeking
  * in at the right so it is clear there is more.
  *
- * Like the hero carousel, a screen that is only partly in view is faded,
+ * Like the hero carousel, a screen that is only partly in view is faded
+ * (the image, not its caption),
  * and clicking it moves the row to it: a screen peeking in at the right
  * brings in the ones hidden behind it, one peeking in at the left goes
  * back.
@@ -152,15 +153,7 @@ export function ScreenCarousel({
                 // next screen always shows at the edge.
                 className="basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10"
               >
-                <figure
-                  className={cn(
-                    "transition-opacity duration-500",
-                    ease,
-                    inView === null
-                      ? fadeBeforeReady(i)
-                      : !inView && "opacity-40"
-                  )}
-                >
+                <figure>
                   <button
                     ref={(el) => {
                       buttons.current[i] = el
@@ -186,8 +179,14 @@ export function ScreenCarousel({
                       setOpenIndex(i)
                       setIsOpen(true)
                     }}
+                    // Only the screen fades, as in the hero: a faded caption
+                    // would fall below readable contrast.
                     className={cn(
-                      "relative block w-full focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
+                      "relative block w-full transition-opacity duration-500 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
+                      ease,
+                      inView === null
+                        ? fadeBeforeReady(i)
+                        : !inView && "opacity-40",
                       inView === false ? "cursor-pointer" : "cursor-zoom-in"
                     )}
                   >

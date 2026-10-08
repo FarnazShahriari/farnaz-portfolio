@@ -136,7 +136,8 @@ row you move through.
 - Three screens in view on wide screens, two on tablets, one on phones
   (container queries), each with the next one peeking in at the right.
   Arrows and a "1–3 / 5" counter underneath; swipe on touch.
-- A screen only partly in view (or out of view) is faded, as in the hero.
+- A screen only partly in view (or out of view) is faded, as in the hero
+  (the image only; its caption keeps full contrast).
   Clicking it pages the row: one peeking in at the right becomes the first
   in view, bringing in the ones behind it; one peeking in at the left
   becomes the last.
