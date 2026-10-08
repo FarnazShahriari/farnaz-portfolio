@@ -136,9 +136,13 @@ row you move through.
 - Three screens in view on wide screens, two on tablets, one on phones
   (container queries), each with the next one peeking in at the right.
   Arrows and a "1–3 / 5" counter underneath; swipe on touch.
+- A screen only partly in view (or out of view) is faded, as in the hero.
+  Clicking it pages the row: one peeking in at the right becomes the first
+  in view, bringing in the ones behind it; one peeking in at the left
+  becomes the last.
 - Every screen keeps its caption under it.
-- Every screen is a button that opens it larger in the same dialog as the
-  hero carousel (`enlarge-dialog.tsx`). Tall screens open narrower than
+- Every screen in full view is a button that opens it larger in the same
+  dialog as the hero carousel (`enlarge-dialog.tsx`). Tall screens open narrower than
   wide ones (at most `max-w-3xl`); the reader scrolls down for the rest.
 - Keyboard: arrow keys move the row, and focus moves with it if the
   focused screen leaves the view; tabbing to a hidden screen brings it in.

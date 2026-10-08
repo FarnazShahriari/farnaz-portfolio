@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@farnazshahriari/design-system/ui/carousel"
+import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { EnlargeDialog } from "@/components/case-study/enlarge-dialog"
 import { captionStyle } from "@/components/ui/media"
@@ -33,8 +34,8 @@ function viewRange(api: NonNullable<CarouselApi>, count: number) {
   return { first, last: Math.min(count, first + inView) - 1 }
 }
 
-/** "1–3", for the counter, once the carousel exists. */
-function useSlidesInView(api: CarouselApi, count: number) {
+/** The slides in full view, kept up to date; null until the carousel exists. */
+function useViewRange(api: CarouselApi, count: number) {
   const subscribe = React.useCallback(
     (onChange: () => void) => {
       api?.on("select", onChange).on("reInit", onChange)
@@ -46,27 +47,50 @@ function useSlidesInView(api: CarouselApi, count: number) {
   )
   const snapshot = React.useSyncExternalStore(
     subscribe,
+    // A string, so an unchanged range is an unchanged snapshot.
     () => {
       if (!api) return null
       const { first, last } = viewRange(api, count)
-      return first === last ? `${first + 1}` : `${first + 1}–${last + 1}`
+      return `${first}:${last}`
     },
     () => null
   )
-  return snapshot
+  if (!snapshot) return null
+  const [first, last] = snapshot.split(":").map(Number)
+  return { first, last }
 }
+
+/**
+ * Before the script runs there is no carousel to ask, so the fade is
+ * worked out from the screen width instead: the same one, two or three in
+ * view as the slide widths below. Keep the two in step.
+ */
+function fadeBeforeReady(i: number) {
+  if (i === 0) return undefined
+  if (i === 1) return "opacity-40 @2xl:opacity-100"
+  if (i === 2) return "opacity-40 @5xl:opacity-100"
+  return "opacity-40"
+}
+
+const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
 
 /**
  * Screens of a flow as a row you can move through: three in view on wide
  * screens, two on tablets, one on phones, each with the next one peeking
  * in at the right so it is clear there is more.
  *
+ * Like the hero carousel, a screen that is only partly in view is faded,
+ * and clicking it moves the row to it: a screen peeking in at the right
+ * brings in the ones hidden behind it, one peeking in at the left goes
+ * back.
+ *
  * Built on the design system's Carousel (Embla underneath), so arrows,
  * keyboard handling and slide semantics come from the system. Tabbing to a
  * slide that is out of view brings it into view (Embla does that).
  *
- * Each screen is a button that opens it in the shared enlarge dialog, at a
- * size where its text can be read. Focus goes back to it on close.
+ * A screen in full view is a button that opens it in the shared enlarge
+ * dialog, at a size where its text can be read. Focus goes back to it on
+ * close.
  */
 export function ScreenCarousel({
   items,
@@ -81,7 +105,7 @@ export function ScreenCarousel({
   const [isOpen, setIsOpen] = React.useState(false)
   const [openIndex, setOpenIndex] = React.useState(0)
   const buttons = React.useRef<(HTMLButtonElement | null)[]>([])
-  const inView = useSlidesInView(api, items.length)
+  const range = useViewRange(api, items.length)
 
   React.useEffect(() => {
     if (!api) return
@@ -118,42 +142,73 @@ export function ScreenCarousel({
         aria-label={label}
       >
         <CarouselContent className="-ml-6">
-          {items.map((media, i) => (
-            <CarouselItem
-              key={media.src ?? i}
-              aria-label={`${i + 1} of ${items.length}`}
-              // A little under a third (a half, a whole) of the row, so the
-              // next screen always shows at the edge.
-              className="basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10"
-            >
-              <figure>
-                <button
-                  ref={(el) => {
-                    buttons.current[i] = el
-                  }}
-                  type="button"
-                  aria-label={`Open screen ${i + 1} larger`}
-                  onClick={() => {
-                    setOpenIndex(i)
-                    setIsOpen(true)
-                  }}
-                  className="relative block w-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+          {items.map((media, i) => {
+            const inView = range ? i >= range.first && i <= range.last : null
+            return (
+              <CarouselItem
+                key={media.src ?? i}
+                aria-label={`${i + 1} of ${items.length}`}
+                // A little under a third (a half, a whole) of the row, so the
+                // next screen always shows at the edge.
+                className="basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10"
+              >
+                <figure
+                  className={cn(
+                    "transition-opacity duration-500",
+                    ease,
+                    inView === null
+                      ? fadeBeforeReady(i)
+                      : !inView && "opacity-40"
+                  )}
                 >
-                  <Image
-                    src={media.src ?? ""}
-                    // The button carries the name; the full description is
-                    // on the enlarged image, and the caption sits below.
-                    alt=""
-                    {...ratioSize(media.ratio)}
-                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw"
-                    quality={90}
-                    className="h-auto w-full"
-                  />
-                </button>
-                <figcaption className={captionStyle}>{media.caption}</figcaption>
-              </figure>
-            </CarouselItem>
-          ))}
+                  <button
+                    ref={(el) => {
+                      buttons.current[i] = el
+                    }}
+                    type="button"
+                    aria-label={
+                      inView === false
+                        ? `Show screen ${i + 1}`
+                        : `Open screen ${i + 1} larger`
+                    }
+                    onClick={() => {
+                      if (api && range && inView === false) {
+                        // Page towards it: from the right it becomes the
+                        // first in view, from the left the last.
+                        const perView = range.last - range.first + 1
+                        const lastSnap = api.scrollSnapList().length - 1
+                        return api.scrollTo(
+                          i > range.last
+                            ? Math.min(i, lastSnap)
+                            : Math.max(0, i - perView + 1)
+                        )
+                      }
+                      setOpenIndex(i)
+                      setIsOpen(true)
+                    }}
+                    className={cn(
+                      "relative block w-full focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
+                      inView === false ? "cursor-pointer" : "cursor-zoom-in"
+                    )}
+                  >
+                    <Image
+                      src={media.src ?? ""}
+                      // The button carries the name; the full description is
+                      // on the enlarged image, and the caption sits below.
+                      alt=""
+                      {...ratioSize(media.ratio)}
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw"
+                      quality={90}
+                      className="h-auto w-full"
+                    />
+                  </button>
+                  <figcaption className={captionStyle}>
+                    {media.caption}
+                  </figcaption>
+                </figure>
+              </CarouselItem>
+            )
+          })}
         </CarouselContent>
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
@@ -162,12 +217,15 @@ export function ScreenCarousel({
             Tap a screen to see it larger.
           </p>
           <div className="ml-auto flex items-center gap-3">
-            {inView ? (
+            {range ? (
               <span
                 aria-hidden="true"
                 className="mr-1 text-sm text-muted-foreground tabular-nums"
               >
-                {inView} / {items.length}
+                {range.first === range.last
+                  ? range.first + 1
+                  : `${range.first + 1}–${range.last + 1}`}{" "}
+                / {items.length}
               </span>
             ) : null}
             <CarouselPrevious className="static translate-y-0" />
@@ -180,7 +238,9 @@ export function ScreenCarousel({
         media={items[openIndex]}
         open={isOpen}
         onOpenChange={setIsOpen}
-        onClosed={() => buttons.current[openIndex]?.focus({ preventScroll: true })}
+        onClosed={() =>
+          buttons.current[openIndex]?.focus({ preventScroll: true })
+        }
       />
     </div>
   )

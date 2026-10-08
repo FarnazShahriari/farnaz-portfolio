@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-08 — Faded edges on the notes-field carousel
+Screens only partly in view in the notes-field carousel are now faded, as in
+the hero, and clicking one moves the row to it: the one peeking in at the
+right brings in the screens hidden behind it, the one at the left goes back.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-08 — Notes-field screens as a carousel
 "The idea" section lost its two paragraphs and its label now reads "Voted
 in the workshop, then built". Its five notes-field screens, too small to read
