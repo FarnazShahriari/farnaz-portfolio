@@ -18,6 +18,32 @@ import type { CaseStudy } from "../types"
 
 export const ksl: CaseStudy = {
   slug: "ksl",
+  hero: {
+    label: "Screens from the farmer portal",
+    slides: [
+      {
+        ratio: "2272 / 1532",
+        caption:
+          "The farmer's start page: the next audits, open deviations and what is overdue come first.",
+        src: "/work/ksl/farmer-start-page-tablet.webp",
+        alt: "Tablet showing the farmer's start page for Ketil Nordseth at Haugseter Gård: the next audits, with a Nyt Norge self audit marked overdue; the Animalia animal welfare programmes; KSL marked 'Ikke OK', with a button to start the self audit and red banners for 2 and 5 open deviations; and a follow-up panel counting 7 external and 3 self-audit deviations, some overdue.",
+      },
+      {
+        ratio: "2272 / 1532",
+        caption:
+          "The self audit, one question at a time, with the guidance beside it. Answering 'Nei' records what is missing and a deadline.",
+        src: "/work/ksl/farmer-self-audit-question-tablet.webp",
+        alt: "Tablet showing the self audit: the checklist questions on the left, with question 1.1.2 marked 'Avvik'; on the right the question about a plan for recalling harmful products, its guidance, the answer 'Nei', what is missing — a written plan for recall and notification — and a deadline of 15.10.2026.",
+      },
+      {
+        ratio: "2272 / 1532",
+        caption:
+          "All open deviations in one place, each with its severity, deadline and status. Opening one shows what is missing, the evidence and the requirement.",
+        src: "/work/ksl/farmer-deviations-and-notes-tablet.webp",
+        alt: "Tablet showing 'Avvik og notater': a table of the ten open deviations with type, scheme, checklist question, deadline, follow-up and status, from 'Kritisk' down to self-audit deviations, several overdue. The critical one is open beside it, with what is missing, the evidence, the requirement and a field to suggest a time for a digital meeting.",
+      },
+    ],
+  },
   sections: [
     {
       type: "story",

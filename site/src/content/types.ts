@@ -239,5 +239,14 @@ export type CaseStudySection = StorySection | InsightsSection
  */
 export type CaseStudy = {
   slug: string
+  /**
+   * Device mockups shown as a carousel in place of the single hero image.
+   * Leave out to keep the project's `image`.
+   */
+  hero?: {
+    /** Names the carousel for screen readers. */
+    label: string
+    slides: MediaPlaceholder[]
+  }
   sections: CaseStudySection[]
 }

@@ -20,7 +20,7 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## Projects — `projects.ts`
 
-- [ ] Hero image (KSL) — revisor and farmer at the barn fence, ≥2400px wide
+- [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
 - [ ] Project two: title, summary, tag
 - [ ] Project three: title, summary, tag
 - [ ] Project four: title, summary, tag

@@ -9,6 +9,7 @@ import { ViewTransition } from "@farnazshahriari/design-system/motion/view-trans
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
 import { CaseStudyBody } from "@/components/case-study/case-study-body"
+import { HeroCarousel } from "@/components/case-study/hero-carousel"
 import { Eyebrow } from "@/components/case-study/parts"
 import { NextProject } from "@/components/sections/next-project"
 import { captionStyle, Media } from "@/components/ui/media"
@@ -94,28 +95,40 @@ export default async function ProjectPage({
         </Container>
       </Section>
 
-      {/* Full-bleed: no Container, so the image runs edge to edge. The same
-          picture as the homepage hero, cropped wider. `rhythm="none"`
-          because the section above has already paid for the gap. */}
-      <Section theme="light" rhythm="none">
-        <figure>
-          <ViewTransition
-            name={projectMediaTransition(project.slug)}
-            share="morph"
-            default="none"
-          >
-            <Media media={{ ...project.image, ratio: "21 / 9" }} priority hideCaption />
-          </ViewTransition>
-          {/* Only once there is a real picture: until then the caption is
-              the note inside the placeholder. In a Container, so it lines
-              up with the text rather than the screen edge. */}
-          {project.image.src ? (
-            <figcaption>
-              <Container className={captionStyle}>{project.image.caption}</Container>
-            </figcaption>
-          ) : null}
-        </figure>
-      </Section>
+      {/* The hero media: a carousel of device mockups when the case study
+          has one — on its own ground, so it needs its own padding — and
+          otherwise the single full-bleed image, the same picture as the
+          homepage hero cropped wider, with `rhythm="none"` because the
+          section above has already paid for the gap. */}
+      {caseStudy?.hero ? (
+        <Section theme="muted">
+          <HeroCarousel
+            slides={caseStudy.hero.slides}
+            label={caseStudy.hero.label}
+            transitionName={projectMediaTransition(project.slug)}
+          />
+        </Section>
+      ) : (
+        <Section theme="light" rhythm="none">
+          <figure>
+            <ViewTransition
+              name={projectMediaTransition(project.slug)}
+              share="morph"
+              default="none"
+            >
+              <Media media={{ ...project.image, ratio: "21 / 9" }} priority hideCaption />
+            </ViewTransition>
+            {/* Only once there is a real picture: until then the caption is
+                the note inside the placeholder. In a Container, so it lines
+                up with the text rather than the screen edge. */}
+            {project.image.src ? (
+              <figcaption>
+                <Container className={captionStyle}>{project.image.caption}</Container>
+              </figcaption>
+            ) : null}
+          </figure>
+        </Section>
+      )}
 
       {caseStudy ? <CaseStudyBody sections={caseStudy.sections} /> : null}
 

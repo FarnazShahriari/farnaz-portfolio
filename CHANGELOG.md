@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-08 — Hero carousel of the farmer portal
+The KSL hero is now a carousel of three farmer-portal screens — start page,
+self audit, deviations and notes — each in a clay-white tablet mockup with a
+shadow, made from the screenshots without resampling them. Neighbouring
+slides peek in on wide screens; any slide opens larger in a dialog, which is
+what makes the screens readable on phones.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-07 — Sketch in "Sketching and weekly sessions"
 The sketch placeholder is now a Figma Make sketch of deviation registration
 with the severity scale, saved as deviation-registration-sketch-figma-make.webp

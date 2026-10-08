@@ -110,6 +110,23 @@ KSL: `ksl-design-process` (the design process, kickoff to launch).
 Use a picture instead only when the diagram's meaning is in its geometry
 (a chart, a floor plan, a hand sketch) rather than in its words.
 
+## Hero carousel
+
+A case study can replace its single hero image with a carousel of device
+mockups: `hero: { label, slides }` in the content file.
+
+- Built on the design system's Carousel. The active slide is centred and
+  its neighbours peek in, faded; arrows, dots, a counter and the active
+  slide's caption sit underneath (the caption is announced on change).
+- Each slide is a button that opens the screen in a dialog, at a readable
+  size the reader can scroll around in — on a phone a whole screen is
+  otherwise too small to read.
+- The first slide carries the project's media transition, so the homepage
+  hero still morphs into the page.
+- Mockups are made from the raw screenshot pasted 1:1 into a clay-white
+  tablet frame with a shadow below, on a transparent background (lossless
+  WebP). Images that are mostly UI text are served at quality 90.
+
 ## Rules
 
 - Two sections in a row on the same ground get a thin `Separator` between
