@@ -109,6 +109,13 @@ export type StoryPart =
    * order. One row on wide screens, two rows below that. Use in `below`.
    */
   | { kind: "gallery"; items: MediaPlaceholder[] }
+  /**
+   * Screens of a flow as a carousel: three in view on wide screens, the
+   * rest by arrows or swiping, each one opening larger on click. For when
+   * a gallery would make the screens too small to read. Use in `below`;
+   * `label` names it for screen readers.
+   */
+  | { kind: "carousel"; label: string; items: MediaPlaceholder[] }
   /** One large line, set as a heading. */
   | { kind: "statement"; text: string }
   /** A service blueprint drawn in HTML. Use it in `below`, at full width. */
@@ -205,7 +212,10 @@ export type StorySection = {
   eyebrow: string
   /** Optional — without it, the eyebrow becomes the heading. */
   title?: string
-  /** The right-hand column, top to bottom. */
+  /**
+   * The right-hand column, top to bottom. Leave it empty when `below`
+   * carries the section; the heading then takes the wider column.
+   */
   body: StoryPart[]
   /** Full container width, under both columns. */
   below?: StoryPart[]

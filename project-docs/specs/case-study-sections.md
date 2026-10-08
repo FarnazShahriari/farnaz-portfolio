@@ -22,7 +22,7 @@ Label and heading on the left (sticky on wide screens), text on the right.
 | `theme` | `light` (default), `dark`, `accent`, `muted`. Dark and accent get more air. |
 | `eyebrow` | Small uppercase label. |
 | `title` | Optional. Without it, the eyebrow is the heading. |
-| `body` | The right column, as a list of parts. |
+| `body` | The right column, as a list of parts. Empty (`[]`) when `below` carries the section: the heading then takes the wider column. |
 | `below` | Optional. Full-width parts under both columns. |
 
 ### `insights`
@@ -43,6 +43,7 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 | `{ kind: "media" }` | One image. |
 | `{ kind: "mediaPair" }` | A large image with a smaller one beside it. |
 | `{ kind: "gallery" }` | Screens of a flow in order: one row when wide, rows of three (last row centred) below that. Use in `below`. |
+| `{ kind: "carousel" }` | Screens of a flow as a carousel, for when a gallery makes them too small to read. Use in `below`. See below. |
 | `{ kind: "statement" }` | One large line, `text-h2`. |
 | `{ kind: "blueprint" }` | A service blueprint in HTML. Use in `below`. See below. |
 | `{ kind: "diagram" }` | A hand-drawn inline-SVG diagram, by id. Use in `below`. See below. |
@@ -126,6 +127,22 @@ mockups: `hero: { label, slides }` in the content file.
 - Mockups are made from the raw screenshot pasted 1:1 into a clay-white
   tablet frame with a shadow below, on a transparent background (lossless
   WebP). Images that are mostly UI text are served at quality 90.
+
+## Screen carousel
+
+`{ kind: "carousel", label, items }` — the same items as a gallery, as a
+row you move through.
+
+- Three screens in view on wide screens, two on tablets, one on phones
+  (container queries), each with the next one peeking in at the right.
+  Arrows and a "1–3 / 5" counter underneath; swipe on touch.
+- Every screen keeps its caption under it.
+- Every screen is a button that opens it larger in the same dialog as the
+  hero carousel (`enlarge-dialog.tsx`). Tall screens open narrower than
+  wide ones (at most `max-w-3xl`); the reader scrolls down for the rest.
+- Keyboard: arrow keys move the row, and focus moves with it if the
+  focused screen leaves the view; tabbing to a hidden screen brings it in.
+- `label` names the carousel for screen readers.
 
 ## Rules
 

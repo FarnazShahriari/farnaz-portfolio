@@ -13,36 +13,14 @@ import {
   type CarouselApi,
 } from "@farnazshahriari/design-system/ui/carousel"
 import { Container } from "@farnazshahriari/design-system/ui/container"
-import { Dialog, DialogContent, DialogTitle } from "@farnazshahriari/design-system/ui/dialog"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
+import { EnlargeDialog } from "@/components/case-study/enlarge-dialog"
 import { captionStyle } from "@/components/ui/media"
+import { ratioSize } from "@/lib/media"
+import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import type { MediaPlaceholder } from "@/content/types"
-
-/** "2272 / 1532" → { width: 2272, height: 1532 }, so next/image knows the shape. */
-function size(ratio: string) {
-  const [width, height] = ratio.split("/").map((n) => Number(n.trim()))
-  return { width, height }
-}
-
-/**
- * Embla runs its own scroll animation, which the site's global Motion
- * config cannot reach, so the carousel asks for reduced motion itself and
- * moves instantly. Belongs upstream in the design system's Carousel; this
- * is the stopgap until it is there.
- */
-function usePrefersReducedMotion() {
-  return React.useSyncExternalStore(
-    (onChange) => {
-      const query = window.matchMedia("(prefers-reduced-motion: reduce)")
-      query.addEventListener("change", onChange)
-      return () => query.removeEventListener("change", onChange)
-    },
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    () => false
-  )
-}
 
 const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
 
@@ -56,8 +34,8 @@ const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
  *
  * Each screen is a full UI, so on a phone or tablet its text is too small
  * to read. The active slide is therefore also a button that opens it in a
- * dialog at a readable size, to scroll around in. Focus goes back to that
- * slide when the dialog closes.
+ * dialog (the shared EnlargeDialog) at a readable size, to scroll around
+ * in. Focus goes back to that slide when the dialog closes.
  *
  * The first slide carries the project's media transition name, so the
  * homepage hero still morphs into this page.
@@ -80,7 +58,6 @@ export function HeroCarousel({
   const [isOpen, setIsOpen] = React.useState(false)
   const [openIndex, setOpenIndex] = React.useState(0)
   const slideButtons = React.useRef<(HTMLButtonElement | null)[]>([])
-  const scroller = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     if (!api) return
@@ -110,8 +87,6 @@ export function HeroCarousel({
     api?.reInit()
   }, [api])
 
-  const open = slides[openIndex]
-
   return (
     <div>
       <Carousel
@@ -135,7 +110,7 @@ export function HeroCarousel({
                 // The button carries the name; the full description is on
                 // the enlarged image and in the caption below.
                 alt=""
-                {...size(slide.ratio)}
+                {...ratioSize(slide.ratio)}
                 sizes="(min-width: 768px) 67vw, 92vw"
                 quality={90}
                 preload={i === 0}
@@ -242,54 +217,14 @@ export function HeroCarousel({
         </Container>
       </Carousel>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent
-          aria-describedby={undefined}
-          // Straight into the scrollable screen, so arrow keys pan it; back
-          // to the slide it came from when it closes.
-          onOpenAutoFocus={(event) => {
-            event.preventDefault()
-            scroller.current?.focus()
-          }}
-          onCloseAutoFocus={(event) => {
-            event.preventDefault()
-            slideButtons.current[openIndex]?.focus({ preventScroll: true })
-          }}
-          className="max-h-[calc(100dvh-2rem)] grid-rows-[auto_minmax(0,1fr)] p-4 sm:max-w-[min(80rem,calc(100%-2rem))] md:p-6"
-        >
-          <div className="pr-8">
-            <DialogTitle className="text-sm leading-normal font-normal text-muted-foreground">
-              {open?.caption}
-            </DialogTitle>
-            <p className="mt-1 hidden text-xs text-muted-foreground pointer-coarse:block">
-              Swipe to move around the screen.
-            </p>
-          </div>
-          {/* Wider than a phone on purpose: the screen keeps a readable
-              size and the reader scrolls around it. Focusable, so keyboard
-              users can pan it too. */}
-          <div
-            ref={scroller}
-            tabIndex={0}
-            role="region"
-            aria-label="Enlarged screen, scrollable"
-            className="overflow-auto focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
-          >
-            {open ? (
-              <Image
-                src={open.src ?? ""}
-                alt={open.alt ?? ""}
-                {...size(open.ratio)}
-                sizes="(min-width: 768px) 80rem, 72rem"
-                quality={90}
-                // Opened on demand, so it should not wait to be scrolled to.
-                loading="eager"
-                className="h-auto w-full min-w-6xl md:min-w-0"
-              />
-            ) : null}
-          </div>
-        </DialogContent>
-      </Dialog>
+      <EnlargeDialog
+        media={slides[openIndex]}
+        open={isOpen}
+        onOpenChange={setIsOpen}
+        onClosed={() =>
+          slideButtons.current[openIndex]?.focus({ preventScroll: true })
+        }
+      />
     </div>
   )
 }

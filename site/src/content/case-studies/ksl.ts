@@ -343,17 +343,15 @@ export const ksl: CaseStudy = {
     {
       type: "story",
       theme: "accent",
-      eyebrow: "The idea",
+      eyebrow: "Voted in the workshop, then built",
       title:
         "Leveraging the note field revisors already use to support deviation registration",
-      body: [
-        "Three concepts were presented, and the one taken forward came from the group's own sketches. The revisor speaks or types a note during the visit. The system suggests which checklist question it belongs to, and if the note describes a deviation, offers to register one on the spot, with the krav, evidence and grading fields opening in the same place.",
-        "Every suggestion is a proposal. The revisor confirms, edits or rejects it.",
-      ],
+      body: [],
       below: [
         {
           // The notes field as built, in the order a revisor meets it.
-          kind: "gallery",
+          kind: "carousel",
+          label: "The notes field as built",
           items: [
             {
               ratio: "1255 / 1783",

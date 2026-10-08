@@ -1,6 +1,7 @@
 import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { Section } from "@farnazshahriari/design-system/ui/section"
+import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { Eyebrow, StoryPartView } from "@/components/case-study/parts"
 import type { StorySection as StorySectionData } from "@/content/types"
@@ -15,16 +16,25 @@ import type { StorySection as StorySectionData } from "@/content/types"
  *
  * Dark and accent bands are emphasis, so they take the larger rhythm; on
  * a light ground the default is enough.
+ *
+ * With an empty `body` there is no right column: the heading takes the
+ * wider column instead and is not sticky, since nothing scrolls past it.
  */
 export function StorySection({ section }: { section: StorySectionData }) {
   const { theme = "light", eyebrow, title, body, below } = section
   const emphasised = theme === "dark" || theme === "accent"
+  const hasBody = body.length > 0
 
   return (
     <Section theme={theme} rhythm={emphasised ? "lg" : "default"}>
       <Container>
         <Grid className="gap-y-8">
-          <header className="col-span-12 flex flex-col gap-3 self-start md:sticky md:top-24 md:col-span-4">
+          <header
+            className={cn(
+              "col-span-12 flex flex-col gap-3 self-start",
+              hasBody ? "md:sticky md:top-24 md:col-span-4" : "md:col-span-8"
+            )}
+          >
             {title ? (
               <>
                 <Eyebrow>{eyebrow}</Eyebrow>
@@ -35,11 +45,13 @@ export function StorySection({ section }: { section: StorySectionData }) {
             )}
           </header>
 
-          <div className="col-span-12 flex flex-col gap-4 md:col-span-7 md:col-start-6">
-            {body.map((part, i) => (
-              <StoryPartView key={i} part={part} inColumn />
-            ))}
-          </div>
+          {hasBody ? (
+            <div className="col-span-12 flex flex-col gap-4 md:col-span-7 md:col-start-6">
+              {body.map((part, i) => (
+                <StoryPartView key={i} part={part} inColumn />
+              ))}
+            </div>
+          ) : null}
         </Grid>
 
         {below?.length ? (

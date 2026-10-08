@@ -7,6 +7,7 @@ import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { Blueprint } from "@/components/case-study/blueprint"
 import { diagrams } from "@/components/case-study/diagrams"
+import { ScreenCarousel } from "@/components/case-study/screen-carousel"
 import { Media } from "@/components/ui/media"
 import type { Fact, MediaPlaceholder, Quote, StoryPart } from "@/content/types"
 
@@ -177,6 +178,9 @@ export function StoryPartView({
       break
     case "gallery":
       content = <Gallery items={part.items} />
+      break
+    case "carousel":
+      content = <ScreenCarousel items={part.items} label={part.label} />
       break
     case "statement":
       content = <p className="max-w-[22ch] text-h2">{part.text}</p>

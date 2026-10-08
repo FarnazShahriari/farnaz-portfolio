@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-08 — Notes-field screens as a carousel
+"The idea" section lost its two paragraphs and its label now reads "Voted
+in the workshop, then built". Its five notes-field screens, too small to read
+in one row, are now a carousel: three in view on wide screens (two on
+tablets, one on phones) with the next peeking in, each opening larger on
+click or tap. The enlarge dialog is now shared with the hero carousel.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-08 — Hero carousel of the farmer portal
 The KSL hero is now a carousel of three farmer-portal screens — start page,
 self audit, deviations and notes — each in a clay-white tablet mockup with a
