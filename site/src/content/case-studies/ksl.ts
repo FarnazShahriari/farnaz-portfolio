@@ -24,16 +24,16 @@ export const ksl: CaseStudy = {
       {
         ratio: "2272 / 1532",
         caption:
-          "The farmer's start page: the next audits, open deviations and what is overdue come first.",
-        src: "/work/ksl/farmer-start-page-tablet.webp",
-        alt: "Tablet showing the farmer's start page for Ketil Nordseth at Haugseter Gård: the next audits, with a Nyt Norge self audit marked overdue; the Animalia animal welfare programmes; KSL marked 'Ikke OK', with a button to start the self audit and red banners for 2 and 5 open deviations; and a follow-up panel counting 7 external and 3 self-audit deviations, some overdue.",
+          "The self audit, one question at a time, with the guidance beside it. Answering 'Nei' records what is missing and a deadline.",
+        src: "/work/ksl/farmer-self-audit-question-tablet.webp",
+        alt: "Tablet showing the self audit: the checklist questions on the left, with question 1.1.2 marked 'Avvik'; on the right the question about a plan for recalling harmful products, its guidance, the answer 'Nei', what is missing — a written plan for recall and notification — and a deadline of 15.10.2026.",
       },
       {
         ratio: "2272 / 1532",
         caption:
-          "The self audit, one question at a time, with the guidance beside it. Answering 'Nei' records what is missing and a deadline.",
-        src: "/work/ksl/farmer-self-audit-question-tablet.webp",
-        alt: "Tablet showing the self audit: the checklist questions on the left, with question 1.1.2 marked 'Avvik'; on the right the question about a plan for recalling harmful products, its guidance, the answer 'Nei', what is missing — a written plan for recall and notification — and a deadline of 15.10.2026.",
+          "The farmer's start page: the next audits, open deviations and what is overdue come first.",
+        src: "/work/ksl/farmer-start-page-tablet.webp",
+        alt: "Tablet showing the farmer's start page for Ketil Nordseth at Haugseter Gård: the next audits, with a Nyt Norge self audit marked overdue; the Animalia animal welfare programmes; KSL marked 'Ikke OK', with a button to start the self audit and red banners for 2 and 5 open deviations; and a follow-up panel counting 7 external and 3 self-audit deviations, some overdue.",
       },
       {
         ratio: "2272 / 1532",
