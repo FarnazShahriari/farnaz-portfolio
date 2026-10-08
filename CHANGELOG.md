@@ -16,7 +16,11 @@ The KSL hero is now a carousel of three farmer-portal screens — start page,
 self audit, deviations and notes — each in a clay-white tablet mockup with a
 shadow, made from the screenshots without resampling them. Neighbouring
 slides peek in on wide screens; any slide opens larger in a dialog, which is
-what makes the screens readable on phones.
+what makes the screens readable on phones. A review then fixed focus (it
+returns to the slide after the dialog, follows the arrow keys, and the
+enlarged screen can be panned by keyboard), the dot contrast and size,
+reduced motion, the load-time jump, and a band padding that kept the
+homepage morph from landing on laptop screens.
 Related: project-docs/specs/case-study-sections.md
 
 ## 2026-10-07 — Sketch in "Sketching and weekly sessions"

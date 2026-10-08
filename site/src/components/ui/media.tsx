@@ -57,7 +57,7 @@ export function Media({
         alt={media.alt ?? ""}
         fill
         sizes={sizes}
-        priority={priority}
+        preload={priority}
         className="object-cover"
       />
     </div>

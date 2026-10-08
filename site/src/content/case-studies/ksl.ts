@@ -38,9 +38,9 @@ export const ksl: CaseStudy = {
       {
         ratio: "2272 / 1532",
         caption:
-          "All open deviations in one place, each with its severity, deadline and status. Opening one shows what is missing, the evidence and the requirement.",
+          "All open deviations in one place, each with its type or severity, deadline and status. Opening one shows what is missing, the evidence and the requirement.",
         src: "/work/ksl/farmer-deviations-and-notes-tablet.webp",
-        alt: "Tablet showing 'Avvik og notater': a table of the ten open deviations with type, scheme, checklist question, deadline, follow-up and status, from 'Kritisk' down to self-audit deviations, several overdue. The critical one is open beside it, with what is missing, the evidence, the requirement and a field to suggest a time for a digital meeting.",
+        alt: "Tablet showing 'Avvik og notater': a table of open deviations (the tab counts ten) with type, scheme, checklist question, deadline, follow-up and status, from 'Kritisk' down to self-audit deviations, several overdue. The critical one is open beside it, with what is missing, the evidence, the requirement and a field to suggest a time for a digital meeting.",
       },
     ],
   },

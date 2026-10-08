@@ -101,7 +101,9 @@ export default async function ProjectPage({
           homepage hero cropped wider, with `rhythm="none"` because the
           section above has already paid for the gap. */}
       {caseStudy?.hero ? (
-        <Section theme="muted">
+        // The small rhythm keeps the first slide's top in view on common
+        // laptop screens — the homepage media only morphs into it if it is.
+        <Section theme="muted" rhythm="sm">
           <HeroCarousel
             slides={caseStudy.hero.slides}
             label={caseStudy.hero.label}
