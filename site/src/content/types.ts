@@ -55,6 +55,11 @@ export type MediaPlaceholder = {
    * explains. It still names the image where it opens larger.
    */
   hideCaption?: boolean
+  /**
+   * A photograph rather than a screen or board: opened larger, it fits the
+   * screen instead of opening at a size for reading small text.
+   */
+  photo?: boolean
 }
 
 export type TrackRecordEntry = {

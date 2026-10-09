@@ -36,7 +36,11 @@ export function EnlargeDialog({
 }) {
   const scroller = React.useRef<HTMLDivElement>(null)
   const size = media ? ratioSize(media.ratio) : null
-  const portrait = size ? size.height > size.width : false
+  // Anything not clearly wide (tall screens, square photos) needs less
+  // width to be readable, and would not fit the height at full width.
+  const narrow = size ? size.width / size.height < 1.2 : false
+  // A photo has no small text to read, so it fits the dialog instead.
+  const fit = !!media?.photo
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -56,15 +60,17 @@ export function EnlargeDialog({
           <DialogTitle className="text-sm leading-normal font-normal text-muted-foreground">
             {media?.caption}
           </DialogTitle>
-          <p className="mt-1 hidden text-xs text-muted-foreground pointer-coarse:block">
-            Swipe to move around the screen.
-          </p>
+          {fit ? null : (
+            <p className="mt-1 hidden text-xs text-muted-foreground pointer-coarse:block">
+              Swipe to move around the image.
+            </p>
+          )}
         </div>
         <div
           ref={scroller}
           tabIndex={0}
           role="region"
-          aria-label="Enlarged screen, scrollable"
+          aria-label={fit ? "Enlarged image" : "Enlarged image, scrollable"}
           className="overflow-auto focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
         >
           {media && size ? (
@@ -77,10 +83,15 @@ export function EnlargeDialog({
               // Opened on demand, so it should not wait to be scrolled to.
               loading="eager"
               // Wider than a phone on purpose, so the text stays readable;
-              // a tall screen needs less width to get there.
+              // a narrow image needs less width to get there. A photo is
+              // contained within the dialog's height instead.
               className={cn(
-                "h-auto w-full md:min-w-0",
-                portrait ? "min-w-2xl md:mx-auto md:max-w-3xl" : "min-w-6xl"
+                "h-auto w-full",
+                fit
+                  ? "max-h-[calc(100dvh-8rem)] object-contain"
+                  : narrow
+                    ? "min-w-2xl md:mx-auto md:max-w-3xl md:min-w-0"
+                    : "min-w-6xl md:min-w-0"
               )}
             />
           ) : null}

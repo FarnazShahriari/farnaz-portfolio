@@ -98,6 +98,7 @@ export const ksl: CaseStudy = {
         ratio: "1 / 1",
         caption: "Revisor Kristen on an audit at a sheep farm in Gjesdal.",
         src: "/work/ksl/revisor-kristen-audit-sheep-farm-gjesdal.webp",
+        photo: true,
         alt: "Two people in work clothes look over the sheep pens from the feeding aisle of a barn.",
       },
       insightsLabel: "What the farm showed us",

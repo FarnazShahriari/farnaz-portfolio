@@ -72,7 +72,9 @@ export function Media({
     </div>
   )
   const image = enlarge ? (
-    <Enlargeable media={media}>{picture}</Enlargeable>
+    <Enlargeable media={media} captioned={showCaption}>
+      {picture}
+    </Enlargeable>
   ) : (
     picture
   )

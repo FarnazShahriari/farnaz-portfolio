@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — Review fixes for enlarging images
+A review of the enlarge change found four things, now fixed:
+- **Captions read twice:** screen readers heard every caption twice, so the button is now "Open image larger" when the caption shows.
+- **Farm photo cropped:** the farm photo opened cropped to a corner on phones. Photos (`photo: true`) now fit the screen, and square images open narrower.
+- **Wrong wording:** the enlarged view called photos and boards a "screen".
+- **Icon motion:** the corner icon now uses the system's easing curve and hover timing.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-09 — Fewer words around the KSL hero and checklist image
 The case-study hero no longer has a lead under the title; the page goes from
 the title straight to the carousel. The checklist image in "Building with AI"
