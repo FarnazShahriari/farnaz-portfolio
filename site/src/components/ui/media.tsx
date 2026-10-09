@@ -28,6 +28,7 @@ export const captionStyle = "mt-3 text-sm text-pretty text-muted-foreground"
 export function Media({
   media,
   className,
+  imageClassName,
   priority,
   sizes = "100vw",
   hideCaption,
@@ -35,6 +36,12 @@ export function Media({
 }: {
   media: MediaPlaceholder
   className?: string
+  /**
+   * Classes for the picture itself rather than the slot around it — in
+   * practice, where the crop sits (`object-left`) when the subject is not
+   * in the middle of the file.
+   */
+  imageClassName?: string
   /** Marks the one image that will be the LCP element. */
   priority?: boolean
   /** How wide the slot is at each breakpoint, so the right file loads. */
@@ -67,7 +74,7 @@ export function Media({
         fill
         sizes={sizes}
         preload={priority}
-        className="object-cover"
+        className={cn("object-cover", imageClassName)}
       />
     </div>
   )

@@ -61,7 +61,7 @@ export function HeroProject({ project }: { project: Project | undefined }) {
               >
                 <h2
                   id="hero-project-title"
-                  className="mt-4 max-w-[20ch] text-h1 text-balance"
+                  className="mt-4 max-w-[20ch] text-h2 text-balance"
                 >
                   {project.title}
                 </h2>
@@ -77,10 +77,13 @@ export function HeroProject({ project }: { project: Project | undefined }) {
         <div className="mt-6 grid grid-cols-1 gap-6 md:mt-8 md:grid-cols-12">
           {project.photograph ? (
             <Reveal variant="rise" className="md:col-span-4">
+              {/* The file is square and the two people stand in its left
+                  quarter, so a centred crop cuts the nearer one in half. */}
               <Media
                 media={project.photograph}
                 hideCaption
                 className="h-full rounded-md"
+                imageClassName="object-left"
                 sizes="(min-width: 768px) 33vw, 100vw"
               />
             </Reveal>
