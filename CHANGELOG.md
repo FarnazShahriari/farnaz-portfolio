@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — The hero becomes the KSL case study, with real imagery
+Rebuilt the homepage hero to the agreed layout: a bordered card with the eyebrow,
+title and single call to action, then the audit photograph beside the interface
+lifted off a blurred frame of the same landscape. The summary line is gone. The
+interface screenshot now morphs into the first slide of a carousel under the
+project page's title, alongside the title morph that already existed.
+Related: project-docs/specs/homepage.md
+
 ## 2026-10-06 — Next-project navigation, and the media joins the morph
 Project pages now end with a next-project teaser — label, name and image on an
 accent band — and the way back moved above the title with a back arrow. Clicking

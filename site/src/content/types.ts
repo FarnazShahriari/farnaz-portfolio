@@ -12,17 +12,43 @@ export type NavItem = {
   href: string
 }
 
+export type MediaAsset = {
+  /** CSS aspect-ratio, e.g. "16 / 10". Locked so nothing reflows on load. */
+  ratio: string
+  /**
+   * With `src`, the alt text. Without it, a description of the picture that
+   * belongs here, shown inside the grey block for whoever fills it in.
+   */
+  caption: string
+  /** Public path. Absent means this image is still undecided. */
+  src?: string
+  /** Intrinsic pixels. Required with `src` so the image can be laid out
+   *  in flow rather than absolutely — an absolutely-positioned image has
+   *  no box of its own to carry a view-transition-name, which silently
+   *  costs the morph. */
+  width?: number
+  height?: number
+}
+
 export type Project = {
   slug: string
   title: string
   /** One line, shown under the title in the grid. */
   summary: string
-  /** Longer, shown only on the hero. */
-  blurb?: string
+  /** Small line above the title — client, discipline, whatever frames it. */
+  eyebrow?: string
   /** Exactly one project should carry this. It gets the largest block. */
   hero?: boolean
-  /** What the image should eventually be, and at what shape. */
-  image: MediaPlaceholder
+  /**
+   * The project's defining image, usually the interface itself. This is the
+   * one that travels: it morphs from the homepage into the first slide of
+   * the project page's carousel.
+   */
+  image: MediaAsset
+  /** A supporting photograph — the context the work happened in. */
+  photo?: MediaAsset
+  /** Sits behind `image` on the homepage, blurred, as a ground for it. */
+  backdrop?: MediaAsset
   tags?: string[]
 }
 
@@ -31,13 +57,6 @@ export type Skill = {
   title: string
   /** Revealed when the accordion row opens. */
   description: string
-}
-
-export type MediaPlaceholder = {
-  /** CSS aspect-ratio, e.g. "16 / 9". Locked so nothing reflows on load. */
-  ratio: string
-  /** Describes the picture that belongs here, for whoever fills it in. */
-  caption: string
 }
 
 export type TrackRecordEntry = {

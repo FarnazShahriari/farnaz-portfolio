@@ -7,85 +7,110 @@ import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
+import { Media } from "@/components/ui/media"
 import { projectMediaTransition } from "@/lib/view-transitions"
-
-import { Placeholder } from "@/components/ui/placeholder"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
 
 /**
- * Block 3 — the focal point of the page, and deliberately the largest.
+ * Block 3 — the focal point of the page.
  *
- * One block, not two: the media is the ground and the words sit on it. That
- * is why this is `theme="dark"` — the section theme re-declares the colour
- * tokens for everything inside it, so the title, the meta line and the
- * button all invert on their own. Nothing here is told it is on a dark
- * background, and nothing should be.
+ * Two parts: a bordered card carrying the eyebrow, the title and the single
+ * call to action, then a row of media beneath it — the photograph of the
+ * work in its real setting, and the interface itself sitting on a blurred
+ * frame of the same world.
  *
- * The scrim is built from `--background`, which the dark theme has already
- * redefined, so it keeps working when a real photograph replaces the
- * placeholder and when the token itself changes upstream.
+ * `theme="dark"` does the colour work. The section theme re-declares the
+ * tokens for everything inside, so the title, the border and the button all
+ * invert on their own; nothing here is told it is on a dark ground.
+ *
+ * No summary line. The title is the whole claim on this page, and the
+ * explaining belongs on the project page.
+ *
+ * Every reveal here is `rise` rather than the default `rise-fade`, and that
+ * is load-bearing rather than taste. A `view-transition-name` on an element
+ * inside an `opacity: 0` ancestor is ignored, so while the default reveal
+ * was still waiting to fire, the media simply did not morph — and the
+ * button that starts the navigation sits above the media, so a reader could
+ * reach it before the reveal ever ran. `rise` moves without touching
+ * opacity, so the morph cannot be silently lost.
  */
 export function HeroProject({ project }: { project: Project | undefined }) {
   if (!project) return null
 
   return (
-    <Section
-      theme="dark"
-      rhythm="lg"
-      aria-labelledby="hero-project-title"
-      className="relative overflow-hidden"
-    >
-      {/* The ground. Decorative — the title below is the accessible name. */}
-      <div aria-hidden="true" className="absolute inset-0">
-        <ViewTransition
-          name={projectMediaTransition(project.slug)}
-          share="morph"
-          default="none"
-        >
-          <Placeholder media={project.image} fill priority />
-        </ViewTransition>
-        {/* Keeps the words legible once this is a photograph rather than a
-            flat block. Token-based, so it follows the theme. */}
-        <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/50 to-background/10" />
-      </div>
+    <Section theme="dark" rhythm="lg" aria-labelledby="hero-project-title">
+      <Container>
+        <Reveal variant="rise">
+          <div className="flex flex-col gap-8 rounded-md border p-8 md:flex-row md:items-center md:justify-between md:gap-12 md:p-12">
+            <div className="min-w-0">
+              {project.eyebrow ? (
+                <p className="text-meta text-muted-foreground">{project.eyebrow}</p>
+              ) : null}
+              <ViewTransition
+                name={projectTitleTransition(project.slug)}
+                share="morph"
+                default="none"
+              >
+                <h2
+                  id="hero-project-title"
+                  className="mt-4 max-w-[20ch] text-h1 text-balance"
+                >
+                  {project.title}
+                </h2>
+              </ViewTransition>
+            </div>
 
-      {/* No min-height. The section's `rhythm="lg"` and the content decide
-          how tall this is, so the block is described entirely in the
-          system's own spacing. If it ever needs a floor, that is a project
-          decision and belongs in globals.css as a declared value, not as a
-          number invented in a component. */}
-      <Container className="relative">
-        <Reveal>
-          {project.tags?.length ? (
-            <p className="text-meta text-muted-foreground">
-              {project.tags.join(" · ")}
-            </p>
+            <Button asChild size="lg" className="w-fit shrink-0 rounded-pill">
+              <Link href={`/work/${project.slug}`}>{site.work.heroCtaLabel}</Link>
+            </Button>
+          </div>
+        </Reveal>
+
+        <div className="mt-6 grid grid-cols-1 gap-6 md:mt-8 md:grid-cols-12">
+          {project.photo ? (
+            <Reveal variant="rise" className="md:col-span-4">
+              <Media
+                media={project.photo}
+                className="h-full rounded-md"
+                sizes="(min-width: 768px) 33vw, 100vw"
+              />
+            </Reveal>
           ) : null}
 
-          {/* The title is the shared element. Clicking through morphs this
-              word into the project page's h1 rather than crossfading it. */}
-          <ViewTransition
-            name={projectTitleTransition(project.slug)}
-            share="morph"
-            default="none"
+          {/* The interface, lifted off a blurred frame of the same landscape
+              so the screenshot reads as an object rather than a cut-out. */}
+          <Reveal
+            variant="rise"
+            delay={0.08}
+            className={project.photo ? "md:col-span-8" : "md:col-span-12"}
           >
-            <h2
-              id="hero-project-title"
-              className="mt-4 max-w-[24ch] text-display text-balance"
-            >
-              {project.title}
-            </h2>
-          </ViewTransition>
-
-          <p className="mt-6 max-w-[46ch] text-lead text-muted-foreground">
-            {project.blurb ?? project.summary}
-          </p>
-
-          <Button asChild size="lg" className="mt-8 w-fit rounded-pill">
-            <Link href={`/work/${project.slug}`}>{site.work.heroCtaLabel}</Link>
-          </Button>
-        </Reveal>
+            <div className="relative flex h-full items-center justify-center overflow-hidden rounded-md bg-muted p-6 md:p-12">
+              {project.backdrop ? (
+                <div aria-hidden="true" className="absolute inset-0">
+                  <Media
+                    media={project.backdrop}
+                    fill
+                    className="scale-110 blur-sm"
+                    sizes="(min-width: 768px) 67vw, 100vw"
+                  />
+                </div>
+              ) : null}
+              <ViewTransition
+                name={projectMediaTransition(project.slug)}
+                share="morph"
+                default="none"
+              >
+                <Media
+                  media={project.image}
+                  priority
+                  className="relative rounded-md"
+                  sizes="(min-width: 768px) 60vw, 90vw"
+                />
+              </ViewTransition>
+            </div>
+          </Reveal>
+        </div>
       </Container>
     </Section>
   )

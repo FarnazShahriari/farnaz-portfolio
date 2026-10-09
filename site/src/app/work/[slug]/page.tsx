@@ -9,8 +9,7 @@ import { ViewTransition } from "@farnazshahriari/design-system/motion/view-trans
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
 import { NextProject } from "@/components/sections/next-project"
-import { Placeholder } from "@/components/ui/placeholder"
-import { projectMediaTransition } from "@/lib/view-transitions"
+import { ProjectGallery } from "@/components/sections/project-gallery"
 import { nextProject, projects } from "@/content/projects"
 import { stubs } from "@/content/stubs"
 
@@ -77,17 +76,11 @@ export default async function ProjectPage({
         </Container>
       </Section>
 
-      {/* The media the teaser's image travels into. `rhythm="none"` because
-          the section above has already paid for the gap. */}
+      {/* The carousel the homepage's image travels into. `rhythm="none"`
+          because the section above has already paid for the gap. */}
       <Section rhythm="none">
-        <Container width="wide">
-          <ViewTransition
-            name={projectMediaTransition(project.slug)}
-            share="morph"
-            default="none"
-          >
-            <Placeholder media={project.image} priority />
-          </ViewTransition>
+        <Container>
+          <ProjectGallery project={project} />
         </Container>
       </Section>
 

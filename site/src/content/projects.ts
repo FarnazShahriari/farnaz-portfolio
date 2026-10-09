@@ -10,15 +10,33 @@ import type { Project } from "./types"
 
 export const projects: Project[] = [
   {
-    slug: "project-one",
-    title: "[Hero project title]",
-    summary: "[One line on what it was. ~12 words.]",
-    blurb:
-      "[Hero summary — two sentences on what the project was and what changed because of it. This is the only project that gets room to explain itself on the homepage, so it runs to about 35 words and wraps to three lines at this width.]",
+    slug: "ksl-norsk-mat",
+    title: "Redesigning KSL around how audits really happen",
+    summary: "A quality-assurance checklist rebuilt around the farm visit itself.",
+    eyebrow: "Case study · KSL · Norsk Mat",
     hero: true,
+    // The interface is the image that travels: homepage → the first slide
+    // of this project's carousel.
     image: {
-      ratio: "16 / 9",
-      caption: "Hero image — full-bleed, 16:9, at least 2400px wide",
+      ratio: "16 / 10",
+      caption: "The KSL checklist, mid-audit, with a finding recorded against a question",
+      src: "/media/ksl-interface.webp",
+      width: 2000,
+      height: 1250,
+    },
+    photo: {
+      ratio: "3 / 4",
+      caption: "An auditor and a farmer walking the sheep barn during a KSL visit",
+      src: "/media/ksl-audit-visit.webp",
+      width: 1500,
+      height: 2000,
+    },
+    backdrop: {
+      ratio: "3 / 2",
+      caption: "",
+      src: "/media/ksl-backdrop.webp",
+      width: 1742,
+      height: 1160,
     },
     tags: ["[Role]", "[Year]"],
   },

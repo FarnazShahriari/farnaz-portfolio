@@ -20,8 +20,9 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## Projects — `projects.ts`
 
-- [ ] Hero project: title, one-line summary, 35-word blurb, tags
-- [ ] Hero image — 16:9, ≥2400px wide
+- [x] ~~Hero project: title, summary, eyebrow~~ — real, the KSL case study
+- [x] ~~Hero imagery~~ — interface, audit photograph and backdrop are real
+- [ ] Hero project tags — still `[Role]` / `[Year]`
 - [ ] Project two: title, summary, tag
 - [ ] Project three: title, summary, tag
 - [ ] Project four: title, summary, tag

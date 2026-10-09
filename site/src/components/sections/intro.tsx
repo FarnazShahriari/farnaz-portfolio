@@ -5,7 +5,7 @@ import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
 
-import { Placeholder } from "@/components/ui/placeholder"
+import { Media } from "@/components/ui/media"
 import { site } from "@/content/site"
 
 /**
@@ -30,7 +30,7 @@ export function Intro() {
           </Reveal>
 
           <Reveal variant="fade" className="md:col-span-5 md:order-first">
-            <Placeholder media={intro.portrait} priority />
+            <Media media={intro.portrait} priority />
           </Reveal>
         </div>
       </Container>

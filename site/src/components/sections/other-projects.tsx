@@ -11,7 +11,7 @@ import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-
 
 import { projectMediaTransition } from "@/lib/view-transitions"
 
-import { Placeholder } from "@/components/ui/placeholder"
+import { Media } from "@/components/ui/media"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
 
@@ -57,7 +57,7 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
                   share="morph"
                   default="none"
                 >
-                  <Placeholder media={project.image} fill />
+                  <Media media={project.image} fill />
                 </ViewTransition>
               }
             />

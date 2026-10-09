@@ -6,7 +6,7 @@ import { Section } from "@farnazshahriari/design-system/ui/section"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
-import { Placeholder } from "@/components/ui/placeholder"
+import { Media } from "@/components/ui/media"
 import { projectMediaTransition } from "@/lib/view-transitions"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
@@ -53,7 +53,7 @@ export function NextProject({ project }: { project: Project | undefined }) {
             default="none"
           >
             <div className="mt-10 md:mt-12">
-              <Placeholder media={project.image} />
+              <Media media={project.image} />
             </div>
           </ViewTransition>
         </Link>
