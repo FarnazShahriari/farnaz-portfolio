@@ -50,6 +50,11 @@ export type MediaPlaceholder = {
   src?: string
   /** What the image shows, for screen readers. Needed as soon as `src` is. */
   alt?: string
+  /**
+   * Keep the caption off the page, for an image the text around it already
+   * explains. It still names the image where it opens larger.
+   */
+  hideCaption?: boolean
 }
 
 export type TrackRecordEntry = {

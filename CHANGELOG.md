@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — Fewer words around the KSL hero and checklist image
+The case-study hero no longer has a lead under the title; the page goes from
+the title straight to the carousel. The checklist image in "Building with AI"
+no longer shows its caption, which only repeated the text above it; a new
+`hideCaption` flag on an image does that, and the caption still names the
+image when it opens larger.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-09 — Every case-study image opens larger
 Screens, boards and sketches in the case study were too small to read on a
 phone. Every image now opens larger on click or tap, in the same dialog as

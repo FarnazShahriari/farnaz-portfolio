@@ -6,7 +6,9 @@ The building blocks every project page is made from. Implements
 ## Page shape (fixed, in `site/src/app/work/[slug]/page.tsx`)
 
 1. **Hero** — back link, eyebrow (the project's `tags`), display title (morphs
-   from the homepage), lead (the project's `blurb`).
+   from the homepage). No lead under the title: the case study starts
+   straight after it. (A project without a case study shows its stub note
+   there instead.)
 2. **Full-bleed image** — the project's `image`, cropped to 21:9.
 3. **The sections** — from the case study's content file, in order.
 4. **Next project** — accent band.
@@ -163,6 +165,9 @@ row you move through.
   clothes look over the sheep pens…"), so the two don't repeat each other.
   One short sentence, ending in a full stop. Diagrams take a `caption` too;
   a blueprint's `note` is its caption.
+- `hideCaption: true` keeps the caption off the page when the text around
+  the image already says what it is. Still write the caption: it names the
+  image in the enlarged view and on the button that opens it.
 - Every image in a case study (single, pair, gallery, insights) opens
   larger on click or tap, in the same dialog as the carousels
   (`Media` with `enlarge`, in `components/ui/enlargeable.tsx`). The image

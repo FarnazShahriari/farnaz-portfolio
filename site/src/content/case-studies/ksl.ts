@@ -452,7 +452,10 @@ export const ksl: CaseStudy = {
           kind: "media",
           media: {
             ratio: "16 / 10",
+            // The text above already says what this is; the caption only
+            // names it in the enlarged view.
             caption: "The KSL checklist that farmers fill out, on desktop and phone.",
+            hideCaption: true,
             src: "/work/ksl/farmer-ksl-checklist-desktop-and-phone.webp",
             alt: "The KSL checklist on a desktop screen and a phone: the self-audit start page, and one question with Ja, Nei and Ikke relevant as answers.",
           },

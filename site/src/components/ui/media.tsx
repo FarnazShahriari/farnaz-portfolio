@@ -51,12 +51,14 @@ export function Media({
     return <Placeholder media={media} className={className} priority={priority} />
   }
 
+  const showCaption = !hideCaption && !media.hideCaption && !!media.caption
+
   const picture = (
     <div
       data-slot="media"
       // No backdrop: an image with transparent areas should show the
       // section through them, not a grey box.
-      className={cn("relative w-full overflow-hidden", (hideCaption || !media.caption) && className)}
+      className={cn("relative w-full overflow-hidden", !showCaption && className)}
       style={{ aspectRatio: media.ratio }}
     >
       <Image
@@ -75,8 +77,9 @@ export function Media({
     picture
   )
 
-  // The caller places the caption itself, and owns the <figure>.
-  if (hideCaption || !media.caption) return image
+  // The caller places the caption itself, and owns the <figure>, or the
+  // content asked for none.
+  if (!showCaption) return image
 
   return (
     <figure className={className}>

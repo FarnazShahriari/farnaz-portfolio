@@ -57,9 +57,9 @@ export default async function ProjectPage({
   if (!project) notFound()
 
   const caseStudy = getCaseStudy(project.slug)
-  const lead = caseStudy
-    ? (project.blurb ?? project.summary)
-    : stubs.project.note
+  // A case study opens straight from its title into the media; only a
+  // page still waiting for its story says what will be here.
+  const note = caseStudy ? null : stubs.project.note
 
   return (
     <>
@@ -89,9 +89,11 @@ export default async function ProjectPage({
             </h1>
           </ViewTransition>
 
-          <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
-            {lead}
-          </p>
+          {note ? (
+            <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
+              {note}
+            </p>
+          ) : null}
         </Container>
       </Section>
 
