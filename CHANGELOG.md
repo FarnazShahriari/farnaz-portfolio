@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — Last KSL image in "Building with AI"
+The last placeholder in the KSL case study is now the farmer checklist on a
+desktop screen and a phone, saved as farmer-ksl-checklist-desktop-and-phone.webp
+with a caption and alt text. Every image slot in the case study is now filled.
+Related: site/src/content/case-studies/ksl.ts
+
 ## 2026-10-08 — Faded edges on the notes-field carousel
 Screens only partly in view in the notes-field carousel are now faded, as in
 the hero, and clicking one moves the row to it: the one peeking in at the

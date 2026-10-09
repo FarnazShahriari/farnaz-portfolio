@@ -450,7 +450,12 @@ export const ksl: CaseStudy = {
         { kind: "steps", items: ["Figma Make", "Claude", "GitHub"] },
         {
           kind: "media",
-          media: { ratio: "16 / 10", caption: "Near-final KSL screen" },
+          media: {
+            ratio: "16 / 10",
+            caption: "The KSL checklist that farmers fill out, on desktop and phone.",
+            src: "/work/ksl/farmer-ksl-checklist-desktop-and-phone.webp",
+            alt: "The KSL checklist on a desktop screen and a phone: the self-audit start page, and one question with Ja, Nei and Ikke relevant as answers.",
+          },
         },
       ],
     },
