@@ -28,6 +28,17 @@ export type Project = {
   hero?: boolean
   /** What the image should eventually be, and at what shape. */
   image: MediaPlaceholder
+  /** Small line above the title on the homepage hero — client, discipline. */
+  eyebrow?: string
+  /**
+   * A photograph of the work in its real setting, shown beside the
+   * interface on the homepage hero. Named `photograph` because
+   * MediaPlaceholder already uses `photo` for a different thing — a flag
+   * about how the image opens when enlarged.
+   */
+  photograph?: MediaPlaceholder
+  /** Blurred behind `image` on the homepage hero, as a ground for it. */
+  backdrop?: MediaPlaceholder
   tags?: string[]
 }
 

@@ -17,10 +17,28 @@ export const projects: Project[] = [
     blurb:
       "How I redesigned the way Norwegian farms are audited for food safety, animal welfare and HMS, and how AI helped ship it fast.",
     hero: true,
+    eyebrow: "Case study · KSL · Norsk Mat",
+    // Deliberately the same screen the case study's hero carousel opens on:
+    // the two are a morph pair, so a different image here would make the
+    // picture change mid-flight.
     image: {
-      ratio: "16 / 9",
-      caption:
-        "Revisor and farmer at the barn fence — full-bleed, at least 2400px wide",
+      ratio: "2272 / 1532",
+      caption: "The KSL self-audit, one question at a time",
+      alt: "A KSL self-audit question on a tablet, with guidance and answer options",
+      src: "/work/ksl/farmer-self-audit-question-tablet.webp",
+    },
+    photograph: {
+      ratio: "3 / 4",
+      caption: "Revisor Kristen on a sheep farm audit in Gjesdal",
+      alt: "A revisor and a farmer walking between pens in a sheep barn",
+      src: "/work/ksl/revisor-kristen-audit-sheep-farm-gjesdal.webp",
+      photo: true,
+    },
+    backdrop: {
+      ratio: "3 / 2",
+      caption: "",
+      alt: "",
+      src: "/work/ksl/field-backdrop.webp",
     },
     tags: ["Case study", "KSL", "Norsk Mat"],
   },
