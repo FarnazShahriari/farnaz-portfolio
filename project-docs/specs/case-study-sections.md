@@ -32,7 +32,12 @@ Label and heading on the left (sticky on wide screens), text on the right.
 Image on the left, findings with quotes on the right. Muted by default.
 
 Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
-(each a `finding` + optional `quote`), optional `closing`.
+(each a `finding`, an optional `detail` and an optional `quote`), optional
+`closing`.
+
+A `finding` is one bold sentence. When it is a short title instead ("Quick
+start, details later"), `detail` carries the plain sentence that explains
+it, between the title and the quote.
 
 ## Parts (used in `body` and `below`)
 
@@ -41,6 +46,7 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 | `"plain text"` | A paragraph. |
 | `{ kind: "facts" }` | Two-column key facts (value bold, label grey). |
 | `{ kind: "quote" }` | Quote with a rule on the left and its source. |
+| `{ kind: "links" }` | Links to sources outside the site (e.g. articles), each with an optional grey `note` under it. The system's `LinkUnderline`, opening in a new tab, as in the footer. |
 | `{ kind: "steps" }` | Badges joined by arrows. |
 | `{ kind: "media" }` | One image. |
 | `{ kind: "mediaPair" }` | A large image with a smaller one beside it. |

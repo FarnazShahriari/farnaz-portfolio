@@ -45,14 +45,17 @@ export const projects: Project[] = [
     tags: ["Case study", "KSL", "Norsk Mat"],
   },
   {
-    slug: "project-two",
-    title: "[Second project title]",
-    summary: "[One line on what it was. ~12 words.]",
+    slug: "tryggdrift",
+    title: "TryggDrift: connecting a farm's safety work in one app",
+    summary: "A mobile app for keeping a Norwegian farm's HMS work in one place.",
+    // The card on the homepage and the page's full-bleed header (cropped to
+    // 21:9) are the same picture, so the two morph into each other.
     image: {
       ratio: "4 / 3",
-      caption: "Project thumbnail — 4:3, roughly 1200×900",
+      caption:
+        "The TryggDrift home screen on a phone, over a faint map of the connected sections.",
     },
-    tags: ["[Role]"],
+    tags: ["Case study", "TryggDrift", "NLR"],
   },
   {
     slug: "project-three",

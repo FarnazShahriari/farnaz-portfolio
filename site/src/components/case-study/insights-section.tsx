@@ -51,6 +51,9 @@ export function InsightsSection({ section }: { section: InsightsSectionData }) {
                   <p className="text-lg font-bold text-pretty">
                     {insight.finding}
                   </p>
+                  {insight.detail ? (
+                    <Paragraph>{insight.detail}</Paragraph>
+                  ) : null}
                   {insight.quote ? <QuoteBlock quote={insight.quote} /> : null}
                 </li>
               ))}

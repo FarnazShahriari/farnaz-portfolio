@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — The TryggDrift case study laid out
+TryggDrift (NLR) replaces the second placeholder project, with its full
+agreed text in eight sections built from the same blocks as KSL. Every
+image is still a placeholder, to be filled one at a time. Two small
+additions: a `detail` line under a finding, for the six titled findings,
+and a `links` part for the two NLR articles.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-09 — The homepage hero rebuilt around the KSL work
 The hero is now a bordered card carrying an eyebrow, the title and one
 button, over a row with the audit photograph beside the KSL interface on a

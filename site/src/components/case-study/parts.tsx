@@ -3,13 +3,20 @@ import { ArrowRightIcon } from "lucide-react"
 
 import { Badge } from "@farnazshahriari/design-system/ui/badge"
 import { Grid } from "@farnazshahriari/design-system/ui/grid"
+import { LinkUnderline } from "@farnazshahriari/design-system/ui/link-underline"
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { Blueprint } from "@/components/case-study/blueprint"
 import { diagrams } from "@/components/case-study/diagrams"
 import { ScreenCarousel } from "@/components/case-study/screen-carousel"
 import { Media } from "@/components/ui/media"
-import type { Fact, MediaPlaceholder, Quote, StoryPart } from "@/content/types"
+import type {
+  ExternalLink,
+  Fact,
+  MediaPlaceholder,
+  Quote,
+  StoryPart,
+} from "@/content/types"
 
 /**
  * The small pieces every case-study section is built from.
@@ -78,6 +85,33 @@ export function Facts({ items }: { items: Fact[] }) {
         </div>
       ))}
     </dl>
+  )
+}
+
+/**
+ * Links to sources outside the site, each with an optional note under it.
+ * The system's LinkUnderline, as in the footer, so they open in a new tab
+ * the same way.
+ */
+export function Links({ items }: { items: ExternalLink[] }) {
+  return (
+    <ul className="flex flex-col gap-4">
+      {items.map((link) => (
+        <li key={link.href} className="flex flex-col gap-2">
+          <LinkUnderline
+            href={link.href}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="w-fit text-lg text-pretty"
+          >
+            {link.label}
+          </LinkUnderline>
+          {link.note ? (
+            <span className="text-sm text-muted-foreground">{link.note}</span>
+          ) : null}
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -157,6 +191,9 @@ export function StoryPartView({
       break
     case "quote":
       content = <QuoteBlock quote={part.quote} />
+      break
+    case "links":
+      content = <Links items={part.items} />
       break
     case "steps":
       content = <Steps items={part.items} />

@@ -108,8 +108,18 @@ export type Fact = {
 export type Insight = {
   /** The finding, in one bold sentence. */
   finding: string
+  /** One plain sentence under a short `finding`, saying what it means. */
+  detail?: string
   /** The evidence for it. */
   quote?: Quote
+}
+
+export type ExternalLink = {
+  /** The link text, e.g. an article's title. */
+  label: string
+  href: string
+  /** A small grey line under it, e.g. "NLR, 5 Feb 2026". */
+  note?: string
 }
 
 /**
@@ -120,6 +130,8 @@ export type StoryPart =
   | string
   | { kind: "facts"; items: Fact[] }
   | { kind: "quote"; quote: Quote }
+  /** Links to sources outside the site, opening in a new tab. */
+  | { kind: "links"; items: ExternalLink[] }
   /** A left-to-right chain of named steps or tools, joined by arrows. */
   | { kind: "steps"; items: string[] }
   | { kind: "media"; media: MediaPlaceholder }

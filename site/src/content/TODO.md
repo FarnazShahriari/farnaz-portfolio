@@ -21,11 +21,10 @@ grey block, so nothing can ship by accident unnoticed.
 ## Projects — `projects.ts`
 
 - [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
-- [ ] Project two: title, summary, tag
 - [ ] Project three: title, summary, tag
 - [ ] Project four: title, summary, tag
-- [ ] Project thumbnails ×3 — 4:3, ~1200×900
-- [ ] Slugs — `project-two`…`project-four`, will change with the titles
+- [ ] Project thumbnails ×2 — 4:3, ~1200×900
+- [ ] Slugs — `project-three`…`project-four`, will change with the titles
 
 ## Skills — `skills.ts`
 
@@ -37,11 +36,24 @@ grey block, so nothing can ship by accident unnoticed.
 ## Pages still stubbed
 
 - [ ] `/about` — the whole page
-- [ ] `/work/[slug]` — case studies for projects two to four
+- [ ] `/work/[slug]` — case studies for projects three and four
 
 ## KSL case study — `case-studies/ksl.ts`
 
 - [ ] `/skills/[slug]` — skill detail template and content
+
+## TryggDrift case study — `case-studies/tryggdrift.ts`
+
+The layout and text are in; every image is still a placeholder.
+
+- [ ] Header image — the final home screen on a phone, a faint map of the sections behind it (in `projects.ts`: the homepage card at 4:3, the page header at 21:9)
+- [ ] The starting point — process visualization, kickoff to launch (to become an inline-SVG diagram, like `ksl-design-process`)
+- [ ] Shaping the structure — priority map, designed first vs added later (which sections are which is still open)
+- [ ] Testing with farmers — results grid, 11 subtasks × 5 farmers
+- [ ] The advisers — focus group screenshots
+- [ ] What changed — the six final screens
+- [ ] Building it — the final screens in phone mockups
+- [ ] Homepage card summary — written for the card, not in the agreed text; check the wording
 
 ## Open structural questions
 
