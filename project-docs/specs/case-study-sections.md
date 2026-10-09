@@ -143,8 +143,9 @@ row you move through.
   becomes the last.
 - Every screen keeps its caption under it.
 - Every screen in full view is a button that opens it larger in the same
-  dialog as the hero carousel (`components/ui/enlarge-dialog.tsx`). Tall screens open narrower than
-  wide ones (at most `max-w-3xl`); the reader scrolls down for the rest.
+  dialog as the hero carousel (`components/ui/enlarge-dialog.tsx`). Tall
+  screens open narrower than wide ones (at most `max-w-3xl`); the reader
+  scrolls down for the rest.
 - Keyboard: arrow keys move the row, and focus moves with it if the
   focused screen leaves the view; tabbing to a hidden screen brings it in.
 - `label` names the carousel for screen readers.
