@@ -111,6 +111,10 @@ export function HeroProject({ project }: { project: Project | undefined }) {
                 </div>
               ) : null}
 
+              {/* Not the full content width. The screenshot's own ratio
+                  turns every pixel of width into 0.67 of height, so this
+                  is the one dial that shortens the row without changing
+                  the composition. */}
               <ViewTransition
                 name={projectMediaTransition(project.slug)}
                 share="morph"
@@ -120,8 +124,8 @@ export function HeroProject({ project }: { project: Project | undefined }) {
                   media={project.image}
                   hideCaption
                   priority
-                  className="relative rounded-md"
-                  sizes="(min-width: 768px) 60vw, 90vw"
+                  className="relative w-[92%] rounded-md"
+                  sizes="(min-width: 768px) 55vw, 85vw"
                 />
               </ViewTransition>
             </div>

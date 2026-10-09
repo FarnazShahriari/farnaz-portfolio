@@ -28,7 +28,9 @@ export const projects: Project[] = [
       src: "/work/ksl/farmer-self-audit-question-tablet.webp",
     },
     photograph: {
-      ratio: "3 / 4",
+      // 4/5 rather than 3/4 so the slot is not so tall on one column,
+      // where it takes the full width and sets the hero's height alone.
+      ratio: "4 / 5",
       caption: "Revisor Kristen on a sheep farm audit in Gjesdal",
       alt: "A revisor and a farmer walking between pens in a sheep barn",
       src: "/work/ksl/revisor-kristen-audit-sheep-farm-gjesdal.webp",
