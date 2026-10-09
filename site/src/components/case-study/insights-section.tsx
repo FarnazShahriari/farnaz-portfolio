@@ -30,7 +30,7 @@ export function InsightsSection({ section }: { section: InsightsSectionData }) {
       <Container>
         <Grid className="items-center gap-y-10">
           <div className="col-span-12 md:col-span-6">
-            <Media media={media} sizes="(min-width: 768px) 50vw, 100vw" />
+            <Media media={media} sizes="(min-width: 768px) 50vw, 100vw" enlarge />
           </div>
 
           <div className="col-span-12 flex flex-col gap-6 md:col-span-5 md:col-start-8">

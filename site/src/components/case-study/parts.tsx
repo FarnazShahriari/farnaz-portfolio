@@ -18,6 +18,8 @@ import type { Fact, MediaPlaceholder, Quote, StoryPart } from "@/content/types"
  * the system's scale (`text-meta`, `text-lead`, `text-h2`…), colour from
  * the theme tokens, and the badge is the system's Badge. Inside a dark or
  * accent Section all of it inverts on its own.
+ *
+ * Every image in a case study opens larger on click or tap (`enlarge`).
  */
 
 /** The small uppercase label above a heading. */
@@ -124,7 +126,7 @@ export function Gallery({ items }: { items: MediaPlaceholder[] }) {
               rest === 1 && i === n - 1 && "col-start-3"
             )}
           >
-            <Media media={media} sizes="(min-width: 1024px) 20vw, 33vw" />
+            <Media media={media} sizes="(min-width: 1024px) 20vw, 33vw" enlarge />
           </li>
         ))}
       </ul>
@@ -161,17 +163,21 @@ export function StoryPartView({
       break
     case "media":
       content = (
-        <Media media={part.media} sizes={inColumn ? columnSizes : undefined} />
+        <Media
+          media={part.media}
+          sizes={inColumn ? columnSizes : undefined}
+          enlarge
+        />
       )
       break
     case "mediaPair":
       content = (
         <Grid className="items-end gap-y-4">
           <div className="col-span-12 md:col-span-8">
-            <Media media={part.main} sizes="(min-width: 768px) 66vw, 100vw" />
+            <Media media={part.main} sizes="(min-width: 768px) 66vw, 100vw" enlarge />
           </div>
           <div className="col-span-12 md:col-span-4">
-            <Media media={part.side} sizes="(min-width: 768px) 33vw, 100vw" />
+            <Media media={part.side} sizes="(min-width: 768px) 33vw, 100vw" enlarge />
           </div>
         </Grid>
       )

@@ -143,7 +143,7 @@ row you move through.
   becomes the last.
 - Every screen keeps its caption under it.
 - Every screen in full view is a button that opens it larger in the same
-  dialog as the hero carousel (`enlarge-dialog.tsx`). Tall screens open narrower than
+  dialog as the hero carousel (`components/ui/enlarge-dialog.tsx`). Tall screens open narrower than
   wide ones (at most `max-w-3xl`); the reader scrolls down for the rest.
 - Keyboard: arrow keys move the row, and focus moves with it if the
   focused screen leaves the view; tabbing to a hidden screen brings it in.
@@ -162,6 +162,13 @@ row you move through.
   clothes look over the sheep pens…"), so the two don't repeat each other.
   One short sentence, ending in a full stop. Diagrams take a `caption` too;
   a blueprint's `note` is its caption.
+- Every image in a case study (single, pair, gallery, insights) opens
+  larger on click or tap, in the same dialog as the carousels
+  (`Media` with `enlarge`, in `components/ui/enlargeable.tsx`). The image
+  keeps its alt text; a button over it opens the dialog, named after the
+  caption. A small icon in the corner shows it can be opened: always on
+  touch screens, on hover or focus elsewhere. Diagrams and blueprints are
+  HTML or SVG with their own phone layouts, so they don't need it.
 - Name image files for what they show: `site/public/work/<project>/
   <who-or-what>-<where-or-context>.webp`.
 - No raw colours, sizes or spacing in the content file or the sections. A

@@ -10,15 +10,16 @@ import { ratioSize } from "@/lib/media"
 import type { MediaPlaceholder } from "@/content/types"
 
 /**
- * One screen, opened large enough to read.
+ * One image, opened large enough to read.
  *
- * Shared by the carousels: a device mockup in a carousel is an overview,
- * and on a phone or tablet its text is too small to read. Here the image
- * keeps a readable size and the reader scrolls around it; the scroll box
- * takes focus on open, so arrow keys pan it too.
+ * Shared by the carousels and every case-study image: in the page an
+ * image is an overview, and on a phone or tablet the text in it is too
+ * small to read. Here the image keeps a readable size and the reader
+ * scrolls around it; the scroll box takes focus on open, so arrow keys pan
+ * it too.
  *
- * The caller decides where focus goes when it closes (back to the slide
- * that opened it), since the dialog has no trigger of its own.
+ * The caller decides where focus goes when it closes (back to whatever
+ * opened it), since the dialog has no trigger of its own.
  */
 export function EnlargeDialog({
   media,

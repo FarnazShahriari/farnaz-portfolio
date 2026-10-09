@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — Every case-study image opens larger
+Screens, boards and sketches in the case study were too small to read on a
+phone. Every image now opens larger on click or tap, in the same dialog as
+the carousels, with a small corner icon on touch screens (and on hover or
+focus) to show it. The dialog moved to `components/ui/` since it is shared.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-09 — Last KSL image in "Building with AI"
 The last placeholder in the KSL case study is now the farmer checklist on a
 desktop screen and a phone, saved as farmer-ksl-checklist-desktop-and-phone.webp

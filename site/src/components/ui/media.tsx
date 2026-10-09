@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
+import { Enlargeable } from "@/components/ui/enlargeable"
 import { Placeholder } from "@/components/ui/placeholder"
 import type { MediaPlaceholder } from "@/content/types"
 
@@ -20,6 +21,9 @@ export const captionStyle = "mt-3 text-sm text-pretty text-muted-foreground"
  * (who, where, what it shows). The `alt` describes what is visible, so the
  * two complement each other rather than being read out twice. While the
  * slot is still a placeholder, the caption is the note inside the grey box.
+ *
+ * With `enlarge`, a real image also opens larger on click or tap — for
+ * screens, boards and sketches whose detail is too small to read in place.
  */
 export function Media({
   media,
@@ -27,6 +31,7 @@ export function Media({
   priority,
   sizes = "100vw",
   hideCaption,
+  enlarge,
 }: {
   media: MediaPlaceholder
   className?: string
@@ -39,12 +44,14 @@ export function Media({
    * sit in a Container. The caller then wraps both in the <figure>.
    */
   hideCaption?: boolean
+  /** Open the image larger on click or tap. */
+  enlarge?: boolean
 }) {
   if (!media.src) {
     return <Placeholder media={media} className={className} priority={priority} />
   }
 
-  const image = (
+  const picture = (
     <div
       data-slot="media"
       // No backdrop: an image with transparent areas should show the
@@ -61,6 +68,11 @@ export function Media({
         className="object-cover"
       />
     </div>
+  )
+  const image = enlarge ? (
+    <Enlargeable media={media}>{picture}</Enlargeable>
+  ) : (
+    picture
   )
 
   // The caller places the caption itself, and owns the <figure>.

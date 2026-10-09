@@ -14,7 +14,7 @@ import {
 } from "@farnazshahriari/design-system/ui/carousel"
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
-import { EnlargeDialog } from "@/components/case-study/enlarge-dialog"
+import { EnlargeDialog } from "@/components/ui/enlarge-dialog"
 import { captionStyle } from "@/components/ui/media"
 import { ratioSize } from "@/lib/media"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
