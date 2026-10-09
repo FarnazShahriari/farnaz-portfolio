@@ -11,6 +11,134 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — Review fixes for enlarging images
+A review found that screen readers heard every caption twice, so the enlarge
+button is now "Open image larger" when the caption shows. The farm photo
+opened cropped to a corner on phones; photos (`photo: true`) now fit the
+screen and square images open narrower. The dialog now says "image" rather
+than "screen", and the corner icon uses the system's curve and hover timing.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-09 — Fewer words around the KSL hero and checklist image
+The case-study hero no longer has a lead under the title; the page goes from
+the title straight to the carousel. The checklist image in "Building with AI"
+no longer shows its caption, which only repeated the text above it; a new
+`hideCaption` flag on an image does that, and the caption still names the
+image when it opens larger.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-09 — Every case-study image opens larger
+Screens, boards and sketches in the case study were too small to read on a
+phone. Every image now opens larger on click or tap, in the same dialog as
+the carousels, with a small corner icon on touch screens (and on hover or
+focus) to show it. The dialog moved to `components/ui/` since it is shared.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-09 — Last KSL image in "Building with AI"
+The last placeholder in the KSL case study is now the farmer checklist on a
+desktop screen and a phone, saved as farmer-ksl-checklist-desktop-and-phone.webp
+with a caption and alt text. Every image slot in the case study is now filled.
+Related: site/src/content/case-studies/ksl.ts
+
+## 2026-10-08 — Faded edges on the notes-field carousel
+Screens only partly in view in the notes-field carousel are now faded, as in
+the hero, and clicking one moves the row to it: the one peeking in at the
+right brings in the screens hidden behind it, the one at the left goes back.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-08 — Notes-field screens as a carousel
+"The idea" section lost its two paragraphs and its label now reads "Voted
+in the workshop, then built". Its five notes-field screens, too small to read
+in one row, are now a carousel: three in view on wide screens (two on
+tablets, one on phones) with the next peeking in, each opening larger on
+click or tap. The enlarge dialog is now shared with the hero carousel.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-08 — Hero carousel of the farmer portal
+The KSL hero is now a carousel of three farmer-portal screens — start page,
+self audit, deviations and notes — each in a clay-white tablet mockup with a
+shadow, made from the screenshots without resampling them. Neighbouring
+slides peek in on wide screens; any slide opens larger in a dialog, which is
+what makes the screens readable on phones. A review then fixed focus (it
+returns to the slide after the dialog, follows the arrow keys, and the
+enlarged screen can be panned by keyboard), the dot contrast and size,
+reduced motion, the load-time jump, and a band padding that kept the
+homepage morph from landing on laptop screens.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-07 — Sketch in "Sketching and weekly sessions"
+The sketch placeholder is now a Figma Make sketch of deviation registration
+with the severity scale, saved as deviation-registration-sketch-figma-make.webp
+with caption and alt text.
+Related: site/src/content/case-studies/ksl.ts
+
+## 2026-10-07 — The notes insights board in "The real problem"
+The evidence-wall placeholder is now the FigJam frame of the sixteen
+note-taking insights from the revisor tests, cropped to the frame (no label)
+and saved as revisor-notes-insights-figjam.webp, with caption and alt text.
+Related: site/src/content/case-studies/ksl.ts
+
+## 2026-10-07 — Farmer user-test collage
+"Testing with farmers" now shows a collage of the farmer prototype from the
+sessions, saved as farmer-user-tests-figma-make-prototype.webp with the same
+transparent-ground treatment, caption and alt text as the revisor collage.
+Related: site/src/content/case-studies/ksl.ts
+
+## 2026-10-07 — The notes field as built, five screens in a row
+"The idea" now shows the five tablet screens of the notes field in the order a
+revisor meets them — new note, dictation, suggested question, deviation, all
+notes — each with a caption. A new `gallery` part lays them out in one row on
+wide screens and two centred rows below that.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-07 — Captions under images, and the workshop board
+Every real image and diagram on a case study now has a one-line caption
+under it, giving the context, while the alt text describes what is visible.
+The workshop section shows the FigJam board from the Norsk Mat workshop,
+saved as norsk-mat-workshop-figjam-board.webp.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-07 — Revisor user-test collage
+The "Testing with revisors" section now shows a collage of screens from the
+sessions, saved as revisor-user-tests-figma-make-prototype.webp with alt text
+naming each screen. Its white ground was made transparent so the section
+shows between the tiles, and image slots no longer paint a grey backdrop
+behind real images.
+Related: site/src/content/case-studies/ksl.ts
+
+## 2026-10-07 — First real photo: the field study
+The field study section now shows Revisor Kristen on an audit at a sheep farm
+in Gjesdal, in place of its placeholder. The photo's rounded transparent
+corners were trimmed off, it is saved as a descriptively named WebP under
+site/public/work/ksl/, and the slot is square to match it instead of a 4:5
+crop that would cut the scene.
+Related: site/src/content/case-studies/ksl.ts
+
+## 2026-10-07 — KSL design process as an inline SVG
+The process map in "The process" is now an inline SVG component
+(`ksl-design-process`) instead of a placeholder: token colours, searchable
+text set in the type scale, a full text description for screen readers, no
+shadows. A tall redraw replaces it below a 64rem-wide figure, since the wide
+drawing would be unreadable on a phone. The designer's source SVGs are kept
+in assets/ksl/.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-07 — Blueprints drawn in HTML, not pictures
+The KSL planning blueprint is now built in HTML from a reusable `blueprint`
+part: the text is searchable and every colour is a design-system token. From
+768px it is the usual roles × stages matrix; below that the matrix turns on
+its side (one narrow column per role, one row per stage) at 12px, so it fits a
+phone in about one screen instead of three.
+Related: project-docs/specs/case-study-sections.md
+
+## 2026-10-06 — KSL case study, and reusable case-study sections
+The hero project is now KSL, with its full case study built from the Claude
+Design layout. The layout became two reusable section types (story, insights)
+plus parts (facts, quote, steps, media, statement), all made from
+design-system components and tokens; a new case study is a new content file.
+Images stay placeholders until `src` is added to each slot.
+Related: project-docs/specs/case-study-sections.md, project-docs/decisions/2026-10-06-case-study-sections-live-in-the-portfolio.md
+
 ## 2026-10-06 — Next-project navigation, and the media joins the morph
 Project pages now end with a next-project teaser — label, name and image on an
 accent band — and the way back moved above the title with a back arrow. Clicking

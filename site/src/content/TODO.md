@@ -20,13 +20,12 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## Projects — `projects.ts`
 
-- [ ] Hero project: title, one-line summary, 35-word blurb, tags
-- [ ] Hero image — 16:9, ≥2400px wide
+- [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
 - [ ] Project two: title, summary, tag
 - [ ] Project three: title, summary, tag
 - [ ] Project four: title, summary, tag
 - [ ] Project thumbnails ×3 — 4:3, ~1200×900
-- [ ] Slugs — currently `project-one`…`project-four`, will change with the titles
+- [ ] Slugs — `project-two`…`project-four`, will change with the titles
 
 ## Skills — `skills.ts`
 
@@ -38,7 +37,10 @@ grey block, so nothing can ship by accident unnoticed.
 ## Pages still stubbed
 
 - [ ] `/about` — the whole page
-- [ ] `/work/[slug]` — project detail template and content
+- [ ] `/work/[slug]` — case studies for projects two to four
+
+## KSL case study — `case-studies/ksl.ts`
+
 - [ ] `/skills/[slug]` — skill detail template and content
 
 ## Open structural questions

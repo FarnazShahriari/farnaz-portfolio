@@ -8,9 +8,13 @@ import { Section } from "@farnazshahriari/design-system/ui/section"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
+import { CaseStudyBody } from "@/components/case-study/case-study-body"
+import { HeroCarousel } from "@/components/case-study/hero-carousel"
+import { Eyebrow } from "@/components/case-study/parts"
 import { NextProject } from "@/components/sections/next-project"
-import { Placeholder } from "@/components/ui/placeholder"
+import { captionStyle, Media } from "@/components/ui/media"
 import { projectMediaTransition } from "@/lib/view-transitions"
+import { getCaseStudy } from "@/content/case-studies"
 import { nextProject, projects } from "@/content/projects"
 import { stubs } from "@/content/stubs"
 
@@ -29,10 +33,13 @@ export async function generateMetadata({
 }
 
 /**
- * A project page. Still a stub in its middle — the problem, the process and
- * the outcome are not written yet — but the shape around that is real: the
- * way back sits above the title rather than below the text, and the page
- * ends by handing the reader the next project.
+ * A project page: the hero, the image it morphed in with, the case study's
+ * sections, then the way onward.
+ *
+ * The sections come from `content/case-studies/` and are drawn by the
+ * reusable blocks in `components/case-study/`. A project with no case study
+ * written yet keeps the same hero and ending, with a note in place of the
+ * story, so every project link still lands somewhere real.
  *
  * The title and the media carry this project's transition names, which is
  * the receiving half of the morph started by a card on the homepage or by
@@ -49,10 +56,15 @@ export default async function ProjectPage({
   // A slug that is not in the content is a genuine 404, not an empty page.
   if (!project) notFound()
 
+  const caseStudy = getCaseStudy(project.slug)
+  // A case study opens straight from its title into the media; only a
+  // page still waiting for its story says what will be here.
+  const note = caseStudy ? null : stubs.project.note
+
   return (
     <>
-      <Section rhythm="lg">
-        <Container width="narrow">
+      <Section theme="light" rhythm="lg">
+        <Container>
           {/* Above the title and sharing its left edge: the way out of a
               page should be the first thing found, not the last. */}
           <Link
@@ -63,33 +75,66 @@ export default async function ProjectPage({
             {stubs.backToWorkLabel}
           </Link>
 
+          {project.tags?.length ? (
+            <Eyebrow className="mt-10">{project.tags.join(" · ")}</Eyebrow>
+          ) : null}
+
           <ViewTransition
             name={projectTitleTransition(project.slug)}
             share="morph"
             default="none"
           >
-            <h1 className="mt-6 text-h1 text-balance">{project.title}</h1>
+            <h1 className="mt-4 max-w-[18ch] text-display text-balance">
+              {project.title}
+            </h1>
           </ViewTransition>
 
-          <p className="mt-6 max-w-[46ch] text-lead text-muted-foreground">
-            {stubs.project.note}
-          </p>
+          {note ? (
+            <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
+              {note}
+            </p>
+          ) : null}
         </Container>
       </Section>
 
-      {/* The media the teaser's image travels into. `rhythm="none"` because
-          the section above has already paid for the gap. */}
-      <Section rhythm="none">
-        <Container width="wide">
-          <ViewTransition
-            name={projectMediaTransition(project.slug)}
-            share="morph"
-            default="none"
-          >
-            <Placeholder media={project.image} priority />
-          </ViewTransition>
-        </Container>
-      </Section>
+      {/* The hero media: a carousel of device mockups when the case study
+          has one — on its own ground, so it needs its own padding — and
+          otherwise the single full-bleed image, the same picture as the
+          homepage hero cropped wider, with `rhythm="none"` because the
+          section above has already paid for the gap. */}
+      {caseStudy?.hero ? (
+        // The small rhythm keeps the first slide's top in view on common
+        // laptop screens — the homepage media only morphs into it if it is.
+        <Section theme="muted" rhythm="sm">
+          <HeroCarousel
+            slides={caseStudy.hero.slides}
+            label={caseStudy.hero.label}
+            transitionName={projectMediaTransition(project.slug)}
+          />
+        </Section>
+      ) : (
+        <Section theme="light" rhythm="none">
+          <figure>
+            <ViewTransition
+              name={projectMediaTransition(project.slug)}
+              share="morph"
+              default="none"
+            >
+              <Media media={{ ...project.image, ratio: "21 / 9" }} priority hideCaption />
+            </ViewTransition>
+            {/* Only once there is a real picture: until then the caption is
+                the note inside the placeholder. In a Container, so it lines
+                up with the text rather than the screen edge. */}
+            {project.image.src ? (
+              <figcaption>
+                <Container className={captionStyle}>{project.image.caption}</Container>
+              </figcaption>
+            ) : null}
+          </figure>
+        </Section>
+      )}
+
+      {caseStudy ? <CaseStudyBody sections={caseStudy.sections} /> : null}
 
       <NextProject project={nextProject(project.slug)} />
     </>
