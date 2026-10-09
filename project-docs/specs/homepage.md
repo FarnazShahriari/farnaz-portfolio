@@ -17,7 +17,16 @@ belongs there, so the intent survives until the real content is written.
 - Button goes to the about page.
 
 ### 3. Hero project
-- Full-bleed image, title, short summary, one button.
+- A dark band holding two parts: a bordered card, then a row of media.
+- The card carries a small eyebrow (client, discipline), the title, and one
+  button. No summary — the title is the whole claim here, and the explaining
+  belongs on the case study.
+- The media row is the photograph of the work in its real setting beside the
+  interface itself, the interface lifted off a blurred frame of the same
+  landscape so it reads as an object rather than a cut-out.
+- The interface must be the same screen the case study's hero carousel opens
+  on: the two are a morph pair, so a different image would make the picture
+  change mid-flight.
 - Button goes to that project's page.
 - Visually the largest block on the page.
 

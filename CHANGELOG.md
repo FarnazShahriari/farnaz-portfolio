@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-09 — The homepage hero rebuilt around the KSL work
+The hero is now a bordered card carrying an eyebrow, the title and one
+button, over a row with the audit photograph beside the KSL interface on a
+blurred field. The summary is gone, the title takes the h2 size rather than
+h1, and the interface morphs into the case study's carousel on click, next
+to the title morph that was already there.
+Related: project-docs/specs/homepage.md
+
 ## 2026-10-09 — Review fixes for enlarging images
 A review found that screen readers heard every caption twice, so the enlarge
 button is now "Open image larger" when the caption shows. The farm photo
