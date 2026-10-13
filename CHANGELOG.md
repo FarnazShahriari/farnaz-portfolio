@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-13 — TryggDrift's hero picture
+A hand holding the app in a sheep pasture is now the TryggDrift picture on
+the homepage card, at the top of its page, and in KSL's "next project"
+teaser, so it morphs from one to the next. The page crops it to 16:9 (a new
+`heroRatio`) so the phone is not cut off, with alt text and no caption.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-13 — Bigger phones, captions as wide as them
 The phone mockups are now just the phone and its shadow, on narrower slides
 (four in view when wide), so they are a little bigger, closer together, and

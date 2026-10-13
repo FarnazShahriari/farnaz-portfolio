@@ -37,6 +37,11 @@ export type Project = {
    * about how the image opens when enlarged.
    */
   photograph?: MediaPlaceholder
+  /**
+   * The crop of `image` at the top of the project page. Defaults to
+   * 21 / 9; choose a taller one when the subject would be cut off.
+   */
+  heroRatio?: string
   /** Blurred behind `image` on the homepage hero, as a ground for it. */
   backdrop?: MediaPlaceholder
   tags?: string[]

@@ -120,12 +120,16 @@ export default async function ProjectPage({
               share="morph"
               default="none"
             >
-              <Media media={{ ...project.image, ratio: "21 / 9" }} priority hideCaption />
+              <Media
+                media={{ ...project.image, ratio: project.heroRatio ?? "21 / 9" }}
+                priority
+                hideCaption
+              />
             </ViewTransition>
             {/* Only once there is a real picture: until then the caption is
                 the note inside the placeholder. In a Container, so it lines
                 up with the text rather than the screen edge. */}
-            {project.image.src ? (
+            {project.image.src && !project.image.hideCaption ? (
               <figcaption>
                 <Container className={captionStyle}>{project.image.caption}</Container>
               </figcaption>

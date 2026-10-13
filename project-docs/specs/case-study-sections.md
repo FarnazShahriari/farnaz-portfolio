@@ -9,7 +9,9 @@ The building blocks every project page is made from. Implements
    from the homepage). No lead under the title: the case study starts
    straight after it. (A project without a case study shows its stub note
    there instead.)
-2. **Full-bleed image** — the project's `image`, cropped to 21:9.
+2. **Full-bleed image** — the project's `image`, cropped to 21:9, or to the
+   project's `heroRatio` when the subject would be cut off (TryggDrift: 16:9).
+   With `hideCaption`, no line under it.
 3. **The sections** — from the case study's content file, in order.
 4. **Next project** — accent band.
 

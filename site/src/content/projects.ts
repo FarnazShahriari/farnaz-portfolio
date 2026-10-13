@@ -48,13 +48,18 @@ export const projects: Project[] = [
     slug: "tryggdrift",
     title: "TryggDrift: connecting a farm's safety work in one app",
     summary: "A mobile app for keeping a Norwegian farm's HMS work in one place.",
-    // The card on the homepage and the page's full-bleed header (cropped to
-    // 21:9) are the same picture, so the two morph into each other.
+    // The card on the homepage (4:3) and the page's full-bleed header
+    // (16:9, so the phone is not cut off) are the same picture, so the two
+    // morph into each other.
     image: {
       ratio: "4 / 3",
-      caption:
-        "The TryggDrift home screen on a phone, over a faint map of the connected sections.",
+      caption: "The TryggDrift start page on a phone, in a sheep pasture.",
+      hideCaption: true,
+      src: "/work/tryggdrift/hand-holding-app-in-sheep-pasture.webp",
+      alt: "A hand holds up a phone showing the TryggDrift start page for 'Bjørndal Gård': open deviations, a search field, and tiles for Beredskap, Oppgaver, Avvik, Arbeidsinstruks, Dokument, Vernerunde and Risikovurdering. Behind it, sheep graze on green hills in low evening sun.",
+      photo: true,
     },
+    heroRatio: "16 / 9",
     tags: ["Case study", "TryggDrift", "NLR"],
   },
   {

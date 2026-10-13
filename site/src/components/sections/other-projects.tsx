@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
@@ -57,7 +59,21 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
                   share="morph"
                   default="none"
                 >
-                  <Placeholder media={project.image} fill />
+                  {project.image.src ? (
+                    // The frame is not positioned, so the picture brings
+                    // its own box to fill.
+                    <div className="relative size-full">
+                      <Image
+                        src={project.image.src}
+                        alt={project.image.alt ?? ""}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <Placeholder media={project.image} fill />
+                  )}
                 </ViewTransition>
               }
             />
