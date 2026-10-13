@@ -92,14 +92,23 @@ export const tryggdrift: CaseStudy = {
       media: {
         caption:
           "The farmer test in April 2025: printed scenarios, the prototype on a phone, and the farmers who tried it.",
-        lead: {
-          ratio: "1506 / 2000",
-          caption: "The test scenarios on paper, and the prototype on a phone.",
-          src: "/work/tryggdrift/scenario-cards-and-prototype-farmer-test.webp",
-          alt: "Two printed test scenarios in Norwegian on a table: 'Scenario 5: Opprette risikovurdering for kjemikalier' (creating a risk assessment for chemicals) and 'Scenario 4: Registrere avvik og følge det opp' (registering a deviation and following it up), each with tasks to solve. Beside them, a phone shows the prototype's start page for the test farm 'Bjørndal Gård'.",
-          photo: true,
-        },
         items: [
+          {
+            // 1506 × 2000, a hair off 3:4: cropped 0.4% to match the others,
+            // so the row lines up.
+            ratio: "3 / 4",
+            caption: "The test scenarios on paper, and the prototype on a phone.",
+            src: "/work/tryggdrift/scenario-cards-and-prototype-farmer-test.webp",
+            alt: "Two printed test scenarios in Norwegian on a table: 'Scenario 5: Opprette risikovurdering for kjemikalier' (creating a risk assessment for chemicals) and 'Scenario 4: Registrere avvik og følge det opp' (registering a deviation and following it up), each with tasks to solve. Beside them, a phone shows the prototype's start page for the test farm 'Bjørndal Gård'.",
+            photo: true,
+          },
+          {
+            ratio: "522 / 696",
+            caption: "A farmer listening during the test, coffee in hand.",
+            src: "/work/tryggdrift/farmer-with-coffee-farmer-test.webp",
+            alt: "An older man in a dark vest sits at a table with a cup in his hands and looks to the side. Fruit, snacks and papers are on the table in front of him.",
+            photo: true,
+          },
           {
             ratio: "504 / 672",
             caption: "A farmer using the prototype on a phone.",
@@ -127,13 +136,6 @@ export const tryggdrift: CaseStudy = {
               "A farmer working through a scenario, with the test leader beside him.",
             src: "/work/tryggdrift/farmer-and-test-leader-farmer-test.webp",
             alt: "Seen over his shoulder, a man holds a phone showing the prototype. A woman sits beside him and watches. Papers, a bowl of cookies and an open laptop are on the table.",
-            photo: true,
-          },
-          {
-            ratio: "522 / 696",
-            caption: "A farmer listening during the test, coffee in hand.",
-            src: "/work/tryggdrift/farmer-with-coffee-farmer-test.webp",
-            alt: "An older man in a dark vest sits at a table with a cup in his hands and looks to the side. Fruit, snacks and papers are on the table in front of him.",
             photo: true,
           },
         ],

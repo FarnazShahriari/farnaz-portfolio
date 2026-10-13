@@ -36,9 +36,8 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 `closing`.
 
 `media` is one image, or a collage of photos from one session:
-`{ lead, items, caption }`. The lead runs across the top; the rest sit under
-it two to a row on every screen (a lone last one is centred), with the
-section's ground in the gaps. Only the collage's `caption` shows on the
+`{ items, caption }`, two to a row at one size on every screen (a lone last
+one is centred), with the section's ground in the gaps. Only the collage's `caption` shows on the
 page; each photo still has its own `caption` (it names the photo where it
 opens larger) and `alt`.
 

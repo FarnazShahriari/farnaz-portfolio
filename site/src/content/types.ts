@@ -261,13 +261,13 @@ export type StorySection = {
 }
 
 /**
- * Photos from one session as a group: one large on top, the rest under it
- * two to a row. Every photo keeps its own `caption` and `alt`; the caption
- * names it on the button that opens it larger and in the dialog, and only
- * the collage's `caption` shows on the page.
+ * Photos from one session as a group, two to a row at one size. Every
+ * photo keeps its own `caption` and `alt`; the caption names it on the
+ * button that opens it larger and in the dialog, and only the collage's
+ * `caption` shows on the page.
  */
 export type MediaCollage = {
-  lead: MediaPlaceholder
+  /** In reading order, left to right, top to bottom. Same shape, ideally. */
   items: MediaPlaceholder[]
   caption: string
 }

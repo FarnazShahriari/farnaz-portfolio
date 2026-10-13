@@ -36,7 +36,7 @@ export function InsightsSection({ section }: { section: InsightsSectionData }) {
       <Container>
         <Grid className="items-center gap-y-10">
           <div className="col-span-12 md:col-span-6">
-            {"lead" in media ? (
+            {"items" in media ? (
               <Collage collage={media} />
             ) : (
               <Media media={media} sizes="(min-width: 768px) 50vw, 100vw" enlarge />
