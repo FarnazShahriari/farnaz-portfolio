@@ -24,7 +24,7 @@ const DESCRIPTION =
   "Each meeting adjusted the sketches for the next week. " +
   "The prototype was tested with 5 farmers in April 2025, " +
   "then taken to a focus group with 5 to 8 HMS advisers in May 2025. " +
-  "Their findings went back into the design. " +
+  "What both groups found went back into the design. " +
   "Both groups had the same needs, so the design went on to a Figma handoff, " +
   "then follow-up development with check-ins and design review. " +
   "It went live in January 2026, as TryggDrift."
@@ -198,10 +198,10 @@ function Tall() {
       <rect x="82" y="308" width="216" height="40" rx="20" className={pill} />
       <text x="190" y="333" textAnchor="middle" className={step}>Weekly meeting with NLR</text>
 
-      {/* Back to Sketch, up the right side */}
-      <path d="M298 328 H318 V248 H262" strokeWidth="1.5" strokeDasharray="5 4" markerEnd={muted} className={dashed} />
-      <text x="202" y="284" className={note}>adjusted for</text>
-      <text x="202" y="298" className={note}>the next week</text>
+      {/* Back to Sketch, up the right side, named beside it */}
+      <path d="M298 328 H318 V248 H261" strokeWidth="1.5" strokeDasharray="5 4" markerEnd={muted} className={dashed} />
+      <text x="310" y="284" textAnchor="end" className={note}>adjusted for</text>
+      <text x="310" y="298" textAnchor="end" className={note}>the next week</text>
 
       <path d="M190 348 V368" strokeWidth="1.8" markerEnd={arrow} className={solid} />
       <rect x="120" y="374" width="140" height="40" rx="20" className={pill} />
