@@ -115,6 +115,8 @@ original export stays in `assets/<project>/` under the same name.
 - Built for light and muted sections, like the blueprint.
 
 KSL: `ksl-design-process` (the design process, kickoff to launch).
+TryggDrift: `tryggdrift-design-process` (the same, with the weekly design
+loop with NLR). Its original is a PNG, `assets/tryggdrift/`.
 
 Use a picture instead only when the diagram's meaning is in its geometry
 (a chart, a floor plan, a hand sketch) rather than in its words.

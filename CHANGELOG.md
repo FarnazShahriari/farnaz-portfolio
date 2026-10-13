@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-13 — TryggDrift's design process drawn in
+The process placeholder in "The starting point" is now an inline-SVG
+diagram, redrawn from the designer's export in the same way as KSL's: theme
+tokens, a wide and a phone drawing, and a full text description for screen
+readers. The sentence about the earlier app is gone from that section.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-09 — The TryggDrift case study laid out
 TryggDrift (NLR) replaces the second placeholder project, with its full
 agreed text in eight sections built from the same blocks as KSL. Every

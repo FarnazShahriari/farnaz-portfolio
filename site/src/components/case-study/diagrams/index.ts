@@ -3,6 +3,7 @@ import type { ComponentType } from "react"
 import type { DiagramId } from "@/content/types"
 
 import { KslDesignProcess } from "./ksl-design-process"
+import { TryggdriftDesignProcess } from "./tryggdrift-design-process"
 
 /**
  * Hand-drawn diagrams, kept as inline SVG because their meaning is in the
@@ -11,4 +12,5 @@ import { KslDesignProcess } from "./ksl-design-process"
  */
 export const diagrams: Record<DiagramId, ComponentType<{ caption?: string }>> = {
   "ksl-design-process": KslDesignProcess,
+  "tryggdrift-design-process": TryggdriftDesignProcess,
 }

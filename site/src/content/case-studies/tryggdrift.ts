@@ -49,17 +49,14 @@ export const tryggdrift: CaseStudy = {
       eyebrow: "The starting point",
       title: "Starting from NLR's request",
       body: [
-        "The project began with a kickoff with NLR. The goal was clear: give farmers a tool they could use on their phone, out on the farm, to keep their HMS work under control. How it should work was still open. An earlier, simpler app existed, but it was different from what NLR wanted to build. So we started from NLR's request and scope, and worked toward a shared picture of the new app.",
+        "The project began with a kickoff with NLR. The goal was clear: give farmers a tool they could use on their phone, out on the farm, to keep their HMS work under control. How it should work was still open. So we started from NLR's request and scope, and worked toward a shared picture of the new app.",
       ],
       below: [
         {
-          // To become an inline-SVG diagram, like `ksl-design-process`.
-          kind: "media",
-          media: {
-            ratio: "2 / 1",
-            caption:
-              "How the project ran, from kickoff through design, testing and development to launch.",
-          },
+          kind: "diagram",
+          id: "tryggdrift-design-process",
+          caption:
+            "How the work ran, from kickoff to launch. Sketches went to NLR every week, and what farmers and advisers found went back into the design.",
         },
       ],
     },

@@ -44,10 +44,9 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## TryggDrift case study — `case-studies/tryggdrift.ts`
 
-The layout and text are in; every image is still a placeholder.
+The layout and text are in, and the process diagram. These are still placeholders:
 
 - [ ] Header image — the final home screen on a phone, a faint map of the sections behind it (in `projects.ts`: the homepage card at 4:3, the page header at 21:9)
-- [ ] The starting point — process visualization, kickoff to launch (to become an inline-SVG diagram, like `ksl-design-process`)
 - [ ] Shaping the structure — priority map, designed first vs added later (which sections are which is still open)
 - [ ] Testing with farmers — results grid, 11 subtasks × 5 farmers
 - [ ] The advisers — focus group screenshots
