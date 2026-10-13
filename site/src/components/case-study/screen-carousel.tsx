@@ -16,6 +16,7 @@ import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { EnlargeDialog } from "@/components/ui/enlarge-dialog"
 import { captionStyle } from "@/components/ui/media"
+import { Placeholder } from "@/components/ui/placeholder"
 import { ratioSize } from "@/lib/media"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import type { MediaPlaceholder } from "@/content/types"
@@ -145,6 +146,8 @@ export function ScreenCarousel({
         <CarouselContent className="-ml-6">
           {items.map((media, i) => {
             const inView = range ? i >= range.first && i <= range.last : null
+            const fade =
+              inView === null ? fadeBeforeReady(i) : !inView && "opacity-40"
             return (
               <CarouselItem
                 key={media.src ?? i}
@@ -154,56 +157,65 @@ export function ScreenCarousel({
                 className="basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10"
               >
                 <figure>
-                  <button
-                    ref={(el) => {
-                      buttons.current[i] = el
-                    }}
-                    type="button"
-                    aria-label={
-                      inView === false
-                        ? `Show screen ${i + 1}`
-                        : `Open screen ${i + 1} larger`
-                    }
-                    onClick={() => {
-                      if (api && range && inView === false) {
-                        // Page towards it: from the right it becomes the
-                        // first in view, from the left the last.
-                        const perView = range.last - range.first + 1
-                        const lastSnap = api.scrollSnapList().length - 1
-                        return api.scrollTo(
-                          i > range.last
-                            ? Math.min(i, lastSnap)
-                            : Math.max(0, i - perView + 1)
-                        )
+                  {media.src ? (
+                    <button
+                      ref={(el) => {
+                        buttons.current[i] = el
+                      }}
+                      type="button"
+                      aria-label={
+                        inView === false
+                          ? `Show screen ${i + 1}`
+                          : `Open screen ${i + 1} larger`
                       }
-                      setOpenIndex(i)
-                      setIsOpen(true)
-                    }}
-                    // Only the screen fades, as in the hero: a faded caption
-                    // would fall below readable contrast.
-                    className={cn(
-                      "relative block w-full transition-opacity duration-500 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
-                      ease,
-                      inView === null
-                        ? fadeBeforeReady(i)
-                        : !inView && "opacity-40",
-                      inView === false ? "cursor-pointer" : "cursor-zoom-in"
-                    )}
-                  >
-                    <Image
-                      src={media.src ?? ""}
-                      // The button carries the name; the full description is
-                      // on the enlarged image, and the caption sits below.
-                      alt=""
-                      {...ratioSize(media.ratio)}
-                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw"
-                      quality={90}
-                      className="h-auto w-full"
+                      onClick={() => {
+                        if (api && range && inView === false) {
+                          // Page towards it: from the right it becomes the
+                          // first in view, from the left the last.
+                          const perView = range.last - range.first + 1
+                          const lastSnap = api.scrollSnapList().length - 1
+                          return api.scrollTo(
+                            i > range.last
+                              ? Math.min(i, lastSnap)
+                              : Math.max(0, i - perView + 1)
+                          )
+                        }
+                        setOpenIndex(i)
+                        setIsOpen(true)
+                      }}
+                      // Only the screen fades, as in the hero: a faded caption
+                      // would fall below readable contrast.
+                      className={cn(
+                        "relative block w-full transition-opacity duration-500 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
+                        ease,
+                        fade,
+                        inView === false ? "cursor-pointer" : "cursor-zoom-in"
+                      )}
+                    >
+                      <Image
+                        src={media.src}
+                        // The button carries the name; the full description is
+                        // on the enlarged image, and the caption sits below.
+                        alt=""
+                        {...ratioSize(media.ratio)}
+                        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw"
+                        quality={90}
+                        className="h-auto w-full"
+                      />
+                    </button>
+                  ) : (
+                    // Not chosen yet: the grey box, with the caption inside
+                    // saying what belongs here. Nothing to open.
+                    <Placeholder
+                      media={media}
+                      className={cn("transition-opacity duration-500", ease, fade)}
                     />
-                  </button>
-                  <figcaption className={captionStyle}>
-                    {media.caption}
-                  </figcaption>
+                  )}
+                  {media.src ? (
+                    <figcaption className={captionStyle}>
+                      {media.caption}
+                    </figcaption>
+                  ) : null}
                 </figure>
               </CarouselItem>
             )

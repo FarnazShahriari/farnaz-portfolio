@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-13 — TryggDrift's final screens in KSL's carousel
+"What changed" now uses the same screen carousel as KSL's notes field, with
+four real screens in clay phone mockups (document, sharing, training, risk
+assessment). Reminders is gone; "Links between parts" waits as a grey
+placeholder, which the carousel can now show.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-13 — Photos from the farmer test, as a collage
 "Testing with farmers" now shows photos from the sessions instead of the
 results grid placeholder: six photos, two to a row in three rows, starting

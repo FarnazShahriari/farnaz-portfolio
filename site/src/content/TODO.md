@@ -48,7 +48,7 @@ The layout and text are in, with the process diagram, the farm map and the farme
 
 - [ ] Header image — the final home screen on a phone, a faint map of the sections behind it (in `projects.ts`: the homepage card at 4:3, the page header at 21:9)
 - [ ] The advisers — focus group screenshots
-- [ ] What changed — the six final screens
+- [ ] What changed — the 'Links between parts' screen, and any more final screens
 - [ ] Building it — the final screens in phone mockups
 - [ ] Homepage card summary — written for the card, not in the agreed text; check the wording
 

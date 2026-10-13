@@ -226,38 +226,42 @@ export const tryggdrift: CaseStudy = {
       ],
       below: [
         {
-          // Phone screens: a gallery keeps all six in one row on wide
-          // screens, where a carousel would make each one taller than the
-          // window.
-          kind: "gallery",
+          // Phone mockups on the same canvas as KSL's tablet slides, so the
+          // carousel looks and behaves the same; made with
+          // `assets/tryggdrift/phone-mockup.py`.
+          kind: "carousel",
+          label: "The final design, screen by screen",
           items: [
             {
-              ratio: "390 / 844",
+              ratio: "1529 / 2172",
               caption:
-                "Document upload. Upload first. Take the photo or add the file, then name and sort it later.",
+                "Document upload. Save the document first, and fill in the description, category and duration later.",
+              src: "/work/tryggdrift/final-document-details-phone.webp",
+              alt: "Phone screen for the document 'Vedlikehold av ventilasjon' (ventilation maintenance), with a 'Del dokument' (share document) button and two tabs, 'Detaljer' and 'Koblinger' (details and links). The name is filled in; the description, category and duration are still empty.",
             },
             {
-              ratio: "390 / 844",
+              ratio: "1529 / 2172",
               caption:
-                "Sharing. Instructions can be shared with employees, also those who don't use the app.",
+                "Sharing. A risk assessment, like a document or a training, can be shared with employees, also those who don't use the app.",
+              src: "/work/tryggdrift/final-risk-assessment-share-phone.webp",
+              alt: "Phone screen for the risk assessment 'Kjemikalier lekker ut' (chemicals leaking), with a 'Del risikoanalyse' (share risk analysis) button at the top. Below, the analysis is not done yet, with a 'Start risikoanalyse' button.",
             },
             {
-              ratio: "390 / 844",
+              ratio: "1529 / 2172",
               caption:
-                "Reminders. Tasks get deadlines and reminders, so yearly jobs aren't forgotten.",
+                "Training. Each training has an overview of who has done it, with their signature.",
+              src: "/work/tryggdrift/final-training-participants-phone.webp",
+              alt: "Phone screen for the training 'Lamming og fødselshjelp' (lambing and birth assistance). Under 'Deltakere' (participants), 2 of 2 have completed it, and a participant's signature is dated 14 October 2026. A menu is open with 'Egenskaper', 'Bilde' and 'Legg til deltakere' (properties, photo, add participants).",
             },
             {
-              ratio: "390 / 844",
-              caption:
-                "Training. Training sits under Employees, with an overview of who has done what.",
-            },
-            {
-              ratio: "390 / 844",
+              ratio: "1529 / 2172",
               caption:
                 "Risk assessment. A high risk score leads to suggested measures, and risk is shown before and after them.",
+              src: "/work/tryggdrift/final-risk-measures-phone.webp",
+              alt: "Phone screen of a risk assessment with two preventive measures: label all chemical containers clearly, and store them in a separate room with good ventilation. Under 'Etter tiltak' (after the measures), the consequence is medium, the likelihood low, and the risk level a green 'Lav risiko' (low risk), above a risk matrix. Buttons: 'Tilbake' and 'Fullfør analyse' (back, finish analysis).",
             },
             {
-              ratio: "390 / 844",
+              ratio: "1529 / 2172",
               caption:
                 "Links between parts. Deviations, safety rounds and tasks are easier to connect to each other.",
             },
