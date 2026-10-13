@@ -44,10 +44,9 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## TryggDrift case study — `case-studies/tryggdrift.ts`
 
-The layout and text are in, and the process diagram. These are still placeholders:
+The layout and text are in, with the process diagram and the farm map. These are still placeholders:
 
 - [ ] Header image — the final home screen on a phone, a faint map of the sections behind it (in `projects.ts`: the homepage card at 4:3, the page header at 21:9)
-- [ ] Shaping the structure — priority map, designed first vs added later (which sections are which is still open)
 - [ ] Testing with farmers — results grid, 11 subtasks × 5 farmers
 - [ ] The advisers — focus group screenshots
 - [ ] What changed — the six final screens

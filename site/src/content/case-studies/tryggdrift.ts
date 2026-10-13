@@ -71,9 +71,12 @@ export const tryggdrift: CaseStudy = {
         {
           kind: "media",
           media: {
-            ratio: "16 / 9",
+            // Full width, so the timeline's small text stays readable.
+            ratio: "1322 / 1360",
             caption:
-              "The sections of the app, grouped by what was designed first and what was added later.",
+              "The weekly design meetings with NLR, and the sections of the app placed on the farm they cover, joined where they connect. Farm illustration generated with AI.",
+            src: "/work/tryggdrift/app-sections-on-farm-with-timeline.webp",
+            alt: "A timeline from kickoff in February 2025, through insight, design and development, to launch in January 2026, with a row of dots for the weekly design meetings with NLR. Below it, an illustrated farm seen from above: fields of maize and sunflowers, a tractor, a farm building and solar panels. Labels for eight sections of the app sit on the parts of the farm they cover, such as Bygninger on the building, Elkontroll on the solar panels and Maskiner & utstyr on the tractor, along with Beredskap, Risikovurdering, Vernerunde, Oppgaver and Avvik. Lines join the sections that connect, and several of them lead to Avvik.",
           },
         },
       ],
