@@ -277,7 +277,7 @@ export const tryggdrift: CaseStudy = {
             caption:
               "Screens from the app as built: deviations, tasks, documents, training, risk assessments and the electrical and fire self-check.",
             src: "/work/tryggdrift/final-screens-wall.webp",
-            alt: "Thirteen phones laid out in staggered columns on a pale blue ground, each casting a soft shadow, showing TryggDrift screens. In the middle: a task, 'Rengjøring av fjøset' (cleaning the cowshed), with its title, description, deadline and a 'Fullfør oppgave' (complete task) button; a deviation with a closing deadline of 25.9.2026 and a 'Lukk avvik' (close deviation) button; a question from the 'El- og Brann egenkontroll' (electrical and fire self-check), question 2 of 42, answered OK; and a document's empty links tab. Around them: the start page, a risk assessment, its measures, a training and a document.",
+            alt: "Thirteen phones laid out in staggered columns on a warm off-white ground, each casting a soft shadow, showing TryggDrift screens. In the middle: a task, 'Rengjøring av fjøset' (cleaning the cowshed), with its title, description, deadline and a 'Fullfør oppgave' (complete task) button; a deviation with a closing deadline of 25.9.2026 and a 'Lukk avvik' (close deviation) button; a question from the 'El- og Brann egenkontroll' (electrical and fire self-check), question 2 of 42, answered OK; and a document's empty links tab. Around them: the start page, a risk assessment, its measures, a training and a document.",
           },
         },
       ],

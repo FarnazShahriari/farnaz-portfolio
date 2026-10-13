@@ -13,8 +13,8 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ## 2026-10-13 — A wall of screens in "Building it"
 The last TryggDrift placeholder is now a composed image: thirteen phones
-in staggered columns on a pale tint of the accent, framed in a slightly
-deeper tint and casting soft tinted shadows, with the four newest screens
+in staggered columns on the app's own warm off-white, framed in its pale
+sage and casting soft olive-tinted shadows, with the four newest screens
 in the middle.
 Related: project-docs/specs/case-study-sections.md
 
