@@ -261,8 +261,20 @@ export type StorySection = {
 }
 
 /**
- * An image on the left and a column of research findings on the right,
- * each backed by a quote.
+ * Photos from one session as a group: one large on top, the rest under it
+ * two to a row. Every photo keeps its own `caption` and `alt`; the caption
+ * names it on the button that opens it larger and in the dialog, and only
+ * the collage's `caption` shows on the page.
+ */
+export type MediaCollage = {
+  lead: MediaPlaceholder
+  items: MediaPlaceholder[]
+  caption: string
+}
+
+/**
+ * An image (or a collage) on the left and a column of research findings on
+ * the right, each backed by a quote.
  */
 export type InsightsSection = {
   type: "insights"
@@ -271,7 +283,7 @@ export type InsightsSection = {
   eyebrow: string
   title: string
   intro: string
-  media: MediaPlaceholder
+  media: MediaPlaceholder | MediaCollage
   /** The small heading above the findings, e.g. "What the farm showed us". */
   insightsLabel: string
   insights: Insight[]

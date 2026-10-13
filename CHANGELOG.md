@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-13 — Photos from the farmer test, as a collage
+"Testing with farmers" now shows photos from the sessions instead of the
+results grid placeholder: the scenarios and prototype large on top, the
+five testers two to a row under it. An insights section's media can now be
+a collage like this; KSL's single images are unchanged.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-13 — TryggDrift's farm map in "Shaping the structure"
 The placeholder is now the real image: the project timeline with the weekly
 meetings with NLR, over a farm with the app's sections placed on it. It

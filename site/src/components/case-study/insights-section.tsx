@@ -2,16 +2,22 @@ import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 
-import { Eyebrow, Paragraph, QuoteBlock } from "@/components/case-study/parts"
+import {
+  Collage,
+  Eyebrow,
+  Paragraph,
+  QuoteBlock,
+} from "@/components/case-study/parts"
 import { Media } from "@/components/ui/media"
 import type { InsightsSection as InsightsSectionData } from "@/content/types"
 
 /**
  * Research findings beside the picture that shows where they came from.
  *
- * An image on the left, and on the right: heading, a one-line intro, then
- * each finding in bold with the quote that backs it. Muted by default, so
- * a run of these reads as the evidence thread through the story.
+ * An image (or a collage of photos) on the left, and on the right:
+ * heading, a one-line intro, then each finding in bold with the quote that
+ * backs it. Muted by default, so a run of these reads as the evidence
+ * thread through the story.
  */
 export function InsightsSection({ section }: { section: InsightsSectionData }) {
   const {
@@ -30,7 +36,11 @@ export function InsightsSection({ section }: { section: InsightsSectionData }) {
       <Container>
         <Grid className="items-center gap-y-10">
           <div className="col-span-12 md:col-span-6">
-            <Media media={media} sizes="(min-width: 768px) 50vw, 100vw" enlarge />
+            {"lead" in media ? (
+              <Collage collage={media} />
+            ) : (
+              <Media media={media} sizes="(min-width: 768px) 50vw, 100vw" enlarge />
+            )}
           </div>
 
           <div className="col-span-12 flex flex-col gap-6 md:col-span-5 md:col-start-8">

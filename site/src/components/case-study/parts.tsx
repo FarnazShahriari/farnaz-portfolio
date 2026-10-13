@@ -9,10 +9,11 @@ import { cn } from "@farnazshahriari/design-system/lib/utils"
 import { Blueprint } from "@/components/case-study/blueprint"
 import { diagrams } from "@/components/case-study/diagrams"
 import { ScreenCarousel } from "@/components/case-study/screen-carousel"
-import { Media } from "@/components/ui/media"
+import { captionStyle, Media } from "@/components/ui/media"
 import type {
   ExternalLink,
   Fact,
+  MediaCollage,
   MediaPlaceholder,
   Quote,
   StoryPart,
@@ -165,6 +166,52 @@ export function Gallery({ items }: { items: MediaPlaceholder[] }) {
         ))}
       </ul>
     </div>
+  )
+}
+
+/**
+ * Photos from one session: the lead across the top, the rest two to a row
+ * at one size, with the section's ground showing in the gaps. Two to a row
+ * on every screen, since portraits stay large enough on a phone. As in the
+ * Gallery, a short last row is centred: on a four-column grid each photo
+ * spans two, so a lone last one can start one column in.
+ *
+ * Sized for the half-width column of an insights section.
+ */
+export function Collage({ collage }: { collage: MediaCollage }) {
+  const { lead, items, caption } = collage
+  const odd = items.length % 2 === 1
+
+  return (
+    <figure>
+      <ul className="grid grid-cols-4 gap-3 md:gap-4">
+        <li className="col-span-4">
+          <Media
+            media={lead}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            hideCaption
+            enlarge
+          />
+        </li>
+        {items.map((media, i) => (
+          <li
+            key={media.src ?? i}
+            className={cn(
+              "col-span-2",
+              odd && i === items.length - 1 && "col-start-2"
+            )}
+          >
+            <Media
+              media={media}
+              sizes="(min-width: 768px) 25vw, 50vw"
+              hideCaption
+              enlarge
+            />
+          </li>
+        ))}
+      </ul>
+      <figcaption className={captionStyle}>{caption}</figcaption>
+    </figure>
   )
 }
 

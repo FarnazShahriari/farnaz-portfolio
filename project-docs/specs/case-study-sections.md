@@ -35,6 +35,13 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 (each a `finding`, an optional `detail` and an optional `quote`), optional
 `closing`.
 
+`media` is one image, or a collage of photos from one session:
+`{ lead, items, caption }`. The lead runs across the top; the rest sit under
+it two to a row on every screen (a lone last one is centred), with the
+section's ground in the gaps. Only the collage's `caption` shows on the
+page; each photo still has its own `caption` (it names the photo where it
+opens larger) and `alt`.
+
 A `finding` is one bold sentence. When it is a short title instead ("Quick
 start, details later"), `detail` carries the plain sentence that explains
 it, between the title and the quote.
