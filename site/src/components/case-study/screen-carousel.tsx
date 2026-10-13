@@ -62,14 +62,35 @@ function useViewRange(api: CarouselApi, count: number) {
 }
 
 /**
- * Before the script runs there is no carousel to ask, so the fade is
- * worked out from the screen width instead: the same one, two or three in
- * view as the slide widths below. Keep the two in step.
+ * Slide widths: a little under a third (a half, a whole) of the row for
+ * tablets, so the next screen always shows at the edge. Phones are
+ * narrower, so four fit on wide screens (two on tablets, one on phones),
+ * each with the next peeking in. The gutter is the slide's left padding,
+ * matched by the row's negative margin.
  */
-function fadeBeforeReady(i: number) {
+const layouts = {
+  tablet: {
+    row: "-ml-6",
+    slide: "basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10",
+    inViewWide: 3,
+  },
+  phone: {
+    row: "-ml-4",
+    slide: "basis-2/3 pl-4 @2xl:basis-2/5 @5xl:basis-6/25",
+    inViewWide: 4,
+  },
+}
+
+/**
+ * Before the script runs there is no carousel to ask, so the fade is
+ * worked out from the screen width instead: one in view on phones, two on
+ * tablets, and three (four phones) on wide screens, as in `layouts`. Keep
+ * the two in step.
+ */
+function fadeBeforeReady(i: number, inViewWide: number) {
   if (i === 0) return undefined
   if (i === 1) return "opacity-40 @2xl:opacity-100"
-  if (i === 2) return "opacity-40 @5xl:opacity-100"
+  if (i < inViewWide) return "opacity-40 @5xl:opacity-100"
   return "opacity-40"
 }
 
@@ -77,8 +98,8 @@ const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
 
 /**
  * Screens of a flow as a row you can move through: three in view on wide
- * screens, two on tablets, one on phones, each with the next one peeking
- * in at the right so it is clear there is more.
+ * screens (four phone screens), two on tablets, one on phones, each with
+ * the next one peeking in at the right so it is clear there is more.
  *
  * Like the hero carousel, a screen that is only partly in view is faded
  * (the image, not its caption),
@@ -97,16 +118,22 @@ const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
 export function ScreenCarousel({
   items,
   label,
+  device = "tablet",
 }: {
   items: MediaPlaceholder[]
   /** Names the carousel for screen readers, e.g. "The notes field as built". */
   label: string
+  /** Phone mockups are narrower, so more fit in a row. */
+  device?: keyof typeof layouts
 }) {
+  const layout = layouts[device]
   const reducedMotion = usePrefersReducedMotion()
   const [api, setApi] = React.useState<CarouselApi>()
   const [isOpen, setIsOpen] = React.useState(false)
   const [openIndex, setOpenIndex] = React.useState(0)
-  const buttons = React.useRef<(HTMLButtonElement | null)[]>([])
+  // One per slide: the screen's button, or a placeholder's box, which
+  // takes focus only when the arrow keys bring it into view.
+  const buttons = React.useRef<(HTMLElement | null)[]>([])
   const range = useViewRange(api, items.length)
 
   React.useEffect(() => {
@@ -132,6 +159,19 @@ export function ScreenCarousel({
     }
   }, [api, items.length])
 
+  // Page towards a slide out of view: from the right it becomes the first
+  // in view, from the left the last.
+  const pageTo = (target: number) => {
+    if (!api || !range) return
+    const perView = range.last - range.first + 1
+    const lastSnap = api.scrollSnapList().length - 1
+    api.scrollTo(
+      target > range.last
+        ? Math.min(target, lastSnap)
+        : Math.max(0, target - perView + 1)
+    )
+  }
+
   return (
     <div className="@container">
       <Carousel
@@ -143,18 +183,18 @@ export function ScreenCarousel({
         }}
         aria-label={label}
       >
-        <CarouselContent className="-ml-6">
+        <CarouselContent className={layout.row}>
           {items.map((media, i) => {
             const inView = range ? i >= range.first && i <= range.last : null
             const fade =
-              inView === null ? fadeBeforeReady(i) : !inView && "opacity-40"
+              inView === null
+                ? fadeBeforeReady(i, layout.inViewWide)
+                : !inView && "opacity-40"
             return (
               <CarouselItem
                 key={media.src ?? i}
                 aria-label={`${i + 1} of ${items.length}`}
-                // A little under a third (a half, a whole) of the row, so the
-                // next screen always shows at the edge.
-                className="basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10"
+                className={layout.slide}
               >
                 <figure>
                   {media.src ? (
@@ -169,17 +209,7 @@ export function ScreenCarousel({
                           : `Open screen ${i + 1} larger`
                       }
                       onClick={() => {
-                        if (api && range && inView === false) {
-                          // Page towards it: from the right it becomes the
-                          // first in view, from the left the last.
-                          const perView = range.last - range.first + 1
-                          const lastSnap = api.scrollSnapList().length - 1
-                          return api.scrollTo(
-                            i > range.last
-                              ? Math.min(i, lastSnap)
-                              : Math.max(0, i - perView + 1)
-                          )
-                        }
+                        if (inView === false) return pageTo(i)
                         setOpenIndex(i)
                         setIsOpen(true)
                       }}
@@ -205,11 +235,24 @@ export function ScreenCarousel({
                     </button>
                   ) : (
                     // Not chosen yet: the grey box, with the caption inside
-                    // saying what belongs here. Nothing to open.
-                    <Placeholder
-                      media={media}
-                      className={cn("transition-opacity duration-500", ease, fade)}
-                    />
+                    // saying what belongs here. Nothing to open, but a
+                    // faded one still pages the row, like a screen.
+                    <div
+                      ref={(el) => {
+                        buttons.current[i] = el
+                      }}
+                      tabIndex={-1}
+                      onClick={inView === false ? () => pageTo(i) : undefined}
+                      className={cn(
+                        "focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
+                        inView === false && "cursor-pointer"
+                      )}
+                    >
+                      <Placeholder
+                        media={media}
+                        className={cn("transition-opacity duration-500", ease, fade)}
+                      />
+                    </div>
                   )}
                   {media.src ? (
                     <figcaption className={captionStyle}>

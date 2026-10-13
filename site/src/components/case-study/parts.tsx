@@ -262,7 +262,13 @@ export function StoryPartView({
       content = <Gallery items={part.items} />
       break
     case "carousel":
-      content = <ScreenCarousel items={part.items} label={part.label} />
+      content = (
+        <ScreenCarousel
+          items={part.items}
+          label={part.label}
+          device={part.device}
+        />
+      )
       break
     case "statement":
       content = <p className="max-w-[22ch] text-h2">{part.text}</p>

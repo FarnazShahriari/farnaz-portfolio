@@ -11,6 +11,15 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-13 — Bigger phones, captions as wide as them
+The phone mockups are now just the phone and its shadow, on narrower slides
+(four in view when wide), so they are a little bigger, closer together, and
+each caption is as wide as its phone. "Links between parts" has its real
+screen, a review's carousel fixes are in (a faded placeholder pages the
+row, focus never strands on a hidden screen), and the advisers' empty
+picture slot is gone.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-13 — TryggDrift's final screens in KSL's carousel
 "What changed" now uses the same screen carousel as KSL's notes field, with
 four real screens in clay phone mockups (document, sharing, training, risk

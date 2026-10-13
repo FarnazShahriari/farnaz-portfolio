@@ -166,10 +166,12 @@ row you move through.
   focused screen leaves the view; tabbing to a hidden screen brings it in.
 - `label` names the carousel for screen readers.
 - A screen without `src` shows the grey placeholder, with its caption
-  inside, and nothing to open.
-- Phone screens (TryggDrift) use the same carousel: each mockup sits on a
-  canvas the shape of KSL's tablet slides, so both carousels are the same
-  height. `assets/tryggdrift/phone-mockup.py` makes them.
+  inside, and nothing to open; a faded one still pages the row.
+- `device: "phone"` is for phone mockups (TryggDrift): narrower slides,
+  four in view on wide screens, two on tablets, one on phones, and a
+  slightly smaller gutter. The mockup is the phone plus its shadow, so the
+  caption is as wide as the phone. `assets/tryggdrift/phone-mockup.py`
+  makes them.
 
 ## Rules
 

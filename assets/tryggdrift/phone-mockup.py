@@ -3,15 +3,15 @@ Phone mockups for the TryggDrift case study, in the style of the KSL
 tablet mockups: the raw screenshot pasted 1:1 into a clay-white frame
 (245, 243, 241) with a soft shadow below, on a transparent background.
 
-The canvas has the same shape as the KSL notes-field slides (1255 / 1783),
-so a carousel of phones sits at the same height as KSL's carousel of
-tablets; the phone stands in the middle with clear space either side.
+The canvas is the phone plus room for its shadow, so in the carousel the
+caption under it is as wide as the phone. The carousel's "phone" layout
+gives these narrower slides than KSL's tablets.
 
 Usage (screenshots are 923 x 2000, as exported from the phone):
 
     python3 phone-mockup.py <screenshot> <out.webp>
 
-Every mockup made with this script is 1529 x 2172.
+Every mockup made with this script is 1071 x 2172.
 """
 
 import sys
@@ -23,8 +23,7 @@ ISLAND = (18, 18, 18, 255)
 BEZEL = 34
 OUTER_RADIUS = 150
 SCREEN_RADIUS = OUTER_RADIUS - BEZEL
-TOP, BOTTOM = 24, 80  # room for the shadow
-SLIDE_RATIO = 1255 / 1783  # the KSL carousel's slide shape
+TOP, BOTTOM, SIDE = 24, 80, 40  # room for the shadow
 
 
 def rounded(size, radius):
@@ -38,8 +37,8 @@ def mockup(screenshot_path, out_path):
     sw, sh = screen.size
     dw, dh = sw + 2 * BEZEL, sh + 2 * BEZEL
     ch = TOP + dh + BOTTOM
-    cw = round(ch * SLIDE_RATIO)
-    dx, dy = (cw - dw) // 2, TOP
+    cw = SIDE + dw + SIDE
+    dx, dy = SIDE, TOP
 
     canvas = Image.new("RGBA", (cw, ch), (0, 0, 0, 0))
 

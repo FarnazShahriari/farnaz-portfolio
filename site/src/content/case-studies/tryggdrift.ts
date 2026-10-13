@@ -207,13 +207,6 @@ export const tryggdrift: CaseStudy = {
       title: "A focus group with HMS advisers",
       body: [
         "In May 2025, I ran a remote focus group with a group of NLR's HMS advisers to discuss the prototype. Each adviser first went through five scenarios in the prototype alone, then we discussed each scenario together. The advisers work with many farms, and their feedback mostly confirmed what the farmers had told us. Three needs stood out: flexibility to create something quickly and add details later, uploading and sharing photos and documents, and suggested measures after a high risk score.",
-        {
-          kind: "media",
-          media: {
-            ratio: "16 / 9",
-            caption: "The remote focus group with NLR's HMS advisers.",
-          },
-        },
       ],
     },
     {
@@ -226,44 +219,46 @@ export const tryggdrift: CaseStudy = {
       ],
       below: [
         {
-          // Phone mockups on the same canvas as KSL's tablet slides, so the
-          // carousel looks and behaves the same; made with
+          // KSL's screen carousel, with phone mockups made by
           // `assets/tryggdrift/phone-mockup.py`.
           kind: "carousel",
           label: "The final design, screen by screen",
+          device: "phone",
           items: [
             {
-              ratio: "1529 / 2172",
+              ratio: "1071 / 2172",
               caption:
                 "Document upload. Save the document first, and fill in the description, category and duration later.",
               src: "/work/tryggdrift/final-document-details-phone.webp",
               alt: "Phone screen for the document 'Vedlikehold av ventilasjon' (ventilation maintenance), with a 'Del dokument' (share document) button and two tabs, 'Detaljer' and 'Koblinger' (details and links). The name is filled in; the description, category and duration are still empty.",
             },
             {
-              ratio: "1529 / 2172",
+              ratio: "1071 / 2172",
               caption:
-                "Sharing. A risk assessment, like a document or a training, can be shared with employees, also those who don't use the app.",
+                "Sharing. Instructions, documents, training and risk assessments can all be shared with employees, also those who don't use the app.",
               src: "/work/tryggdrift/final-risk-assessment-share-phone.webp",
               alt: "Phone screen for the risk assessment 'Kjemikalier lekker ut' (chemicals leaking), with a 'Del risikoanalyse' (share risk analysis) button at the top. Below, the analysis is not done yet, with a 'Start risikoanalyse' button.",
             },
             {
-              ratio: "1529 / 2172",
+              ratio: "1071 / 2172",
               caption:
                 "Training. Each training has an overview of who has done it, with their signature.",
               src: "/work/tryggdrift/final-training-participants-phone.webp",
-              alt: "Phone screen for the training 'Lamming og fødselshjelp' (lambing and birth assistance). Under 'Deltakere' (participants), 2 of 2 have completed it, and a participant's signature is dated 14 October 2026. A menu is open with 'Egenskaper', 'Bilde' and 'Legg til deltakere' (properties, photo, add participants).",
+              alt: "Phone screen for the training 'Lamming og fødselshjelp' (lambing and birth assistance). Under 'Deltakere' (participants), 2 of 2 have completed it, and each participant has a 'Se signatur' (view signature) button and a signed date. A menu is open with 'Egenskaper', 'Bilde' and 'Legg til deltakere' (properties, photo, add participants).",
             },
             {
-              ratio: "1529 / 2172",
+              ratio: "1071 / 2172",
               caption:
-                "Risk assessment. A high risk score leads to suggested measures, and risk is shown before and after them.",
+                "Risk assessment. The analysis leads to measures, and the risk is scored again after them.",
               src: "/work/tryggdrift/final-risk-measures-phone.webp",
               alt: "Phone screen of a risk assessment with two preventive measures: label all chemical containers clearly, and store them in a separate room with good ventilation. Under 'Etter tiltak' (after the measures), the consequence is medium, the likelihood low, and the risk level a green 'Lav risiko' (low risk), above a risk matrix. Buttons: 'Tilbake' and 'Fullfør analyse' (back, finish analysis).",
             },
             {
-              ratio: "1529 / 2172",
+              ratio: "1071 / 2172",
               caption:
-                "Links between parts. Deviations, safety rounds and tasks are easier to connect to each other.",
+                "Links between parts. Each part links to the others it belongs with: here a training to its work instruction and a task.",
+              src: "/work/tryggdrift/final-training-links-phone.webp",
+              alt: "Phone screen for the training 'Lamming og fødselshjelp' on its 'Koblinger' (links) tab, with a 'Del opplæring' (share training) button and a search field. Two linked items are listed: an 'Arbeidsinstruks' (work instruction) called 'Test' and an 'Oppgaver' (tasks) item called 'Tue'. A 'Legg til kobling' (add link) button sits at the bottom.",
             },
           ],
         },

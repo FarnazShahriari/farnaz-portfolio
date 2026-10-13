@@ -154,7 +154,13 @@ export type StoryPart =
    * a gallery would make the screens too small to read. Use in `below`;
    * `label` names it for screen readers.
    */
-  | { kind: "carousel"; label: string; items: MediaPlaceholder[] }
+  | {
+      kind: "carousel"
+      label: string
+      items: MediaPlaceholder[]
+      /** "phone" for phone mockups: narrower slides, four in view when wide. */
+      device?: "tablet" | "phone"
+    }
   /** One large line, set as a heading. */
   | { kind: "statement"; text: string }
   /** A service blueprint drawn in HTML. Use it in `below`, at full width. */
