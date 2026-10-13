@@ -44,9 +44,8 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## TryggDrift case study — `case-studies/tryggdrift.ts`
 
-The layout and text are in, with the process diagram, the farm map and the farmer test photos. These are still placeholders:
+Every image is in. Still open:
 
-- [ ] Building it — the final screens in phone mockups
 - [ ] Homepage card summary — written for the card, not in the agreed text; check the wording
 
 ## Open structural questions

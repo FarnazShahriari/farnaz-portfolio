@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-13 — A wall of screens in "Building it"
+The last TryggDrift placeholder is now a composed image: thirteen phones
+in staggered columns on a pale tint of the accent, framed in a slightly
+deeper tint and casting soft tinted shadows, with the four newest screens
+in the middle.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-13 — TryggDrift's hero picture
 A hand holding the app in a sheep pasture is now the TryggDrift picture on
 the homepage card, at the top of its page, and in KSL's "next project"
