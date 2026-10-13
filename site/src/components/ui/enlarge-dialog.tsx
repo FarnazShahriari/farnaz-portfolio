@@ -37,8 +37,10 @@ export function EnlargeDialog({
   const scroller = React.useRef<HTMLDivElement>(null)
   const size = media ? ratioSize(media.ratio) : null
   // Anything not clearly wide (tall screens, square photos) needs less
-  // width to be readable, and would not fit the height at full width.
-  const narrow = size ? size.width / size.height < 1.2 : false
+  // width to be readable, and would not fit the height at full width —
+  // unless it already runs full width in the page (`openWide`).
+  const narrow =
+    size && !media?.openWide ? size.width / size.height < 1.2 : false
   // A photo has no small text to read, so it fits the dialog instead.
   const fit = !!media?.photo
 

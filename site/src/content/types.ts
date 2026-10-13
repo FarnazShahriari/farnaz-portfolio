@@ -71,6 +71,12 @@ export type MediaPlaceholder = {
    * screen instead of opening at a size for reading small text.
    */
   photo?: boolean
+  /**
+   * Opened larger, it takes the full width even though it is not a wide
+   * shape. For a tall or square image that already runs full width in the
+   * page, which the narrower enlarged view would show smaller.
+   */
+  openWide?: boolean
 }
 
 export type TrackRecordEntry = {

@@ -175,6 +175,9 @@ row you move through.
   a blueprint's `note` is its caption.
 - `photo: true` marks a photograph. Opened larger, it fits the screen
   instead of opening at a size for reading small text.
+- `openWide: true` lets a tall or square image open at the wide size.
+  Use it when the image already runs full width in the page (in `below`):
+  the narrow size would open it at about half its size in the page.
 - `hideCaption: true` keeps the caption off the page when the text around
   the image already says what it is. Still write the caption: it names the
   image in the enlarged view and on the button that opens it.

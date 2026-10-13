@@ -14,8 +14,9 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 ## 2026-10-13 — TryggDrift's farm map in "Shaping the structure"
 The placeholder is now the real image: the project timeline with the weekly
 meetings with NLR, over a farm with the app's sections placed on it. It
-runs full width so the timeline's text stays readable, and its caption
-says the farm illustration was generated with AI.
+runs full width so the timeline's text stays readable, and a new
+`openWide` flag makes it open larger at the wide size too, instead of the
+narrow one. The caption says the farm was generated with AI.
 Related: project-docs/specs/case-study-sections.md
 
 ## 2026-10-13 — TryggDrift's design process drawn in
