@@ -10,8 +10,8 @@
 import type { CaseStudy } from "../types"
 
 // The redesigned desktop screens, in the same clay-white landscape tablet
-// mockups as KSL's hero.
-const tablet = "2272 / 1532"
+// mockups as KSL's hero, made with `assets/readyware/tablet-mockup.py`.
+const tablet = "2272 / 1704"
 
 export const readyware: CaseStudy = {
   slug: "readyware",
@@ -21,17 +21,23 @@ export const readyware: CaseStudy = {
       {
         ratio: tablet,
         caption:
-          "The incident Overview: what has happened, the key roles and the latest logs, with a TEST banner when it is practice.",
+          "The incident Overview: what has happened, the key roles and the latest logs, with a TEST banner across the top when it is practice.",
+        src: "/work/readyware/incident-overview-tablet.webp",
+        alt: "Tablet showing the Overview of the test incident 'Fire at Sjøberg school'. A blue 'Test incident' banner runs across the top: no real-world impact is expected. Under the incident's name: started today at 08:55, high impact, fire, everyone in the organization, and an 'Edit details' link. A row of key roles follows, from Incident Commander to Public Information Officer, each with a name and phone number. Below, 'What has happened?' with a short account and a situation map, 'What is our strategy?' and 'What is the potential risk?', each updated by Planning. On the right, the latest logs, such as 'Gas supply to the science wing shut off', each with its time, staff function and source.",
       },
       {
         ratio: tablet,
         caption:
-          "The Situation Report, one question at a time. Planning edits and publishes, everyone else reads the latest version.",
+          "Action Cards: a checklist for each staff function. Every step is marked pending, done or not relevant, with who did it and when.",
+        src: "/work/readyware/action-cards-tablet.webp",
+        alt: "Tablet showing the Action Cards tab of the same test incident, acting as Logistics. On the left, the cards in progress, such as 'First Aid Protocols' with 4 pending, 3 done and 1 not relevant, and the cards that are done. On the right, 'First Aid Protocols' is open, with filters for all, pending, done and not relevant. Its first step, 'Set up a first aid point at the assembly area', is pending, with instructions, four image slots, a 'Repeating' tag and who did it last. Below, one step is marked done and one not relevant, each with who set it and when.",
       },
       {
         ratio: tablet,
         caption:
-          "The Incident Log: every action, with who logged it, the source and when it happened. Logs are corrected, never deleted.",
+          "The incident's contacts, under Organization. Contacts added for this incident sit beside the organization's global ones, and can be made global.",
+        src: "/work/readyware/organization-contacts-tablet.webp",
+        alt: "Tablet showing the Organization tab of the same test incident. On the left: Key Roles, Contacts, Communication Channels, Health, Safety & Environment and Press Release, each with when it was updated. Contacts is open: a table with name, note, phone, email, address and type, such as the school caretaker, the fire service on duty and the building inspector. Each contact is tagged 'This incident' or 'Global'. Two are selected, with 'Add to global contacts' and 'Delete' in the bar above.",
       },
     ],
   },

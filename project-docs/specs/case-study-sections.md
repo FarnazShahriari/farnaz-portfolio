@@ -150,6 +150,8 @@ mockups: `hero: { label, slides }` in the content file.
 - Mockups are made from the raw screenshot pasted 1:1 into a clay-white
   tablet frame with a shadow below, on a transparent background (lossless
   WebP). Images that are mostly UI text are served at quality 90.
+  `assets/readyware/tablet-mockup.py` makes them from a 2000px-wide
+  screenshot, with the frame and shadow measured from KSL's.
 
 ## Screen carousel
 

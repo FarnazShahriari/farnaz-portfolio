@@ -8,9 +8,9 @@ Readyware case study, version 1. A short case study, in slot 4 on the site (slot
 
 | # | Screen | Caption (shows under the active slide) |
 |---|---|---|
-| 1 | Incident Overview | The incident Overview: what has happened, the key roles and the latest logs, with a TEST banner when it is practice. |
-| 2 | Situation Report | The Situation Report, one question at a time. Planning edits and publishes, everyone else reads the latest version. |
-| 3 | Incident Log | The Incident Log: every action, with who logged it, the source and when it happened. Logs are corrected, never deleted. |
+| 1 | Incident Overview | The incident Overview: what has happened, the key roles and the latest logs, with a TEST banner across the top when it is practice. |
+| 2 | Action Cards | Action Cards: a checklist for each staff function. Every step is marked pending, done or not relevant, with who did it and when. |
+| 3 | Organization, Contacts | The incident's contacts, under Organization. Contacts added for this incident sit beside the organization's global ones, and can be made global. |
 
 ---
 
@@ -188,9 +188,9 @@ Short version of the shared pattern: The project (facts) → The process (diagra
 
 ## Open items
 
-- Redesign 3 hero screens: Overview (with TEST banner), Situation Report, Incident Log.
+- Done: 3 hero screens (Overview, Action Cards, Organization contacts), in `site/public/work/readyware/`.
 - Redesign 4 "What changed" screens: Test mode, Incident details, Incident Log, Tabs.
-- Homepage card image (4:3), can reuse the Overview screen.
+- Done: homepage card image, the Overview mockup (4:3).
 - Export one part of the Discussion Analysis board, and optionally the navigation alternatives slide.
 - Blur and export the three test session screenshots as one collage.
 - Draw the process diagram (wide and tall).

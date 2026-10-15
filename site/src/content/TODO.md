@@ -50,10 +50,9 @@ Every image is in. Still open:
 
 ## Readyware case study — `case-studies/readyware.ts`
 
-Text and the process diagram are in. Every image is a placeholder:
+Text, the process diagram, the hero carousel and the homepage card are in.
+Still placeholders:
 
-- [ ] Homepage card (4:3) — the redesigned incident Overview, same mockup as hero slide 1
-- [ ] Hero ×3 — Overview (with TEST banner), Situation Report, Incident Log, in clay-white tablet mockups
 - [ ] Weekly design meetings — one part of the "Discussion Analysis" feedback board, no date
 - [ ] Testing with users — the three remote sessions as one collage; faces blurred, names removed
 - [ ] What changed ×4 — Test mode, Incident details, Incident Log, Tabs

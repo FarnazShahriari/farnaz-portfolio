@@ -80,11 +80,14 @@ export const projects: Project[] = [
       "An incident management tool, designed weekly with the developers and tested with experts.",
     // The same screen the case study's hero carousel opens on, so the two
     // morph into each other.
+    // The mockup is 4:3 already, so the card shows all of it.
     image: {
-      ratio: "4 / 3",
+      ratio: "2272 / 1704",
       caption:
         "The Readyware incident Overview, with the TEST banner across the top.",
       hideCaption: true,
+      src: "/work/readyware/incident-overview-tablet.webp",
+      alt: "The Overview of a test incident, 'Fire at Sjøberg school', on a tablet: a blue test banner across the top, the key roles, what has happened with a situation map, and the latest logs.",
     },
     tags: ["Case study", "Readyware", "Netpower"],
   },

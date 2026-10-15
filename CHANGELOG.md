@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-15 — Readyware's hero screens
+The hero carousel now shows three redesigned screens in KSL's clay-white
+tablet frame, opening on the incident Overview: then Action Cards and the
+incident's contacts. The Overview is also the homepage card. A small
+script makes the frames, matched to KSL's, so later screens fit the set.
+Related: project-docs/specs/case-study-readyware.md
+
 ## 2026-10-15 — Readyware, the fourth case study
 Readyware is now slot 4, with its full text, facts, insights and quotes,
 and its design process drawn as an inline SVG like TryggDrift's. Every
