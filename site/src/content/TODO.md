@@ -21,10 +21,10 @@ grey block, so nothing can ship by accident unnoticed.
 ## Projects — `projects.ts`
 
 - [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
-- [ ] Project three: title, summary, tag
-- [ ] Project four: title, summary, tag
+- [ ] Project three (how the design system was made): title, summary, tag
+- [ ] Project five (Natzka): title, summary, tag
 - [ ] Project thumbnails ×2 — 4:3, ~1200×900
-- [ ] Slugs — `project-three`…`project-four`, will change with the titles
+- [ ] Slugs — `project-three` and `project-five`, will change with the titles
 
 ## Skills — `skills.ts`
 
@@ -36,7 +36,7 @@ grey block, so nothing can ship by accident unnoticed.
 ## Pages still stubbed
 
 - [ ] `/about` — the whole page
-- [ ] `/work/[slug]` — case studies for projects three and four
+- [ ] `/work/[slug]` — case studies for projects three and five
 
 ## KSL case study — `case-studies/ksl.ts`
 
@@ -47,6 +47,19 @@ grey block, so nothing can ship by accident unnoticed.
 Every image is in. Still open:
 
 - [ ] Homepage card summary — written for the card, not in the agreed text; check the wording
+
+## Readyware case study — `case-studies/readyware.ts`
+
+Text and the process diagram are in. Every image is a placeholder:
+
+- [ ] Homepage card (4:3) — the redesigned incident Overview, same mockup as hero slide 1
+- [ ] Hero ×3 — Overview (with TEST banner), Situation Report, Incident Log, in clay-white tablet mockups
+- [ ] Weekly design meetings — one part of the "Discussion Analysis" feedback board, no date
+- [ ] Testing with users — the three remote sessions as one collage; faces blurred, names removed
+- [ ] What changed ×4 — Test mode, Incident details, Incident Log, Tabs
+- [ ] Where it landed — one incident evaluation screen
+- [ ] Check the test consent covers first names in a public portfolio
+- [ ] Check the role titles: "quality lead" (Ellen), "preparedness lead" (Thomas)
 
 ## Open structural questions
 

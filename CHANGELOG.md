@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-15 — Readyware, the fourth case study
+Readyware is now slot 4, with its full text, facts, insights and quotes,
+and its design process drawn as an inline SVG like TryggDrift's. Every
+picture is a grey placeholder for now; the hero carousel can show one.
+Slot 3 is kept for how the design system was made, and a new last slot
+for Natzka.
+Related: project-docs/specs/case-study-readyware.md
+
 ## 2026-10-13 — A wall of screens in "Building it"
 The last TryggDrift placeholder is now a composed image: thirteen phones
 in staggered columns on the app's own warm off-white, framed in its pale

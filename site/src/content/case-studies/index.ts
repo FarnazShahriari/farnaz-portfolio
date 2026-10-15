@@ -7,9 +7,10 @@
 
 import type { CaseStudy } from "../types"
 import { ksl } from "./ksl"
+import { readyware } from "./readyware"
 import { tryggdrift } from "./tryggdrift"
 
-const caseStudies: CaseStudy[] = [ksl, tryggdrift]
+const caseStudies: CaseStudy[] = [ksl, tryggdrift, readyware]
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return caseStudies.find((c) => c.slug === slug)

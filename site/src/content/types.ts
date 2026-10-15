@@ -177,7 +177,10 @@ export type StoryPart =
  * The inline-SVG diagrams that exist, one per file in
  * `components/case-study/diagrams/`.
  */
-export type DiagramId = "ksl-design-process" | "tryggdrift-design-process"
+export type DiagramId =
+  | "ksl-design-process"
+  | "tryggdrift-design-process"
+  | "readyware-design-process"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

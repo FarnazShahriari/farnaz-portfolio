@@ -63,8 +63,9 @@ export const projects: Project[] = [
     tags: ["Case study", "TryggDrift", "NLR"],
   },
   {
+    // Reserved for how the design system was made.
     slug: "project-three",
-    title: "[Third project title]",
+    title: "[Design system project title]",
     summary: "[One line on what it was. ~12 words.]",
     image: {
       ratio: "4 / 3",
@@ -73,8 +74,24 @@ export const projects: Project[] = [
     tags: ["[Role]"],
   },
   {
-    slug: "project-four",
-    title: "[Fourth project title]",
+    slug: "readyware",
+    title: "Readyware: from chaos to control when an incident hits",
+    summary:
+      "An incident management tool, designed weekly with the developers and tested with experts.",
+    // The same screen the case study's hero carousel opens on, so the two
+    // morph into each other.
+    image: {
+      ratio: "4 / 3",
+      caption:
+        "The Readyware incident Overview, with the TEST banner across the top.",
+      hideCaption: true,
+    },
+    tags: ["Case study", "Readyware", "Netpower"],
+  },
+  {
+    // Reserved for the Natzka case study, the last slot.
+    slug: "project-five",
+    title: "[Natzka project title]",
     summary: "[One line on what it was. ~12 words.]",
     image: {
       ratio: "4 / 3",

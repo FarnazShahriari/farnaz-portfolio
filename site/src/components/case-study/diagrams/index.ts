@@ -3,6 +3,7 @@ import type { ComponentType } from "react"
 import type { DiagramId } from "@/content/types"
 
 import { KslDesignProcess } from "./ksl-design-process"
+import { ReadywareDesignProcess } from "./readyware-design-process"
 import { TryggdriftDesignProcess } from "./tryggdrift-design-process"
 
 /**
@@ -13,4 +14,5 @@ import { TryggdriftDesignProcess } from "./tryggdrift-design-process"
 export const diagrams: Record<DiagramId, ComponentType<{ caption?: string }>> = {
   "ksl-design-process": KslDesignProcess,
   "tryggdrift-design-process": TryggdriftDesignProcess,
+  "readyware-design-process": ReadywareDesignProcess,
 }

@@ -17,6 +17,7 @@ import { ViewTransition } from "@farnazshahriari/design-system/motion/view-trans
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { EnlargeDialog } from "@/components/ui/enlarge-dialog"
+import { Placeholder } from "@/components/ui/placeholder"
 import { captionStyle } from "@/components/ui/media"
 import { ratioSize } from "@/lib/media"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
@@ -104,7 +105,11 @@ export function HeroCarousel({
         >
           {slides.map((slide, i) => {
             const isCurrent = i === current
-            const image = (
+            // A screen not drawn yet is a grey box at the screen's shape,
+            // and has nothing to open larger.
+            const image = !slide.src ? (
+              <Placeholder media={slide} />
+            ) : (
               <Image
                 src={slide.src ?? ""}
                 // The button carries the name; the full description is on
@@ -130,19 +135,26 @@ export function HeroCarousel({
                   }}
                   type="button"
                   aria-label={
-                    isCurrent
-                      ? `Open slide ${i + 1} larger`
-                      : `Show slide ${i + 1}`
+                    !isCurrent
+                      ? `Show slide ${i + 1}`
+                      : slide.src
+                        ? `Open slide ${i + 1} larger`
+                        : `Slide ${i + 1}`
                   }
                   onClick={() => {
                     if (!isCurrent) return api?.scrollTo(i)
+                    if (!slide.src) return
                     setOpenIndex(i)
                     setIsOpen(true)
                   }}
                   className={cn(
                     "relative block w-full transition-opacity duration-500 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring",
                     ease,
-                    isCurrent ? "cursor-zoom-in" : "cursor-pointer opacity-40"
+                    !isCurrent
+                      ? "cursor-pointer opacity-40"
+                      : slide.src
+                        ? "cursor-zoom-in"
+                        : "cursor-default"
                   )}
                 >
                   {i === 0 ? (

@@ -125,6 +125,9 @@ original export stays in `assets/<project>/` under the same name.
 KSL: `ksl-design-process` (the design process, kickoff to launch).
 TryggDrift: `tryggdrift-design-process` (the same, with the weekly design
 loop with NLR). Its original is a PNG, `assets/tryggdrift/`.
+Readyware: `readyware-design-process` (the weekly design meeting with the
+developers, the pilot and usability tests, and the next feature). No
+original export; drawn straight from the case study text, with no dates.
 
 Use a picture instead only when the diagram's meaning is in its geometry
 (a chart, a floor plan, a hand sketch) rather than in its words.
@@ -142,6 +145,8 @@ mockups: `hero: { label, slides }` in the content file.
   otherwise too small to read.
 - The first slide carries the project's media transition, so the homepage
   hero still morphs into the page.
+- A slide without a `src` is a grey placeholder at the slide's shape. It
+  has nothing to open larger, so it is not a zoom button.
 - Mockups are made from the raw screenshot pasted 1:1 into a clay-white
   tablet frame with a shadow below, on a transparent background (lossless
   WebP). Images that are mostly UI text are served at quality 90.
