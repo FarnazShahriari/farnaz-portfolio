@@ -284,6 +284,12 @@ export type MediaCollage = {
   /** In reading order, left to right, top to bottom. Same shape, ideally. */
   items: MediaPlaceholder[]
   caption: string
+  /**
+   * One to a row, the column's full width, instead of two to a row. For
+   * wide screens such as video call stills, which two to a row make too
+   * small to read.
+   */
+  stacked?: boolean
 }
 
 /**

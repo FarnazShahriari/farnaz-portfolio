@@ -54,7 +54,6 @@ Text, the process diagram, the hero carousel and the homepage card are in.
 Still placeholders:
 
 - [ ] Weekly design meetings — one part of the "Discussion Analysis" feedback board, no date
-- [ ] Testing with users — the three remote sessions as one collage; faces blurred, names removed
 - [ ] What changed ×4 — Test mode, Incident details, Incident Log, Tabs
 - [ ] Where it landed — one incident evaluation screen
 - [ ] Check the test consent covers first names in a public portfolio

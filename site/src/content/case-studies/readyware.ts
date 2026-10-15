@@ -121,10 +121,35 @@ export const readyware: CaseStudy = {
       title: "Three incident experts, six real tasks",
       intro:
         "Before anyone outside saw it, the team went through the test themselves, which tightened both the tasks and a few flows. Then three incident experts, from a pharmacy chain, an energy company and a power grid company, tested the Figma prototype in remote sessions of about an hour. They worked through six tasks, from reporting an incident to giving a new user access, and thought aloud. At each step the script asked the same three things: how they read the screen, what they thought they should do, and what happened.",
+      // Stills from three of the video calls, made with
+      // `assets/readyware/test-session-frames.py`: the same size, with the
+      // video tiles, name labels and browser tabs blurred.
       media: {
-        ratio: "4 / 5",
         caption:
           "The remote test sessions: the Figma prototype on screen, participants' video blurred.",
+        stacked: true,
+        items: [
+          {
+            ratio: "2000 / 1111",
+            caption: "The Situation Report in the prototype, during a session.",
+            src: "/work/readyware/test-session-situation-report.webp",
+            alt: "A video call with a shared screen. The Readyware prototype is open on the Situation Report of a live incident, 'Brann i vannbehandlingsanlegg' (fire at a water treatment plant), with questions such as 'What has happened?' down the left and the cursor on 'Edit Report'. The video tiles on the right, the name label and the browser's tabs are blurred.",
+          },
+          {
+            ratio: "2000 / 1111",
+            caption:
+              "One of the six tasks: importing an Action Card and updating its steps.",
+            src: "/work/readyware/test-session-action-cards-task.webp",
+            alt: "A video call with a shared screen showing one of the test tasks, in Norwegian. The scenario: you are part of the Logistics staff function and follow the Action Cards prepared before the incident. The tasks: import the Action Card 'Brannhåndteringstiltak' (fire response measures) from the category 'Brann' (fire), set one step to done with a comment, and set another to not relevant without a comment. The video tiles on the right, the name label and the browser's tabs are blurred.",
+          },
+          {
+            ratio: "2000 / 1111",
+            caption:
+              "Creating a new incident, with a small note at the top saying it is a test.",
+            src: "/work/readyware/test-session-test-mode.webp",
+            alt: "A video call with a shared screen. In the prototype, the 'New Incident' dialog is open, with a small grey note at the top: 'This incident is a TEST. No real-world impact is expected', and the cursor on 'Switch mode'. Below are the incident's name, scenario template, date and time, access control, impact and category. The video tiles on the right, the name label and the browser's tabs are blurred.",
+          },
+        ],
       },
       insightsLabel: "What the experts showed us",
       insights: [

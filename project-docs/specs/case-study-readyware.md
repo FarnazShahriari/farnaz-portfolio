@@ -192,7 +192,7 @@ Short version of the shared pattern: The project (facts) → The process (diagra
 - Redesign 4 "What changed" screens: Test mode, Incident details, Incident Log, Tabs.
 - Done: homepage card image, the Overview mockup (4:3).
 - Export one part of the Discussion Analysis board, and optionally the navigation alternatives slide.
-- Blur and export the three test session screenshots as one collage.
+- Done: the three test session stills, blurred and the same size, stacked in one column.
 - Draw the process diagram (wide and tall).
 - Optional: one incident evaluation screen.
 - Check that the test consent covers first names in a public portfolio.

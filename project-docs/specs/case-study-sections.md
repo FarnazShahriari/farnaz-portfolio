@@ -39,7 +39,9 @@ Fields: `eyebrow`, `title`, `intro`, `media`, `insightsLabel`, `insights`
 
 `media` is one image, or a collage of photos from one session:
 `{ items, caption }`, two to a row at one size on every screen (a lone last
-one is centred), with the section's ground in the gaps. Only the collage's `caption` shows on the
+one is centred), with the section's ground in the gaps. With `stacked`,
+one to a row at the column's full width instead, for wide stills that two
+to a row make too small to read (Readyware's video calls). Only the collage's `caption` shows on the
 page; each photo still has its own `caption` (it names the photo where it
 opens larger) and `alt`.
 

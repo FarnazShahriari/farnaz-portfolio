@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-15 — Readyware's test sessions
+"Testing with users" now shows stills from three of the video calls, one
+under the other at the same size. The video tiles, name labels and browser
+tabs are blurred by a small script, so no participant or employer can be
+read. A collage can now be `stacked`, one to a row.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-15 — Readyware's hero screens
 The hero carousel now shows three redesigned screens in KSL's clay-white
 tablet frame, opening on the incident Overview: then Action Cards and the

@@ -179,7 +179,7 @@ export function Gallery({ items }: { items: MediaPlaceholder[] }) {
  * Sized for the half-width column of an insights section.
  */
 export function Collage({ collage }: { collage: MediaCollage }) {
-  const { items, caption } = collage
+  const { items, caption, stacked } = collage
   const odd = items.length % 2 === 1
 
   return (
@@ -189,13 +189,17 @@ export function Collage({ collage }: { collage: MediaCollage }) {
           <li
             key={media.src ?? i}
             className={cn(
-              "col-span-2",
-              odd && i === items.length - 1 && "col-start-2"
+              stacked ? "col-span-4" : "col-span-2",
+              !stacked && odd && i === items.length - 1 && "col-start-2"
             )}
           >
             <Media
               media={media}
-              sizes="(min-width: 768px) 25vw, 50vw"
+              sizes={
+                stacked
+                  ? "(min-width: 768px) 50vw, 100vw"
+                  : "(min-width: 768px) 25vw, 50vw"
+              }
               hideCaption
               enlarge
             />
