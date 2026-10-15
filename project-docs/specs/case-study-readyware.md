@@ -191,7 +191,7 @@ Short version of the shared pattern: The project (facts) → The process (diagra
 - Done: 3 hero screens (Overview, Action Cards, Organization contacts), in `site/public/work/readyware/`.
 - Redesign 4 "What changed" screens: Test mode, Incident details, Incident Log, Tabs.
 - Done: homepage card image, the Overview mockup (4:3).
-- Export one part of the Discussion Analysis board, and optionally the navigation alternatives slide.
+- Done: "Weekly design meetings" shows a sketch meeting slide (four wireframe alternatives and the home view's priorities) instead of the feedback board, its side panel redrawn in the site's tokens.
 - Done: the three test session stills, blurred and the same size, stacked in one column.
 - Draw the process diagram (wide and tall).
 - Optional: one incident evaluation screen.

@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-15 — A sketch meeting slide in "Weekly design meetings"
+The placeholder is now a slide from one sketch meeting: four rough
+wireframes of the home view, left exactly as drawn, beside its must,
+should and could list. That side panel and the title are redrawn in the
+site's own tokens and Inter, so the slide sits in the page.
+Related: project-docs/specs/case-study-readyware.md
+
 ## 2026-10-15 — Readyware's test sessions
 "Testing with users" now shows stills from three of the video calls, one
 under the other at the same size. The video tiles, name labels and browser

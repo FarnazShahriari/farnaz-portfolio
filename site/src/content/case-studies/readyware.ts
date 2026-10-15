@@ -107,10 +107,15 @@ export const readyware: CaseStudy = {
       below: [
         {
           kind: "media",
+          // The original slide, with its side panel and title redrawn in the
+          // site's tokens and the sketches left as they were; see
+          // `assets/readyware/sketch-meeting-slide.html`.
           media: {
-            ratio: "16 / 9",
+            ratio: "2000 / 1125",
             caption:
-              "Feedback from one design meeting, sorted by part of the app beside the sketch it was about.",
+              "A slide from one sketch meeting. Early ideas and alternatives were always discussed with the team: here, four layouts for the home view, beside what it must, should and could hold.",
+            src: "/work/readyware/sketch-meeting-wireframes.webp",
+            alt: "A slide titled 'Wireframe sketches'. On the left, for the client, emergency management: the home view by priority. Must: report or join incidents, current incident, function staff. Should: log, mobilization, Action Plan, Situation Report, Action Cards, contacts. Could: holding statement. Below, a question: which things should be in front of the user at the same time, for example Action Cards versus the missions in them, with a small two-column layout sketch. On the right, four rough wireframes of the same screen in pale blue, each with yellow callouts. Sketch 1 lists the current emergency, staff functions and every section down the side, with logs on the right. Sketch 2 groups the sections differently and puts mobilization on the right. Sketch 3 adds a list of things to do, and a log where users add only the parts they need in the view. Sketch 4 splits the view in two, with the selected sections of each part as tabs.",
           },
         },
       ],

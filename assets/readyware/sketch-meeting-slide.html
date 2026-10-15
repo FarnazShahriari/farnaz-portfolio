@@ -1,0 +1,104 @@
+<!doctype html>
+<!--
+  The sketch meeting slide for the Readyware case study, restyled in the
+  portfolio's tokens. The four wireframe sketches and the small layout
+  sketch are the original slide (`sketch-meeting-original.webp`), untouched;
+  only the panel on the left and the title are redrawn, over white.
+
+  Colours are the design system's light-theme tokens (theme.css 2.x), font
+  is Inter at the system's two weights. Rendered at 2000 x 1125 to
+  `site/public/work/readyware/sketch-meeting-wireframes.webp`.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --background: #ffffff;
+    --foreground: #06070a;
+    --muted: #f3f4f6;
+    --muted-foreground: #666c7a;
+    --accent: #33658a;
+    --accent-foreground: #ffffff;
+    --border: #e6e8eb;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 2000px; height: 1125px; position: relative; overflow: hidden;
+    background: var(--background); color: var(--foreground);
+    font-family: Inter, sans-serif; font-weight: 500;
+  }
+  .original { position: absolute; inset: 0; width: 2000px; height: 1125px; }
+  .cover { position: absolute; background: var(--background); }
+  .eyebrow {
+    font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+  .title { position: absolute; left: 388px; top: 36px; font-size: 18px; }
+  .panel { position: absolute; left: 30px; top: 40px; width: 320px; }
+  .client { font-size: 30px; font-weight: 700; line-height: 1.15; margin-top: 10px; letter-spacing: -0.01em; }
+  .home { margin-top: 36px; }
+  .group { margin-top: 22px; }
+  .group h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .group h3 span { font-weight: 500; color: var(--muted-foreground); }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    border-radius: 999px; padding: 7px 14px; font-size: 15px; line-height: 1.2;
+    border: 1.5px solid transparent;
+  }
+  .must { background: var(--accent); color: var(--accent-foreground); font-weight: 700; }
+  .should { background: var(--background); color: var(--accent); border-color: rgb(51 101 138 / 0.35); font-weight: 700; }
+  .could { background: var(--muted); color: var(--muted-foreground); }
+  .note {
+    position: absolute; left: 30px; top: 790px; width: 300px;
+    padding-left: 14px; border-left: 2px solid var(--border);
+    font-size: 15px; line-height: 1.45; color: var(--muted-foreground);
+  }
+</style>
+</head>
+<body>
+  <img class="original" src="sketch-meeting-original.webp" alt="">
+  <!-- Everything left of the sketches, except the small layout sketch. -->
+  <div class="cover" style="left:0; top:0; width:372px; height:895px"></div>
+  <div class="cover" style="left:250px; top:895px; width:122px; height:230px"></div>
+  <!-- The old title. -->
+  <div class="cover" style="left:372px; top:20px; width:400px; height:60px"></div>
+
+  <p class="eyebrow title">Wireframe sketches</p>
+
+  <div class="panel">
+    <p class="eyebrow">Client</p>
+    <p class="client">Emergency management</p>
+
+    <p class="eyebrow home">The home view, by priority</p>
+
+    <div class="group">
+      <h3>Must</h3>
+      <div class="pills">
+        <span class="pill must">Report or join incidents</span>
+        <span class="pill must">Current incident</span>
+        <span class="pill must">Function staff</span>
+      </div>
+    </div>
+    <div class="group">
+      <h3>Should</h3>
+      <div class="pills">
+        <span class="pill should">Log</span>
+        <span class="pill should">Mobilization</span>
+        <span class="pill should">Action Plan</span>
+        <span class="pill should">Situation Report</span>
+        <span class="pill should">Action Cards</span>
+        <span class="pill should">Contacts</span>
+      </div>
+    </div>
+    <div class="group">
+      <h3>Could</h3>
+      <div class="pills">
+        <span class="pill could">Holding statement</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">Which things should be in front of the user at the same time? For example, Action Cards versus the missions in them.</p>
+</body>
+</html>
