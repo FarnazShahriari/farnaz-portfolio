@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — Readyware's card photo, slightly out of focus
+The fire engine photo behind the card's screen is blurred a little, in the
+file, like a shallow depth of field: what is behind is still clear, but the
+eye goes to the screen.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-16 — Readyware's card: the screen in front of the scene
 The homepage card now shows fire engines at a cordon on a sunny day, with
 the incident Overview in front at 80% of the width. Only the screen morphs
