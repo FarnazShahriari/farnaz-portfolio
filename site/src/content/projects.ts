@@ -80,7 +80,7 @@ export const projects: Project[] = [
       "An incident management tool, designed weekly with the developers and tested with experts.",
     // The same screen the case study's hero carousel opens on, so the two
     // morph into each other.
-    // The mockup is 4:3 already, so the card shows all of it.
+    // The mockup is 4:3 already. On the card it sits in front of `scene`.
     image: {
       ratio: "2272 / 1704",
       caption:
@@ -88,6 +88,14 @@ export const projects: Project[] = [
       hideCaption: true,
       src: "/work/readyware/incident-overview-tablet.webp",
       alt: "The Overview of a test incident, 'Fire at Sjøberg school', on a tablet: a blue test banner across the top, the key roles, what has happened with a situation map, and the latest logs.",
+    },
+    // Behind the screen on the card only: the screen morphs into the
+    // page's hero carousel, the photo stays on the homepage.
+    scene: {
+      ratio: "4 / 3",
+      caption: "Fire engines and a police van at a cordon, on a sunny day.",
+      src: "/work/readyware/card-scene-fire-engines.webp",
+      alt: "Behind it, fire engines and a police van at a cordon on a sunny day.",
     },
     tags: ["Case study", "Readyware", "Netpower"],
   },

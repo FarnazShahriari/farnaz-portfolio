@@ -3,6 +3,16 @@
 The building blocks every project page is made from. Implements
 `../decisions/2026-10-06-case-study-sections-live-in-the-portfolio.md`.
 
+## Homepage card with a scene
+
+A project can set `scene` (a photo of the setting) beside its `image` (the
+screen). The homepage card and the "next project" teaser then show the photo
+filling the frame with the screen in front, at 80% of the width, centred
+(`components/ui/scene-cover.tsx`). Only the screen carries the media
+transition name, so on click the screen alone morphs into the page's hero;
+the photo stays behind. Readyware: fire engines at a cordon, behind the
+incident Overview.
+
 ## Page shape (fixed, in `site/src/app/work/[slug]/page.tsx`)
 
 1. **Hero** — back link, eyebrow (the project's `tags`), display title (morphs

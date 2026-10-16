@@ -7,6 +7,7 @@ import { ViewTransition } from "@farnazshahriari/design-system/motion/view-trans
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
 import { Media } from "@/components/ui/media"
+import { SceneCover } from "@/components/ui/scene-cover"
 import { projectMediaTransition } from "@/lib/view-transitions"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
@@ -47,15 +48,22 @@ export function NextProject({ project }: { project: Project | undefined }) {
             <ArrowRightIcon className="size-8 shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 md:size-12" />
           </div>
 
-          <ViewTransition
-            name={projectMediaTransition(project.slug)}
-            share="morph"
-            default="none"
-          >
-            <div className="mt-10 md:mt-12">
-              <Media media={project.image} hideCaption />
+          {project.scene ? (
+            // The screen alone morphs; the photo stays on this page.
+            <div className="mt-10 md:mt-12" style={{ aspectRatio: project.image.ratio }}>
+              <SceneCover project={{ ...project, scene: project.scene }} sizes="100vw" />
             </div>
-          </ViewTransition>
+          ) : (
+            <ViewTransition
+              name={projectMediaTransition(project.slug)}
+              share="morph"
+              default="none"
+            >
+              <div className="mt-10 md:mt-12">
+                <Media media={project.image} hideCaption />
+              </div>
+            </ViewTransition>
+          )}
         </Link>
       </Container>
     </Section>

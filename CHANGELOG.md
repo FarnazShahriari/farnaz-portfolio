@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — Readyware's card: the screen in front of the scene
+The homepage card now shows fire engines at a cordon on a sunny day, with
+the incident Overview in front at 80% of the width. Only the screen morphs
+into the case study's hero; the photo stays on the homepage. A project can
+now set a `scene` for this, also used by the "next project" teaser.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-16 — The built app in "Where it landed"
 The last Readyware placeholder is now the app on a laptop and a phone,
 in a test incident: Action Cards on the laptop, the Situation Report on the

@@ -14,6 +14,7 @@ import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-
 import { projectMediaTransition } from "@/lib/view-transitions"
 
 import { Placeholder } from "@/components/ui/placeholder"
+import { SceneCover } from "@/components/ui/scene-cover"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
 
@@ -54,27 +55,36 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
               tags={project.tags ? [...project.tags] : undefined}
               ratio={project.image.ratio}
               media={
-                <ViewTransition
-                  name={projectMediaTransition(project.slug)}
-                  share="morph"
-                  default="none"
-                >
-                  {project.image.src ? (
-                    // The frame is not positioned, so the picture brings
-                    // its own box to fill.
-                    <div className="relative size-full">
-                      <Image
-                        src={project.image.src}
-                        alt={project.image.alt ?? ""}
-                        fill
-                        sizes="(min-width: 768px) 33vw, 100vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <Placeholder media={project.image} fill />
-                  )}
-                </ViewTransition>
+                project.scene ? (
+                  // The photo stays here; only the screen in front of it
+                  // morphs into the project page.
+                  <SceneCover
+                    project={{ ...project, scene: project.scene }}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                ) : (
+                  <ViewTransition
+                    name={projectMediaTransition(project.slug)}
+                    share="morph"
+                    default="none"
+                  >
+                    {project.image.src ? (
+                      // The frame is not positioned, so the picture brings
+                      // its own box to fill.
+                      <div className="relative size-full">
+                        <Image
+                          src={project.image.src}
+                          alt={project.image.alt ?? ""}
+                          fill
+                          sizes="(min-width: 768px) 33vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <Placeholder media={project.image} fill />
+                    )}
+                  </ViewTransition>
+                )
               }
             />
           ))}

@@ -44,6 +44,12 @@ export type Project = {
   heroRatio?: string
   /** Blurred behind `image` on the homepage hero, as a ground for it. */
   backdrop?: MediaPlaceholder
+  /**
+   * A photo of the setting behind `image` on the homepage card (and the
+   * "next project" teaser), with the screen in front of it. Only the
+   * screen morphs into the project page; the photo stays behind.
+   */
+  scene?: MediaPlaceholder
   tags?: string[]
 }
 
