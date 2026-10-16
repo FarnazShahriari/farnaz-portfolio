@@ -167,6 +167,8 @@ row you move through.
 
 - Three screens in view on wide screens, two on tablets, one on phones
   (container queries), each with the next one peeking in at the right.
+  With `device: "landscape"` (desktop screens in landscape tablets), two
+  on wide screens and one below that; `"phone"` fits four.
   Arrows and a "1–3 / 5" counter underneath; swipe on touch.
 - A screen only partly in view (or out of view) is faded, as in the hero
   (the image only; its caption keeps full contrast).

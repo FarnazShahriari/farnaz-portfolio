@@ -53,7 +53,6 @@ Every image is in. Still open:
 Text, the process diagram, the hero carousel and the homepage card are in.
 Still placeholders:
 
-- [ ] What changed ×4 — Test mode, Incident details, Incident Log, Tabs
 - [ ] Where it landed — one incident evaluation screen
 - [ ] Check the test consent covers first names in a public portfolio
 - [ ] Check the role titles: "quality lead" (Ellen), "preparedness lead" (Thomas)

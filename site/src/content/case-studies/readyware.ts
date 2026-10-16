@@ -217,26 +217,37 @@ export const readyware: CaseStudy = {
         {
           kind: "carousel",
           label: "The redesigned version, screen by screen",
+          // Desktop screens in landscape tablets, made outside this repo
+          // in the same frame as the hero's: two in view when wide.
+          device: "landscape",
           items: [
             {
-              ratio: tablet,
+              ratio: "2000 / 1349",
               caption:
-                "Test mode. A TEST banner across the top, in its own colour, so a practice incident never looks like a real one.",
+                "Test mode. Test or live is the first choice when an incident is created, and a TEST banner across the top, in its own colour, keeps a practice incident from looking like a real one.",
+              src: "/work/readyware/test-mode-new-incident-tablet.webp",
+              alt: "Tablet showing the 'New incident' dialog over a test incident. The first question is 'What kind of incident is it?', with two large options: 'Test incident', selected, 'Practice. No real-world impact is expected', and 'Live incident', 'A real incident that is happening now'. Below are the name, 'Water leak in the sports hall', the scenario, category, start time, status, access and impact, and a 'Create test incident' button. Behind the dialog, a blue 'Test incident' banner runs across the top of the screen.",
             },
             {
-              ratio: tablet,
+              ratio: "2000 / 1349",
               caption:
-                "Incident details. The time, impact and access sit under the incident's name on the Overview, and open for editing with one click.",
+                "Incident details. The time, impact and access sit under the incident's name, and Edit details opens them all in one place. A changed field shows what it was before.",
+              src: "/work/readyware/incident-details-edit-tablet.webp",
+              alt: "Tablet showing the 'Incident details' dialog for the test incident 'Fire at Sjøberg school', last changed by the Incident Commander. Fields for the name, start date and time, status (ongoing or ended), category, organizational impact, access and scenario. The start time has been changed to 08:40, with the note 'Changed from 08:55' under it. At the bottom: 'Everyone in the incident sees the change', and 'Cancel' and 'Save changes' buttons.",
             },
             {
-              ratio: tablet,
+              ratio: "2000 / 1349",
               caption:
-                "Incident Log. The title, the source and when it happened come first. Optional fields only show when they are filled in.",
+                "Incident Log. The title, the source and when it happened come first, and optional fields only show when they are filled in. An edited log keeps its original, so nothing is lost.",
+              src: "/work/readyware/incident-log-edited-tablet.webp",
+              alt: "Tablet showing the Incident Log of the test incident, 32 of 232 logs, filtered to Logistics and Operations. The first log, 'Fire safety gear handed out to staff near the science wing', shows its source, location, when it was logged and when it happened, then the text. It is marked 'Edited 14:30', and the original, logged at 14:22, is shown below it, with a 'Hide original' link. The second log is 'Gas supply to the science wing shut off'.",
             },
             {
-              ratio: tablet,
+              ratio: "2000 / 1349",
               caption:
                 "Tabs. In Planning and Settings the tabs moved up under the section name, as in the incident itself, so the main sections stay in view.",
+              src: "/work/readyware/planning-tabs-action-cards-tablet.webp",
+              alt: "Tablet showing Incident Planning, with the tabs 'Action Cards' and 'Scenarios' right under the heading. On the left, a list of Action Cards with their staff function and number of actions. On the right, 'First Aid Protocols', used in 3 scenarios, with its four actions, each marked repeating or one-time, and an 'Add action' button.",
             },
           ],
         },

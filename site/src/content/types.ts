@@ -163,8 +163,12 @@ export type StoryPart =
       kind: "carousel"
       label: string
       items: MediaPlaceholder[]
-      /** "phone" for phone mockups: narrower slides, four in view when wide. */
-      device?: "tablet" | "phone"
+      /**
+       * "phone" for phone mockups: narrower slides, four in view when wide.
+       * "landscape" for desktop screens in landscape tablets: wider slides,
+       * two in view when wide.
+       */
+      device?: "tablet" | "phone" | "landscape"
     }
   /** One large line, set as a heading. */
   | { kind: "statement"; text: string }

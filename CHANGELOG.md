@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — Readyware's redesigned screens in "What changed"
+The four placeholders are now the redesigned screens in tablet frames:
+choosing test or live for a new incident, editing the incident details,
+an edited log that keeps its original, and Planning's tabs. A new
+`landscape` carousel layout shows two at a time, so their text stays
+readable.
+Related: project-docs/specs/case-study-sections.md
+
 ## 2026-10-16 — How Readyware works, under the key facts
 A wide, short diagram now explains the app to someone who has never used
 an incident tool: four phases, who does each of five steps, and the

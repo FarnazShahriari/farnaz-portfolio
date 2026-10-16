@@ -65,31 +65,40 @@ function useViewRange(api: CarouselApi, count: number) {
  * Slide widths: a little under a third (a half, a whole) of the row for
  * tablets, so the next screen always shows at the edge. Phones are
  * narrower, so four fit on wide screens (two on tablets, one on phones),
- * each with the next peeking in. The gutter is the slide's left padding,
- * matched by the row's negative margin.
+ * each with the next peeking in. Landscape tablets (desktop screens) are
+ * wider: two on wide screens, one below that. The gutter is the slide's
+ * left padding, matched by the row's negative margin.
  */
 const layouts = {
   tablet: {
     row: "-ml-6",
     slide: "basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10",
+    inViewMedium: 2,
     inViewWide: 3,
   },
   phone: {
     row: "-ml-4",
     slide: "basis-2/3 pl-4 @2xl:basis-2/5 @5xl:basis-6/25",
+    inViewMedium: 2,
     inViewWide: 4,
+  },
+  landscape: {
+    row: "-ml-6",
+    slide: "basis-5/6 pl-6 @2xl:basis-3/4 @5xl:basis-9/20",
+    inViewMedium: 1,
+    inViewWide: 2,
   },
 }
 
 /**
  * Before the script runs there is no carousel to ask, so the fade is
- * worked out from the screen width instead: one in view on phones, two on
- * tablets, and three (four phones) on wide screens, as in `layouts`. Keep
- * the two in step.
+ * worked out from the screen width instead: one in view on phones, then
+ * `inViewMedium` on tablets and `inViewWide` on wide screens, as in
+ * `layouts`. Keep the two in step.
  */
-function fadeBeforeReady(i: number, inViewWide: number) {
+function fadeBeforeReady(i: number, inViewMedium: number, inViewWide: number) {
   if (i === 0) return undefined
-  if (i === 1) return "opacity-40 @2xl:opacity-100"
+  if (i < inViewMedium) return "opacity-40 @2xl:opacity-100"
   if (i < inViewWide) return "opacity-40 @5xl:opacity-100"
   return "opacity-40"
 }
@@ -123,7 +132,7 @@ export function ScreenCarousel({
   items: MediaPlaceholder[]
   /** Names the carousel for screen readers, e.g. "The notes field as built". */
   label: string
-  /** Phone mockups are narrower, so more fit in a row. */
+  /** Phone mockups are narrower, so more fit in a row; landscape tablets are wider, so fewer. */
   device?: keyof typeof layouts
 }) {
   const layout = layouts[device]
@@ -188,7 +197,7 @@ export function ScreenCarousel({
             const inView = range ? i >= range.first && i <= range.last : null
             const fade =
               inView === null
-                ? fadeBeforeReady(i, layout.inViewWide)
+                ? fadeBeforeReady(i, layout.inViewMedium, layout.inViewWide)
                 : !inView && "opacity-40"
             return (
               <CarouselItem
