@@ -107,11 +107,11 @@ export const readyware: CaseStudy = {
       below: [
         {
           kind: "media",
-          // The original slide, with its side panel and title redrawn in the
-          // site's tokens and the sketches left as they were; see
+          // The sketches from the Figma SVG, beside the slide's side panel
+          // redrawn in the site's tokens, rendered at 2x; see
           // `assets/readyware/sketch-meeting-slide.html`.
           media: {
-            ratio: "2000 / 1125",
+            ratio: "4000 / 2250",
             caption:
               "A slide from one sketch meeting. Early ideas and alternatives were always discussed with the team: here, four layouts for the home view, beside what it must, should and could hold.",
             src: "/work/readyware/sketch-meeting-wireframes.webp",

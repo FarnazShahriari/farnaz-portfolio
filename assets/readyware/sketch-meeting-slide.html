@@ -1,12 +1,15 @@
 <!doctype html>
 <!--
   The sketch meeting slide for the Readyware case study, restyled in the
-  portfolio's tokens. The four wireframe sketches and the small layout
-  sketch are the original slide (`sketch-meeting-original.webp`), untouched;
-  only the panel on the left and the title are redrawn, over white.
+  portfolio's tokens. The four wireframe sketches are the Figma export
+  (`wireframe-sketches.svg`, vector, untouched, its own title cropped off);
+  the small layout sketch is cut from the original slide
+  (`sketch-meeting-original.webp`). Only the panel on the left and the title
+  are redrawn.
 
   Colours are the design system's light-theme tokens (theme.css 2.x), font
-  is Inter at the system's two weights. Rendered at 2000 x 1125 to
+  is Inter at the system's two weights. Laid out at 2000 x 1125 and rendered
+  at 2x, 4000 x 2250, to
   `site/public/work/readyware/sketch-meeting-wireframes.webp`.
 -->
 <html>
@@ -28,8 +31,20 @@
     background: var(--background); color: var(--foreground);
     font-family: Inter, sans-serif; font-weight: 500;
   }
-  .original { position: absolute; inset: 0; width: 2000px; height: 1125px; }
-  .cover { position: absolute; background: var(--background); }
+  .sketches {
+    position: absolute; left: 380px; top: 96px;
+    width: 1590px; height: 980.7px; overflow: hidden;
+  }
+  /* 1590 / 1524 = 1.0433: the whole SVG at that scale, shifted by the
+     crop's origin. */
+  .sketches img {
+    position: absolute; width: 1632.8px; height: 1037.1px;
+    left: -12.5px; top: -56.3px;
+  }
+  .thumb {
+    position: absolute; left: 28px; top: 902px; width: 211px; height: 196px;
+    background: url(sketch-meeting-original.webp) -28px -902px / 2000px 1125px;
+  }
   .eyebrow {
     font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--muted-foreground);
@@ -57,12 +72,13 @@
 </style>
 </head>
 <body>
-  <img class="original" src="sketch-meeting-original.webp" alt="">
-  <!-- Everything left of the sketches, except the small layout sketch. -->
-  <div class="cover" style="left:0; top:0; width:372px; height:895px"></div>
-  <div class="cover" style="left:250px; top:895px; width:122px; height:230px"></div>
-  <!-- The old title. -->
-  <div class="cover" style="left:372px; top:20px; width:400px; height:60px"></div>
+  <!-- The four sketches: the SVG's viewBox 12 54 1524 940, without its
+       title, scaled to 1590 wide. -->
+  <div class="sketches">
+    <img src="wireframe-sketches.svg" alt="">
+  </div>
+  <!-- The small layout sketch, from the original slide. -->
+  <div class="thumb"></div>
 
   <p class="eyebrow title">Wireframe sketches</p>
 

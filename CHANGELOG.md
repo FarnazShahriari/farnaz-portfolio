@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — Sharper sketches in "Weekly design meetings"
+The four wireframe sketches now come from the Figma SVG instead of a
+screenshot of the slide, and the slide renders at twice the size, so the
+small labels stay sharp when it opens larger.
+Related: project-docs/specs/case-study-readyware.md
+
 ## 2026-10-15 — A sketch meeting slide in "Weekly design meetings"
 The placeholder is now a slide from one sketch meeting: four rough
 wireframes of the home view, left exactly as drawn, beside its must,
