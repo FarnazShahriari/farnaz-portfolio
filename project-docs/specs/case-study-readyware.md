@@ -198,7 +198,7 @@ Short version of the shared pattern: The project (facts) → The process (diagra
 - Done: "Weekly design meetings" shows a sketch meeting slide (four wireframe alternatives and the home view's priorities) instead of the feedback board, its side panel redrawn in the site's tokens.
 - Done: the three test session stills, blurred and the same size, stacked in one column.
 - Draw the process diagram (wide and tall).
-- Optional: one incident evaluation screen.
+- Done: "Where it landed" shows the built app on a laptop and a phone (no caption), instead of an incident evaluation screen.
 - Check that the test consent covers first names in a public portfolio.
 - Check the role titles: "quality lead" (Ellen) and "preparedness lead" (Thomas).
 

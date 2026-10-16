@@ -269,10 +269,14 @@ export const readyware: CaseStudy = {
         },
         {
           kind: "media",
+          // The text above says what it is, so no line under it.
           media: {
-            ratio: tablet,
+            ratio: "2000 / 1216",
             caption:
-              "Incident evaluation: lessons learned, feedback from the people involved and follow-up tasks, the feature the test asked for.",
+              "Readyware on a laptop and a phone, in a test incident.",
+            hideCaption: true,
+            src: "/work/readyware/built-app-laptop-and-phone.webp",
+            alt: "Readyware on a laptop and a phone, both in the test incident 'Fire at Sjøberg school', with the blue test banner across the top. The laptop shows the Action Cards tab: a list of cards in progress, such as First Aid Protocols and Securing the Science Wing, and the open card's steps, each marked pending, done or not relevant, with who set it and when. The phone shows the Situation Report on a narrow screen: the current version, valid from 15 to 16 February and published by Planning, with 'What has happened?', 'What is the location?' with a map, and a Share button.",
           },
         },
       ],

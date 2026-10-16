@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — The built app in "Where it landed"
+The last Readyware placeholder is now the app on a laptop and a phone,
+in a test incident: Action Cards on the laptop, the Situation Report on the
+phone. No line under it; the text above says what it is.
+Related: project-docs/specs/case-study-readyware.md
+
 ## 2026-10-16 — Readyware's redesigned screens in "What changed"
 The four placeholders are now the redesigned screens in tablet frames:
 choosing test or live for a new incident, editing the incident details,
