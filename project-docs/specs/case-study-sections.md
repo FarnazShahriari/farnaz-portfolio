@@ -130,6 +130,11 @@ loop with NLR). Its original is a PNG, `assets/tryggdrift/`.
 Readyware: `readyware-design-process` (the weekly design meeting with the
 developers, the pilot and usability tests, and the next feature). No
 original export; drawn straight from the case study text, with no dates.
+Readyware also has `readyware-incident-cycle` under its key facts: the four
+phases of an incident (settings, preparedness, emergency, evaluation), who
+does each step, and the insights going back into the scenarios. Redrawn from
+the designer's user-journey slide, wide and short so it does not push the
+story down.
 
 Use a picture instead only when the diagram's meaning is in its geometry
 (a chart, a floor plan, a hand sketch) rather than in its words.

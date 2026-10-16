@@ -62,14 +62,22 @@ export const readyware: CaseStudy = {
               label: "Users",
               value: "Incident management teams and their admins",
             },
-            { label: "Timeline", value: "Jan to Mar 2024" },
-            { label: "Platform", value: "Web app, desktop" },
+            { label: "Timeline", value: "Jan to May 2024" },
+            { label: "Platform", value: "Web app, desktop and mobile" },
             {
               label: "Approach",
               value: "Weekly design meetings, usability testing",
             },
-            { label: "Designed with", value: "Figma" },
+            { label: "Designed with", value: "Figma, FigJam" },
           ],
+        },
+      ],
+      below: [
+        {
+          kind: "diagram",
+          id: "readyware-incident-cycle",
+          caption:
+            "How Readyware works across an incident's life. The admin sets it up and prepares the scenarios, the incident team uses them when something happens, and what the log shows improves the next response.",
         },
       ],
     },

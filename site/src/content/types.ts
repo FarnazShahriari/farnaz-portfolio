@@ -181,6 +181,7 @@ export type DiagramId =
   | "ksl-design-process"
   | "tryggdrift-design-process"
   | "readyware-design-process"
+  | "readyware-incident-cycle"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

@@ -26,10 +26,14 @@ Readyware is Netpower's tool for managing incidents, from a fire to a cyber atta
 | Role | Sole designer |
 | Team | Product manager, incident management expert, 5 developers |
 | Users | Incident management teams and their admins |
-| Timeline | Jan to Mar 2024 |
-| Platform | Web app, desktop |
+| Timeline | Jan to May 2024 |
+| Platform | Web app, desktop and mobile |
 | Approach | Weekly design meetings, usability testing |
-| Designed with | Figma |
+| Designed with | Figma, FigJam |
+
+*Visual (under the facts): how the app works across an incident's life, inline SVG `readyware-incident-cycle`, redrawn from the user-journey slide. Four phases (settings, preparedness, emergency, evaluation), five steps with who does each (admin or incident team), and the insights going back into the scenarios. Wide and short.*
+
+Caption: "How Readyware works across an incident's life. The admin sets it up and prepares the scenarios, the incident team uses them when something happens, and what the log shows improves the next response."
 
 ---
 
@@ -173,7 +177,7 @@ Short version of the shared pattern: The project (facts) → The process (diagra
 
 - Same rules as the other case studies: engaging, honest, objective, informative, no marketing language, no em dashes.
 - Positive framing: focus on the process and the collaboration.
-- No dates in the body. The facts table says Jan to Mar 2024; material from earlier meetings is shown without a date.
+- No dates in the body. The facts table says Jan to May 2024; material from earlier meetings is shown without a date.
 - Nothing about sales or the product stopping. Nothing that claims it is live or in use.
 - Team members by role, not by name.
 - Test users by first name and role. Their companies are described by industry only: Ellen (pharmacy chain), Thomas (energy company), Rune (power grid company).

@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — How Readyware works, under the key facts
+A wide, short diagram now explains the app to someone who has never used
+an incident tool: four phases, who does each of five steps, and the
+insights going back into the scenarios. Redrawn from the user-journey
+slide in the site's tokens. The facts now say Jan to May 2024, desktop and
+mobile, and Figma and FigJam.
+Related: project-docs/specs/case-study-readyware.md
+
 ## 2026-10-16 — Sharper sketches in "Weekly design meetings"
 The four wireframe sketches now come from the Figma SVG instead of a
 screenshot of the slide, and the slide renders at twice the size, so the
