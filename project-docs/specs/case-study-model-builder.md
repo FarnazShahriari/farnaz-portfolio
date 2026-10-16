@@ -1,0 +1,235 @@
+# Model Builder: making a complex data tool feel simple
+
+Content for the Model Builder case study, ready to build. It uses the same section types as `site/src/content/case-studies/ksl.ts`. Text is final. Every image is a placeholder for now (ratio and caption only, no `src`); Farnaz adds the visuals at the end.
+
+---
+
+## Build instructions for Claude Code
+
+- **Slug:** `model-builder`. It replaces the `project-five` (Natzka) slot in `site/src/content/projects.ts`.
+- **Order on the site:** KSL, TryggDrift, [design system, `project-three`], Readyware, Model Builder (last). The design system slot stays where it is (decided 2026-10-16).
+- **New file:** `site/src/content/case-studies/model-builder.ts`, copied from `ksl.ts`. Register it in `case-studies/index.ts`.
+- **Images:** every slot gets `ratio` and `caption` only. No `src`, no `alt` yet, so they render as grey placeholders.
+- **Diagrams:** the two diagrams below (`natzka-data-model`, `natzka-design-process`) start as `media` placeholders. Build them later as inline SVG, like `ksl-design-process`. Their content is under "Diagrams, for later".
+- **Placeholders list:** add every image slot to `site/src/content/TODO.md` under a "Model Builder case study" heading.
+- **Writing rules:** no em dashes anywhere. Keep the text exactly as written.
+- Add a `CHANGELOG.md` entry when done.
+
+---
+
+## Homepage card (`projects.ts`)
+
+| Field | Value |
+|---|---|
+| slug | `model-builder` |
+| title | Model Builder: making a complex data tool feel simple |
+| summary | The first version of a tool for building complex business data models. |
+| tags | Case study · Model Builder · Natzka |
+| image | ratio `4 / 3`, caption: "Several cubes selected in the Model Builder, edited in one go.", `hideCaption: true` |
+
+---
+
+## Hero carousel
+
+label: "Screens from the Model Builder"
+
+| # | ratio | caption |
+|---|---|---|
+| 1 | `2272 / 1532` | The workspace: entities, cubes and hierarchies side by side, each one shown, hidden or resized. |
+| 2 | `2272 / 1532` | Several cubes selected. One change goes to all of them. |
+| 3 | `2272 / 1532` | A new cube from a template, with its structure already in place. |
+
+---
+
+## Section 1 · story
+
+**eyebrow:** The project
+**title:** Where a company's numbers get their structure
+
+**body:**
+
+Natzka builds software that helps companies model and manage their business data. The Model Builder is where a data model developer builds that model: entities like customers and products, hierarchies that link them, and cubes that hold the numbers, like sales by customer and day.
+
+In 2023 we designed its first version. I was the only designer, working with the CTO and ten front-end developers.
+
+**facts:**
+
+| label | value |
+|---|---|
+| Client | Natzka, Switzerland |
+| Role | Sole designer |
+| Team | CTO, 10 front-end developers |
+| Users | Data model developers |
+| Timeline | 2023 |
+| Platform | Web app, desktop |
+| Approach | Interview, journey mapping, usability testing, workshop |
+| Designed with | Figma, FigJam |
+
+**media** (placeholder for the diagram `natzka-data-model`): ratio `16 / 9`, caption: "The three building blocks. A cube's dimensions are entities, and hierarchies decide which ones fit together."
+
+---
+
+## Section 2 · story
+
+**eyebrow:** The process
+**title:** Bringing the model builder into the design
+
+**body:**
+
+The product had been shaped by the people building it. Before we built more, I wanted to put our ideas in front of someone who builds data models for a living, and let what he showed us steer the design.
+
+**below:** media (placeholder for the diagram `natzka-design-process`): ratio `2 / 1`, caption: "How the work ran. Small findings were fixed right away. The biggest one went to a workshop with the developers."
+
+---
+
+## Section 3 · story · theme `muted`
+
+**eyebrow:** Understanding the work
+**title:** Listening before designing
+
+**body:**
+
+First, I interviewed Luca, a data model developer with more than ten years of experience, with the team listening in. He walked us through how a model gets made, from a client's request to the finished model.
+
+From that came a journey map and two personas: Tom, who builds the model, and Chiara, who only sees the reports it produces. Tom's journey had several low points. One of them, creating many similar cubes one by one, looked small at the time.
+
+**mediaPair:**
+- main: ratio `16 / 9`, caption: "Tom's journey as a model builder, from planning to changes after delivery, with where it hurt and where it worked."
+- side: ratio `16 / 9`, caption: "The interview: Luca described his work while I wrote 'how might we' questions."
+
+---
+
+## Section 4 · insights
+
+**eyebrow:** Testing the prototype
+**title:** Testing ideas before building on them
+
+**intro:** Model builders are busy people, so a session with one was worth a lot. Luca tested the Figma prototype remotely in six tasks, from an empty workspace to a finished model, then answered our follow-up questions.
+
+**media:** ratio `4 / 5`, caption: "The remote test: the Model Builder prototype on screen, with Luca's video blurred."
+
+**insightsLabel:** What Luca showed us
+
+1. **finding:** Shaping the workspace worked.
+   **detail:** Showing, hiding and resizing sections let him make room for each task.
+   **quote:** "I really like that I could change the size of the different sections manually." · Luca, data model developer
+
+2. **finding:** The graph did not scale to a real model.
+   **detail:** Fine for a small model. For a large one, he preferred a table.
+   **quote:** "If we have a big big data model, I expect that I will never use this one." · Luca, data model developer
+
+3. **finding:** Save and Commit looked like the same thing.
+   **detail:** He could not tell saving his work apart from sending it to the database.
+   **quote:** "I do not know what Commit to database means." · Luca, data model developer
+
+4. **finding:** Deleting should show what will break.
+   **detail:** Before an entity goes, he expected to see every cube and query that depends on it.
+   **quote:** "If you are deleting an Entity there should be a lot of warnings listed here." · Luca, data model developer
+
+**closing:** Building the model worked. The trouble started after it was built.
+
+---
+
+## Section 5 · story · theme `dark`
+
+**eyebrow:** The real problem
+**title:** One change, many cubes, edited one by one
+
+**body:**
+
+The prototype followed the order the team thought in: entities, then hierarchies, then cubes.
+
+In the follow-up questions, Luca turned that around. Entities are set up once. Cubes are made every day, there are far more of them, and many share the same structure. So one client request means editing cube after cube by hand.
+
+The small low point in Tom's journey was the biggest problem in the product.
+
+**quote:** "What I do not want to do is to create a same cube ten times from scratch." · Luca, data model developer
+
+**below:**
+- media: ratio `5 / 2`, caption: "Every request about cubes from the test, clustered in FigJam."
+- statement: "Entities are made once. Cubes are made every day."
+
+---
+
+## Section 6 · story
+
+**eyebrow:** The workshop
+**title:** Quick fixes first, then a workshop for the big one
+
+**body:**
+
+With the team, I placed every finding on an effort and impact matrix. The quick wins, like dragging an entity onto a cube or searching entities by name, went straight into the design.
+
+The cube problem needed more than a fix. I ran a workshop with the front-end and back-end developers: we looked at the problem together, sketched ideas and voted. Two ideas won, and they worked best together: templates to create cubes, and editing many cubes at once to change them.
+
+**mediaPair:**
+- main: ratio `16 / 10`, caption: "The workshop with the developers, from the problem to the ideas we voted on."
+- side: ratio `4 / 3`, caption: "Every finding on effort and impact. The cube problem was the major project."
+
+---
+
+## Section 7 · story · theme `accent`
+
+**eyebrow:** Voted in the workshop, then designed
+**title:** Designing for many cubes at once
+
+**body:**
+
+The combined solution, with the fixes from the test. Screens redrawn for this portfolio.
+
+**below:** carousel, label: "The redesigned Model Builder, screen by screen"
+
+| # | ratio | caption |
+|---|---|---|
+| 1 | `2272 / 1532` | Cube templates. A new cube starts from one with the right structure, and only what differs changes. |
+| 2 | `2272 / 1532` | Editing many cubes at once. Select several, and the panel shows what they share. One change goes to all. |
+| 3 | `2272 / 1532` | Cubes in groups. Sorted by what they hold, like sales or budget, with tags to find them. |
+| 4 | `2272 / 1532` | Cubes as a table. The graph opens only when asked for. |
+| 5 | `2272 / 1532` | Impact before a change. Every cube, query and ingestion that depends on it, listed first. |
+
+---
+
+## Section 8 · story
+
+**eyebrow:** Where it landed
+(no title, like KSL)
+
+**body:**
+
+The quick fixes went into the design of the first version. The cube solution came out of the developers' own workshop, so the people who would build it had already shaped it.
+
+The bigger lesson was about timing. One session with a real model builder, before building further, moved the team's focus from making a model to living with one.
+
+---
+---
+
+## Diagrams, for later
+
+**`natzka-data-model`** (Section 1). Two entities, State and Customer, joined as a hierarchy (State above Customer). One cube, Gross sales, with Customer and Day as its dimensions.
+- title: "The three building blocks of a data model"
+- desc: "Entities describe the business, such as State and Customer. A hierarchy links them, so each customer belongs to a state. A cube holds numbers, such as gross sales, organised by entities such as customer and day."
+
+**`natzka-design-process`** (Section 2). Same visual language as `ksl-design-process`, wide and tall drawings.
+- Steps: Interview with Luca → personas and journey → prototype in Figma → remote test with Luca → analysis in FigJam → effort and impact matrix. Then two paths: quick fixes → back into the design; the cube problem → workshop with the developers (sketch, vote) → combined solution → back into the design.
+- title: "The Model Builder design process"
+- desc: "An interview with Luca, a data model developer, led to two personas and a journey map. A Figma prototype was tested remotely with Luca, and the findings were analysed in FigJam and placed on an effort and impact matrix. Quick fixes went straight back into the design. The biggest problem, editing many cubes, went to a workshop with the developers, where ideas were sketched and voted on. The combined solution went back into the design."
+
+## Visual sources, for later (Farnaz)
+
+| Slot | Figma file | Node |
+|---|---|---|
+| Journey (Section 3, main) | natzka-recap, "app creator journey detailed" | 1:34709 |
+| Interview (Section 3, side) | Model Builder presentation, slide 9 | 1:34032 |
+| Test screenshots (Section 4) | Model Builder UX board, "Test & Follow up_Screens" | 62:6118 |
+| Cube cluster (Section 5) | Model Builder UX board, "Needs to change", Cubes columns | 62:6289 |
+| Effort and impact matrix (Section 6, side) | Model Builder UX board, "Prority" | 62:6069 |
+| Workshop board (Section 6, main) | Farnaz has it | |
+| Hero and carousel screens | Farnaz redesigns them | |
+
+## Notes
+
+- Luca is quoted by first name, with permission. Team members by role only. Tom and Chiara are personas.
+- Quotes are Luca's own English words from the FigJam board, trimmed, no words changed.
+- Only one person tested, by design of the situation. The text does not count users; it frames the value of testing with a real model builder before building further.
+- Outcome: the quick fixes went into the design. The combined cube solution was designed; whether it shipped is unknown, so the page does not claim it.
+- Blur Luca's face in test screenshots unless he agrees to be shown.

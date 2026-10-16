@@ -22,9 +22,8 @@ grey block, so nothing can ship by accident unnoticed.
 
 - [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
 - [ ] Project three (how the design system was made): title, summary, tag
-- [ ] Project five (Natzka): title, summary, tag
-- [ ] Project thumbnails ×2 — 4:3, ~1200×900
-- [ ] Slugs — `project-three` and `project-five`, will change with the titles
+- [ ] Project three thumbnail — 4:3, ~1200×900
+- [ ] Slug — `project-three`, will change with the title
 
 ## Skills — `skills.ts`
 
@@ -36,7 +35,7 @@ grey block, so nothing can ship by accident unnoticed.
 ## Pages still stubbed
 
 - [ ] `/about` — the whole page
-- [ ] `/work/[slug]` — case studies for projects three and five
+- [ ] `/work/[slug]` — case study for project three
 
 ## KSL case study — `case-studies/ksl.ts`
 
@@ -54,6 +53,23 @@ Every image is in. Still open:
 
 - [ ] Check the test consent covers first names in a public portfolio
 - [ ] Check the role titles: "quality lead" (Ellen), "preparedness lead" (Thomas)
+
+## Model Builder case study — `case-studies/model-builder.ts`
+
+Every image is a placeholder. Still open:
+
+- [ ] Homepage card — 4:3, several cubes selected, edited in one go
+- [ ] Hero carousel ×3 — 2272:1532: the workspace; several cubes selected; a new cube from a template
+- [ ] The project — diagram `natzka-data-model` (16:9 placeholder, to draw as inline SVG)
+- [ ] The process — diagram `natzka-design-process` (2:1 placeholder, to draw as inline SVG)
+- [ ] Understanding the work — Tom's journey map (16:9)
+- [ ] Understanding the work — the interview with Luca (16:9)
+- [ ] Testing the prototype — the remote test, Luca's video blurred (4:5)
+- [ ] The real problem — cube requests clustered in FigJam (5:2)
+- [ ] The workshop — the workshop board (16:10)
+- [ ] The workshop — effort and impact matrix (4:3)
+- [ ] Designing for many cubes at once — carousel ×5, 2272:1532: templates; editing many at once; groups; table; impact before a change
+- [ ] Add `alt` text to every image when it lands
 
 ## Open structural questions
 

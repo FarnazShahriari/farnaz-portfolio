@@ -102,15 +102,16 @@ export const projects: Project[] = [
     tags: ["Case study", "Readyware", "Netpower"],
   },
   {
-    // Reserved for the Natzka case study, the last slot.
-    slug: "project-five",
-    title: "[Natzka project title]",
-    summary: "[One line on what it was. ~12 words.]",
+    slug: "model-builder",
+    title: "Model Builder: making a complex data tool feel simple",
+    summary:
+      "The first version of a tool for building complex business data models.",
     image: {
       ratio: "4 / 3",
-      caption: "Project thumbnail — 4:3, roughly 1200×900",
+      caption: "Several cubes selected in the Model Builder, edited in one go.",
+      hideCaption: true,
     },
-    tags: ["[Role]"],
+    tags: ["Case study", "Model Builder", "Natzka"],
   },
 ]
 

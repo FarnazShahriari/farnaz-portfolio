@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-16 — Model Builder case study, laid out with placeholders
+The Natzka slot is now the Model Builder case study: eight sections from
+the interview with Luca to the cube workshop, with the text as agreed.
+Every image is a grey placeholder, listed in `TODO.md`; the two diagrams
+start as placeholders too. The design system slot stays third.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-16 — Readyware's card photo, slightly out of focus
 The fire engine photo behind the card's screen is blurred a little, in the
 file, like a shallow depth of field: what is behind is still clear, but the
