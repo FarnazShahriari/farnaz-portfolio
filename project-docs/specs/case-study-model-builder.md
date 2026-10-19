@@ -208,7 +208,7 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 - Dimension: the whole hierarchy, named after its most detailed entity. Customer dimension = Customer + City + State.
 - Cube: numbers, such as gross sales, stored where its dimensions cross.
 
-**`natzka-design-process`** (Section 2). Same visual language as `ksl-design-process`, wide and tall drawings.
+**`natzka-design-process`** (removed with Section 2 on 2026-10-19; notes kept for reference). Same visual language as `ksl-design-process`, wide and tall drawings.
 - Steps: Interview with Luca → personas and journey → prototype in Figma → remote test with Luca → analysis in FigJam → effort and impact matrix. Then two paths: quick fixes → back into the design; the cube problem → workshop with the developers (sketch, vote) → combined solution → back into the design.
 - title: "The Model Builder design process"
 - desc: "An interview with Luca, a data model developer, led to two personas and a journey map. A Figma prototype was tested remotely with Luca, and the findings were analysed in FigJam and placed on an effort and impact matrix. Quick fixes went straight back into the design. The biggest problem, editing many cubes, went to a workshop with the developers, where ideas were sketched and voted on. The combined solution went back into the design."
