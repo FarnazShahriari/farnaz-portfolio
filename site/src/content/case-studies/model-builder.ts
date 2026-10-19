@@ -189,7 +189,7 @@ export const modelBuilder: CaseStudy = {
           media: {
             ratio: "2000 / 1250",
             caption:
-              "The Model Builder with a cube selected: a checkbox on every cube in the list, and a hint to shift-click for more. Redrawn and refined with Claude Design in 2026, years after the original design.",
+              "The Model Builder with a cube selected: a checkbox on every cube in the list, and a hint to shift-click for more. Fonts, colours and sizing refined using Claude Design in 2026.",
             src: "/work/model-builder/multi-select-cubes-model-builder.webp",
             alt: "The Model Builder for the model 'Summer Sales'. On the left, lists of entities, four dimensions and six cubes, each cube with a checkbox and 'Budget Quantity' ticked. In the middle, a canvas of dimension groups (Customer, Day, Product, Store) with their levels, and cube cards; Budget Quantity is selected and linked to City, Month and Category. On the right, its settings: name, group 'Budget', tag '#budget', data type Integer, unit 'pieces', totals set to Sum, and filled by planner input. A hint at the bottom reads 'Shift-click cubes to edit several at once. Try it'. Save and Commit to database sit top right.",
             openWide: true,
@@ -203,29 +203,43 @@ export const modelBuilder: CaseStudy = {
       eyebrow: "The redesigned flow",
       title: "Designing for many cubes at once",
       body: [
-        "Creating a data model in the redesigned Model Builder, step by step: from an empty workspace to entities, dimensions and cubes. The screens were redrawn and refined with Claude Design in 2026, years after the original design, so the ideas read clearly today.",
+        "Creating a data model in the redesigned Model Builder, step by step: from the first entity to finished dimensions. In 2026 the fonts, colours and sizing were refined using Claude Design, but the structure and the flow are unchanged.",
       ],
       below: [
         {
-          // Placeholders until the flow screenshots arrive, in order.
+          // Screens in the same clay tablet frame as KSL's hero, made with
+          // `assets/readyware/tablet-mockup.py`: two in view when wide.
           kind: "carousel",
           label: "Creating a data model, step by step",
+          device: "landscape",
           items: [
             {
               ratio: "2272 / 1532",
-              caption: "An empty workspace. Redrawn and refined with Claude Design in 2026.",
+              caption:
+                "A new entity. Customer gets its fields and a key, and the panel explains why the key must be unique. Refined using Claude Design in 2026.",
+              src: "/work/model-builder/new-entity-customer-tablet.webp",
+              alt: "Tablet showing the Model Builder for 'Summer Sales' with one new entity, Customer, alone on the canvas with a hint 'Drag a dot to link it'. The panel on the right lists its six fields, with customer_code marked as the key, a note that the key must be unique and that City should be its own entity to get totals by city, where the rows come from, and 'Belongs to nothing yet'. Cancel and Save entity at the bottom.",
             },
             {
               ratio: "2272 / 1532",
-              caption: "Adding entities. Redrawn and refined with Claude Design in 2026.",
+              caption:
+                "All twelve entities on the canvas, none linked yet. The model checks say what is still missing. Refined using Claude Design in 2026.",
+              src: "/work/model-builder/twelve-entities-not-linked-tablet.webp",
+              alt: "Tablet showing twelve entity cards on the canvas, from Customer, City and State to Day, Month, Year and Store, each with its key. The list on the left marks every entity 'not linked', with no dimensions or cubes yet. A hint reads 'Drag from an entity to the one it belongs to, like Customer to City. Try it'. The panel on the right shows the model's name and data source, and two checks: no links yet, and no cubes yet.",
             },
             {
               ratio: "2272 / 1532",
-              caption: "Building dimensions. Redrawn and refined with Claude Design in 2026.",
+              caption:
+                "Linking Customer to City, many to one, while the Customer dimension takes shape. The panel checks the loaded rows and suggests more links. Refined using Claude Design in 2026.",
+              src: "/work/model-builder/link-customer-to-city-tablet.webp",
+              alt: "Tablet showing a new link from Customer to City, many to one, inside a Customer dimension marked 'forming', with State, Area Manager, Salesperson and Channel around it. The panel explains that each customer belongs to exactly one city, shows the link matched by city_code, and ticks three checks on the loaded rows: every customer has a city, no customer has two cities, no loop back to Customer. It suggests two more links, to Salesperson and Channel. Product, Category, Store, Day, Month and Year wait below, not in a dimension yet.",
             },
             {
               ratio: "2272 / 1532",
-              caption: "Creating cubes. Redrawn and refined with Claude Design in 2026.",
+              caption:
+                "Four dimensions, ready for cubes. Customer is named after its most detailed entity and has three drill paths. Refined using Claude Design in 2026.",
+              src: "/work/model-builder/customer-dimension-drill-paths-tablet.webp",
+              alt: "Tablet showing four dimensions on the canvas: Customer, Day as a time dimension, Product and Store, each with its levels linked upward. The Customer dimension is selected. The panel says it is named after Customer, its most detailed entity, with the key customer_code, and lists three drill paths: Geography (State, City, Customer), Sales org (Area Manager, Salesperson, Customer) and Channel (Channel, Customer). Three checks are ticked, and it is not used by any cube yet. Edit links and New cube at the bottom.",
             },
           ],
         },

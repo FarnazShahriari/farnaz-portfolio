@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — Model Builder's flow screens, in tablet frames
+"Designing for many cubes at once" now shows four steps of creating a data
+model (a new entity, twelve entities, a link, finished dimensions) in the
+same clay tablet frame as KSL's hero, two at a time like Readyware's. The
+text says the fonts, colours and sizing were refined using Claude Design in
+2026, and that the structure and flow are unchanged.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — Model Builder: the workshop and what went into development
 "The real problem" and the old workshop section are now one dark section,
 "Solving the biggest problem with the people building it", with the FigJam
