@@ -70,26 +70,6 @@ export const modelBuilder: CaseStudy = {
     },
     {
       type: "story",
-      eyebrow: "The process",
-      title: "Bringing the model builder into the design",
-      body: [
-        "The product had been shaped by the people building it. Before we built more, I wanted to put our ideas in front of someone who builds data models for a living, and let what he showed us steer the design.",
-      ],
-      below: [
-        {
-          // Placeholder for the diagram `natzka-design-process`, drawn later
-          // as inline SVG like `ksl-design-process`.
-          kind: "media",
-          media: {
-            ratio: "2 / 1",
-            caption:
-              "How the work ran. Small findings were fixed right away. The biggest one went to a workshop with the developers.",
-          },
-        },
-      ],
-    },
-    {
-      type: "story",
       theme: "muted",
       eyebrow: "Understanding the work",
       title: "Listening before designing",

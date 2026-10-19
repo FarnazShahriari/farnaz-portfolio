@@ -11,6 +11,11 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — "The process" section removed from Model Builder
+The section and its process diagram placeholder were not relevant for the
+reader, so the story now goes straight from the key facts to the interview.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — The journey map stays one picture on phones
 The stacked phone version of the journey map was long and took a lot of
 the screen. Now the wide map shows at every width, and opens larger on

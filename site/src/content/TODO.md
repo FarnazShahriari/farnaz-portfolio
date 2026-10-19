@@ -61,7 +61,6 @@ Every image is a placeholder. Still open:
 - [ ] Homepage card — 4:3, several cubes selected, edited in one go
 - [ ] Hero carousel ×3 — 2272:1532: the workspace; several cubes selected; a new cube from a template
 - [ ] The project — check the new caption under the overview diagram (not in the agreed text)
-- [ ] The process — diagram `natzka-design-process` (2:1 placeholder, to draw as inline SVG)
 - [ ] Testing the prototype — the remote test, Luca's video blurred (4:5)
 - [ ] The real problem — cube requests clustered in FigJam (5:2)
 - [ ] The workshop — the workshop board (16:10)

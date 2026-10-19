@@ -10,7 +10,7 @@ Content for the Model Builder case study, ready to build. It uses the same secti
 - **Order on the site:** KSL, TryggDrift, [design system, `project-three`], Readyware, Model Builder (last). The design system slot stays where it is (decided 2026-10-16).
 - **New file:** `site/src/content/case-studies/model-builder.ts`, copied from `ksl.ts`. Register it in `case-studies/index.ts`.
 - **Images:** every slot gets `ratio` and `caption` only. No `src`, no `alt` yet, so they render as grey placeholders.
-- **Diagrams:** `model-builder-overview` (Section 1) is built, see "Diagrams". `natzka-design-process` (Section 2) starts as a `media` placeholder; build it later as inline SVG, like `ksl-design-process`.
+- **Diagrams:** `model-builder-overview` (Section 1) is built, see "Diagrams".
 - **Placeholders list:** add every image slot to `site/src/content/TODO.md` under a "Model Builder case study" heading.
 - **Writing rules:** no em dashes anywhere. Keep the text exactly as written.
 - Add a `CHANGELOG.md` entry when done.
@@ -69,16 +69,9 @@ In 2023 we designed its first version. I was the only designer, working with the
 
 ---
 
-## Section 2 · story
+## Section 2 · removed
 
-**eyebrow:** The process
-**title:** Bringing the model builder into the design
-
-**body:**
-
-The product had been shaped by the people building it. Before we built more, I wanted to put our ideas in front of someone who builds data models for a living, and let what he showed us steer the design.
-
-**below:** media (placeholder for the diagram `natzka-design-process`): ratio `2 / 1`, caption: "How the work ran. Small findings were fixed right away. The biggest one went to a workshop with the developers."
+"The process" (Bringing the model builder into the design) was removed on 2026-10-19: not relevant for the reader. The diagram `natzka-design-process` is no longer planned.
 
 ---
 
