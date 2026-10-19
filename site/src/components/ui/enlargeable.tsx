@@ -20,6 +20,7 @@ export function Enlargeable({
   media,
   captioned,
   children,
+  enlarged,
 }: {
   media: MediaPlaceholder
   /**
@@ -30,6 +31,11 @@ export function Enlargeable({
   captioned: boolean
   /** The image, as rendered in the page. */
   children: React.ReactNode
+  /**
+   * What the dialog shows, when it is not `media.src`: a diagram drawn in
+   * code, rendered again at a readable size.
+   */
+  enlarged?: React.ReactNode
 }) {
   const [open, setOpen] = React.useState(false)
   const button = React.useRef<HTMLButtonElement>(null)
@@ -60,7 +66,9 @@ export function Enlargeable({
         open={open}
         onOpenChange={setOpen}
         onClosed={() => button.current?.focus({ preventScroll: true })}
-      />
+      >
+        {enlarged}
+      </EnlargeDialog>
     </div>
   )
 }

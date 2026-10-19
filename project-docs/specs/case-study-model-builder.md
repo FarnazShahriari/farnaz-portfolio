@@ -95,6 +95,8 @@ From the interview I built a journey map of a data model developer's work, from 
 
 **below:** diagram `model-builder-journey` (built 2026-10-19 from `assets/model-builder/journey-original.svg`), caption: "A data model developer's journey, from the client's order to data exploration, with the nine pain points marked."
 
+On phones it stays one wide picture and opens larger on tap, like the images (decided 2026-10-19).
+
 No personas in this case study (decided 2026-10-19): roles only. The journey map's "Tom and the team" is "Data model developers".
 
 ---

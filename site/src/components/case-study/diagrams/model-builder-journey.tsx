@@ -8,11 +8,13 @@
  * drop shadows, real SVG text, and one image with a full text description
  * for screen readers. Roles only, no personas.
  *
- * Two drawings: the wide one from a figure `@5xl` (64rem) wide, and below
- * that the steps stacked top to bottom, growing with the screen up to
- * `max-w-md`.
+ * One wide drawing at every width, so it reads as one picture rather than
+ * a long scroll on a phone. Where it is too small to read, it opens larger
+ * on tap in the shared enlarge dialog, like the case study's images, and
+ * the reader swipes around it there.
  */
 
+import { Enlargeable } from "@/components/ui/enlargeable"
 import { captionStyle } from "@/components/ui/media"
 
 const TITLE = "A data model developer's journey, before the Model Builder was redesigned"
@@ -140,12 +142,11 @@ function PainTag({ x, y, label }: { x: number; y: number; label: string }) {
 }
 
 /**
- * Wide screens: the steps left to right in three zones, the pain points
- * under them, the daily changes looping back over the top, and the three
- * numbers along the bottom.
+ * The steps left to right in three zones, the pain points under them, the
+ * daily changes looping back over the top, and the three numbers along
+ * the bottom. `id` keeps the copy in the enlarge dialog apart.
  */
-function Wide() {
-  const id = "model-builder-journey-wide"
+function Journey({ id }: { id: string }) {
   const cx = (i: number) => (i === 8 ? 1040 : 70 + i * 120)
   const track = 284
 
@@ -155,7 +156,7 @@ function Wide() {
       role="img"
       aria-labelledby={`${id}-title`}
       aria-describedby={`${id}-desc`}
-      className="hidden h-auto w-full font-sans @5xl:block"
+      className="h-auto w-full font-sans"
     >
       <title id={`${id}-title`}>{TITLE}</title>
       <desc id={`${id}-desc`}>{DESCRIPTION}</desc>
@@ -238,170 +239,16 @@ function Wide() {
   )
 }
 
-/**
- * Phones and tablets: the zones stacked, the steps down a track on the
- * left with their pain points under them, the daily changes looping back
- * up the right side, and the numbers at the end.
- */
-function Tall() {
-  const id = "model-builder-journey-tall"
-  const W = 380
-  const trackX = 24
-  const textX = 48
-
-  const zones = [
-    { label: "Before the tool", steps: [0, 1], roles: ["Client"] },
-    { label: "In the tool", steps: [2, 3, 4, 5, 6], roles: ["Data model developers"], tool: true },
-    { label: "Delivered", steps: [7, 8], roles: ["Client", "Business users"] },
-  ]
-
-  // Lay everything out top to bottom.
-  type Placed = { i: number; y: number; pains: { n: number; y: number }[] }
-  const placedZones: { zone: (typeof zones)[number]; top: number; height: number }[] = []
-  const placedSteps: Placed[] = []
-  let y = 0
-  for (const zone of zones) {
-    const top = y
-    y += 92
-    for (const i of zone.steps) {
-      const step: Placed = { i, y, pains: [] }
-      const subLines = STEPS[i].subs.length > 2 ? 2 : 1
-      y += 20 + subLines * 16
-      PAINS.forEach((p, n) => {
-        if (p.step !== i) return
-        step.pains.push({ n, y })
-        y += p.tall.length * 17 + (p.tag ? 26 : 0) + 4
-      })
-      placedSteps.push(step)
-      y += 34
-    }
-    placedZones.push({ zone, top, height: y - top - 14 })
-    y += 4
-  }
-  const statsTop = y + 16
-  const height = statsTop + STATS.length * 62
-
-  const stepY = (i: number) => placedSteps.find((s) => s.i === i)!.y
-  const loopX = W - 10
-  const loopFrom = stepY(7)
-  const loopTo = stepY(3)
-
-  return (
-    <svg
-      viewBox={`0 0 ${W} ${height}`}
-      role="img"
-      aria-labelledby={`${id}-title`}
-      aria-describedby={`${id}-desc`}
-      className="mx-auto block h-auto w-full max-w-sm font-sans @2xl:max-w-md @5xl:hidden"
-    >
-      <title id={`${id}-title`}>{TITLE}</title>
-      <desc id={`${id}-desc`}>{DESCRIPTION}</desc>
-      <Markers id={id} />
-
-      {placedZones.map(({ zone, top, height: h }) => {
-        let px = textX
-        return (
-          <g key={zone.label}>
-            <rect
-              x="0"
-              y={top}
-              width={W - 32}
-              height={h}
-              className={zone.tool ? zoneTool : zoneOutside}
-              strokeDasharray={zone.tool ? undefined : "4 4"}
-            />
-            <text x={textX} y={top + 60} className={`${zone.tool ? "fill-accent" : "fill-muted-foreground"} ${zoneLabel}`}>
-              {zone.label}
-            </text>
-            {zone.roles.map((r) => {
-              const w = r.length * 7 + 36
-              const cx = px + w / 2
-              px += w + 8
-              return <RolePill key={r} cx={cx} y={top + 14} label={r} />
-            })}
-          </g>
-        )
-      })}
-
-      {/* The track */}
-      {placedSteps.slice(1).map((s, k) => (
-        <path
-          key={s.i}
-          d={`M${trackX} ${placedSteps[k].y + 8} V${s.y - 16}`}
-          strokeWidth="3"
-          markerEnd={`url(#${id}-arrow)`}
-          className="fill-none stroke-accent"
-        />
-      ))}
-
-      {placedSteps.map((s) => {
-        const step = STEPS[s.i]
-        const last = s.i === STEPS.length - 1
-        const subLines = step.subs.length > 2 ? [step.subs.slice(0, 2).join(" · "), step.subs[2]] : [step.subs.join(" · ")]
-        return (
-          <g key={s.i}>
-            {last ? (
-              <circle cx={trackX} cy={s.y - 4} r="10" className="fill-accent" />
-            ) : (
-              <circle cx={trackX} cy={s.y - 4} r="8" strokeWidth="3" className="fill-background stroke-accent" />
-            )}
-            <text x={textX} y={s.y} className={stepTitle}>{step.title.join(" ")}</text>
-            {subLines.map((t, k) => (
-              <text key={t} x={textX} y={s.y + 20 + k * 16} className={sub}>{t}</text>
-            ))}
-            {s.pains.map(({ n, y: py }) => {
-              const p = PAINS[n]
-              return (
-                <g key={n}>
-                  <PainNumber cx={textX + 9} cy={py + 4} n={n + 1} />
-                  {p.tall.map((t, k) => (
-                    <text key={t} x={textX + 26} y={py + 8 + k * 17} className={painText}>{t}</text>
-                  ))}
-                  {p.tag ? <PainTag x={textX + 26} y={py + p.tall.length * 17} label={p.tag} /> : null}
-                </g>
-              )
-            })}
-          </g>
-        )
-      })}
-
-      {/* Every change after delivery goes back into the model */}
-      <path
-        d={`M${W - 40} ${loopFrom - 4} H${loopX} V${loopTo - 4} H${W - 40}`}
-        strokeWidth="2.5"
-        markerEnd={`url(#${id}-arrow-pain)`}
-        className="fill-none stroke-destructive"
-      />
-      <text
-        x={loopX - 8}
-        y={(loopFrom + loopTo) / 2}
-        textAnchor="middle"
-        transform={`rotate(-90 ${loopX - 8} ${(loopFrom + loopTo) / 2})`}
-        className={loopLabel}
-      >
-        {LOOP}
-      </text>
-
-      {/* The numbers */}
-      <path d={`M0 ${statsTop - 16} H${W}`} className="fill-none stroke-border" />
-      {STATS.map((s, i) => {
-        const sy = statsTop + 22 + i * 62
-        return (
-          <g key={s.number}>
-            <text x="0" y={sy} className={statNumber}>{s.number}</text>
-            <text x="0" y={sy + 20} className={statNote}>{s.lines.join(" ")}</text>
-          </g>
-        )
-      })}
-    </svg>
-  )
-}
-
 export function ModelBuilderJourney({ caption }: { caption?: string }) {
   return (
-    <figure data-slot="diagram" data-diagram="model-builder-journey" className="@container">
-      <Wide />
-      <Tall />
+    <figure data-slot="diagram" data-diagram="model-builder-journey">
+      <Enlargeable
+        media={{ ratio: "1100 / 640", caption: caption ?? TITLE }}
+        captioned={!!caption}
+        enlarged={<Journey id="model-builder-journey-enlarged" />}
+      >
+        <Journey id="model-builder-journey" />
+      </Enlargeable>
       {caption ? <figcaption className={captionStyle}>{caption}</figcaption> : null}
     </figure>
   )

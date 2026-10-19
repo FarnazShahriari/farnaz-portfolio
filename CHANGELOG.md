@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — The journey map stays one picture on phones
+The stacked phone version of the journey map was long and took a lot of
+the screen. Now the wide map shows at every width, and opens larger on
+tap in the shared enlarge dialog, like the case study's images. The
+dialog can now show a diagram drawn in code, not only an image file.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — The journey map in "Listening before designing"
 The two image placeholders are now one coded journey map: nine steps in
 three zones, nine pain points, the daily changes looping back into the
