@@ -95,19 +95,14 @@ export const modelBuilder: CaseStudy = {
       title: "Listening before designing",
       body: [
         "First, I interviewed Luca, a data model developer with more than ten years of experience, with the team listening in. He walked us through how a model gets made, from a client's request to the finished model.",
-        "From that came a journey map and two personas: Tom, who builds the model, and Chiara, who only sees the reports it produces. Tom's journey had several low points. One of them, creating many similar cubes one by one, looked small at the time.",
+        "From the interview I built a journey map of a data model developer's work, from the client's first order to the reports the business reads. Its purpose was to give the team one shared picture of the whole process before we designed any part of it: who is involved at each step, what happens inside the tool and outside it, and where the work gets hard. It marked nine pain points. One of them, making many similar cubes one by one, looked small at the time.",
+      ],
+      below: [
         {
-          kind: "mediaPair",
-          main: {
-            ratio: "16 / 9",
-            caption:
-              "Tom's journey as a model builder, from planning to changes after delivery, with where it hurt and where it worked.",
-          },
-          side: {
-            ratio: "16 / 9",
-            caption:
-              "The interview: Luca described his work while I wrote 'how might we' questions.",
-          },
+          kind: "diagram",
+          id: "model-builder-journey",
+          caption:
+            "A data model developer's journey, from the client's order to data exploration, with the nine pain points marked.",
         },
       ],
     },
@@ -170,7 +165,7 @@ export const modelBuilder: CaseStudy = {
       body: [
         "The prototype followed the order the team thought in: entities, then hierarchies, then cubes.",
         "In the follow-up questions, Luca turned that around. Entities are set up once. Cubes are made every day, there are far more of them, and many share the same structure. So one client request means editing cube after cube by hand.",
-        "The small low point in Tom's journey was the biggest problem in the product.",
+        "The small pain point on the journey map was the biggest problem in the product.",
         {
           kind: "quote",
           quote: {

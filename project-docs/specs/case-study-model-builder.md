@@ -91,11 +91,11 @@ The product had been shaped by the people building it. Before we built more, I w
 
 First, I interviewed Luca, a data model developer with more than ten years of experience, with the team listening in. He walked us through how a model gets made, from a client's request to the finished model.
 
-From that came a journey map and two personas: Tom, who builds the model, and Chiara, who only sees the reports it produces. Tom's journey had several low points. One of them, creating many similar cubes one by one, looked small at the time.
+From the interview I built a journey map of a data model developer's work, from the client's first order to the reports the business reads. Its purpose was to give the team one shared picture of the whole process before we designed any part of it: who is involved at each step, what happens inside the tool and outside it, and where the work gets hard. It marked nine pain points. One of them, making many similar cubes one by one, looked small at the time.
 
-**mediaPair:**
-- main: ratio `16 / 9`, caption: "Tom's journey as a model builder, from planning to changes after delivery, with where it hurt and where it worked."
-- side: ratio `16 / 9`, caption: "The interview: Luca described his work while I wrote 'how might we' questions."
+**below:** diagram `model-builder-journey` (built 2026-10-19 from `assets/model-builder/journey-original.svg`), caption: "A data model developer's journey, from the client's order to data exploration, with the nine pain points marked."
+
+No personas in this case study (decided 2026-10-19): roles only. The journey map's "Tom and the team" is "Data model developers".
 
 ---
 
@@ -141,7 +141,7 @@ The prototype followed the order the team thought in: entities, then hierarchies
 
 In the follow-up questions, Luca turned that around. Entities are set up once. Cubes are made every day, there are far more of them, and many share the same structure. So one client request means editing cube after cube by hand.
 
-The small low point in Tom's journey was the biggest problem in the product.
+The small pain point on the journey map was the biggest problem in the product.
 
 **quote:** "What I do not want to do is to create a same cube ten times from scratch." · Luca, data model developer
 
@@ -222,8 +222,6 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 
 | Slot | Figma file | Node |
 |---|---|---|
-| Journey (Section 3, main) | natzka-recap, "app creator journey detailed" | 1:34709 |
-| Interview (Section 3, side) | Model Builder presentation, slide 9 | 1:34032 |
 | Test screenshots (Section 4) | Model Builder UX board, "Test & Follow up_Screens" | 62:6118 |
 | Cube cluster (Section 5) | Model Builder UX board, "Needs to change", Cubes columns | 62:6289 |
 | Effort and impact matrix (Section 6, side) | Model Builder UX board, "Prority" | 62:6069 |
@@ -232,7 +230,7 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 
 ## Notes
 
-- Luca is quoted by first name, with permission. Team members by role only. Tom and Chiara are personas.
+- Luca is quoted by first name, with permission. Team members by role only. No personas.
 - Quotes are Luca's own English words from the FigJam board, trimmed, no words changed.
 - Only one person tested, by design of the situation. The text does not count users; it frames the value of testing with a real model builder before building further.
 - Outcome: the quick fixes went into the design. The combined cube solution was designed; whether it shipped is unknown, so the page does not claim it.

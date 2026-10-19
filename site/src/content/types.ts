@@ -193,6 +193,7 @@ export type DiagramId =
   | "readyware-design-process"
   | "readyware-incident-cycle"
   | "model-builder-overview"
+  | "model-builder-journey"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

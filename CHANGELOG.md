@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — The journey map in "Listening before designing"
+The two image placeholders are now one coded journey map: nine steps in
+three zones, nine pain points, the daily changes looping back into the
+model. No personas in this case study, roles only, so the text no longer
+names Tom or Chiara, and the second paragraph now says what the map was for.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — What the Model Builder is for, under its key facts
 The first placeholder is now a three-panel overview, redrawn from the
 original slide: business data, the Model Builder, analysis. Chosen over a

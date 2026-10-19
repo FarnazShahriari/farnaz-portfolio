@@ -62,8 +62,6 @@ Every image is a placeholder. Still open:
 - [ ] Hero carousel ×3 — 2272:1532: the workspace; several cubes selected; a new cube from a template
 - [ ] The project — check the new caption under the overview diagram (not in the agreed text)
 - [ ] The process — diagram `natzka-design-process` (2:1 placeholder, to draw as inline SVG)
-- [ ] Understanding the work — Tom's journey map (16:9)
-- [ ] Understanding the work — the interview with Luca (16:9)
 - [ ] Testing the prototype — the remote test, Luca's video blurred (4:5)
 - [ ] The real problem — cube requests clustered in FigJam (5:2)
 - [ ] The workshop — the workshop board (16:10)
