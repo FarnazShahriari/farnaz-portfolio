@@ -91,37 +91,31 @@ export const modelBuilder: CaseStudy = {
       eyebrow: "Testing the prototype",
       title: "Testing ideas before building on them",
       intro:
-        "Model builders are busy people, so a session with one was worth a lot. Luca tested the Figma prototype remotely in six tasks, from an empty workspace to a finished model, then answered our follow-up questions.",
+        "We tested the first ideas as soon as we could, with Luca, a real user who works in the application every day.",
       media: {
-        ratio: "4 / 5",
+        ratio: "1670 / 2000",
         caption:
-          "The remote test: the Model Builder prototype on screen, with Luca's video blurred.",
+          "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know.",
+        src: "/work/model-builder/test-insights-figjam-board.webp",
+        alt: "A FigJam board in three areas of sticky notes. 'Work well' in green, about the general layout, the toggle buttons and the modelling sections. 'Needs to change' in red, the largest, about cubes, entities, hierarchies, the graph, impact analysis, selection, exporting, and save versus commit. 'Good to know' in blue, about entities, cubes, the general layout, and save versus commit.",
       },
       insightsLabel: "What Luca showed us",
       insights: [
         {
-          finding: "Shaping the workspace worked.",
+          finding: "Maintaining many cubes, one by one, was the hardest part.",
           detail:
-            "Showing, hiding and resizing sections let him make room for each task.",
+            "A real model has far more cubes than entities, many with the same structure and settings, and each one was created and changed on its own.",
           quote: {
-            text: "I really like that I could change the size of the different sections manually.",
+            text: "You are creating Cubes everyday but not Entities and Hierarchies.",
             source: "Luca, data model developer",
           },
         },
         {
-          finding: "The graph did not scale to a real model.",
-          detail: "Fine for a small model. For a large one, he preferred a table.",
-          quote: {
-            text: "If we have a big big data model, I expect that I will never use this one.",
-            source: "Luca, data model developer",
-          },
-        },
-        {
-          finding: "Save and Commit looked like the same thing.",
+          finding: "He needed to see which cubes an entity feeds.",
           detail:
-            "He could not tell saving his work apart from sending it to the database.",
+            "Selecting an entity should show the cubes built on it, and selecting a cube should show its entities.",
           quote: {
-            text: "I do not know what Commit to database means.",
+            text: "It is really helpful if I can also see the cubes structure by an entity when I select that Entity.",
             source: "Luca, data model developer",
           },
         },
@@ -131,6 +125,15 @@ export const modelBuilder: CaseStudy = {
             "Before an entity goes, he expected to see every cube and query that depends on it.",
           quote: {
             text: "If you are deleting an Entity there should be a lot of warnings listed here.",
+            source: "Luca, data model developer",
+          },
+        },
+        {
+          finding: "Naming a dimension made no sense to him.",
+          detail:
+            "The entity already had a name, and he would keep it nine times out of ten, so it should be the default.",
+          quote: {
+            text: "It is not clear for me what it means to name your dimension.",
             source: "Luca, data model developer",
           },
         },

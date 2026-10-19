@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — Model Builder test: the insight board and new findings
+"Testing ideas before building on them" now shows the FigJam insight
+board from the test instead of a placeholder, a shorter intro, and four
+new findings: many cubes one by one, which cubes an entity feeds,
+deleting, and naming a dimension.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — "The process" section removed from Model Builder
 The section and its process diagram placeholder were not relevant for the
 reader, so the story now goes straight from the key facts to the interview.

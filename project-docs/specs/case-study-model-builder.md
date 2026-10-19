@@ -99,27 +99,27 @@ No personas in this case study (decided 2026-10-19): roles only. The journey map
 **eyebrow:** Testing the prototype
 **title:** Testing ideas before building on them
 
-**intro:** Model builders are busy people, so a session with one was worth a lot. Luca tested the Figma prototype remotely in six tasks, from an empty workspace to a finished model, then answered our follow-up questions.
+**intro:** We tested the first ideas as soon as we could, with Luca, a real user who works in the application every day.
 
-**media:** ratio `4 / 5`, caption: "The remote test: the Model Builder prototype on screen, with Luca's video blurred."
+**media:** `/work/model-builder/test-insights-figjam-board.webp`, ratio `1670 / 2000`, caption: "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know."
 
 **insightsLabel:** What Luca showed us
 
-1. **finding:** Shaping the workspace worked.
-   **detail:** Showing, hiding and resizing sections let him make room for each task.
-   **quote:** "I really like that I could change the size of the different sections manually." · Luca, data model developer
+1. **finding:** Maintaining many cubes, one by one, was the hardest part.
+   **detail:** A real model has far more cubes than entities, many with the same structure and settings, and each one was created and changed on its own.
+   **quote:** "You are creating Cubes everyday but not Entities and Hierarchies." · Luca, data model developer
 
-2. **finding:** The graph did not scale to a real model.
-   **detail:** Fine for a small model. For a large one, he preferred a table.
-   **quote:** "If we have a big big data model, I expect that I will never use this one." · Luca, data model developer
+2. **finding:** He needed to see which cubes an entity feeds.
+   **detail:** Selecting an entity should show the cubes built on it, and selecting a cube should show its entities.
+   **quote:** "It is really helpful if I can also see the cubes structure by an entity when I select that Entity." · Luca, data model developer
 
-3. **finding:** Save and Commit looked like the same thing.
-   **detail:** He could not tell saving his work apart from sending it to the database.
-   **quote:** "I do not know what Commit to database means." · Luca, data model developer
-
-4. **finding:** Deleting should show what will break.
+3. **finding:** Deleting should show what will break.
    **detail:** Before an entity goes, he expected to see every cube and query that depends on it.
    **quote:** "If you are deleting an Entity there should be a lot of warnings listed here." · Luca, data model developer
+
+4. **finding:** Naming a dimension made no sense to him.
+   **detail:** The entity already had a name, and he would keep it nine times out of ten, so it should be the default.
+   **quote:** "It is not clear for me what it means to name your dimension." · Luca, data model developer
 
 **closing:** Building the model worked. The trouble started after it was built.
 
@@ -217,7 +217,6 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 
 | Slot | Figma file | Node |
 |---|---|---|
-| Test screenshots (Section 4) | Model Builder UX board, "Test & Follow up_Screens" | 62:6118 |
 | Cube cluster (Section 5) | Model Builder UX board, "Needs to change", Cubes columns | 62:6289 |
 | Effort and impact matrix (Section 6, side) | Model Builder UX board, "Prority" | 62:6069 |
 | Workshop board (Section 6, main) | Farnaz has it | |
