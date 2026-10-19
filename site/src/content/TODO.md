@@ -60,7 +60,7 @@ Every image is a placeholder. Still open:
 
 - [ ] Homepage card — 4:3, several cubes selected, edited in one go
 - [ ] Hero carousel ×3 — 2272:1532: the workspace; several cubes selected; a new cube from a template
-- [ ] The project — diagram `natzka-data-model` (16:9 placeholder, to draw as inline SVG)
+- [ ] The project — check the new caption under the overview diagram (not in the agreed text)
 - [ ] The process — diagram `natzka-design-process` (2:1 placeholder, to draw as inline SVG)
 - [ ] Understanding the work — Tom's journey map (16:9)
 - [ ] Understanding the work — the interview with Luca (16:9)

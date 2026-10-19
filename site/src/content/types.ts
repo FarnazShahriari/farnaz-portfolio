@@ -192,6 +192,7 @@ export type DiagramId =
   | "tryggdrift-design-process"
   | "readyware-design-process"
   | "readyware-incident-cycle"
+  | "model-builder-overview"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

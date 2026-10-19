@@ -10,7 +10,7 @@ Content for the Model Builder case study, ready to build. It uses the same secti
 - **Order on the site:** KSL, TryggDrift, [design system, `project-three`], Readyware, Model Builder (last). The design system slot stays where it is (decided 2026-10-16).
 - **New file:** `site/src/content/case-studies/model-builder.ts`, copied from `ksl.ts`. Register it in `case-studies/index.ts`.
 - **Images:** every slot gets `ratio` and `caption` only. No `src`, no `alt` yet, so they render as grey placeholders.
-- **Diagrams:** the two diagrams below (`natzka-data-model`, `natzka-design-process`) start as `media` placeholders. Build them later as inline SVG, like `ksl-design-process`. Their content is under "Diagrams, for later".
+- **Diagrams:** `model-builder-overview` (Section 1) is built, see "Diagrams". `natzka-design-process` (Section 2) starts as a `media` placeholder; build it later as inline SVG, like `ksl-design-process`.
 - **Placeholders list:** add every image slot to `site/src/content/TODO.md` under a "Model Builder case study" heading.
 - **Writing rules:** no em dashes anywhere. Keep the text exactly as written.
 - Add a `CHANGELOG.md` entry when done.
@@ -65,7 +65,7 @@ In 2023 we designed its first version. I was the only designer, working with the
 | Approach | Interview, journey mapping, usability testing, workshop |
 | Designed with | Figma, FigJam |
 
-**media** (placeholder for the diagram `natzka-data-model`): ratio `16 / 9`, caption: "The three building blocks. A cube's dimensions are entities, and hierarchies decide which ones fit together."
+**below:** diagram `model-builder-overview` (built, see "Diagrams"), caption: "What the Model Builder is for. A data model developer gives the business data a structure, so analysts can get answers from it."
 
 ---
 
@@ -203,11 +203,15 @@ The bigger lesson was about timing. One session with a real model builder, befor
 ---
 ---
 
-## Diagrams, for later
+## Diagrams
 
-**`natzka-data-model`** (Section 1). Two entities, State and Customer, joined as a hierarchy (State above Customer). One cube, Gross sales, with Customer and Day as its dimensions.
-- title: "The three building blocks of a data model"
-- desc: "Entities describe the business, such as State and Customer. A hierarchy links them, so each customer belongs to a state. A cube holds numbers, such as gross sales, organised by entities such as customer and day."
+**`model-builder-overview`** (Section 1, built 2026-10-19). Replaces the planned `natzka-data-model`. Chosen from three sketches (what it does, the four building blocks, one cube as a table): the audience needs to know what the tool is for, not how to build a data model. Three panels from the original slide: business data (raw data) → Model Builder (data model developer) → analysis (business analyst, with the question "Which sales rep sold the most discounted skirts in April?"). Built in HTML with small decorative SVG drawings, so the text is real text.
+
+Terms, checked with Farnaz and against public docs (Board's data model docs use the same Customer → City → State example):
+- Entity: a list of members, such as all customers. Each member has a unique code, the entity's key.
+- Hierarchy: many-to-one links. Each customer is in one city, each city in one state.
+- Dimension: the whole hierarchy, named after its most detailed entity. Customer dimension = Customer + City + State.
+- Cube: numbers, such as gross sales, stored where its dimensions cross.
 
 **`natzka-design-process`** (Section 2). Same visual language as `ksl-design-process`, wide and tall drawings.
 - Steps: Interview with Luca → personas and journey → prototype in Figma → remote test with Luca → analysis in FigJam → effort and impact matrix. Then two paths: quick fixes → back into the design; the cube problem → workshop with the developers (sketch, vote) → combined solution → back into the design.

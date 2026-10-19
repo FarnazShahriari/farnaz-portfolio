@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — What the Model Builder is for, under its key facts
+The first placeholder is now a three-panel overview, redrawn from the
+original slide: business data, the Model Builder, analysis. Chosen over a
+"four building blocks" sketch because readers need to know what the tool
+is for, not how to build a model. Built in HTML so the words are real
+text. The caption is new and not yet in the agreed text.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-16 — Model Builder case study, laid out with placeholders
 The Natzka slot is now the Model Builder case study: eight sections from
 the interview with Luca to the cube workshop, with the text as agreed.

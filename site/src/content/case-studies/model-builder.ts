@@ -58,15 +58,13 @@ export const modelBuilder: CaseStudy = {
             { label: "Designed with", value: "Figma, FigJam" },
           ],
         },
+      ],
+      below: [
         {
-          // Placeholder for the diagram `natzka-data-model`, drawn later as
-          // inline SVG.
-          kind: "media",
-          media: {
-            ratio: "16 / 9",
-            caption:
-              "The three building blocks. A cube's dimensions are entities, and hierarchies decide which ones fit together.",
-          },
+          kind: "diagram",
+          id: "model-builder-overview",
+          caption:
+            "What the Model Builder is for. A data model developer gives the business data a structure, so analysts can get answers from it.",
         },
       ],
     },
