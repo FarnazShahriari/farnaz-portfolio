@@ -143,53 +143,56 @@ export const modelBuilder: CaseStudy = {
     {
       type: "story",
       theme: "dark",
-      eyebrow: "The real problem",
-      title: "One change, many cubes, edited one by one",
+      eyebrow: "The workshop",
+      title: "Solving the biggest problem with the people building it",
       body: [
-        "The prototype followed the order the team thought in: entities, then hierarchies, then cubes.",
-        "In the follow-up questions, Luca turned that around. Entities are set up once. Cubes are made every day, there are far more of them, and many share the same structure. So one client request means editing cube after cube by hand.",
-        "The small pain point on the journey map was the biggest problem in the product.",
+        "The quick fixes from the test went straight into the design. The biggest problem needed more: a real model has many cubes, often with the same structure and settings, and each one was created and maintained by hand.",
         {
           kind: "quote",
           quote: {
-            text: "What I do not want to do is to create a same cube ten times from scratch.",
+            text: "Maybe I have to create 10 cubes with the exact same structure, exactly with the same properties, just changing the name.",
             source: "Luca, data model developer",
           },
         },
+        "I ran a remote workshop on this one problem with five front-end and back-end developers. After an icebreaker, we framed the problem from Luca's own words: we create many cubes that share their settings, but build each one from scratch, so the work is slow and every later change is repeated cube by cube.",
+        "In lightning demos, everyone showed how other tools handle repetitive work, from bulk editing to duplicating with the keyboard. Then came crazy 8s, one solution sketch each, and a vote across nine ideas.",
       ],
       below: [
         {
           kind: "media",
           media: {
-            ratio: "5 / 2",
+            ratio: "2000 / 1170",
             caption:
-              "Every request about cubes from the test, clustered in FigJam.",
+              "The remote workshop in FigJam: icebreakers, the user problem, lightning demos, crazy 8s and solution sketches, and the vote.",
+            src: "/work/model-builder/workshop-figjam-board-creating-cubes.webp",
+            alt: "A FigJam board titled 'Usability Problem Brainstorming Workshop', on creating cubes, in five areas: hand-drawn portraits of the team; the user problem, with a quote from the test, sticky notes and a problem statement; lightning demos from five developers; crazy 8s and solution sketches; and nine ideas laid out for voting.",
+            openWide: true,
           },
         },
         {
           kind: "statement",
-          text: "Entities are made once. Cubes are made every day.",
+          text: "Nine ideas. One went into development.",
         },
       ],
     },
     {
       type: "story",
-      eyebrow: "The workshop",
-      title: "Quick fixes first, then a workshop for the big one",
+      eyebrow: "Into development",
+      title: "Select several cubes, change them once",
       body: [
-        "With the team, I placed every finding on an effort and impact matrix. The quick wins, like dragging an entity onto a cube or searching entities by name, went straight into the design.",
-        "The cube problem needed more than a fix. I ran a workshop with the front-end and back-end developers: we looked at the problem together, sketched ideas and voted. Two ideas won, and they worked best together: templates to create cubes, and editing many cubes at once to change them.",
+        "Of the nine ideas, multi-select went into development. Tick cubes in the list, or shift-click them on the canvas, and the property panel shows what they have in common.",
+        "One change, to the group, the unit or how totals work, then goes to every selected cube. Twenty edits become one, and cubes that belong together stay alike.",
+      ],
+      below: [
         {
-          kind: "mediaPair",
-          main: {
-            ratio: "16 / 10",
+          kind: "media",
+          media: {
+            ratio: "2000 / 1250",
             caption:
-              "The workshop with the developers, from the problem to the ideas we voted on.",
-          },
-          side: {
-            ratio: "4 / 3",
-            caption:
-              "Every finding on effort and impact. The cube problem was the major project.",
+              "The Model Builder with a cube selected: a checkbox on every cube in the list, and a hint to shift-click for more. Redrawn and refined with Claude Design in 2026, years after the original design.",
+            src: "/work/model-builder/multi-select-cubes-model-builder.webp",
+            alt: "The Model Builder for the model 'Summer Sales'. On the left, lists of entities, four dimensions and six cubes, each cube with a checkbox and 'Budget Quantity' ticked. In the middle, a canvas of dimension groups (Customer, Day, Product, Store) with their levels, and cube cards; Budget Quantity is selected and linked to City, Month and Category. On the right, its settings: name, group 'Budget', tag '#budget', data type Integer, unit 'pieces', totals set to Sum, and filled by planner input. A hint at the bottom reads 'Shift-click cubes to edit several at once. Try it'. Save and Commit to database sit top right.",
+            openWide: true,
           },
         },
       ],
@@ -197,39 +200,32 @@ export const modelBuilder: CaseStudy = {
     {
       type: "story",
       theme: "accent",
-      eyebrow: "Voted in the workshop, then designed",
+      eyebrow: "The redesigned flow",
       title: "Designing for many cubes at once",
       body: [
-        "The combined solution, with the fixes from the test. Screens redrawn for this portfolio.",
+        "Creating a data model in the redesigned Model Builder, step by step: from an empty workspace to entities, dimensions and cubes. The screens were redrawn and refined with Claude Design in 2026, years after the original design, so the ideas read clearly today.",
       ],
       below: [
         {
+          // Placeholders until the flow screenshots arrive, in order.
           kind: "carousel",
-          label: "The redesigned Model Builder, screen by screen",
+          label: "Creating a data model, step by step",
           items: [
             {
               ratio: "2272 / 1532",
-              caption:
-                "Cube templates. A new cube starts from one with the right structure, and only what differs changes.",
+              caption: "An empty workspace. Redrawn and refined with Claude Design in 2026.",
             },
             {
               ratio: "2272 / 1532",
-              caption:
-                "Editing many cubes at once. Select several, and the panel shows what they share. One change goes to all.",
+              caption: "Adding entities. Redrawn and refined with Claude Design in 2026.",
             },
             {
               ratio: "2272 / 1532",
-              caption:
-                "Cubes in groups. Sorted by what they hold, like sales or budget, with tags to find them.",
+              caption: "Building dimensions. Redrawn and refined with Claude Design in 2026.",
             },
             {
               ratio: "2272 / 1532",
-              caption: "Cubes as a table. The graph opens only when asked for.",
-            },
-            {
-              ratio: "2272 / 1532",
-              caption:
-                "Impact before a change. Every cube, query and ingestion that depends on it, listed first.",
+              caption: "Creating cubes. Redrawn and refined with Claude Design in 2026.",
             },
           ],
         },
@@ -239,7 +235,7 @@ export const modelBuilder: CaseStudy = {
       type: "story",
       eyebrow: "Where it landed",
       body: [
-        "The quick fixes went into the design of the first version. The cube solution came out of the developers' own workshop, so the people who would build it had already shaped it.",
+        "The quick fixes went into the design of the first version, and multi-select went into development. It came out of the developers' own workshop, so the people building it had already shaped it.",
         "The bigger lesson was about timing. One session with a real model builder, before building further, moved the team's focus from making a model to living with one.",
       ],
     },

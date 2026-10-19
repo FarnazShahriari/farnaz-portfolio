@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-19 — Model Builder: the workshop and what went into development
+"The real problem" and the old workshop section are now one dark section,
+"Solving the biggest problem with the people building it", with the FigJam
+workshop board. A new section, "Into development", shows multi-select, the
+one idea of nine that was built. The flow carousel is relabelled and waits
+for its screenshots; "Where it landed" names multi-select.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — Model Builder test: the insight board and new findings
 "Testing ideas before building on them" now shows the FigJam insight
 board from the test instead of a placeholder, a shorter intro, and four

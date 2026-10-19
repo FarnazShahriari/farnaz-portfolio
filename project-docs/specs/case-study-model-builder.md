@@ -229,3 +229,7 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 - Only one person tested, by design of the situation. The text does not count users; it frames the value of testing with a real model builder before building further.
 - Outcome: the quick fixes went into the design. The combined cube solution was designed; whether it shipped is unknown, so the page does not claim it.
 - Blur Luca's face in test screenshots unless he agrees to be shown.
+
+## Update 2026-10-19: workshop and development
+
+After "Testing the prototype" the page now runs: "The workshop" (dark, "Solving the biggest problem with the people building it", FigJam workshop board, statement "Nine ideas. One went into development."), "Into development" (light, "Select several cubes, change them once", multi-select screen), "The redesigned flow" (accent, carousel "Creating a data model, step by step", placeholders until the flow screenshots arrive; every caption ends "Redrawn and refined with Claude Design in 2026."), and "Where it landed" (first paragraph names multi-select). The old "The real problem" and "Quick fixes first" sections, the cube-cluster image and the effort and impact matrix are gone. The text in `model-builder.ts` is the source of truth; sections 5 to 8 above are superseded.
