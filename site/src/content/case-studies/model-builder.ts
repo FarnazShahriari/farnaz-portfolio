@@ -72,7 +72,7 @@ export const modelBuilder: CaseStudy = {
           kind: "diagram",
           id: "model-builder-overview",
           caption:
-            "What the Model Builder is for. A data model developer gives the business data a structure, so analysts can get answers from it.",
+            "What the Model Builder is for.",
         },
       ],
     },
@@ -209,9 +209,9 @@ export const modelBuilder: CaseStudy = {
       type: "story",
       theme: "accent",
       eyebrow: "How it works",
-      title: "Designing for many cubes at once",
+      title: "Building a model by dragging and linking",
       body: [
-        "Building a data model, step by step: create the entities, then drag from each one to the one it belongs to, and the dimensions take shape as you link. Dragging, dropping and connecting make a fast, friendly flow that new data model developers can learn in less time. The UI was retouched using Claude Design in 2026.",
+        "Building a data model, step by step: create the entities, then drag from each one to the one it belongs to, and the dimensions take shape as you link. Dragging, dropping and connecting make a fast, friendly flow that is easy to learn. The UI was retouched using Claude Design in 2026.",
       ],
       below: [
         {

@@ -1,6 +1,6 @@
 # Model Builder: making a complex data tool feel simple
 
-The Model Builder case study as it stands on the site. The content lives in `site/src/content/case-studies/model-builder.ts`; this file mirrors it, so the two must change together. The sections below are generated from that file (2026-10-20).
+The Model Builder case study as it stands on the site. The content lives in `site/src/content/case-studies/model-builder.ts`; this file mirrors it, so the two must change together. The sections below are generated from that file (2026-10-20, refreshed after the open text questions were settled).
 
 ---
 
@@ -67,7 +67,7 @@ In 2023 we designed its first version. I was the only designer, working with the
 
 **below:**
 
-**diagram:** `model-builder-overview`, caption: "What the Model Builder is for. A data model developer gives the business data a structure, so analysts can get answers from it."
+**diagram:** `model-builder-overview`, caption: "What the Model Builder is for."
 
 
 ---
@@ -170,11 +170,11 @@ One change, to the group, the unit or how totals work, then goes to every select
 ## Section 6 · story · theme `accent`
 
 **eyebrow:** How it works
-**title:** Designing for many cubes at once
+**title:** Building a model by dragging and linking
 
 **body:**
 
-Building a data model, step by step: create the entities, then drag from each one to the one it belongs to, and the dimensions take shape as you link. Dragging, dropping and connecting make a fast, friendly flow that new data model developers can learn in less time. The UI was retouched using Claude Design in 2026.
+Building a data model, step by step: create the entities, then drag from each one to the one it belongs to, and the dimensions take shape as you link. Dragging, dropping and connecting make a fast, friendly flow that is easy to learn. The UI was retouched using Claude Design in 2026.
 
 **below:**
 
@@ -203,11 +203,6 @@ The quick fixes went into the design of the first version, and multi-select went
 
 The bigger lesson was about timing. One session with a real model builder, before building further, moved the team's focus from making a model to living with one.
 
-(node:253) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/user/farnaz-portfolio/site/src/content/case-studies/model-builder.ts is not specified and it doesn't parse as CommonJS.
-Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
-To eliminate this warning, add "type": "module" to /home/user/farnaz-portfolio/site/package.json.
-(Use `node --trace-warnings ...` to show where the warning was created)
-
 ---
 
 ## Diagrams
@@ -234,6 +229,6 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 - Quotes are Luca's own English words from the FigJam boards, trimmed, no words changed.
 - Only one person tested, by design of the situation. The text does not count users; it frames the value of testing with a real user early.
 - Outcome: the quick fixes went into the design, and multi-select went into development (confirmed by Farnaz, 2026-10-19).
-- "New data model developers can learn in less time" is a claim on the page; keep it only if it holds.
-- Open: the "How it works" title, "Designing for many cubes at once", no longer matches its content (building a model by dragging and linking).
+- "Easy to learn" replaced "can learn in less time", which was never measured (2026-10-20).
+- The "How it works" title is "Building a model by dragging and linking" (2026-10-20).
 - Removed along the way: "The process" section and its diagram, "The real problem" and "Quick fixes first" sections, the cube-cluster image and the effort and impact matrix.

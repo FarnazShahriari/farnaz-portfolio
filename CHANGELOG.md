@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-20 — Model Builder's open text questions settled
+"How it works" is now titled "Building a model by dragging and linking";
+"can learn in less time", never measured, became "easy to learn"; the
+overview diagram's caption is just "What the Model Builder is for."
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-20 — Model Builder's card: the screen in front of a scene
 The homepage card now shows the multi-select tablet in front of glowing
 data cubes, like Readyware's card, and is 4:3 like the others: a card
