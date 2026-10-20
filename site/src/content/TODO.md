@@ -58,8 +58,6 @@ Every image is in. Still open:
 
 Still open:
 
-- [ ] Homepage card — 4:3, several cubes selected, edited in one go
-- [ ] Hero carousel ×3 — 2272:1532: the workspace; several cubes selected; a new cube from a template
 - [ ] The project — check the new caption under the overview diagram (not in the agreed text)
 - [ ] Testing the prototype — insight board is in at 1670×2000; a sharper export would make the enlarged view easier to read
 - [ ] Add `alt` text to every image when it lands

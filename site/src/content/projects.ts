@@ -106,10 +106,14 @@ export const projects: Project[] = [
     title: "Model Builder: making a complex data tool feel simple",
     summary:
       "The first version of a tool for building complex business data models.",
+    // The same screen the case study's hero carousel opens on, so the two
+    // morph into each other.
     image: {
-      ratio: "4 / 3",
-      caption: "Several cubes selected in the Model Builder, edited in one go.",
+      ratio: "2272 / 1532",
+      caption: "The Model Builder with a cube selected, ready to select more.",
       hideCaption: true,
+      src: "/work/model-builder/multi-select-cubes-model-builder-tablet.webp",
+      alt: "The Model Builder on a tablet: cubes in a list with checkboxes, a canvas of dimensions and cube cards, and the selected cube's settings.",
     },
     tags: ["Case study", "Model Builder", "Natzka"],
   },

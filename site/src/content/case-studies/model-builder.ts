@@ -19,18 +19,26 @@ export const modelBuilder: CaseStudy = {
     label: "Screens from the Model Builder",
     slides: [
       {
+        // The same screen as the homepage card: the two are a morph pair.
         ratio: "2272 / 1532",
         caption:
-          "The workspace: entities, cubes and hierarchies side by side, each one shown, hidden or resized.",
+          "One cube selected, with a checkbox on every cube in the list and a hint to shift-click for more. Refined using Claude Design in 2026.",
+        src: "/work/model-builder/multi-select-cubes-model-builder-tablet.webp",
+        alt: "Tablet showing the Model Builder for 'Summer Sales': lists of entities, dimensions and six cubes on the left, each cube with a checkbox and 'Budget Quantity' ticked; a canvas of the Customer, Day, Product and Store dimensions with cube cards, Budget Quantity selected and linked to City, Month and Category; and its settings on the right, with group, tag, data type, unit and how totals work. A hint reads 'Shift-click cubes to edit several at once'.",
       },
       {
         ratio: "2272 / 1532",
-        caption: "Several cubes selected. One change goes to all of them.",
+        caption:
+          "Three cubes selected on the canvas. The panel shows what they share, and a change here goes to all three. Refined using Claude Design in 2026.",
+        src: "/work/model-builder/three-cubes-selected-canvas-tablet.webp",
+        alt: "Tablet showing three cubes ticked in the list and highlighted on the canvas: Budget Quantity, Gross Sales and Sales Quantity, with lines to the dimension levels they use. The panel on the right, headed 'Selection, 3 cubes', lists them with their data types, the shared group 'Mixed: Sales, Budget' and totals 'Sum', how many of the three use each dimension (Customer, Product and Day 3 of 3, Store 2 of 3), a note on mixed detail, and a button 'Add dimension to all 3'. At the bottom: 'Changes here apply to all 3 cubes.'",
       },
       {
         ratio: "2272 / 1532",
         caption:
-          "A new cube from a template, with its structure already in place.",
+          "The same three cubes in the Dimensions view: every level shows which cubes use it. Refined using Claude Design in 2026.",
+        src: "/work/model-builder/three-cubes-selected-dimensions-view-tablet.webp",
+        alt: "Tablet showing the Dimensions view with the same three cubes selected. Each dimension is a row of its levels: Customer with its drill paths Geography, Sales org and Channel; Day with Year, Month and Day; Product with Category and Product; and Store. Under each level, tags name the selected cubes that use it, such as Budget Quantity under City, Month and Category, and Gross Sales and Sales Quantity under Customer, Day, Product and Store. The selection panel stays open on the right.",
       },
     ],
   },
@@ -187,11 +195,11 @@ export const modelBuilder: CaseStudy = {
         {
           kind: "media",
           media: {
-            ratio: "2000 / 1250",
+            ratio: "2272 / 1532",
             caption:
               "The Model Builder with a cube selected: a checkbox on every cube in the list, and a hint to shift-click for more. Fonts, colours and sizing refined using Claude Design in 2026.",
-            src: "/work/model-builder/multi-select-cubes-model-builder.webp",
-            alt: "The Model Builder for the model 'Summer Sales'. On the left, lists of entities, four dimensions and six cubes, each cube with a checkbox and 'Budget Quantity' ticked. In the middle, a canvas of dimension groups (Customer, Day, Product, Store) with their levels, and cube cards; Budget Quantity is selected and linked to City, Month and Category. On the right, its settings: name, group 'Budget', tag '#budget', data type Integer, unit 'pieces', totals set to Sum, and filled by planner input. A hint at the bottom reads 'Shift-click cubes to edit several at once. Try it'. Save and Commit to database sit top right.",
+            src: "/work/model-builder/multi-select-cubes-model-builder-tablet.webp",
+            alt: "Tablet showing the Model Builder for the model 'Summer Sales'. On the left, lists of entities, four dimensions and six cubes, each cube with a checkbox and 'Budget Quantity' ticked. In the middle, a canvas of dimension groups (Customer, Day, Product, Store) with their levels, and cube cards; Budget Quantity is selected and linked to City, Month and Category. On the right, its settings: name, group 'Budget', tag '#budget', data type Integer, unit 'pieces', totals set to Sum, and filled by planner input. A hint at the bottom reads 'Shift-click cubes to edit several at once. Try it'. Save and Commit to database sit top right.",
             openWide: true,
           },
         },

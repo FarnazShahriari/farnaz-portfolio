@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-20 — Model Builder's hero, card and multi-select screen
+The hero carousel now opens on the multi-select screen, then three cubes
+selected on the canvas and in the Dimensions view, all in the clay tablet
+frame. The homepage card uses the first slide, so the two morph. The
+"Into development" screen is in the same frame now, like the rest.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-19 — Model Builder's flow screens, in tablet frames
 "Designing for many cubes at once" now shows four steps of creating a data
 model (a new entity, twelve entities, a link, finished dimensions) in the
