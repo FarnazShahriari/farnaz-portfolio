@@ -42,6 +42,16 @@ export const tryggdrift: CaseStudy = {
             { label: "Designed with", value: "Figma, FigJam" },
           ],
         },
+        {
+          kind: "media",
+          media: {
+            ratio: "1322 / 1145",
+            caption:
+              "What the app covers: each section placed where its work happens on a farm, and linked to the sections it connects to. Farm illustration generated with AI.",
+            src: "/work/tryggdrift/app-sections-on-farm.webp",
+            alt: "An illustrated farm seen from above: fields of maize and sunflowers, a tractor, a farm building and solar panels. Eight labels name sections of the app. 'Bygninger' (buildings) points to the building, 'Elkontroll' (electrical checks) to the solar panels, 'Maskiner & utstyr' (machinery and equipment) to the tractor, and 'Avvik' (deviations) to a fence post. 'Vernerunde' (safety round) sits on a dashed route around the building. Curved lines join the labels: 'Beredskap' (emergency preparedness), 'Bygninger' and 'Maskiner & utstyr' to 'Risikovurdering' (risk assessment); 'Elkontroll' to 'Bygninger'; 'Vernerunde' to 'Oppgaver' (tasks); and 'Risikovurdering', 'Vernerunde' and 'Oppgaver' to 'Avvik'.",
+          },
+        },
       ],
     },
     {
@@ -71,14 +81,11 @@ export const tryggdrift: CaseStudy = {
         {
           kind: "media",
           media: {
-            // Full width, so the timeline's small text stays readable, and
-            // opened larger at the wide size too, not the narrow one.
-            ratio: "1322 / 1360",
-            openWide: true,
+            ratio: "1322 / 160",
             caption:
-              "The structure we worked out with NLR, week by week: the app's sections and how they link, drawn over a farm. Farm illustration generated with AI.",
-            src: "/work/tryggdrift/app-sections-on-farm-with-timeline.webp",
-            alt: "A timeline across the top runs from 'Kickoff', February 2025, to 'Live', January 2026, through insight, design and development. Along the design phase, a row of dots is labelled 'Weekly design meetings with NLR'. Below it, an illustrated farm seen from above: fields of maize and sunflowers, a tractor, a farm building and solar panels. Eight labels name sections of the app. 'Bygninger' (buildings) points to the building, 'Elkontroll' (electrical checks) to the solar panels, 'Maskiner & utstyr' (machinery and equipment) to the tractor, and 'Avvik' (deviations) to a fence post. 'Vernerunde' (safety round) sits on a dashed route around the building. Curved lines join the labels: 'Beredskap' (emergency preparedness), 'Bygninger' and 'Maskiner & utstyr' to 'Risikovurdering' (risk assessment); 'Elkontroll' to 'Bygninger'; 'Vernerunde' to 'Oppgaver' (tasks); and 'Risikovurdering', 'Vernerunde' and 'Oppgaver' to 'Avvik'.",
+              "The project from kickoff to launch, with a weekly design meeting with NLR through the design phase.",
+            src: "/work/tryggdrift/project-timeline-weekly-meetings.webp",
+            alt: "A timeline from 'Kickoff', February 2025, to 'Live', January 2026, through insight, design and development. Along the design phase, a row of dots is labelled 'Weekly design meetings with NLR'.",
           },
         },
       ],

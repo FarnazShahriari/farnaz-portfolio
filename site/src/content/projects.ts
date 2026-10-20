@@ -90,14 +90,14 @@ export const projects: Project[] = [
       alt: "The Overview of a test incident, 'Fire at Sjøberg school', on a tablet: a blue test banner across the top, the key roles, what has happened with a situation map, and the latest logs.",
     },
     // Behind the screen on the card only: the screen morphs into the
-    // page's hero carousel, the photo stays on the homepage. Cropped from
-    // `assets/readyware/card-scene-original.webp` and blurred slightly
-    // (2px Gaussian, in the file) so the focus is on the screen.
+    // page's hero carousel, the illustration stays on the homepage. From
+    // `assets/readyware/card-scene-illustration-original.webp`, blurred
+    // slightly (1.5px Gaussian, in the file) so the focus is on the screen.
     scene: {
       ratio: "4 / 3",
-      caption: "Fire engines and a police van at a cordon, on a sunny day.",
-      src: "/work/readyware/card-scene-fire-engines.webp",
-      alt: "Behind it, fire engines and a police van at a cordon on a sunny day.",
+      caption: "An illustrated incident map in glass, with warning lights.",
+      src: "/work/readyware/card-scene-incident-illustration.webp",
+      alt: "Behind it, an illustration of glass roads and panels with small orange and blue warning lights, shields and first-aid signs.",
     },
     tags: ["Case study", "Readyware", "Netpower"],
   },
