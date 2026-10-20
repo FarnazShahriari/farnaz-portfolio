@@ -1,14 +1,14 @@
 /**
- * Model Builder (Natzka) — the content of the case study, and nothing else.
+ * Model Builder (Natzka): the content of the case study, and nothing else.
  *
  * Every block here is one of the reusable section types in
  * `components/case-study/`. How a section looks is decided there, from the
  * design system, and never here.
  *
- * Every image is still a placeholder: `ratio` and `caption` only, so it
- * renders as a grey block. The caption says what belongs there and becomes
- * the line under the image once `src` and `alt` are set. The open slots are
- * listed in `content/TODO.md`.
+ * Every image has a short `caption` and a full `alt`. The redesigned screens
+ * had their UI retouched using Claude Design in 2026; the page says so once,
+ * in "How it works", and nowhere else. The text is mirrored in
+ * `project-docs/specs/case-study-model-builder.md`.
  */
 
 import type { CaseStudy } from "../types"

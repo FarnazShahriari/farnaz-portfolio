@@ -1,19 +1,17 @@
 # Model Builder: making a complex data tool feel simple
 
-Content for the Model Builder case study, ready to build. It uses the same section types as `site/src/content/case-studies/ksl.ts`. Text is final. Every image is a placeholder for now (ratio and caption only, no `src`); Farnaz adds the visuals at the end.
+The Model Builder case study as it stands on the site. The content lives in `site/src/content/case-studies/model-builder.ts`; this file mirrors it, so the two must change together. The sections below are generated from that file (2026-10-20).
 
 ---
 
-## Build instructions for Claude Code
+## Rules
 
-- **Slug:** `model-builder`. It replaces the `project-five` (Natzka) slot in `site/src/content/projects.ts`.
-- **Order on the site:** KSL, TryggDrift, [design system, `project-three`], Readyware, Model Builder (last). The design system slot stays where it is (decided 2026-10-16).
-- **New file:** `site/src/content/case-studies/model-builder.ts`, copied from `ksl.ts`. Register it in `case-studies/index.ts`.
-- **Images:** every slot gets `ratio` and `caption` only. No `src`, no `alt` yet, so they render as grey placeholders.
-- **Diagrams:** `model-builder-overview` (Section 1) is built, see "Diagrams".
-- **Placeholders list:** add every image slot to `site/src/content/TODO.md` under a "Model Builder case study" heading.
-- **Writing rules:** no em dashes anywhere. Keep the text exactly as written.
-- Add a `CHANGELOG.md` entry when done.
+- **Slug:** `model-builder`, in the last slot of `site/src/content/projects.ts` (the old `project-five`, Natzka).
+- **Order on the site:** KSL, TryggDrift, [design system, `project-three`], Readyware, Model Builder.
+- **Writing:** no em dashes. Roles only, no personas. Luca is the one person named.
+- **The 2026 retouch:** the redesigned screens had their UI (fonts, colours, sizing) retouched using Claude Design in 2026; the structure and the flow are the original design. Say it once, briefly, in the "How it works" paragraph. Not in captions, not in eyebrows or titles, and never as the point of a section.
+- **Screens:** every UI screenshot sits in the clay tablet frame (`assets/readyware/tablet-mockup.py`, 2000 x 1250 in, 2272 x 1532 out). Carousel captions only name the step; the detail goes in `alt`.
+- **Images:** descriptive file names in `site/public/work/model-builder/`, a short caption and a full `alt` on each.
 
 ---
 
@@ -25,7 +23,9 @@ Content for the Model Builder case study, ready to build. It uses the same secti
 | title | Model Builder: making a complex data tool feel simple |
 | summary | The first version of a tool for building complex business data models. |
 | tags | Case study · Model Builder · Natzka |
-| image | ratio `4 / 3`, caption: "Several cubes selected in the Model Builder, edited in one go.", `hideCaption: true` |
+| image | the hero's first slide, `multi-select-cubes-model-builder-tablet.webp`, ratio `2272 / 1532`, so the two morph. Caption: "The Model Builder with a cube selected, ready to select more.", `hideCaption: true` |
+
+Open: the card is shorter than Readyware's 4:3 card beside it. Either a background photo (a `scene`, like Readyware's) or a 4:3 card with space around the tablet.
 
 ---
 
@@ -33,11 +33,12 @@ Content for the Model Builder case study, ready to build. It uses the same secti
 
 label: "Screens from the Model Builder"
 
-| # | ratio | caption |
-|---|---|---|
-| 1 | `2272 / 1532` | The workspace: entities, cubes and hierarchies side by side, each one shown, hidden or resized. |
-| 2 | `2272 / 1532` | Several cubes selected. One change goes to all of them. |
-| 3 | `2272 / 1532` | A new cube from a template, with its structure already in place. |
+1. ratio `2272 / 1532`, `/work/model-builder/multi-select-cubes-model-builder-tablet.webp`, caption: "One cube selected, with a checkbox on every cube in the list and a hint to shift-click for more."
+  alt: "Tablet showing the Model Builder for 'Summer Sales': lists of entities, dimensions and six cubes on the left, each cube with a checkbox and 'Budget Quantity' ticked; a canvas of the Customer, Day, Product and Store dimensions with cube cards, Budget Quantity selected and linked to City, Month and Category; and its settings on the right, with group, tag, data type, unit and how totals work. A hint reads 'Shift-click cubes to edit several at once'."
+2. ratio `2272 / 1532`, `/work/model-builder/three-cubes-selected-canvas-tablet.webp`, caption: "Three cubes selected on the canvas. The panel shows what they share, and a change here goes to all three."
+  alt: "Tablet showing three cubes ticked in the list and highlighted on the canvas: Budget Quantity, Gross Sales and Sales Quantity, with lines to the dimension levels they use. The panel on the right, headed 'Selection, 3 cubes', lists them with their data types, the shared group 'Mixed: Sales, Budget' and totals 'Sum', how many of the three use each dimension (Customer, Product and Day 3 of 3, Store 2 of 3), a note on mixed detail, and a button 'Add dimension to all 3'. At the bottom: 'Changes here apply to all 3 cubes.'"
+3. ratio `2272 / 1532`, `/work/model-builder/three-cubes-selected-dimensions-view-tablet.webp`, caption: "The same three cubes in the Dimensions view: every level shows which cubes use it."
+  alt: "Tablet showing the Dimensions view with the same three cubes selected. Each dimension is a row of its levels: Customer with its drill paths Geography, Sales org and Channel; Day with Year, Month and Day; Product with Category and Product; and Store. Under each level, tags name the selected cubes that use it, such as Budget Quantity under City, Month and Category, and Gross Sales and Sales Quantity under Customer, Day, Product and Store. The selection panel stays open on the right."
 
 ---
 
@@ -65,17 +66,14 @@ In 2023 we designed its first version. I was the only designer, working with the
 | Approach | Interview, journey mapping, usability testing, workshop |
 | Designed with | Figma, FigJam |
 
-**below:** diagram `model-builder-overview` (built, see "Diagrams"), caption: "What the Model Builder is for. A data model developer gives the business data a structure, so analysts can get answers from it."
+**below:**
+
+**diagram:** `model-builder-overview`, caption: "What the Model Builder is for. A data model developer gives the business data a structure, so analysts can get answers from it."
+
 
 ---
 
-## Section 2 · removed
-
-"The process" (Bringing the model builder into the design) was removed on 2026-10-19: not relevant for the reader. The diagram `natzka-design-process` is no longer planned.
-
----
-
-## Section 3 · story · theme `muted`
+## Section 2 · story · theme `muted`
 
 **eyebrow:** Understanding the work
 **title:** Listening before designing
@@ -86,22 +84,22 @@ First, I interviewed Luca, a data model developer with more than ten years of ex
 
 From the interview I built a journey map of a data model developer's work, from the client's first order to the reports the business reads. Its purpose was to give the team one shared picture of the whole process before we designed any part of it: who is involved at each step, what happens inside the tool and outside it, and where the work gets hard. It marked nine pain points. One of them, making many similar cubes one by one, looked small at the time.
 
-**below:** diagram `model-builder-journey` (built 2026-10-19 from `assets/model-builder/journey-original.svg`), caption: "A data model developer's journey, from the client's order to data exploration, with the nine pain points marked."
+**below:**
 
-On phones it stays one wide picture and opens larger on tap, like the images (decided 2026-10-19).
+**diagram:** `model-builder-journey`, caption: "A data model developer's journey, from the client's order to data exploration, with the nine pain points marked."
 
-No personas in this case study (decided 2026-10-19): roles only. The journey map's "Tom and the team" is "Data model developers".
 
 ---
 
-## Section 4 · insights
+## Section 3 · insights
 
 **eyebrow:** Testing the prototype
 **title:** Testing ideas before building on them
 
 **intro:** We tested the first ideas as soon as we could, with Luca, a real user who works in the application every day.
 
-**media:** `/work/model-builder/test-insights-figjam-board.webp`, ratio `1670 / 2000`, caption: "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know."
+**media:** ratio `1670 / 2000`, `/work/model-builder/test-insights-figjam-board.webp`, caption: "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know."
+  alt: "A FigJam board in three areas of sticky notes. 'Work well' in green, about the general layout, the toggle buttons and the modelling sections. 'Needs to change' in red, the largest, about cubes, entities, hierarchies, the graph, impact analysis, selection, exporting, and save versus commit. 'Good to know' in blue, about entities, cubes, the general layout, and save versus commit."
 
 **insightsLabel:** What Luca showed us
 
@@ -123,79 +121,94 @@ No personas in this case study (decided 2026-10-19): roles only. The journey map
 
 **closing:** Building the model worked. The trouble started after it was built.
 
----
-
-## Section 5 · story · theme `dark`
-
-**eyebrow:** The real problem
-**title:** One change, many cubes, edited one by one
-
-**body:**
-
-The prototype followed the order the team thought in: entities, then hierarchies, then cubes.
-
-In the follow-up questions, Luca turned that around. Entities are set up once. Cubes are made every day, there are far more of them, and many share the same structure. So one client request means editing cube after cube by hand.
-
-The small pain point on the journey map was the biggest problem in the product.
-
-**quote:** "What I do not want to do is to create a same cube ten times from scratch." · Luca, data model developer
-
-**below:**
-- media: ratio `5 / 2`, caption: "Every request about cubes from the test, clustered in FigJam."
-- statement: "Entities are made once. Cubes are made every day."
 
 ---
 
-## Section 6 · story
+## Section 4 · story · theme `dark`
 
 **eyebrow:** The workshop
-**title:** Quick fixes first, then a workshop for the big one
+**title:** Solving the biggest problem with the people building it
 
 **body:**
 
-With the team, I placed every finding on an effort and impact matrix. The quick wins, like dragging an entity onto a cube or searching entities by name, went straight into the design.
+The quick fixes from the test went straight into the design. The biggest problem needed more: a real model has many cubes, often with the same structure and settings, and each one was created and maintained by hand.
 
-The cube problem needed more than a fix. I ran a workshop with the front-end and back-end developers: we looked at the problem together, sketched ideas and voted. Two ideas won, and they worked best together: templates to create cubes, and editing many cubes at once to change them.
+**quote:** "Maybe I have to create 10 cubes with the exact same structure, exactly with the same properties, just changing the name." · Luca, data model developer
 
-**mediaPair:**
-- main: ratio `16 / 10`, caption: "The workshop with the developers, from the problem to the ideas we voted on."
-- side: ratio `4 / 3`, caption: "Every finding on effort and impact. The cube problem was the major project."
+I ran a remote workshop on this one problem with five front-end and back-end developers. After an icebreaker, we framed the problem from Luca's own words: we create many cubes that share their settings, but build each one from scratch, so the work is slow and every later change is repeated cube by cube.
+
+In lightning demos, everyone showed how other tools handle repetitive work, from bulk editing to duplicating with the keyboard. Then came crazy 8s, one solution sketch each, and a vote across nine ideas.
+
+**below:**
+
+**media:** ratio `2000 / 1170`, `/work/model-builder/workshop-figjam-board-creating-cubes.webp`, caption: "The remote workshop in FigJam: icebreakers, the user problem, lightning demos, crazy 8s and solution sketches, and the vote."
+  alt: "A FigJam board titled 'Usability Problem Brainstorming Workshop', on creating cubes, in five areas: hand-drawn portraits of the team; the user problem, with a quote from the test, sticky notes and a problem statement; lightning demos from five developers; crazy 8s and solution sketches; and nine ideas laid out for voting."
+
+**statement:** "Nine ideas. One went into development."
+
 
 ---
 
-## Section 7 · story · theme `accent`
+## Section 5 · story
 
-**eyebrow:** Voted in the workshop, then designed
+**eyebrow:** Into development
+**title:** Select several cubes, change them once
+
+**body:**
+
+Of the nine ideas, multi-select went into development. Tick cubes in the list, or shift-click them on the canvas, and the property panel shows what they have in common.
+
+One change, to the group, the unit or how totals work, then goes to every selected cube. Twenty edits become one, and cubes that belong together stay alike.
+
+**below:**
+
+**media:** ratio `2272 / 1532`, `/work/model-builder/multi-select-cubes-model-builder-tablet.webp`, caption: "The Model Builder with a cube selected: a checkbox on every cube in the list, and a hint to shift-click for more."
+  alt: "Tablet showing the Model Builder for the model 'Summer Sales'. On the left, lists of entities, four dimensions and six cubes, each cube with a checkbox and 'Budget Quantity' ticked. In the middle, a canvas of dimension groups (Customer, Day, Product, Store) with their levels, and cube cards; Budget Quantity is selected and linked to City, Month and Category. On the right, its settings: name, group 'Budget', tag '#budget', data type Integer, unit 'pieces', totals set to Sum, and filled by planner input. A hint at the bottom reads 'Shift-click cubes to edit several at once. Try it'. Save and Commit to database sit top right."
+
+
+---
+
+## Section 6 · story · theme `accent`
+
+**eyebrow:** How it works
 **title:** Designing for many cubes at once
 
 **body:**
 
-The combined solution, with the fixes from the test. Screens redrawn for this portfolio.
+Building a data model, step by step: create the entities, then drag from each one to the one it belongs to, and the dimensions take shape as you link. Dragging, dropping and connecting make a fast, friendly flow that new data model developers can learn in less time. The UI was retouched using Claude Design in 2026.
 
-**below:** carousel, label: "The redesigned Model Builder, screen by screen"
+**below:**
 
-| # | ratio | caption |
-|---|---|---|
-| 1 | `2272 / 1532` | Cube templates. A new cube starts from one with the right structure, and only what differs changes. |
-| 2 | `2272 / 1532` | Editing many cubes at once. Select several, and the panel shows what they share. One change goes to all. |
-| 3 | `2272 / 1532` | Cubes in groups. Sorted by what they hold, like sales or budget, with tags to find them. |
-| 4 | `2272 / 1532` | Cubes as a table. The graph opens only when asked for. |
-| 5 | `2272 / 1532` | Impact before a change. Every cube, query and ingestion that depends on it, listed first. |
+**carousel:** label "Creating a data model, step by step", device `large`
+
+1. ratio `2272 / 1532`, `/work/model-builder/new-entity-customer-tablet.webp`, caption: "Create an entity"
+  alt: "Tablet showing the Model Builder for 'Summer Sales' with one new entity, Customer, alone on the canvas with a hint 'Drag a dot to link it'. The panel on the right lists its six fields, with customer_code marked as the key, a note that the key must be unique and that City should be its own entity to get totals by city, where the rows come from, and 'Belongs to nothing yet'. Cancel and Save entity at the bottom."
+2. ratio `2272 / 1532`, `/work/model-builder/twelve-entities-not-linked-tablet.webp`, caption: "Add all the entities"
+  alt: "Tablet showing twelve entity cards on the canvas, from Customer, City and State to Day, Month, Year and Store, each with its key. The list on the left marks every entity 'not linked', with no dimensions or cubes yet. A hint reads 'Drag from an entity to the one it belongs to, like Customer to City. Try it'. The panel on the right shows the model's name and data source, and two checks: no links yet, and no cubes yet."
+3. ratio `2272 / 1532`, `/work/model-builder/link-customer-to-city-tablet.webp`, caption: "Link entities into a dimension"
+  alt: "Tablet showing a new link from Customer to City, many to one, inside a Customer dimension marked 'forming', with State, Area Manager, Salesperson and Channel around it. The panel explains that each customer belongs to exactly one city, shows the link matched by city_code, and ticks three checks on the loaded rows: every customer has a city, no customer has two cities, no loop back to Customer. It suggests two more links, to Salesperson and Channel. Product, Category, Store, Day, Month and Year wait below, not in a dimension yet."
+4. ratio `2272 / 1532`, `/work/model-builder/customer-dimension-drill-paths-tablet.webp`, caption: "Review the dimensions"
+  alt: "Tablet showing four dimensions on the canvas: Customer, Day as a time dimension, Product and Store, each with its levels linked upward. The Customer dimension is selected. The panel says it is named after Customer, its most detailed entity, with the key customer_code, and lists three drill paths: Geography (State, City, Customer), Sales org (Area Manager, Salesperson, Customer) and Channel (Channel, Customer). Three checks are ticked, and it is not used by any cube yet. Edit links and New cube at the bottom."
+
 
 ---
 
-## Section 8 · story
+## Section 7 · story
 
 **eyebrow:** Where it landed
-(no title, like KSL)
+(no title)
 
 **body:**
 
-The quick fixes went into the design of the first version. The cube solution came out of the developers' own workshop, so the people who would build it had already shaped it.
+The quick fixes went into the design of the first version, and multi-select went into development. It came out of the developers' own workshop, so the people building it had already shaped it.
 
 The bigger lesson was about timing. One session with a real model builder, before building further, moved the team's focus from making a model to living with one.
 
----
+(node:253) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/user/farnaz-portfolio/site/src/content/case-studies/model-builder.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/user/farnaz-portfolio/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
 ---
 
 ## Diagrams
@@ -208,28 +221,20 @@ Terms, checked with Farnaz and against public docs (Board's data model docs use 
 - Dimension: the whole hierarchy, named after its most detailed entity. Customer dimension = Customer + City + State.
 - Cube: numbers, such as gross sales, stored where its dimensions cross.
 
-**`natzka-design-process`** (removed with Section 2 on 2026-10-19; notes kept for reference). Same visual language as `ksl-design-process`, wide and tall drawings.
+**`natzka-design-process`** (dropped on 2026-10-19 with the "The process" section; notes kept for reference). Same visual language as `ksl-design-process`, wide and tall drawings.
 - Steps: Interview with Luca → personas and journey → prototype in Figma → remote test with Luca → analysis in FigJam → effort and impact matrix. Then two paths: quick fixes → back into the design; the cube problem → workshop with the developers (sketch, vote) → combined solution → back into the design.
 - title: "The Model Builder design process"
 - desc: "An interview with Luca, a data model developer, led to two personas and a journey map. A Figma prototype was tested remotely with Luca, and the findings were analysed in FigJam and placed on an effort and impact matrix. Quick fixes went straight back into the design. The biggest problem, editing many cubes, went to a workshop with the developers, where ideas were sketched and voted on. The combined solution went back into the design."
 
-## Visual sources, for later (Farnaz)
+**`model-builder-journey`** (Section 2, built 2026-10-19 from `assets/model-builder/journey-original.svg`). Nine steps in three zones, nine pain points, the daily changes looping back into the model, and three numbers. Roles only: "Tom and the team" became "Data model developers". One wide drawing at every width; on phones it opens larger on tap.
 
-| Slot | Figma file | Node |
-|---|---|---|
-| Cube cluster (Section 5) | Model Builder UX board, "Needs to change", Cubes columns | 62:6289 |
-| Effort and impact matrix (Section 6, side) | Model Builder UX board, "Prority" | 62:6069 |
-| Workshop board (Section 6, main) | Farnaz has it | |
-| Hero and carousel screens | Farnaz redesigns them | |
 
 ## Notes
 
 - Luca is quoted by first name, with permission. Team members by role only. No personas.
-- Quotes are Luca's own English words from the FigJam board, trimmed, no words changed.
-- Only one person tested, by design of the situation. The text does not count users; it frames the value of testing with a real model builder before building further.
-- Outcome: the quick fixes went into the design. The combined cube solution was designed; whether it shipped is unknown, so the page does not claim it.
-- Blur Luca's face in test screenshots unless he agrees to be shown.
-
-## Update 2026-10-19: workshop and development
-
-After "Testing the prototype" the page now runs: "The workshop" (dark, "Solving the biggest problem with the people building it", FigJam workshop board, statement "Nine ideas. One went into development."), "Into development" (light, "Select several cubes, change them once", multi-select screen), "The redesigned flow" (accent, carousel "Creating a data model, step by step", placeholders until the flow screenshots arrive; every caption ends "Redrawn and refined with Claude Design in 2026."), and "Where it landed" (first paragraph names multi-select). The old "The real problem" and "Quick fixes first" sections, the cube-cluster image and the effort and impact matrix are gone. The text in `model-builder.ts` is the source of truth; sections 5 to 8 above are superseded.
+- Quotes are Luca's own English words from the FigJam boards, trimmed, no words changed.
+- Only one person tested, by design of the situation. The text does not count users; it frames the value of testing with a real user early.
+- Outcome: the quick fixes went into the design, and multi-select went into development (confirmed by Farnaz, 2026-10-19).
+- "New data model developers can learn in less time" is a claim on the page; keep it only if it holds.
+- Open: the "How it works" title, "Designing for many cubes at once", no longer matches its content (building a model by dragging and linking).
+- Removed along the way: "The process" section and its diagram, "The real problem" and "Quick fixes first" sections, the cube-cluster image and the effort and impact matrix.
