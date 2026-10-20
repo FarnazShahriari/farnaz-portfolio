@@ -56,9 +56,7 @@ Every image is in. Still open:
 
 ## Model Builder case study — `case-studies/model-builder.ts`
 
-Still open:
-
-- [ ] Testing the prototype — insight board is in at 1670×2000; a sharper export would make the enlarged view easier to read
+Nothing open.
 
 ## Open structural questions
 

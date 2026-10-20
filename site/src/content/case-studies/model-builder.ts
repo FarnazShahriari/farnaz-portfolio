@@ -101,7 +101,8 @@ export const modelBuilder: CaseStudy = {
       intro:
         "We tested the first ideas as soon as we could, with Luca, a real user who works in the application every day.",
       media: {
-        ratio: "1670 / 2000",
+        // Rendered from `assets/model-builder/test-insights-figjam-board.svg`.
+        ratio: "3220 / 3856",
         caption:
           "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know.",
         src: "/work/model-builder/test-insights-figjam-board.webp",

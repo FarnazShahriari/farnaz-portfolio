@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-20 — A sharp test insight board
+The board in "Testing the prototype" is now rendered from Farnaz's SVG
+export at 3220 x 3856, so the sticky notes can be read when opened large.
+The SVG is kept in `assets/model-builder/`.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-20 — Model Builder's open text questions settled
 "How it works" is now titled "Building a model by dragging and linking";
 "can learn in less time", never measured, became "easy to learn"; the

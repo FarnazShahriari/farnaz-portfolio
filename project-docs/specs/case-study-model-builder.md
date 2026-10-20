@@ -97,7 +97,7 @@ From the interview I built a journey map of a data model developer's work, from 
 
 **intro:** We tested the first ideas as soon as we could, with Luca, a real user who works in the application every day.
 
-**media:** ratio `1670 / 2000`, `/work/model-builder/test-insights-figjam-board.webp`, caption: "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know."
+**media:** ratio `3220 / 3856`, `/work/model-builder/test-insights-figjam-board.webp`, caption: "Every insight from the test, clustered in FigJam: what worked, what needs to change, and what is good to know."
   alt: "A FigJam board in three areas of sticky notes. 'Work well' in green, about the general layout, the toggle buttons and the modelling sections. 'Needs to change' in red, the largest, about cubes, entities, hierarchies, the graph, impact analysis, selection, exporting, and save versus commit. 'Good to know' in blue, about entities, cubes, the general layout, and save versus commit."
 
 **insightsLabel:** What Luca showed us
