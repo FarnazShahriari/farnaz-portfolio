@@ -66,7 +66,9 @@ function useViewRange(api: CarouselApi, count: number) {
  * tablets, so the next screen always shows at the edge. Phones are
  * narrower, so four fit on wide screens (two on tablets, one on phones),
  * each with the next peeking in. Landscape tablets (desktop screens) are
- * wider: two on wide screens, one below that. The gutter is the slide's
+ * wider: two on wide screens, one below that. Large landscape tablets are
+ * one in view at every width, for screens whose text should be read in
+ * the page. The gutter is the slide's
  * left padding, matched by the row's negative margin.
  */
 const layouts = {
@@ -87,6 +89,12 @@ const layouts = {
     slide: "basis-5/6 pl-6 @2xl:basis-3/4 @5xl:basis-9/20",
     inViewMedium: 1,
     inViewWide: 2,
+  },
+  large: {
+    row: "-ml-6",
+    slide: "basis-5/6 pl-6 @5xl:basis-4/5",
+    inViewMedium: 1,
+    inViewWide: 1,
   },
 }
 
@@ -132,7 +140,10 @@ export function ScreenCarousel({
   items: MediaPlaceholder[]
   /** Names the carousel for screen readers, e.g. "The notes field as built". */
   label: string
-  /** Phone mockups are narrower, so more fit in a row; landscape tablets are wider, so fewer. */
+  /**
+   * Phone mockups are narrower, so more fit in a row; landscape tablets are
+   * wider, so fewer; large ones are one at a time.
+   */
   device?: keyof typeof layouts
 }) {
   const layout = layouts[device]

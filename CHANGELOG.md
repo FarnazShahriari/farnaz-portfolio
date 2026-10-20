@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-20 — Model Builder's flow: bigger screens, less about 2026
+The flow carousel shows one screen at a time, large enough to read, using
+a new `large` carousel layout. The eyebrow is now "How it works", the text
+is about the drag, drop and connect flow, and the 2026 retouch is one short
+sentence instead of a line under every image.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-20 — Model Builder's hero, card and multi-select screen
 The hero carousel now opens on the multi-select screen, then three cubes
 selected on the canvas and in the Dimensions view, all in the clay tablet
