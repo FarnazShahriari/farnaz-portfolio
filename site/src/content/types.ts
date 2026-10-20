@@ -172,9 +172,10 @@ export type StoryPart =
       /**
        * "phone" for phone mockups: narrower slides, four in view when wide.
        * "landscape" for desktop screens in landscape tablets: wider slides,
-       * two in view when wide.
+       * two in view when wide. "large" for the same, one in view at every
+       * width, when the screens should be readable in the page.
        */
-      device?: "tablet" | "phone" | "landscape"
+      device?: "tablet" | "phone" | "landscape" | "large"
     }
   /** One large line, set as a heading. */
   | { kind: "statement"; text: string }
@@ -192,6 +193,8 @@ export type DiagramId =
   | "tryggdrift-design-process"
   | "readyware-design-process"
   | "readyware-incident-cycle"
+  | "model-builder-overview"
+  | "model-builder-journey"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

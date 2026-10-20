@@ -50,7 +50,7 @@ export function NextProject({ project }: { project: Project | undefined }) {
 
           {project.scene ? (
             // The screen alone morphs; the photo stays on this page.
-            <div className="mt-10 md:mt-12" style={{ aspectRatio: project.image.ratio }}>
+            <div className="mt-10 md:mt-12" style={{ aspectRatio: project.scene.ratio }}>
               <SceneCover project={{ ...project, scene: project.scene }} sizes="100vw" />
             </div>
           ) : (

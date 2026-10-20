@@ -26,6 +26,7 @@ export function EnlargeDialog({
   open,
   onOpenChange,
   onClosed,
+  children,
 }: {
   /** Kept set while closing, so the dialog does not empty mid-animation. */
   media: MediaPlaceholder | undefined
@@ -33,6 +34,11 @@ export function EnlargeDialog({
   onOpenChange: (open: boolean) => void
   /** Return focus to whatever opened it. */
   onClosed: () => void
+  /**
+   * Something drawn in code to show instead of `media.src`, such as a
+   * wide diagram. It gets the same readable width as a wide image.
+   */
+  children?: React.ReactNode
 }) {
   const scroller = React.useRef<HTMLDivElement>(null)
   const size = media ? ratioSize(media.ratio) : null
@@ -75,7 +81,9 @@ export function EnlargeDialog({
           aria-label={fit ? "Enlarged image" : "Enlarged image, scrollable"}
           className="overflow-auto focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
         >
-          {media && size ? (
+          {children ? (
+            <div className="min-w-6xl md:min-w-0">{children}</div>
+          ) : media && size ? (
             <Image
               src={media.src ?? ""}
               alt={media.alt ?? ""}

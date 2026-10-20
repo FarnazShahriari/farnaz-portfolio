@@ -18,6 +18,108 @@ structure". The opening paragraph says what NLR wanted: one app for all of
 it. Readyware's homepage card shows its screen on an illustration.
 Related: project-docs/specs/case-study-sections.md
 
+## 2026-10-20 — A sharp test insight board
+The board in "Testing the prototype" is now rendered from Farnaz's SVG
+export at 3220 x 3856, so the sticky notes can be read when opened large.
+The SVG is kept in `assets/model-builder/`.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-20 — Model Builder's open text questions settled
+"How it works" is now titled "Building a model by dragging and linking";
+"can learn in less time", never measured, became "easy to learn"; the
+overview diagram's caption is just "What the Model Builder is for."
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-20 — Model Builder's card: the screen in front of a scene
+The homepage card now shows the multi-select tablet in front of glowing
+data cubes, like Readyware's card, and is 4:3 like the others: a card
+with a scene now takes its shape from the scene, not the screen.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-20 — Model Builder spec matches the page
+The spec now mirrors `model-builder.ts` section by section, generated
+from it, with the rules agreed along the way: roles only, captions that
+name the step, screens in the tablet frame, and the 2026 retouch said
+once, briefly, in "How it works". TODO.md lists what is still open.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-20 — Sharper flow screens, captions that name the step
+The carousel now asks for each screen at the size it is shown, so the
+large layout no longer loads a small image and stretches it. Its captions
+start at the tablet's edge and only name the step.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-20 — Model Builder's flow: bigger screens, less about 2026
+The flow carousel shows one screen at a time, large enough to read, using
+a new `large` carousel layout. The eyebrow is now "How it works", the text
+is about the drag, drop and connect flow, and the 2026 retouch is one short
+sentence instead of a line under every image.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-20 — Model Builder's hero, card and multi-select screen
+The hero carousel now opens on the multi-select screen, then three cubes
+selected on the canvas and in the Dimensions view, all in the clay tablet
+frame. The homepage card uses the first slide, so the two morph. The
+"Into development" screen is in the same frame now, like the rest.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — Model Builder's flow screens, in tablet frames
+"Designing for many cubes at once" now shows four steps of creating a data
+model (a new entity, twelve entities, a link, finished dimensions) in the
+same clay tablet frame as KSL's hero, two at a time like Readyware's. The
+text says the fonts, colours and sizing were refined using Claude Design in
+2026, and that the structure and flow are unchanged.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — Model Builder: the workshop and what went into development
+"The real problem" and the old workshop section are now one dark section,
+"Solving the biggest problem with the people building it", with the FigJam
+workshop board. A new section, "Into development", shows multi-select, the
+one idea of nine that was built. The flow carousel is relabelled and waits
+for its screenshots; "Where it landed" names multi-select.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — Model Builder test: the insight board and new findings
+"Testing ideas before building on them" now shows the FigJam insight
+board from the test instead of a placeholder, a shorter intro, and four
+new findings: many cubes one by one, which cubes an entity feeds,
+deleting, and naming a dimension.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — "The process" section removed from Model Builder
+The section and its process diagram placeholder were not relevant for the
+reader, so the story now goes straight from the key facts to the interview.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — The journey map stays one picture on phones
+The stacked phone version of the journey map was long and took a lot of
+the screen. Now the wide map shows at every width, and opens larger on
+tap in the shared enlarge dialog, like the case study's images. The
+dialog can now show a diagram drawn in code, not only an image file.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — The journey map in "Listening before designing"
+The two image placeholders are now one coded journey map: nine steps in
+three zones, nine pain points, the daily changes looping back into the
+model. No personas in this case study, roles only, so the text no longer
+names Tom or Chiara, and the second paragraph now says what the map was for.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-19 — What the Model Builder is for, under its key facts
+The first placeholder is now a three-panel overview, redrawn from the
+original slide: business data, the Model Builder, analysis. Chosen over a
+"four building blocks" sketch because readers need to know what the tool
+is for, not how to build a model. Built in HTML so the words are real
+text. The caption is new and not yet in the agreed text.
+Related: project-docs/specs/case-study-model-builder.md
+
+## 2026-10-16 — Model Builder case study, laid out with placeholders
+The Natzka slot is now the Model Builder case study: eight sections from
+the interview with Luca to the cube workshop, with the text as agreed.
+Every image is a grey placeholder, listed in `TODO.md`; the two diagrams
+start as placeholders too. The design system slot stays third.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-16 — Readyware's card photo, slightly out of focus
 The fire engine photo behind the card's screen is blurred a little, in the
 file, like a shallow depth of field: what is behind is still clear, but the

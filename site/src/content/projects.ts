@@ -102,15 +102,30 @@ export const projects: Project[] = [
     tags: ["Case study", "Readyware", "Netpower"],
   },
   {
-    // Reserved for the Natzka case study, the last slot.
-    slug: "project-five",
-    title: "[Natzka project title]",
-    summary: "[One line on what it was. ~12 words.]",
+    slug: "model-builder",
+    title: "Model Builder: making a complex data tool feel simple",
+    summary:
+      "The first version of a tool for building complex business data models.",
+    // The same screen the case study's hero carousel opens on, so the two
+    // morph into each other.
     image: {
-      ratio: "4 / 3",
-      caption: "Project thumbnail — 4:3, roughly 1200×900",
+      ratio: "2272 / 1532",
+      caption: "The Model Builder with a cube selected, ready to select more.",
+      hideCaption: true,
+      src: "/work/model-builder/multi-select-cubes-model-builder-tablet.webp",
+      alt: "The Model Builder on a tablet: cubes in a list with checkboxes, a canvas of dimensions and cube cards, and the selected cube's settings.",
     },
-    tags: ["[Role]"],
+    // Behind the screen on the card only, like Readyware's: the screen
+    // morphs into the page's hero carousel, the picture stays on the
+    // homepage. A 4:3 crop of `assets/model-builder/card-scene-original.webp`,
+    // centred on the glowing cube; it is soft already, so no extra blur.
+    scene: {
+      ratio: "4 / 3",
+      caption: "Glowing data cubes on a soft blue grid.",
+      src: "/work/model-builder/card-scene-glowing-data-cubes.webp",
+      alt: "Behind it, an illustration of glowing glass cubes linked on a soft blue grid.",
+    },
+    tags: ["Case study", "Model Builder", "Natzka"],
   },
 ]
 

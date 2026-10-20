@@ -22,9 +22,8 @@ grey block, so nothing can ship by accident unnoticed.
 
 - [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
 - [ ] Project three (how the design system was made): title, summary, tag
-- [ ] Project five (Natzka): title, summary, tag
-- [ ] Project thumbnails ×2 — 4:3, ~1200×900
-- [ ] Slugs — `project-three` and `project-five`, will change with the titles
+- [ ] Project three thumbnail — 4:3, ~1200×900
+- [ ] Slug — `project-three`, will change with the title
 
 ## Skills — `skills.ts`
 
@@ -36,7 +35,7 @@ grey block, so nothing can ship by accident unnoticed.
 ## Pages still stubbed
 
 - [ ] `/about` — the whole page
-- [ ] `/work/[slug]` — case studies for projects three and five
+- [ ] `/work/[slug]` — case study for project three
 
 ## KSL case study — `case-studies/ksl.ts`
 
@@ -54,6 +53,10 @@ Every image is in. Still open:
 
 - [ ] Check the test consent covers first names in a public portfolio
 - [ ] Check the role titles: "quality lead" (Ellen), "preparedness lead" (Thomas)
+
+## Model Builder case study — `case-studies/model-builder.ts`
+
+Nothing open.
 
 ## Open structural questions
 

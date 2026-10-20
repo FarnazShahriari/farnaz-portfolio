@@ -53,7 +53,8 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
               transitionName={projectTitleTransition(project.slug)}
               description={project.summary}
               tags={project.tags ? [...project.tags] : undefined}
-              ratio={project.image.ratio}
+              // A scene sets the card's shape; the screen sits in front of it.
+              ratio={project.scene?.ratio ?? project.image.ratio}
               media={
                 project.scene ? (
                   // The photo stays here; only the screen in front of it
