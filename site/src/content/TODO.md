@@ -62,7 +62,6 @@ Still open:
 - [ ] Testing the prototype — insight board is in at 1670×2000; a sharper export would make the enlarged view easier to read
 - [ ] How it works — the title "Designing for many cubes at once" no longer matches the section (building a model by dragging and linking)
 - [ ] How it works — "can learn in less time" is a claim; keep only if it holds
-- [ ] Homepage card — shorter than Readyware's 4:3 card beside it; a background photo or a 4:3 card with space
 
 ## Open structural questions
 

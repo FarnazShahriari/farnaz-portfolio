@@ -24,8 +24,7 @@ The Model Builder case study as it stands on the site. The content lives in `sit
 | summary | The first version of a tool for building complex business data models. |
 | tags | Case study · Model Builder · Natzka |
 | image | the hero's first slide, `multi-select-cubes-model-builder-tablet.webp`, ratio `2272 / 1532`, so the two morph. Caption: "The Model Builder with a cube selected, ready to select more.", `hideCaption: true` |
-
-Open: the card is shorter than Readyware's 4:3 card beside it. Either a background photo (a `scene`, like Readyware's) or a 4:3 card with space around the tablet.
+| scene | `card-scene-glowing-data-cubes.webp`, ratio `4 / 3`, a crop of `assets/model-builder/card-scene-original.webp` centred on the glowing cube. Behind the screen on the card only, like Readyware's; it sets the card's 4:3 shape, so the card matches the others. |
 
 ---
 

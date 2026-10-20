@@ -115,6 +115,16 @@ export const projects: Project[] = [
       src: "/work/model-builder/multi-select-cubes-model-builder-tablet.webp",
       alt: "The Model Builder on a tablet: cubes in a list with checkboxes, a canvas of dimensions and cube cards, and the selected cube's settings.",
     },
+    // Behind the screen on the card only, like Readyware's: the screen
+    // morphs into the page's hero carousel, the picture stays on the
+    // homepage. A 4:3 crop of `assets/model-builder/card-scene-original.webp`,
+    // centred on the glowing cube; it is soft already, so no extra blur.
+    scene: {
+      ratio: "4 / 3",
+      caption: "Glowing data cubes on a soft blue grid.",
+      src: "/work/model-builder/card-scene-glowing-data-cubes.webp",
+      alt: "Behind it, an illustration of glowing glass cubes linked on a soft blue grid.",
+    },
     tags: ["Case study", "Model Builder", "Natzka"],
   },
 ]

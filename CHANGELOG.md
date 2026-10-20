@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-20 — Model Builder's card: the screen in front of a scene
+The homepage card now shows the multi-select tablet in front of glowing
+data cubes, like Readyware's card, and is 4:3 like the others: a card
+with a scene now takes its shape from the scene, not the screen.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-20 — Model Builder spec matches the page
 The spec now mirrors `model-builder.ts` section by section, generated
 from it, with the rules agreed along the way: roles only, captions that
