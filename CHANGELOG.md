@@ -4,6 +4,13 @@ All notable decisions and changes to this project, newest first.
 
 Format per entry:
 ```
+## 2026-10-20 — TryggDrift's farm up front, Readyware's card illustrated
+The farm part of TryggDrift's map now sits under its key facts, smaller,
+to show at once what the app covers; the timeline stays in "Shaping the
+structure". The opening paragraph says what NLR wanted: one app for all of
+it. Readyware's homepage card shows its screen on an illustration.
+Related: project-docs/specs/case-study-sections.md
+
 ## YYYY-MM-DD — Short title
 What changed, and why. 2-4 sentences max.
 Related: project-docs/{insights|decisions|specs}/filename.md

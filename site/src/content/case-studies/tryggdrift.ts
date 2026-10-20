@@ -17,7 +17,7 @@ export const tryggdrift: CaseStudy = {
       eyebrow: "The project",
       title: "Safety work on Norwegian farms, in one app",
       body: [
-        "Norwegian farms need to document their HMS work: risk assessments, safety rounds, work instructions, training and emergency plans. NLR, whose advisers help farmers with this across the country, wanted a mobile tool for it that did not exist yet. Together with NLR, farmers and advisers, we turned the idea into a clear structure, a tested prototype and an app the developers could build.",
+        "Norwegian farms need to document their HMS work: risk assessments, safety rounds, work instructions, training and emergency plans. NLR, whose advisers help farmers with this across the country, wanted one mobile app where farmers could gather all of it and keep track of the daily work on the farm. Together with NLR, farmers and advisers, we turned the idea into a clear structure, a tested prototype and an app the developers could build.",
         {
           kind: "facts",
           items: [
