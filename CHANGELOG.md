@@ -11,6 +11,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-20 — Sharper flow screens, captions that name the step
+The carousel now asks for each screen at the size it is shown, so the
+large layout no longer loads a small image and stretches it. Its captions
+start at the tablet's edge and only name the step.
+Related: project-docs/specs/case-study-model-builder.md
+
 ## 2026-10-20 — Model Builder's flow: bigger screens, less about 2026
 The flow carousel shows one screen at a time, large enough to read, using
 a new `large` carousel layout. The eyebrow is now "How it works", the text

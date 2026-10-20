@@ -75,24 +75,35 @@ const layouts = {
   tablet: {
     row: "-ml-6",
     slide: "basis-3/4 pl-6 @2xl:basis-5/12 @5xl:basis-3/10",
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw",
+    caption: "",
     inViewMedium: 2,
     inViewWide: 3,
   },
   phone: {
     row: "-ml-4",
     slide: "basis-2/3 pl-4 @2xl:basis-2/5 @5xl:basis-6/25",
+    sizes: "(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw",
+    caption: "",
     inViewMedium: 2,
     inViewWide: 4,
   },
   landscape: {
     row: "-ml-6",
     slide: "basis-5/6 pl-6 @2xl:basis-3/4 @5xl:basis-9/20",
+    sizes: "(min-width: 1024px) 45vw, (min-width: 640px) 75vw, 85vw",
+    caption: "",
     inViewMedium: 1,
     inViewWide: 2,
   },
   large: {
     row: "-ml-6",
     slide: "basis-5/6 pl-6 @5xl:basis-4/5",
+    // Asked for at the size it is shown, so it stays sharp.
+    sizes: "(min-width: 1024px) 80vw, 85vw",
+    // The tablet frame sits inside the image with room for its shadow at
+    // the sides (90 of 2272 px each); the caption starts where it does.
+    caption: "mx-auto w-23/25",
     inViewMedium: 1,
     inViewWide: 1,
   },
@@ -248,7 +259,7 @@ export function ScreenCarousel({
                         // on the enlarged image, and the caption sits below.
                         alt=""
                         {...ratioSize(media.ratio)}
-                        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 42vw, 75vw"
+                        sizes={layout.sizes}
                         quality={90}
                         className="h-auto w-full"
                       />
@@ -275,7 +286,7 @@ export function ScreenCarousel({
                     </div>
                   )}
                   {media.src ? (
-                    <figcaption className={captionStyle}>
+                    <figcaption className={cn(captionStyle, layout.caption)}>
                       {media.caption}
                     </figcaption>
                   ) : null}

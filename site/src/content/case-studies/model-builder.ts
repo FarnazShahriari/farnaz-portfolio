@@ -225,28 +225,28 @@ export const modelBuilder: CaseStudy = {
             {
               ratio: "2272 / 1532",
               caption:
-                "A new entity. Customer gets its fields and a key, and the panel explains why the key must be unique.",
+                "Create an entity",
               src: "/work/model-builder/new-entity-customer-tablet.webp",
               alt: "Tablet showing the Model Builder for 'Summer Sales' with one new entity, Customer, alone on the canvas with a hint 'Drag a dot to link it'. The panel on the right lists its six fields, with customer_code marked as the key, a note that the key must be unique and that City should be its own entity to get totals by city, where the rows come from, and 'Belongs to nothing yet'. Cancel and Save entity at the bottom.",
             },
             {
               ratio: "2272 / 1532",
               caption:
-                "All twelve entities on the canvas, none linked yet. The model checks say what is still missing.",
+                "Add all the entities",
               src: "/work/model-builder/twelve-entities-not-linked-tablet.webp",
               alt: "Tablet showing twelve entity cards on the canvas, from Customer, City and State to Day, Month, Year and Store, each with its key. The list on the left marks every entity 'not linked', with no dimensions or cubes yet. A hint reads 'Drag from an entity to the one it belongs to, like Customer to City. Try it'. The panel on the right shows the model's name and data source, and two checks: no links yet, and no cubes yet.",
             },
             {
               ratio: "2272 / 1532",
               caption:
-                "Linking Customer to City, many to one, while the Customer dimension takes shape. The panel checks the loaded rows and suggests more links.",
+                "Link entities into a dimension",
               src: "/work/model-builder/link-customer-to-city-tablet.webp",
               alt: "Tablet showing a new link from Customer to City, many to one, inside a Customer dimension marked 'forming', with State, Area Manager, Salesperson and Channel around it. The panel explains that each customer belongs to exactly one city, shows the link matched by city_code, and ticks three checks on the loaded rows: every customer has a city, no customer has two cities, no loop back to Customer. It suggests two more links, to Salesperson and Channel. Product, Category, Store, Day, Month and Year wait below, not in a dimension yet.",
             },
             {
               ratio: "2272 / 1532",
               caption:
-                "Four dimensions, ready for cubes. Customer is named after its most detailed entity and has three drill paths.",
+                "Review the dimensions",
               src: "/work/model-builder/customer-dimension-drill-paths-tablet.webp",
               alt: "Tablet showing four dimensions on the canvas: Customer, Day as a time dimension, Product and Store, each with its levels linked upward. The Customer dimension is selected. The panel says it is named after Customer, its most detailed entity, with the key customer_code, and lists three drill paths: Geography (State, City, Customer), Sales org (Area Manager, Salesperson, Customer) and Channel (Channel, Customer). Three checks are ticked, and it is not used by any cube yet. Edit links and New cube at the bottom.",
             },
