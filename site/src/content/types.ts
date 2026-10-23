@@ -195,6 +195,7 @@ export type DiagramId =
   | "readyware-incident-cycle"
   | "model-builder-overview"
   | "model-builder-journey"
+  | "design-system-structure"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

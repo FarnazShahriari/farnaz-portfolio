@@ -63,15 +63,21 @@ export const projects: Project[] = [
     tags: ["Case study", "TryggDrift", "NLR"],
   },
   {
-    // Reserved for how the design system was made.
-    slug: "project-three",
-    title: "[Design system project title]",
-    summary: "[One line on what it was. ~12 words.]",
+    slug: "design-system",
+    title: "Norsk Mat design system: one system, four brands",
+    summary:
+      "One shared design system for Norsk Mat's platforms, each in its own brand.",
+    // Will be the hero carousel's first slide (KSL theme, tablet mockup),
+    // so the two morph into each other, in front of a `scene` like
+    // Readyware's and Model Builder's: four stacked glass layers in soft
+    // brand tints. Both are still to make, so for now a 4:3 placeholder,
+    // the card's final shape.
     image: {
       ratio: "4 / 3",
-      caption: "Project thumbnail — 4:3, roughly 1200×900",
+      caption:
+        "One screen from the library, KSL theme, on a tablet, in front of four stacked glass layers in soft brand tints.",
     },
-    tags: ["[Role]"],
+    tags: ["Case study", "Design system", "Norsk Mat"],
   },
   {
     slug: "readyware",

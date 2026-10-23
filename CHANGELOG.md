@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-23 — The design system case study, first version
+Slot 3 is now the Norsk Mat design system, replacing the `project-three`
+placeholder: seven sections from the agreed outline, a new structure
+diagram, and grey placeholders for every image still to make. Gaps in the
+text stay in [brackets] until they are filled in.
+Related: project-docs/specs/case-study-design-system.md
+
 ## 2026-10-20 — TryggDrift's farm up front, Readyware's card illustrated
 The farm part of TryggDrift's map now sits under its key facts, smaller,
 to show at once what the app covers; the timeline stays in "Shaping the

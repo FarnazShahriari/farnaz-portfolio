@@ -21,9 +21,7 @@ grey block, so nothing can ship by accident unnoticed.
 ## Projects — `projects.ts`
 
 - [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
-- [ ] Project three (how the design system was made): title, summary, tag
-- [ ] Project three thumbnail — 4:3, ~1200×900
-- [ ] Slug — `project-three`, will change with the title
+- [ ] Design system card: hero slide 1 as the image, and the glass-layers `scene` behind it
 
 ## Skills — `skills.ts`
 
@@ -35,7 +33,6 @@ grey block, so nothing can ship by accident unnoticed.
 ## Pages still stubbed
 
 - [ ] `/about` — the whole page
-- [ ] `/work/[slug]` — case study for project three
 
 ## KSL case study — `case-studies/ksl.ts`
 
@@ -53,6 +50,21 @@ Every image is in. Still open:
 
 - [ ] Check the test consent covers first names in a public portfolio
 - [ ] Check the role titles: "quality lead" (Ellen), "preparedness lead" (Thomas)
+
+## Norsk Mat design system case study — `case-studies/design-system.ts`
+
+First version: structure and draft copy. Every [bracket] in the text is
+open, and every image is a placeholder. Open questions are listed in
+`project-docs/specs/case-study-design-system.md`, under "Open items".
+
+- [ ] Hero: one screen in the four themes (KSL, Nyt Norge, Lokalmat, Spesialitet)
+- [ ] The starting point: interface inventory, 16:9
+- [ ] Making the case: the four-steps slide (optional), 16:9
+- [ ] The structure: Figma variables panel 16:10, button set in four themes 4:3
+- [ ] In use: a second platform's live screen
+- [ ] Ready for AI: the rules excerpt and a screen Claude built, 16:10 each
+- [ ] Quotes from Norsk Mat or a developer, if there are any
+- [ ] Permission from Netpower and Norsk Mat to show the work
 
 ## Model Builder case study — `case-studies/model-builder.ts`
 

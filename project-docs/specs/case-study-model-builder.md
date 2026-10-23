@@ -7,7 +7,7 @@ The Model Builder case study as it stands on the site. The content lives in `sit
 ## Rules
 
 - **Slug:** `model-builder`, in the last slot of `site/src/content/projects.ts` (the old `project-five`, Natzka).
-- **Order on the site:** KSL, TryggDrift, [design system, `project-three`], Readyware, Model Builder.
+- **Order on the site:** KSL, TryggDrift, Norsk Mat design system (`design-system`), Readyware, Model Builder.
 - **Writing:** no em dashes. Roles only, no personas. Luca is the one person named.
 - **The 2026 retouch:** the redesigned screens had their UI (fonts, colours, sizing) retouched using Claude Design in 2026; the structure and the flow are the original design. Say it once, briefly, in the "How it works" paragraph. Not in captions, not in eyebrows or titles, and never as the point of a section.
 - **Screens:** every UI screenshot sits in the clay tablet frame (`assets/readyware/tablet-mockup.py`, 2000 x 1250 in, 2272 x 1532 out). Carousel captions only name the step; the detail goes in `alt`.
