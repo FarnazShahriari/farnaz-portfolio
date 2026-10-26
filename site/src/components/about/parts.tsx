@@ -45,7 +45,7 @@ function LogoMark({ logo }: { logo: MediaPlaceholder }) {
   return (
     <Mark>
       {logo.src ? (
-        <div className="relative size-full p-2">
+        <div className="relative size-full p-1">
           <Image
             src={logo.src}
             alt={logo.alt ?? ""}
@@ -106,21 +106,25 @@ export function FactCards({ facts }: { facts: AboutFact[] }) {
   )
 }
 
-/** One row of pills, wrapping on narrow screens. */
+/**
+ * One row of pills, wrapping on narrow screens. The flag is decoration:
+ * the language's name is right beside it.
+ */
 export function LanguagePills({ languages }: { languages: AboutLanguage[] }) {
   return (
     <ul className="flex flex-wrap gap-3">
       {languages.map((language) => (
         <li
-          key={language.code}
+          key={language.name}
           className="flex items-center gap-3 rounded-pill border py-2 pr-5 pl-2"
         >
-          <span
-            aria-hidden="true"
-            className="flex size-9 shrink-0 items-center justify-center rounded-pill border text-xs font-bold"
-          >
-            {language.code}
-          </span>
+          <Image
+            src={language.flag}
+            alt=""
+            width={72}
+            height={72}
+            className="size-9 shrink-0 rounded-pill border object-cover"
+          />
           <span className="flex flex-col">
             <span className="text-sm font-bold">{language.name}</span>
             <span className="text-sm text-muted-foreground">{language.level}</span>

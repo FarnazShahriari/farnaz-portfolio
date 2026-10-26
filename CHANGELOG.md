@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — About: languages under the intro, flags and two logos
+The language pills now sit under the intro line, with flags instead of
+codes; Persian uses the Lion and Sun flag. Politecnico di Milano and
+University of Tehran logos are in; Netpower, Piratech and Spentys are still
+placeholders. Sources are in `assets/about/SOURCES.md`.
+Related: project-docs/specs/about-page.md
+
 ## 2026-10-26 — The About page
 `/about` is no longer a stub: portrait and the big line, three key-fact
 cards, the languages as pills, a timeline of the path so far that

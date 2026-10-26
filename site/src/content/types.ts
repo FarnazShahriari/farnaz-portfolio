@@ -119,8 +119,8 @@ export type AboutFact = {
 }
 
 export type AboutLanguage = {
-  /** Two letters in the circle, e.g. "NO". Never a flag. */
-  code: string
+  /** A square flag under `public/`, shown in a small circle. */
+  flag: string
   name: string
   /** e.g. "Fluent". */
   level: string

@@ -22,9 +22,9 @@ import { ifPublished } from "@/lib/public-file"
 export const metadata: Metadata = { title: "About" }
 
 /**
- * The About page: short and visual. Portrait and the big line, three key
- * facts, the languages, the path so far, and one line about life outside
- * work.
+ * The About page: short and visual. Portrait, the big line and the
+ * languages, three key facts, the path so far, and one line about life
+ * outside work.
  *
  * Everything it says comes from `content/about.ts`; this file only lays it
  * out, with the same header, type and reveals as a case study page. The
@@ -66,15 +66,14 @@ export default function AboutPage() {
               <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
                 {about.lead}
               </p>
+              <div className="mt-8">
+                <LanguagePills languages={about.languages} />
+              </div>
             </Reveal>
           </div>
 
           <Reveal className="mt-16 md:mt-24">
             <FactCards facts={about.facts} />
-          </Reveal>
-
-          <Reveal variant="fade" className="mt-6">
-            <LanguagePills languages={about.languages} />
           </Reveal>
         </Container>
       </Section>

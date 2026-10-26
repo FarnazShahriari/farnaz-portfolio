@@ -49,11 +49,9 @@ The page is built. Each file below shows as a grey placeholder until it is
 in `site/public/`, and appears on the next build without a code change.
 
 - [ ] `about/portrait.webp`: portrait outdoors, 4:5, roughly 1200×1500. Check the alt text in `about.ts`
-- [ ] `about/logos/netpower.png`: square, ideally transparent; shown in greyscale
-- [ ] `about/logos/piratech.png`
-- [ ] `about/logos/spentys.png`
-- [ ] `about/logos/polimi.png`
-- [ ] `about/logos/university-of-tehran.png`
+- [ ] `about/logos/netpower.png` (Netpower, Stavanger): square, ideally transparent; shown in greyscale. The company sites were blocked from the build environment, so the three company logos need adding by hand
+- [ ] `about/logos/piratech.png` (Piratech, Padova, piratech.io)
+- [ ] `about/logos/spentys.png` (Spentys, Brussels)
 - [ ] "[Back home]" label on the back link (`stubs.backHomeLabel`)
 
 ## KSL case study — `case-studies/ksl.ts`

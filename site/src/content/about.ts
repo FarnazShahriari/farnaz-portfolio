@@ -58,11 +58,13 @@ export const about: About = {
     },
   ],
 
+  // Flags from flag-icons, and for Persian the Lion and Sun flag; sources
+  // in `assets/about/SOURCES.md`.
   languages: [
-    { code: "NO", name: "Norwegian", level: "Fluent" },
-    { code: "EN", name: "English", level: "Fluent" },
-    { code: "FA", name: "Persian", level: "Native" },
-    { code: "IT", name: "Italian", level: "Basic" },
+    { flag: "/about/flags/no.png", name: "Norwegian", level: "Fluent" },
+    { flag: "/about/flags/gb.png", name: "English", level: "Fluent" },
+    { flag: "/about/flags/ir-lion-and-sun.png", name: "Persian", level: "Native" },
+    { flag: "/about/flags/it.png", name: "Italian", level: "Basic" },
   ],
 
   timelineLabel: "My path",
