@@ -28,6 +28,8 @@ function logo(file: string, name: string): MediaPlaceholder {
 }
 
 export const about: About = {
+  pageTitle: "About me",
+
   portrait: {
     ratio: "4 / 5",
     caption: "Portrait outdoors, 4:5, roughly 1200×1500",

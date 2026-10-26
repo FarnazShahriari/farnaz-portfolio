@@ -7,7 +7,6 @@ import { TooltipProvider } from "@farnazshahriari/design-system/ui/tooltip"
 
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteNav } from "@/components/layout/site-nav"
-import { site } from "@/content/site"
 
 import "./globals.css"
 
@@ -19,9 +18,17 @@ import "./globals.css"
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] })
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
 
+/**
+ * What search engines and link previews show. The full name here; the
+ * shorter `site.name` is for the nav.
+ */
 export const metadata: Metadata = {
-  title: { default: site.name, template: `%s — ${site.name}` },
-  description: "[Site description — one sentence, used by search and link previews.]",
+  title: {
+    default: "Farnaz Shahriari Norheim, UX designer",
+    template: "%s | Farnaz Shahriari Norheim",
+  },
+  description:
+    "UX designer in Sandnes, Norway, designing complex B2B services from discovery to finished interface.",
 }
 
 export default function RootLayout({

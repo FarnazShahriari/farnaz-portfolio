@@ -142,6 +142,8 @@ export type TimelineStop = {
 )
 
 export type About = {
+  /** The page's name in the browser tab and in search results. */
+  pageTitle: string
   /** Shown as the placeholder until the file at `src` exists. */
   portrait: MediaPlaceholder
   /** The big line, set like a case study's title. */
@@ -156,11 +158,6 @@ export type About = {
   timeline: TimelineStop[]
   /** The one line at the very end. */
   outside: { icon: LucideIcon; text: string }
-}
-
-export type TrackRecordEntry = {
-  /** A client, employer, publication or award. Name only — no prose. */
-  name: string
 }
 
 /* ------------------------------------------------------------------ */

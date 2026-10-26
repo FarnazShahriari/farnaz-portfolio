@@ -91,7 +91,12 @@ export default async function SkillPage({
             <p className="mt-8 max-w-[30ch] text-lead text-pretty">
               {page.statement}
             </p>
-          ) : null}
+          ) : (
+            // Only until the page is written, as on a project page.
+            <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
+              {stubs.skill.note}
+            </p>
+          )}
         </Container>
       </Section>
 

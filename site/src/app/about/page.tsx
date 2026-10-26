@@ -19,7 +19,7 @@ import { about } from "@/content/about"
 import { stubs } from "@/content/stubs"
 import { ifPublished } from "@/lib/public-file"
 
-export const metadata: Metadata = { title: "About" }
+export const metadata: Metadata = { title: about.pageTitle }
 
 /**
  * The About page: short and visual. Portrait, the big line and the

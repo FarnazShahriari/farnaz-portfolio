@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — Homepage copy, projects first, no track record
+Nav, intro, section titles, buttons and footer have their real copy, and
+the site name is "Farnaz S. Norheim" (the full name in the page title for
+search). The homepage now runs intro, hero project, more projects, how I
+work. The track record strip is gone. Only the footer email is still a
+placeholder on the homepage, besides project three and the images.
+Related: project-docs/decisions/2026-10-26-projects-first-no-track-record.md
+
 ## 2026-10-26 — About: languages under the intro, flags and two logos
 The language pills now sit under the intro line, with flags instead of
 codes; Persian uses the Lion and Sun flag. Politecnico di Milano and

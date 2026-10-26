@@ -6,20 +6,12 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## Site-level — `site.ts`
 
-- [ ] Site name (nav, top left)
-- [ ] Nav labels ×4 — Work, Skills, About, Contact are working names only
-- [ ] Intro statement — one sentence, positioning
-- [ ] Intro CTA label
-- [ ] Portrait image — 4:5, ~800×1000
-- [ ] Section title above the non-hero projects
-- [ ] Track record line — one sentence framing the names
-- [ ] Track record names ×5
-- [ ] Footer email address
-- [ ] Footer links ×3 — LinkedIn, Instagram, CV placeholders point at example.com
+- [ ] Footer email address (`site.footer.email`, shows as "[email]")
+- [ ] CV file at `site/public/cv.pdf` (the footer's CV link points there)
+- [ ] Homepage portrait image, 4:5, ~800×1000
 
 ## Projects — `projects.ts`
 
-- [ ] Homepage hero image (KSL) — the case study page has its carousel; the homepage block still shows a placeholder
 - [ ] Project three (how the design system was made): title, summary, tag
 - [ ] Project three thumbnail — 4:3, ~1200×900
 - [ ] Slug — `project-three`, will change with the title
@@ -52,7 +44,6 @@ in `site/public/`, and appears on the next build without a code change.
 - [ ] `about/logos/netpower.png` (Netpower, Stavanger): square, ideally transparent; shown in greyscale. The company sites were blocked from the build environment, so the three company logos need adding by hand
 - [ ] `about/logos/piratech.png` (Piratech, Padova, piratech.io)
 - [ ] `about/logos/spentys.png` (Spentys, Brussels)
-- [ ] "[Back home]" label on the back link (`stubs.backHomeLabel`)
 
 ## KSL case study — `case-studies/ksl.ts`
 
@@ -79,4 +70,3 @@ Nothing open.
 
 - [ ] Is three the right number of skills?
 - [ ] Should the footer carry a contact form, or stay links only?
-- [ ] Does the track record strip need logos rather than names?

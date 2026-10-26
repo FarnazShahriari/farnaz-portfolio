@@ -69,7 +69,7 @@ export const projects: Project[] = [
     summary: "[One line on what it was. ~12 words.]",
     image: {
       ratio: "4 / 3",
-      caption: "Project thumbnail — 4:3, roughly 1200×900",
+      caption: "Project thumbnail, 4:3, roughly 1200×900",
     },
     tags: ["[Role]"],
   },
