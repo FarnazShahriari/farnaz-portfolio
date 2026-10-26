@@ -105,6 +105,59 @@ export type MediaPlaceholder = {
   openWide?: boolean
 }
 
+/* ------------------------------------------------------------------ */
+/* About                                                               */
+/* ------------------------------------------------------------------ */
+
+/** One of the key-fact cards under the About hero. */
+export type AboutFact = {
+  icon: LucideIcon
+  /** Bold, e.g. "Sandnes, Norway". */
+  title: string
+  /** Muted, under the title. */
+  subtitle: string
+}
+
+export type AboutLanguage = {
+  /** Two letters in the circle, e.g. "NO". Never a flag. */
+  code: string
+  name: string
+  /** e.g. "Fluent". */
+  level: string
+}
+
+/**
+ * One stop on the About timeline, with a logo or an icon on its card. A
+ * logo's `src` can point at a file that is not there yet: the page shows a
+ * small grey square until it is.
+ */
+export type TimelineStop = {
+  /** Written out in words, e.g. "2023 to now". Leave out for none. */
+  period?: string
+  title: string
+  subtitle: string
+} & (
+  | { logo: MediaPlaceholder; icon?: never }
+  | { icon: LucideIcon; logo?: never }
+)
+
+export type About = {
+  /** Shown as the placeholder until the file at `src` exists. */
+  portrait: MediaPlaceholder
+  /** The big line, set like a case study's title. */
+  title: string
+  /** One muted line under it. */
+  lead: string
+  facts: AboutFact[]
+  languages: AboutLanguage[]
+  /** The eyebrow above the timeline. */
+  timelineLabel: string
+  /** Newest first. */
+  timeline: TimelineStop[]
+  /** The one line at the very end. */
+  outside: { icon: LucideIcon; text: string }
+}
+
 export type TrackRecordEntry = {
   /** A client, employer, publication or award. Name only — no prose. */
   name: string

@@ -11,11 +11,6 @@ export const stubs = {
   backToWorkLabel: "[Back to the work]",
   backToSkillsLabel: "Back to the skills",
 
-  about: {
-    title: "[About page title]",
-    note: "[What this page will hold — the longer version of the intro, the background, and how she works. One narrow column throughout. ~30 words.]",
-  },
-
   project: {
     note: "[What a project page will hold — the problem, the process, the outcome, and the images that carry it. Built on the case-study archetype. ~30 words.]",
   },

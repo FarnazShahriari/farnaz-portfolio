@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — The About page
+`/about` is no longer a stub: portrait and the big line, three key-fact
+cards, the languages as pills, a timeline of the path so far that
+alternates sides on desktop, and one line about painting. Content is in
+`about.ts`; the portrait and five logos are placeholders until their files
+are in `public/about/`.
+Related: project-docs/specs/about-page.md
+
 ## 2026-10-26 — Nyt Norge workshop, shorter, with three images
 The section is cut to two short paragraphs and the steps. Under it, the room,
 the scenario 1 sticky notes and the impact and effort map sit side by side,
