@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — A plan to modernise the site
+The site feels old-fashioned, so a modernisation round starts: global look,
+home intro, home work, about, and footer, each taken through explore →
+Crazy 8s → decide → spec → build. Global goes first, lightly, since the
+rest depends on it.
+Related: project-docs/decisions/2026-10-26-modernisation-process.md
+
 ## 2026-10-20 — TryggDrift's farm up front, Readyware's card illustrated
 The farm part of TryggDrift's map now sits under its key facts, smaller,
 to show at once what the app covers; the timeline stays in "Shaping the
