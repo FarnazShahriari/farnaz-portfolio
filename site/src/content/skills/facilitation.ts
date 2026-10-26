@@ -3,9 +3,10 @@
  * page, and nothing else.
  *
  * Built from the same section types as the case studies; see the note at
- * the top of `field-to-interface.ts`. The three workshops are told as the
- * case studies tell them: KSL from `ksl.ts`, Natzka from
- * `model-builder.ts`, Readyware from `readyware.ts`.
+ * the top of `field-to-interface.ts`. KSL, Natzka and Readyware are told
+ * as their case studies tell them (`ksl.ts`, `model-builder.ts`,
+ * `readyware.ts`). Nyt Norge has no case study; its photos are kept full
+ * size in `assets/nyt-norge/`.
  */
 
 import type { SkillPage } from "../types"
@@ -30,6 +31,50 @@ export const facilitation: SkillPage = {
             { label: "Format", value: "On site or remote" },
             { label: "Tools", value: "FigJam" },
           ],
+        },
+      ],
+    },
+    {
+      // No case study behind this one: the facts are Farnaz's own account,
+      // the pain points are from the workshop's sticky notes and the
+      // effort and impact map Netpower made afterwards.
+      type: "story",
+      theme: "muted",
+      eyebrow: "With the users",
+      title: "Nyt Norge: finding where product registration breaks",
+      body: [
+        "Nyt Norge is Norsk Mat's origin label for Norwegian food. To use it, a producer registers each product and its ingredients on Norsk Mat's platform and applies for approval. I ran a workshop with people from Coop and Nortura who do this work every day, to find out where the process breaks for them.",
+        "We kept the focus on products: searching your own products, creating, changing and removing them, and sending messages. Each participant first worked alone through scenarios with real tasks in the current portal. Then everyone wrote down what most often goes wrong in their daily work, one problem per note.",
+        "With a simple structure, each problem became a how might we question on the wall. Anything outside the process went to a parking lot, to be picked up later. We grouped similar questions, the people who wrote them explained what was behind them, and a vote showed what mattered most.",
+        {
+          kind: "steps",
+          items: [
+            "Scenarios in the current portal",
+            "What goes wrong",
+            "How might we",
+            "Group and discuss",
+            "Vote",
+          ],
+        },
+        "The pain points were concrete. Help texts did not show what spices and ingredients need to be approved, and that note was among the most voted. Error messages said something was wrong, but not where. Products could not be found by EPD number or internal item number.",
+        {
+          kind: "quote",
+          quote: {
+            text: "Hvordan komme direkte til feilen hvis noen punkter ikke er fylt ut riktig? Feilmelding men sier ikke hvor.",
+            source: "Participant, scenario 1: create a new product",
+          },
+        },
+        "Afterwards, we at Netpower placed every problem on a map of impact against the effort to fix it in design and development. That showed which fixes would help most for the least work, and made it easier to decide what to take forward.",
+        {
+          kind: "media",
+          media: {
+            ratio: "1800 / 1752",
+            caption:
+              "Nyt Norge: one wall per scenario, from creating a new product to administration.",
+            src: "/work/nyt-norge/workshop-room-scenario-walls.webp",
+            alt: "A meeting room with a long table of laptops, coffee cups and snacks. Two people sit at the table, and three stand at the wall, reading five large paper sheets covered in yellow sticky notes. Each sheet is headed with a scenario: create a new product, get a comment and change the application, get messages, the search experience and removing products, and administration.",
+            photo: true,
+          },
         },
       ],
     },

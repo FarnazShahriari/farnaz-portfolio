@@ -48,7 +48,7 @@ because it uses the same blocks.
 | Slug | Projects | Notes |
 | --- | --- | --- |
 | `field-to-interface` | ksl, tryggdrift, readyware, model-builder | |
-| `facilitation` | ksl, model-builder, readyware | |
+| `facilitation` | ksl, model-builder, readyware | Opens with the Nyt Norge workshop, which has no case study; photo in `public/work/nyt-norge/`, PNG originals in `assets/nyt-norge/` |
 | `ai-across-the-design-process` | ksl, tryggdrift, project-three | Two `[confirm]` items in TODO.md |
 
 Facts are taken from `content/case-studies/*.ts`. Where the brief and a case

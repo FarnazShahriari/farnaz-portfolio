@@ -35,6 +35,8 @@ Titles, descriptions, slugs and the three pages are in. Still open:
 - [ ] Certificates, AI: three Anthropic courses, image, course name, year, credential link
 - [ ] [confirm] AI page, "Where I use it": the design system built in code with Claude Code and versioned on GitHub. No case study to check it against yet
 - [ ] [confirm] AI page, "Designing for AI": confirm the question suggestion is AI-driven. `ksl.ts` only says "the system suggests"
+- [ ] Facilitation page, Nyt Norge: check the people in the workshop photo are fine with being shown, and that Norsk Mat, Coop and Nortura can be named
+- [ ] Facilitation page, Nyt Norge: no case study to check against. The pain points are read from the sticky notes and the impact and effort map
 - [ ] Facilitation page, facts: "On site or remote" and "Norwegian and English" come from the brief, not a case study. The KSL workshop's format is not stated in `ksl.ts`
 
 ## Pages still stubbed

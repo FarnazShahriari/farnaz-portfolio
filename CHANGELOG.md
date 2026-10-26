@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — Nyt Norge workshop on the facilitation page
+The facilitation page opens its workshops with Nyt Norge: users from Coop
+and Nortura worked through product scenarios in the current portal, turned
+what goes wrong into how might we questions, and voted; Netpower then
+mapped each problem by impact and effort. The two workshop photos are
+converted from HEIC to PNG in `assets/nyt-norge/`.
+Related: project-docs/specs/skill-pages.md
+
 ## 2026-10-26 — Skills section and three skill pages
 The homepage skills list has its real titles and descriptions, and each
 skill has a page built from the case study blocks: header, story sections,
