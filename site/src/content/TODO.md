@@ -12,7 +12,6 @@ grey block, so nothing can ship by accident unnoticed.
 - [ ] Intro CTA label
 - [ ] Portrait image — 4:5, ~800×1000
 - [ ] Section title above the non-hero projects
-- [ ] Section title above the skills list
 - [ ] Track record line — one sentence framing the names
 - [ ] Track record names ×5
 - [ ] Footer email address
@@ -25,12 +24,18 @@ grey block, so nothing can ship by accident unnoticed.
 - [ ] Project three thumbnail — 4:3, ~1200×900
 - [ ] Slug — `project-three`, will change with the title
 
-## Skills — `skills.ts`
+## Skills — `skills.ts` and `skills/*.ts`
 
-- [ ] Skill one: title and description
-- [ ] Skill two: title and description
-- [ ] Skill three: title and description
-- [ ] Slugs — currently `skill-one`…`skill-three`
+Titles, descriptions, slugs and the three pages are in. Still open:
+
+- [ ] "Next skill" label above the next skill's name (`site.skills.nextLabel`)
+- [ ] Credential link label under a certificate (`site.skills.credentialLabel`), shown once a certificate has an `href`
+- [ ] Certificates, field study to interface: three images, course name, issuer, year, credential link
+- [ ] Certificates, facilitation: three images, course name, issuer, year, credential link
+- [ ] Certificates, AI: three Anthropic courses, image, course name, year, credential link
+- [ ] [confirm] AI page, "Where I use it": the design system built in code with Claude Code and versioned on GitHub. No case study to check it against yet
+- [ ] [confirm] AI page, "Designing for AI": confirm the question suggestion is AI-driven. `ksl.ts` only says "the system suggests"
+- [ ] Facilitation page, facts: "On site or remote" and "Norwegian and English" come from the brief, not a case study. The KSL workshop's format is not stated in `ksl.ts`
 
 ## Pages still stubbed
 
@@ -39,7 +44,7 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## KSL case study — `case-studies/ksl.ts`
 
-- [ ] `/skills/[slug]` — skill detail template and content
+Nothing open.
 
 ## TryggDrift case study — `case-studies/tryggdrift.ts`
 

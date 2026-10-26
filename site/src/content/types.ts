@@ -60,6 +60,21 @@ export type Skill = {
   description: string
 }
 
+/**
+ * A course or certificate on a skill page: its image, and the line of
+ * facts under it.
+ */
+export type Certificate = {
+  /** The certificate itself. Opens larger on click, like a case study image. */
+  image: MediaPlaceholder
+  title: string
+  /** Who gave it, e.g. a school or a company. */
+  issuer: string
+  year: string
+  /** The credential online, when there is one. */
+  href?: string
+}
+
 export type MediaPlaceholder = {
   /** CSS aspect-ratio, e.g. "16 / 9". Locked so nothing reflows on load. */
   ratio: string
@@ -195,6 +210,7 @@ export type DiagramId =
   | "readyware-incident-cycle"
   | "model-builder-overview"
   | "model-builder-journey"
+  | "ai-design-process"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */
@@ -344,4 +360,20 @@ export type CaseStudy = {
     slides: MediaPlaceholder[]
   }
   sections: CaseStudySection[]
+}
+
+/**
+ * The body of a skill page. The title comes from the skill itself, so it
+ * is written once and shared with the homepage list.
+ */
+export type SkillPage = {
+  slug: string
+  /** One large line under the title. */
+  statement: string
+  /** Drawn by the same blocks as a case study. */
+  sections: CaseStudySection[]
+  /** Project slugs, in the order the cards show. */
+  projects: string[]
+  /** Three or more show as a carousel, fewer as a row. */
+  certificates: Certificate[]
 }

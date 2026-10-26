@@ -44,9 +44,19 @@ export const site = {
   },
 
   skills: {
-    title: "[Section title for the skills list]",
+    title: "How I work",
     /** Shown inside every expanded skill row. */
-    ctaLabel: "[Open this skill]",
+    ctaLabel: "See it in practice",
+    /** Above the title on a skill page. */
+    eyebrow: "Skill",
+    /** Above the project cards on a skill page. */
+    projectsTitle: "Seen in these projects",
+    /** Above the courses and certificates on a skill page. */
+    certificatesTitle: "Courses and certificates",
+    /** Under a certificate that links to its credential online. */
+    credentialLabel: "[See the credential]",
+    /** Sits above the next skill's name at the foot of a skill page. */
+    nextLabel: "[Next skill]",
   },
 
   trackRecord: {

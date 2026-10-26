@@ -147,6 +147,8 @@ export function ScreenCarousel({
   items,
   label,
   device = "tablet",
+  noun = "screen",
+  details,
 }: {
   items: MediaPlaceholder[]
   /** Names the carousel for screen readers, e.g. "The notes field as built". */
@@ -156,6 +158,13 @@ export function ScreenCarousel({
    * wider, so fewer; large ones are one at a time.
    */
   device?: keyof typeof layouts
+  /** What one slide is, in the buttons' names and the tap hint. */
+  noun?: string
+  /**
+   * Anything to show under each slide, in the same order as `items`, such
+   * as a certificate's title and issuer.
+   */
+  details?: React.ReactNode[]
 }) {
   const layout = layouts[device]
   const reducedMotion = usePrefersReducedMotion()
@@ -236,8 +245,8 @@ export function ScreenCarousel({
                       type="button"
                       aria-label={
                         inView === false
-                          ? `Show screen ${i + 1}`
-                          : `Open screen ${i + 1} larger`
+                          ? `Show ${noun} ${i + 1}`
+                          : `Open ${noun} ${i + 1} larger`
                       }
                       onClick={() => {
                         if (inView === false) return pageTo(i)
@@ -285,11 +294,12 @@ export function ScreenCarousel({
                       />
                     </div>
                   )}
-                  {media.src ? (
+                  {media.src && !media.hideCaption ? (
                     <figcaption className={cn(captionStyle, layout.caption)}>
                       {media.caption}
                     </figcaption>
                   ) : null}
+                  {details?.[i]}
                 </figure>
               </CarouselItem>
             )
@@ -299,7 +309,7 @@ export function ScreenCarousel({
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <p className="hidden items-center gap-2 text-xs text-muted-foreground pointer-coarse:flex">
             <MaximizeIcon aria-hidden="true" className="size-4" />
-            Tap a screen to see it larger.
+            Tap a {noun} to see it larger.
           </p>
           <div className="ml-auto flex items-center gap-3">
             {range ? (

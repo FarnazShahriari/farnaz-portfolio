@@ -9,7 +9,7 @@
 export const stubs = {
   backHomeLabel: "[Back home]",
   backToWorkLabel: "[Back to the work]",
-  backToSkillsLabel: "[Back to the skills]",
+  backToSkillsLabel: "Back to the skills",
 
   about: {
     title: "[About page title]",
@@ -18,9 +18,5 @@ export const stubs = {
 
   project: {
     note: "[What a project page will hold — the problem, the process, the outcome, and the images that carry it. Built on the case-study archetype. ~30 words.]",
-  },
-
-  skill: {
-    note: "[What a skill page will hold — where this skill came from, how it shows up in the work, and which projects demonstrate it. ~30 words.]",
   },
 } as const

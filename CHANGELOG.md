@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — Skills section and three skill pages
+The homepage skills list has its real titles and descriptions, and each
+skill has a page built from the case study blocks: header, story sections,
+the projects that show it, courses and certificates, and the next skill.
+AI page gets a new `ai-design-process` diagram. Certificates are grey
+placeholders; open facts are in TODO.md.
+Related: project-docs/specs/skill-pages.md
+
 ## 2026-10-20 — TryggDrift's farm up front, Readyware's card illustrated
 The farm part of TryggDrift's map now sits under its key facts, smaller,
 to show at once what the app covers; the timeline stays in "Shaping the

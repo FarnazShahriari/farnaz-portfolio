@@ -141,27 +141,36 @@ export function Steps({ items }: { items: string[] }) {
  * items wrap into rows of three, and a short last row is centred rather
  * than left hanging. That is done on a six-column grid where each item
  * spans two, so the leftover one or two can start one column in.
+ *
+ * Fewer than three keep the size they would have in a row of three, and
+ * are centred the same way, rather than growing to fill the row.
  */
 export function Gallery({ items }: { items: MediaPlaceholder[] }) {
   const n = items.length
   const rest = n % 3
+  const perRow = Math.max(n, 3)
 
   return (
     <div className="@container">
       <ul
-        className="grid grid-cols-6 gap-x-4 gap-y-8 @4xl:grid-cols-[repeat(var(--n),minmax(0,1fr))] @4xl:gap-x-6"
-        style={{ "--n": n } as CSSProperties}
+        className="grid grid-cols-6 gap-x-4 gap-y-8 @4xl:grid-cols-[repeat(var(--cols),minmax(0,1fr))] @4xl:gap-x-6"
+        style={{ "--cols": perRow * 2 } as CSSProperties}
       >
         {items.map((media, i) => (
           <li
             key={media.src ?? i}
             className={cn(
-              "col-span-2 @4xl:col-span-1 @4xl:col-start-auto",
+              "col-span-2",
+              n >= 3 && "@4xl:col-start-auto",
               rest === 2 && i === n - 2 && "col-start-2",
               rest === 1 && i === n - 1 && "col-start-3"
             )}
           >
-            <Media media={media} sizes="(min-width: 1024px) 20vw, 33vw" enlarge />
+            <Media
+              media={media}
+              sizes={`(min-width: 1024px) ${Math.ceil(100 / perRow)}vw, 33vw`}
+              enlarge
+            />
           </li>
         ))}
       </ul>

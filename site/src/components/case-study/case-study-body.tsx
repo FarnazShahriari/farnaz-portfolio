@@ -11,7 +11,8 @@ const defaultTheme: Record<CaseStudySection["type"], SectionTheme> = {
   insights: "muted",
 }
 
-function themeOf(section: CaseStudySection): SectionTheme {
+/** The ground a section sits on, once its default is filled in. */
+export function themeOf(section: CaseStudySection): SectionTheme {
   return section.theme ?? defaultTheme[section.type]
 }
 
