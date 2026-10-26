@@ -29,7 +29,7 @@ export const facilitation: SkillPage = {
           items: [
             { label: "Languages", value: "Norwegian and English" },
             { label: "Format", value: "On site or remote" },
-            { label: "Tools", value: "FigJam" },
+            { label: "Workspace", value: "FigJam remote, sticky notes on site" },
           ],
         },
       ],
@@ -43,38 +43,43 @@ export const facilitation: SkillPage = {
       eyebrow: "With the users",
       title: "Nyt Norge: finding where product registration breaks",
       body: [
-        "Nyt Norge is Norsk Mat's origin label for Norwegian food. To use it, a producer registers each product and its ingredients on Norsk Mat's platform and applies for approval. I ran a workshop with people from Coop and Nortura who do this work every day, to find out where the process breaks for them.",
-        "We kept the focus on products: searching your own products, creating, changing and removing them, and sending messages. Each participant first worked alone through scenarios with real tasks in the current portal. Then everyone wrote down what most often goes wrong in their daily work, one problem per note.",
-        "With a simple structure, each problem became a how might we question on the wall. Anything outside the process went to a parking lot, to be picked up later. We grouped similar questions, the people who wrote them explained what was behind them, and a vote showed what mattered most.",
+        "To use the Nyt Norge label, producers register products and ingredients on Norsk Mat's platform for approval. I ran a workshop with users from Coop and Nortura to find where that breaks in their daily work.",
         {
           kind: "steps",
           items: [
-            "Scenarios in the current portal",
+            "Scenarios in the portal",
             "What goes wrong",
             "How might we",
             "Group and discuss",
             "Vote",
           ],
         },
-        "The pain points were concrete. Help texts did not show what spices and ingredients need to be approved, and that note was among the most voted. Error messages said something was wrong, but not where. Products could not be found by EPD number or internal item number.",
+        "Top pain points: unclear ingredient requirements, error messages that do not say where, and no search by EPD or item number. Afterwards, Netpower mapped each problem by impact and cost to fix, to decide what to take forward.",
+      ],
+      below: [
         {
-          kind: "quote",
-          quote: {
-            text: "Hvordan komme direkte til feilen hvis noen punkter ikke er fylt ut riktig? Feilmelding men sier ikke hvor.",
-            source: "Participant, scenario 1: create a new product",
-          },
-        },
-        "Afterwards, we at Netpower placed every problem on a map of impact against the effort to fix it in design and development. That showed which fixes would help most for the least work, and made it easier to decide what to take forward.",
-        {
-          kind: "media",
-          media: {
-            ratio: "1800 / 1752",
-            caption:
-              "Nyt Norge: one wall per scenario, from creating a new product to administration.",
-            src: "/work/nyt-norge/workshop-room-scenario-walls.webp",
-            alt: "A meeting room with a long table of laptops, coffee cups and snacks. Two people sit at the table, and three stand at the wall, reading five large paper sheets covered in yellow sticky notes. Each sheet is headed with a scenario: create a new product, get a comment and change the application, get messages, the search experience and removing products, and administration.",
-            photo: true,
-          },
+          kind: "gallery",
+          items: [
+            {
+              ratio: "2000 / 1837",
+              caption: "One wall per scenario, from creating a product to administration.",
+              src: "/work/nyt-norge/workshop-room-scenario-walls.webp",
+              alt: "A meeting room with a long table of laptops, coffee cups and snacks. Two people sit at the table, and three stand at the wall, reading five large paper sheets covered in yellow sticky notes. Each sheet is headed with a scenario: create a new product, get a comment and change the application, get messages, the search experience and removing products, and administration.",
+              photo: true,
+            },
+            {
+              ratio: "2000 / 1837",
+              caption: "Scenario 1, create a new product: problems as notes, with votes.",
+              src: "/work/nyt-norge/scenario-1-sticky-notes.webp",
+              alt: "A paper sheet headed 'Scenario 1: Opprett nytt produkt' with handwritten yellow sticky notes in Norwegian. One asks how to get straight to the error when some fields are not filled in correctly, since the error message does not say where. Another asks for help texts that show the requirements for spices and ingredients to be approved, with several coloured voting dots on it.",
+            },
+            {
+              ratio: "2000 / 1837",
+              caption: "After the workshop: every problem placed by impact and effort.",
+              src: "/work/nyt-norge/impact-effort-matrix.webp",
+              alt: "A two by two matrix in Norwegian, effort ('Innsats') low and high across the top, impact ('Innflytelse') high and low down the side, with colour-coded notes in each quarter and red dots on the most voted. High impact, low effort holds most of them: help texts for ingredient requirements, error messages that point to the error, search by EPD number and internal item number, and feedback by email when an application is sent, rejected or approved.",
+            },
+          ],
         },
       ],
     },

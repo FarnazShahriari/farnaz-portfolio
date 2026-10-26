@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-10-26 — Nyt Norge workshop, shorter, with three images
+The section is cut to two short paragraphs and the steps. Under it, the room,
+the scenario 1 sticky notes and the impact and effort map sit side by side,
+cropped to one shape. "Tools" in the facilitation facts is now "Workspace":
+FigJam remote, sticky notes on site.
+Related: project-docs/specs/skill-pages.md
+
 ## 2026-10-26 — Nyt Norge workshop on the facilitation page
 The facilitation page opens its workshops with Nyt Norge: users from Coop
 and Nortura worked through product scenarios in the current portal, turned
