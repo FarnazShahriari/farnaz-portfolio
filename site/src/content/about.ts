@@ -40,7 +40,7 @@ export const about: About = {
   },
 
   title: "Hi, I'm Farnaz. I design tools for demanding work.",
-  lead: "UX designer in Sandnes, working on B2B tools for food safety, HMS, incident management and complex data.",
+  lead: "UX designer in Sandnes. So far I've designed for agriculture, safety and complex data, with experience from Norway, Italy and Switzerland.",
 
   facts: [
     {

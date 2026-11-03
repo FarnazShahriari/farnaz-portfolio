@@ -11,6 +11,11 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-03 — About: a new line under the title
+The line under "Hi, I'm Farnaz" now names the fields and the countries:
+agriculture, safety and complex data, from Norway, Italy and Switzerland.
+Related: project-docs/specs/about-page.md
+
 ## 2026-10-26 — Homepage copy, projects first, no track record
 Nav, intro, section titles, buttons and footer have their real copy, and
 the site name is "Farnaz S. Norheim" (the full name in the page title for
