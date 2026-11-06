@@ -1,32 +1,26 @@
 import Image from "next/image"
+import Link from "next/link"
 
 import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
-import {
-  ProjectCard,
-  ProjectGrid,
-} from "@farnazshahriari/design-system/patterns/project-grid"
-
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
+import { cn } from "@farnazshahriari/design-system/lib/utils"
 
-import { projectMediaTransition } from "@/lib/view-transitions"
-
+import { Eyebrow } from "@/components/case-study/parts"
+import { photoTone } from "@/components/ui/media"
 import { Placeholder } from "@/components/ui/placeholder"
-import { SceneCover } from "@/components/ui/scene-cover"
+import { SectionOpener } from "@/components/ui/section-opener"
+import { ratioSize } from "@/lib/media"
+import { projectMediaTransition } from "@/lib/view-transitions"
 import { site } from "@/content/site"
 import type { Project } from "@/content/types"
 
 /**
- * Block 4 — the rest of the work, deliberately smaller than the hero.
- *
- * Uses the system's own `ProjectGrid` pattern rather than a local grid, so
- * this listing and any future work-index page stay the same thing. Stagger
- * stays off: it reads well with eight considered projects and badly with
- * three.
- *
- * Renders nothing when there is nothing but the hero.
+ * The rest of the work, under the hero: two columns that drift, the right
+ * one starting 160px lower, so the grid reads as a sequence rather than
+ * rows. Renders nothing when there is nothing but the hero.
  */
 export function OtherProjects({ projects }: { projects: Project[] }) {
   if (projects.length === 0) return null
@@ -34,90 +28,116 @@ export function OtherProjects({ projects }: { projects: Project[] }) {
   return (
     <Section id="work" rhythm="lg" aria-labelledby="other-projects-title">
       <Container>
-        <Reveal>
+        <SectionOpener />
+        <Reveal className="flex flex-col gap-4">
+          <Eyebrow>{site.work.eyebrow}</Eyebrow>
           <h2 id="other-projects-title" className="text-h2 text-balance">
             {site.work.title}
           </h2>
         </Reveal>
 
-        <ProjectCards projects={projects} className="mt-10 md:mt-16" />
+        <ProjectCards projects={projects} stagger className="mt-20" />
       </Container>
     </Section>
   )
 }
 
 /**
- * The cards on their own, for anywhere else that lists projects — a skill
- * page's "Seen in these projects" — so every listing shows the same
- * picture and title, and each card morphs into its project page the same
- * way.
+ * The project cards on their own, for anywhere that lists projects: the
+ * homepage (staggered) and a skill page's "Seen in these projects" (in
+ * plain rows). One card shape everywhere, and every card morphs into its
+ * project page the same way.
  */
 export function ProjectCards({
   projects,
+  stagger,
   className,
 }: {
   projects: Project[]
+  /** Push every second card 160px down, so the two columns drift. */
+  stagger?: boolean
   className?: string
 }) {
   return (
-    <ProjectGrid className={className}>
-      {projects.map(withScene).map((project) => (
-        <ProjectCard
-          key={project.slug}
-          href={`/work/${project.slug}`}
-          title={project.title}
-          // Pairs this title with the same-named one on the project
-          // page, so the word travels and scales into place instead of
-          // one fading out while another fades in. Both sides must use
-          // the same name or it silently falls back to a crossfade.
-          transitionName={projectTitleTransition(project.slug)}
-          description={project.summary}
-          tags={project.tags ? [...project.tags] : undefined}
-          // A scene sets the card's shape; the screen sits in front of it.
-          ratio={project.scene?.ratio ?? project.image.ratio}
-          media={
-            project.scene ? (
-              // The photo stays here; only the screen in front of it
-              // morphs into the project page.
-              <SceneCover
-                project={{ ...project, scene: project.scene }}
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-            ) : (
-              <ViewTransition
-                name={projectMediaTransition(project.slug)}
-                share="morph"
-                default="none"
-              >
-                {project.image.src ? (
-                  // The frame is not positioned, so the picture brings
-                  // its own box to fill.
-                  <div className="relative size-full">
-                    <Image
-                      src={project.image.src}
-                      alt={project.image.alt ?? ""}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <Placeholder media={project.image} fill />
-                )}
-              </ViewTransition>
-            )
-          }
-        />
+    <ul
+      className={cn(
+        "grid list-none grid-cols-1 gap-y-16 p-0 md:grid-cols-2 md:gap-x-24 md:gap-y-30",
+        stagger && "md:pb-40",
+        className
+      )}
+    >
+      {projects.map((project) => (
+        <li key={project.slug} className={cn(stagger && "md:even:translate-y-40")}>
+          <ProjectTile project={project} />
+        </li>
       ))}
-    </ProjectGrid>  )
+    </ul>
+  )
 }
 
 /**
- * The hero project has no card on the homepage, so no `scene`; listed
- * elsewhere it takes its `backdrop` as one, at the cards' 4:3, so its
- * screen sits in front of its own setting like the others' do.
+ * One project as a single link: the image at 4:3, a meta row (what it is,
+ * a short rule, who it was for), then the name. Hovering draws the rule
+ * across in black.
+ *
+ * A photograph fills the frame, in the photo tone. A screen or mockup sits
+ * at 82% on the muted ground instead, in full colour.
  */
-function withScene(project: Project): Project {
-  if (project.scene || !project.backdrop) return project
-  return { ...project, scene: { ...project.backdrop, ratio: "4 / 3" } }
+function ProjectTile({ project }: { project: Project }) {
+  const { image } = project
+
+  return (
+    <Link
+      href={`/work/${project.slug}`}
+      className="group flex flex-col gap-7 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+    >
+      <div className="relative aspect-4/3 overflow-hidden rounded-lg bg-muted">
+        <ViewTransition
+          name={projectMediaTransition(project.slug)}
+          share="morph"
+          default="none"
+        >
+          {!image.src ? (
+            <Placeholder media={image} fill />
+          ) : image.photo ? (
+            <Image
+              src={image.src}
+              alt={image.alt ?? ""}
+              fill
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className={`object-cover ${photoTone}`}
+            />
+          ) : (
+            <div className="absolute inset-0 grid place-items-center">
+              <Image
+                src={image.src}
+                alt={image.alt ?? ""}
+                {...ratioSize(image.ratio)}
+                sizes="(min-width: 768px) 40vw, 85vw"
+                className="h-auto w-41/50"
+              />
+            </div>
+          )}
+        </ViewTransition>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-[minmax(0,1fr)_--spacing(18)_minmax(0,1fr)] items-start gap-5">
+          <p className="text-meta text-pretty">{project.summary}</p>
+          <span aria-hidden="true" className="relative mt-2.25 block h-px bg-border">
+            <span className="absolute inset-0 origin-left scale-x-0 bg-foreground transition-transform duration-700 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none" />
+          </span>
+          <p className="text-meta">{project.client}</p>
+        </div>
+
+        <ViewTransition
+          name={projectTitleTransition(project.slug)}
+          share="morph"
+          default="none"
+        >
+          <h3 className="text-h2 text-balance">{project.name}</h3>
+        </ViewTransition>
+      </div>
+    </Link>
+  )
 }

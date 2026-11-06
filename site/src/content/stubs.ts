@@ -6,7 +6,6 @@
  */
 
 export const stubs = {
-  backHomeLabel: "Back home",
   backToWorkLabel: "Back to projects",
   backToSkillsLabel: "Back to how I work",
 

@@ -18,6 +18,7 @@ import type { CaseStudy } from "../types"
 
 export const ksl: CaseStudy = {
   slug: "ksl",
+  status: { label: "Live", value: "Across Norway, September 2026" },
   hero: {
     label: "Screens from the farmer portal",
     slides: [
@@ -233,6 +234,7 @@ export const ksl: CaseStudy = {
             caption:
               "A Figma Make sketch brought to a weekly session: registering a deviation, with its severity set on a scale and the level worked out by the system.",
             src: "/work/ksl/deviation-registration-sketch-figma-make.webp",
+        frame: true,
             alt: "Sketch of the KSL audit screen: the checklist on the left; question 1.1.4, on whether equipment that requires it is inspected and certified, answered 'Nei'; and a 'Register avvik' form with the observation, the requirement, an evidence upload, a deadline and who is responsible for closing it. A pop-up asks how far the deviation is from the requirement, with a slider from 'a little' to 'very far', and shows the level the system calculated, 'Lite avvik'. Guidance text runs down the right, and numbered markers 1 to 4 sit over parts of the screen.",
           },
         },
@@ -251,6 +253,7 @@ export const ksl: CaseStudy = {
         caption:
           "The Figma Make prototype in the revisor tests: farm scenes set up each task, and revisors registered what they found in the KSL checklist.",
         src: "/work/ksl/revisor-user-tests-figma-make-prototype.webp",
+        frame: true,
         alt: "Collage of six screenshots: an illustrated farmer welcoming the revisor to the farm; a task to photograph the chemicals cabinet; and the KSL audit checklist for Haugseter Gård, with the answer 'Nei' and a deviation graded 'Lite avvik' on question 1.5.5, whether pesticides are stored locked and labelled. Participants' video is blurred.",
       },
       insightsLabel: "What the revisors showed us",
@@ -313,6 +316,7 @@ export const ksl: CaseStudy = {
             caption:
               "Every note-taking insight from the revisor tests, clustered in FigJam: quotes, with who said them and when in the session.",
             src: "/work/ksl/revisor-notes-insights-figjam.webp",
+        frame: true,
             alt: "A dark FigJam frame holding sixteen white sticky notes in Norwegian. Each quotes a revisor from the tests, with a timestamp, on how they take notes: jotting reminders during the audit, keeping a separate notebook, writing the report later from those notes, and needing all notes in one place.",
           },
         },
@@ -336,6 +340,7 @@ export const ksl: CaseStudy = {
             caption:
               "The workshop board in FigJam, from the core problem to the ideas Norsk Mat voted on.",
             src: "/work/ksl/norsk-mat-workshop-figjam-board.webp",
+        frame: true,
             alt: "FigJam board in five areas: an icebreaker; problem understanding, with the core problem — deviations are rarely filled in during the audit, revisors jot notes instead and write the report later — and the planned audit flow set against the real one, with sticky notes from the tests; 'how might we' questions, with the one chosen to take forward; lightning demos of outside references such as Evernote, Goodnotes, speech recognition and smart pens; and idea presentations with hand-drawn sketches and voting.",
           },
         },
@@ -404,6 +409,7 @@ export const ksl: CaseStudy = {
         caption:
           "The farmer prototype in the tests: the overview of open deviations and deadlines, the self audit, and the farm's documents.",
         src: "/work/ksl/farmer-user-tests-figma-make-prototype.webp",
+        frame: true,
         alt: "Collage of five screenshots: the farmer's start page with open deviations and an overdue self audit; a list of deviations with their severity, deadline and status; a self-audit question with yes, no and not-relevant answers; the farm's uploaded documents; and the farm profile for Haugseter Gård with a map and contact details. Participants' video is blurred.",
       },
       insightsLabel: "What the test showed us",
@@ -465,7 +471,8 @@ export const ksl: CaseStudy = {
     },
     {
       type: "story",
-      eyebrow: "Where it landed",
+      eyebrow: "The outcome",
+      title: "Where it landed",
       body: [
         "The system went live across Norway in September 2026, and is now used by farmers and revisors in the whole country.",
         "Deviations are graded, so a serious finding and a small one no longer follow the same path to being closed. That was the reason the redesign started. The notes field went in as the way a deviation gets captured in the field, which came from watching how the work already happened rather than from the brief.",

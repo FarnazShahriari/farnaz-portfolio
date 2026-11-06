@@ -1,17 +1,16 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeftIcon } from "lucide-react"
 
 import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Section } from "@farnazshahriari/design-system/ui/section"
-import { Separator } from "@farnazshahriari/design-system/ui/separator"
 
-import { CaseStudyBody, themeOf } from "@/components/case-study/case-study-body"
+import { CaseStudyBody } from "@/components/case-study/case-study-body"
 import { Eyebrow } from "@/components/case-study/parts"
 import { NextSkill } from "@/components/sections/next-skill"
 import { ProjectCards } from "@/components/sections/other-projects"
 import { Certificates } from "@/components/skill/certificates"
+import { BackLink } from "@/components/ui/back-link"
+import { SectionOpener } from "@/components/ui/section-opener"
 import { projects } from "@/content/projects"
 import { site } from "@/content/site"
 import { nextSkill, skills } from "@/content/skills"
@@ -39,7 +38,7 @@ export async function generateMetadata({
  * behind it, and the way onward.
  *
  * The sections come from `content/skills/` and are drawn by the case
- * study's own `CaseStudyBody`, so themes and separators behave exactly as
+ * study's own `CaseStudyBody`, so themes and opening hairlines behave exactly as
  * they do on a project page. A skill with no page written yet keeps its
  * header and the way onward.
  */
@@ -60,77 +59,58 @@ export default async function SkillPage({
     .map((s) => projects.find((p) => p.slug === s))
     .filter((p): p is Project => !!p)
 
-  // Two neighbours on the same ground read as one band, so a rule goes
-  // between them, as CaseStudyBody does between its own sections. The
-  // header is light; so are the certificates; the projects are muted.
-  const first = sections.at(0)
-  const last = sections.at(-1)
-  const beforeCertificates = shown.length ? "muted" : last && themeOf(last)
-
   return (
     <>
-      <Section theme="light" rhythm="lg">
+      <Section rhythm="lg">
         <Container>
-          {/* Above the title and sharing its left edge, as on a project
-              page: the way out should be the first thing found. */}
-          <Link
-            href="/#skills"
-            className="inline-flex items-center gap-2 text-meta text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-          >
-            <ArrowLeftIcon className="size-4 shrink-0" />
-            {stubs.backToSkillsLabel}
-          </Link>
+          <BackLink href="/#skills" label={stubs.backToSkillsLabel} />
 
-          <Eyebrow className="mt-10">{site.skills.eyebrow}</Eyebrow>
-
-          <h1 className="mt-4 max-w-[18ch] text-display text-balance">
-            {skill.title}
-          </h1>
-
-          {page ? (
-            <p className="mt-8 max-w-[30ch] text-lead text-pretty">
-              {page.statement}
-            </p>
-          ) : (
-            // Only until the page is written, as on a project page.
-            <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
-              {stubs.skill.note}
-            </p>
-          )}
+          <div className="mt-18 flex flex-col gap-7">
+            <Eyebrow>{site.skills.eyebrow}</Eyebrow>
+            <h1 className="max-w-[18ch] text-h1 text-balance">{skill.title}</h1>
+            {page ? (
+              <p className="max-w-[36ch] text-lead text-pretty text-muted-foreground">
+                {page.statement}
+              </p>
+            ) : (
+              // Only until the page is written, as on a project page.
+              <p className="max-w-[40ch] text-lead text-pretty text-muted-foreground">
+                {stubs.skill.note}
+              </p>
+            )}
+          </div>
         </Container>
       </Section>
 
-      {first && themeOf(first) === "light" ? <Separator /> : null}
       <CaseStudyBody sections={sections} />
 
       {shown.length ? (
-        <>
-          {last && themeOf(last) === "muted" ? <Separator /> : null}
-          <Section theme="muted" aria-labelledby="skill-projects-title">
-            <Container>
-              <h2 id="skill-projects-title" className="text-h3 text-balance">
+        <Section aria-labelledby="skill-projects-title">
+          <Container>
+            <SectionOpener />
+            <div className="flex flex-col gap-4">
+              <Eyebrow>{site.work.eyebrow}</Eyebrow>
+              <h2 id="skill-projects-title" className="text-h2 text-balance">
                 {site.skills.projectsTitle}
               </h2>
-              <ProjectCards projects={shown} className="mt-8 md:mt-12" />
-            </Container>
-          </Section>
-        </>
+            </div>
+            <ProjectCards projects={shown} className="mt-20" />
+          </Container>
+        </Section>
       ) : null}
 
       {page?.certificates.length ? (
-        <>
-          {beforeCertificates === "light" ? <Separator /> : null}
-          <Section theme="light" aria-labelledby="skill-certificates-title">
-            <Container>
-              <h2 id="skill-certificates-title" className="text-h3 text-balance">
-                {site.skills.certificatesTitle}
-              </h2>
-              <div className="mt-8 md:mt-12">
-                <Certificates certificates={page.certificates} />
-              </div>
-            </Container>
-          </Section>
-        </>
+        <Section aria-labelledby="skill-certificates-title">
+          <Container>
+            <SectionOpener />
+            <h2 id="skill-certificates-title" className="text-h2 text-balance">
+              {site.skills.certificatesTitle}
+            </h2>
+            <div className="mt-18">
+              <Certificates certificates={page.certificates} />
+            </div>
+          </Container>
+        </Section>
       ) : null}
 
       <NextSkill skill={nextSkill(skill.slug)} />

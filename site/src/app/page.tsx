@@ -18,10 +18,10 @@ import { skills } from "@/content/skills"
  * first; how she works follows, for whoever wants the method behind it.
  * See project-docs/decisions/2026-10-26-projects-first-no-track-record.md.
  *
- * The grounds run light → dark → light → muted, then the dark footer, so
- * no two neighbours share a ground and no Divider is needed. If a block is
- * added or moved so that two neighbours match, put the design system's
- * Divider between them, or give one of them another theme.
+ * Every block is on the white page ground except the hero project, the
+ * page's one black block. Each section after the first opens with a
+ * hairline (`SectionOpener`), and that is what separates neighbours, so
+ * two of them may share a ground.
  */
 export default function HomePage() {
   return (

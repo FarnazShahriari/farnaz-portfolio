@@ -8,10 +8,16 @@ The copy is in `content/site.ts`. What is still a placeholder (the footer
 email, the portrait, project three) is listed in `content/TODO.md`, and
 describes what belongs there, so the intent survives until it is written.
 
+Restyled for portfolio v2: see `portfolio-v2.md` for the shared rules. In
+short, the intro has an eyebrow and a text link instead of a button, the hero
+project drops its bordered card, the other projects are staggered cards with
+a meta row, and How I work is a list of links that open on hover, not an
+accordion.
+
 ## Page blocks, in order
 
 ### 1. Top navigation
-- Sticky. "Farnaz S. Norheim" on the left, links on the right: Projects,
+- Sticky. "Farnaz Shahriari Norheim" on the left, links on the right: Projects,
   How I work, About me, Contact.
 - Collapses to a menu on small screens.
 

@@ -11,6 +11,17 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-06 — Portfolio v2: Home, About and the KSL case study
+The three pages follow the v2 design: white pages, a hairline opening every
+section, an eyebrow above every heading, quietened photos, a new nav with a
+scroll line and a light footer. The homepage gets staggered project cards
+and a hover list for How I work; About a horizontal timeline with city
+drawings; the case study a new header, hero carousel, insights layout,
+screen strip, diagram and blueprint. The pattern lives in shared components,
+so the other case studies and skill pages follow it too. The site name is
+now "Farnaz Shahriari Norheim".
+Related: project-docs/specs/portfolio-v2.md
+
 ## 2026-11-06 — Design system 3.0.0: paper, black and four type roles
 The portfolio moves to the "Calm. Bold." brand. The removed accent bands
 are now muted, the "next" teasers too (the black footer follows them),

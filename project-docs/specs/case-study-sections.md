@@ -3,6 +3,10 @@
 The building blocks every project page is made from. Implements
 `../decisions/2026-10-06-case-study-sections-live-in-the-portfolio.md`.
 
+Restyled for portfolio v2: see `portfolio-v2.md` for the shared rules and
+the new layouts of every block. The homepage cards no longer use a scene
+behind the screen; the section below is history.
+
 ## Homepage card with a scene
 
 A project can set `scene` (a photo of the setting) beside its `image` (the

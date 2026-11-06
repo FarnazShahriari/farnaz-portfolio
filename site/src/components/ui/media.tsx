@@ -10,6 +10,13 @@ import type { MediaPlaceholder } from "@/content/types"
 export const captionStyle = "mt-3 text-sm text-pretty text-muted-foreground"
 
 /**
+ * Photographs are quietened so they sit with the black and white of the
+ * page; screens and mockups keep their full colour. Applied wherever
+ * `photo` is set, the blurred hero backdrop included.
+ */
+export const photoTone = "saturate-35"
+
+/**
  * An image slot: the real picture once `media.src` is set, the grey
  * placeholder until then.
  *
@@ -24,6 +31,10 @@ export const captionStyle = "mt-3 text-sm text-pretty text-muted-foreground"
  *
  * With `enlarge`, a real image also opens larger on click or tap — for
  * screens, boards and sketches whose detail is too small to read in place.
+ *
+ * Every slot takes the system's radius. A photograph gets the photo tone;
+ * a screenshot with `frame` gets a hairline drawn over its edge, so a
+ * white screen does not dissolve into the white page.
  */
 export function Media({
   media,
@@ -65,7 +76,10 @@ export function Media({
       data-slot="media"
       // No backdrop: an image with transparent areas should show the
       // section through them, not a grey box.
-      className={cn("relative w-full overflow-hidden", !showCaption && className)}
+      className={cn(
+        "relative w-full overflow-hidden rounded-lg",
+        !showCaption && className
+      )}
       style={{ aspectRatio: media.ratio }}
     >
       <Image
@@ -74,8 +88,14 @@ export function Media({
         fill
         sizes={sizes}
         preload={priority}
-        className={cn("object-cover", imageClassName)}
+        className={cn("object-cover", media.photo && photoTone, imageClassName)}
       />
+      {media.frame ? (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-lg border"
+        />
+      ) : null}
     </div>
   )
   const image = enlarge ? (

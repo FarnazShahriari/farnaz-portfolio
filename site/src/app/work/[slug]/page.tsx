@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeftIcon } from "lucide-react"
 
 import { Container } from "@farnazshahriari/design-system/ui/container"
+import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
@@ -12,6 +11,7 @@ import { CaseStudyBody } from "@/components/case-study/case-study-body"
 import { HeroCarousel } from "@/components/case-study/hero-carousel"
 import { Eyebrow } from "@/components/case-study/parts"
 import { NextProject } from "@/components/sections/next-project"
+import { BackLink } from "@/components/ui/back-link"
 import { captionStyle, Media } from "@/components/ui/media"
 import { projectMediaTransition } from "@/lib/view-transitions"
 import { getCaseStudy } from "@/content/case-studies"
@@ -63,37 +63,37 @@ export default async function ProjectPage({
 
   return (
     <>
-      <Section theme="light" rhythm="lg">
+      <Section rhythm="lg">
         <Container>
-          {/* Above the title and sharing its left edge: the way out of a
-              page should be the first thing found, not the last. */}
-          <Link
-            href="/#work"
-            className="inline-flex items-center gap-2 text-meta text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-          >
-            <ArrowLeftIcon className="size-4 shrink-0" />
-            {stubs.backToWorkLabel}
-          </Link>
+          <BackLink href="/#work" label={stubs.backToWorkLabel} />
 
-          {project.tags?.length ? (
-            <Eyebrow className="mt-10">{project.tags.join(" · ")}</Eyebrow>
-          ) : null}
+          <Grid className="mt-18 gap-y-8">
+            <div className="col-span-12 flex flex-col gap-7 self-end md:col-span-9">
+              {project.tags?.length ? <Eyebrow>{project.tags.join(" · ")}</Eyebrow> : null}
 
-          <ViewTransition
-            name={projectTitleTransition(project.slug)}
-            share="morph"
-            default="none"
-          >
-            <h1 className="mt-4 max-w-[18ch] text-display text-balance">
-              {project.title}
-            </h1>
-          </ViewTransition>
+              <ViewTransition
+                name={projectTitleTransition(project.slug)}
+                share="morph"
+                default="none"
+              >
+                <h1 className="max-w-[18ch] text-h1 text-balance">{project.title}</h1>
+              </ViewTransition>
 
-          {note ? (
-            <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
-              {note}
-            </p>
-          ) : null}
+              {note ? (
+                <p className="max-w-[40ch] text-lead text-pretty text-muted-foreground">
+                  {note}
+                </p>
+              ) : null}
+            </div>
+
+            {/* Where the project stands now, beside the title. */}
+            {caseStudy?.status ? (
+              <div className="col-span-12 flex flex-col gap-1.5 self-end border-l pl-5 md:col-span-3">
+                <Eyebrow>{caseStudy.status.label}</Eyebrow>
+                <p className="text-body">{caseStudy.status.value}</p>
+              </div>
+            ) : null}
+          </Grid>
         </Container>
       </Section>
 
@@ -103,9 +103,7 @@ export default async function ProjectPage({
           homepage hero cropped wider, with `rhythm="none"` because the
           section above has already paid for the gap. */}
       {caseStudy?.hero ? (
-        // The small rhythm keeps the first slide's top in view on common
-        // laptop screens — the homepage media only morphs into it if it is.
-        <Section theme="muted" rhythm="sm">
+        <Section theme="muted">
           <HeroCarousel
             slides={caseStudy.hero.slides}
             label={caseStudy.hero.label}
@@ -124,6 +122,8 @@ export default async function ProjectPage({
                 media={{ ...project.image, ratio: project.heroRatio ?? "21 / 9" }}
                 priority
                 hideCaption
+                // Full bleed, so square to the screen edges.
+                className="rounded-none"
               />
             </ViewTransition>
             {/* Only once there is a real picture: until then the caption is

@@ -17,7 +17,7 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## Projects — `projects.ts`
 
-- [ ] Project three (how the design system was made): title, summary, tag
+- [ ] Project three (how the design system was made): title, card name, summary, client, tag
 - [ ] Project three thumbnail — 4:3, ~1200×900
 - [ ] Slug — `project-three`, will change with the title
 
@@ -46,9 +46,7 @@ The page is built. Each file below shows as a grey placeholder until it is
 in `site/public/`, and appears on the next build without a code change.
 
 - [ ] `about/portrait.webp`: portrait outdoors, 4:5, roughly 1200×1500. Check the alt text in `about.ts`
-- [ ] `about/logos/netpower.png` (Netpower, Stavanger): square, ideally transparent; shown in greyscale. The company sites were blocked from the build environment, so the three company logos need adding by hand
-- [ ] `about/logos/piratech.png` (Piratech, Padova, piratech.io)
-- [ ] `about/logos/spentys.png` (Spentys, Brussels)
+- [ ] Outside work: a painting at 4:5 and a decorative object at 1:1. Add them as `src` (and `alt`) on `about.outside.artworks`
 
 ## KSL case study — `case-studies/ksl.ts`
 
@@ -58,7 +56,7 @@ Nothing open.
 
 Every image is in. Still open:
 
-- [ ] Homepage card summary — written for the card, not in the agreed text; check the wording
+- [ ] Homepage card summary is now the design's line, "Connecting a farm's safety work in one app"; check you are happy with it
 
 ## Readyware case study — `case-studies/readyware.ts`
 
@@ -70,6 +68,11 @@ Every image is in. Still open:
 ## Model Builder case study — `case-studies/model-builder.ts`
 
 Nothing open.
+
+## Portfolio v2 pattern
+
+- [ ] Other case studies (TryggDrift, Readyware, Model Builder): mark screenshots and boards with `frame: true` and add a `status` line beside the title, as KSL has, if wanted
+- [ ] Skill pages: an eyebrow above "Courses and certificates" (every heading should have one; the projects section reuses "Work")
 
 ## Open structural questions
 

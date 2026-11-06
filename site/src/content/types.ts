@@ -20,7 +20,11 @@ export type NavItem = {
 export type Project = {
   slug: string
   title: string
-  /** One line, shown under the title in the grid. */
+  /** The short name on a project card, e.g. "TryggDrift". */
+  name: string
+  /** Who it was for, on the card beside the summary, e.g. "NLR". */
+  client?: string
+  /** One line on what the project is, on its card. */
   summary: string
   /** Longer, shown only on the hero. */
   blurb?: string
@@ -44,12 +48,6 @@ export type Project = {
   heroRatio?: string
   /** Blurred behind `image` on the homepage hero, as a ground for it. */
   backdrop?: MediaPlaceholder
-  /**
-   * A photo of the setting behind `image` on the homepage card (and the
-   * "next project" teaser), with the screen in front of it. Only the
-   * screen morphs into the project page; the photo stays behind.
-   */
-  scene?: MediaPlaceholder
   tags?: string[]
 }
 
@@ -98,6 +96,12 @@ export type MediaPlaceholder = {
    */
   photo?: boolean
   /**
+   * A screenshot or board with a white edge: drawn with a hairline frame so
+   * it does not dissolve into the white page. Not for photos or device
+   * mockups, which have edges of their own.
+   */
+  frame?: boolean
+  /**
    * Opened larger, it takes the full width even though it is not a wide
    * shape. For a tall or square image that already runs full width in the
    * page, which the narrower enlarged view would show smaller.
@@ -109,55 +113,84 @@ export type MediaPlaceholder = {
 /* About                                                               */
 /* ------------------------------------------------------------------ */
 
-/** One of the key-fact cards under the About hero. */
+/** One of the four facts under the About intro. */
 export type AboutFact = {
-  icon: LucideIcon
-  /** Bold, e.g. "Sandnes, Norway". */
-  title: string
-  /** Muted, under the title. */
-  subtitle: string
+  /** The small label, e.g. "Based in". */
+  label: string
+  /** The fact itself, e.g. "Sandnes, Norway". */
+  value: string
+  /** One muted line under it. */
+  note: string
 }
 
 export type AboutLanguage = {
-  /** A square flag under `public/`, shown in a small circle. */
-  flag: string
   name: string
-  /** e.g. "Fluent". */
+  /** Lower case, read after the name: "Norwegian, fluent". */
   level: string
 }
 
 /**
- * One stop on the About timeline, with a logo or an icon on its card. A
- * logo's `src` can point at a file that is not there yet: the page shows a
- * small grey square until it is.
+ * One stop on the About timeline, oldest first. The strip is drawn on a
+ * fixed canvas, so a stop carries its own position: `x` is where its
+ * column starts, in px, and it runs to the next stop's `x`.
+ *
+ * A city stop has a line drawing standing on the ground line; a milestone
+ * (`milestone`) is a dot on the line with no city. The `current` stop is
+ * marked with the point.
  */
 export type TimelineStop = {
-  /** Written out in words, e.g. "2023 to now". Leave out for none. */
-  period?: string
-  title: string
-  subtitle: string
-} & (
-  | { logo: MediaPlaceholder; icon?: never }
-  | { icon: LucideIcon; logo?: never }
-)
+  id: string
+  /** The city, e.g. "Milan". Left out for a milestone. */
+  city?: string
+  /** Under the city, e.g. the country. */
+  sub?: string
+  /** In words, e.g. "2012 to 2016". */
+  period: string
+  /** What happened there. */
+  what: string
+  /** Where the column starts, in px from the canvas's left edge. */
+  x: number
+  /** The line drawing, as a path under `public/`, and its size and place. */
+  art?: string
+  artW?: number
+  artH?: number
+  /** The drawing's left edge, in px from the column's start. */
+  artL?: number
+  /** How wide the "what" text may run, in px. */
+  ww: number
+  milestone?: boolean
+  current?: boolean
+}
 
 export type About = {
   /** The page's name in the browser tab and in search results. */
   pageTitle: string
   /** Shown as the placeholder until the file at `src` exists. */
   portrait: MediaPlaceholder
-  /** The big line, set like a case study's title. */
+  eyebrow: string
+  /** The big line. */
   title: string
   /** One muted line under it. */
   lead: string
-  facts: AboutFact[]
+  languagesLabel: string
   languages: AboutLanguage[]
-  /** The eyebrow above the timeline. */
-  timelineLabel: string
-  /** Newest first. */
-  timeline: TimelineStop[]
-  /** The one line at the very end. */
-  outside: { icon: LucideIcon; text: string }
+  facts: AboutFact[]
+  path: {
+    eyebrow: string
+    title: string
+    /** Beside the scroll buttons. */
+    hint: string
+    /** After the end of the line. */
+    next: string
+    /** Oldest first. */
+    stops: TimelineStop[]
+  }
+  outside: {
+    eyebrow: string
+    text: string
+    /** A painting at 4:5 and a decorative object at 1:1. */
+    artworks: MediaPlaceholder[]
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -400,6 +433,11 @@ export type CaseStudySection = StorySection | InsightsSection
  */
 export type CaseStudy = {
   slug: string
+  /**
+   * Where the project stands now, beside the title: a small label and one
+   * line, e.g. "Live" / "Across Norway, September 2026".
+   */
+  status?: { label: string; value: string }
   /**
    * Device mockups shown as a carousel in place of the single hero image.
    * Leave out to keep the project's `image`.

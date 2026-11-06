@@ -1,7 +1,5 @@
 import type { CSSProperties } from "react"
-import { ArrowRightIcon } from "lucide-react"
 
-import { Badge } from "@farnazshahriari/design-system/ui/badge"
 import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { LinkUnderline } from "@farnazshahriari/design-system/ui/link-underline"
 import { cn } from "@farnazshahriari/design-system/lib/utils"
@@ -24,7 +22,7 @@ import type {
  *
  * Nothing here sets a colour, size or radius of its own: type comes from
  * the system's scale (`text-label`, `text-body`, `text-h2`…), colour from
- * the theme tokens, and the badge is the system's Badge. Inside a dark
+ * the theme tokens. Inside a dark
  * Section all of it inverts on its own.
  *
  * Every image in a case study opens larger on click or tap (`enlarge`).
@@ -52,39 +50,36 @@ export function Eyebrow({
   )
 }
 
+/** Body copy, kept to a reading measure. */
 export function Paragraph({ children }: { children: React.ReactNode }) {
-  return <p className="text-body text-pretty">{children}</p>
+  return <p className="max-w-[62ch] text-body text-pretty">{children}</p>
 }
 
-/** A quote with its source, set off by a rule on the left. */
+/** A quote with its source, set off by a black rule on the left. */
 export function QuoteBlock({ quote }: { quote: Quote }) {
   return (
-    <figure className="flex flex-col gap-1 border-l border-input pl-4">
-      {/* Body text, not `text-meta`: the label role's wide tracking is for
-          short labels, and spreads a sentence apart. */}
-      <blockquote className="text-body text-pretty">
+    <figure className="flex flex-col gap-2 border-l border-foreground pl-6">
+      <blockquote className="text-lead text-pretty">
         &ldquo;{quote.text}&rdquo;
       </blockquote>
-      <figcaption className="text-xs text-muted-foreground">
+      <figcaption className="text-sm text-muted-foreground">
         {quote.source}
       </figcaption>
     </figure>
   )
 }
 
-/** Key facts in two columns: the value in bold, its label underneath. */
+/**
+ * Key facts in three columns, each behind a hairline on its left: the
+ * label first, then the value in regular body text.
+ */
 export function Facts({ items }: { items: Fact[] }) {
   return (
-    <dl className="grid grid-cols-2 gap-x-8 gap-y-6">
+    <dl className="grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-3">
       {items.map((fact) => (
-        // Reversed so the label stays first for screen readers while the
-        // value reads first on screen.
-        <div
-          key={fact.label}
-          className="flex flex-col-reverse justify-end gap-2 border-t border-border pt-4"
-        >
-          <dt className="text-sm text-muted-foreground">{fact.label}</dt>
-          <dd className="text-body font-bold">{fact.value}</dd>
+        <div key={fact.label} className="flex flex-col gap-2 border-l pl-5">
+          <dt className="text-label text-muted-foreground">{fact.label}</dt>
+          <dd className="text-body text-pretty">{fact.value}</dd>
         </div>
       ))}
     </dl>
@@ -118,18 +113,15 @@ export function Links({ items }: { items: ExternalLink[] }) {
   )
 }
 
-/** Named steps or tools in order, joined by arrows. */
+/** Named steps or tools in order, as labels joined by a short black line. */
 export function Steps({ items }: { items: string[] }) {
   return (
-    <ol className="flex flex-wrap items-center gap-3">
+    <ol className="flex list-none flex-wrap items-center gap-4 p-0">
       {items.map((item, i) => (
-        <li key={item} className="flex items-center gap-3">
-          <Badge variant="outline">{item}</Badge>
+        <li key={item} className="flex items-center gap-4">
+          <span className="text-label">{item}</span>
           {i < items.length - 1 ? (
-            <ArrowRightIcon
-              aria-hidden="true"
-              className="size-4 shrink-0 text-muted-foreground"
-            />
+            <span aria-hidden="true" className="h-px w-16 bg-foreground" />
           ) : null}
         </li>
       ))}
@@ -223,6 +215,35 @@ export function Collage({ collage }: { collage: MediaCollage }) {
 }
 
 /**
+ * The room above a full-width part under a story, by kind: a wide figure
+ * stands 80px clear of the text, a diagram 88px, a carousel 72px, and a
+ * statement 120px, so it lands on its own.
+ */
+export function belowSpacing(part: StoryPart) {
+  if (typeof part === "string") return "mt-6"
+  switch (part.kind) {
+    case "statement":
+      return "mt-30"
+    case "diagram":
+    case "blueprint":
+      return "mt-22"
+    case "carousel":
+      return "mt-18"
+    default:
+      return "mt-20"
+  }
+}
+
+/** The room above a part in the narrow column, after the text. */
+const columnSpacing: Partial<Record<Exclude<StoryPart, string>["kind"], string>> = {
+  facts: "mt-6",
+  media: "mt-6",
+  mediaPair: "mt-6",
+  quote: "mt-4",
+  steps: "mt-4",
+}
+
+/**
  * Renders one StoryPart. `inColumn` is true for the narrow right-hand
  * column, where anything that is not a paragraph gets extra room above it
  * so it does not read as part of the text.
@@ -286,7 +307,13 @@ export function StoryPartView({
       )
       break
     case "statement":
-      content = <p className="max-w-[22ch] text-h2">{part.text}</p>
+      content = (
+        <Grid>
+          <p className="col-span-12 max-w-[18ch] text-h1 text-balance md:col-span-9">
+            {part.text}
+          </p>
+        </Grid>
+      )
       break
     case "blueprint":
       content = <Blueprint blueprint={part.blueprint} />
@@ -298,5 +325,9 @@ export function StoryPartView({
     }
   }
 
-  return inColumn ? <div className="mt-4">{content}</div> : content
+  return inColumn ? (
+    <div className={columnSpacing[part.kind] ?? "mt-4"}>{content}</div>
+  ) : (
+    content
+  )
 }

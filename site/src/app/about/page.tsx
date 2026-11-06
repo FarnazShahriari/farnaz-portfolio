@@ -1,102 +1,83 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowLeftIcon } from "lucide-react"
 
 import { Container } from "@farnazshahriari/design-system/ui/container"
+import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { Section } from "@farnazshahriari/design-system/ui/section"
-import { Separator } from "@farnazshahriari/design-system/ui/separator"
 import { Reveal } from "@farnazshahriari/design-system/motion/reveal"
 
-import {
-  FactCards,
-  LanguagePills,
-  OutsideWork,
-  Timeline,
-} from "@/components/about/parts"
+import { AboutFacts, LanguagesLine } from "@/components/about/parts"
+import { PathTimeline } from "@/components/about/timeline"
 import { Eyebrow } from "@/components/case-study/parts"
 import { Media } from "@/components/ui/media"
+import { SectionOpener } from "@/components/ui/section-opener"
 import { about } from "@/content/about"
-import { stubs } from "@/content/stubs"
 import { ifPublished } from "@/lib/public-file"
 
 export const metadata: Metadata = { title: about.pageTitle }
 
 /**
- * The About page: short and visual. Portrait, the big line and the
- * languages, three key facts, the path so far, and one line about life
- * outside work.
+ * The About page, in three grounds: the introduction on the white page,
+ * the path so far on a muted band, and life outside work as the page's one
+ * black block. Every section after the first opens with a hairline.
  *
- * Everything it says comes from `content/about.ts`; this file only lays it
- * out, with the same header, type and reveals as a case study page. The
- * ground stays light throughout, so a Separator marks where the
- * introduction ends and the timeline begins, and the second section takes
- * the default rhythm so two large ones are not stacked.
+ * About is in the nav, so there is no back link. Everything it says comes
+ * from `content/about.ts`; this file only lays it out.
  */
 export default function AboutPage() {
-  const timeline = about.timeline.map((stop) =>
-    stop.logo ? { ...stop, logo: ifPublished(stop.logo) } : stop
-  )
+  const { outside } = about
 
   return (
     <>
-      <Section theme="light" rhythm="lg">
+      <Section rhythm="lg">
         <Container>
-          {/* The project pages' way back, above everything and sharing its
-              left edge. */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-meta text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-          >
-            <ArrowLeftIcon className="size-4 shrink-0" />
-            {stubs.backHomeLabel}
-          </Link>
-
-          {/* Portrait first in the DOM, so on a phone it sits on top. */}
-          <div className="mt-10 grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
-            <Reveal variant="fade" className="md:col-span-5">
+          <Grid className="gap-y-10">
+            <Reveal variant="fade" className="col-span-12 self-end md:col-span-4">
               <Media
                 media={ifPublished(about.portrait)}
-                sizes="(min-width: 768px) 40vw, 100vw"
+                sizes="(min-width: 768px) 33vw, 100vw"
                 priority
               />
             </Reveal>
 
-            <Reveal className="md:col-span-7">
-              <h1 className="text-display text-balance">{about.title}</h1>
-              <p className="mt-6 max-w-[40ch] text-lead text-pretty text-muted-foreground">
+            <Reveal className="col-span-12 flex flex-col gap-7 self-end pb-1 md:col-span-7 md:col-start-6">
+              <Eyebrow>{about.eyebrow}</Eyebrow>
+              <h1 className="max-w-[15ch] text-h1 text-balance">{about.title}</h1>
+              <p className="max-w-[36ch] text-lead text-pretty text-muted-foreground">
                 {about.lead}
               </p>
-              <div className="mt-8">
-                <LanguagePills languages={about.languages} />
-              </div>
+              <LanguagesLine label={about.languagesLabel} languages={about.languages} />
             </Reveal>
-          </div>
+          </Grid>
 
-          <Reveal className="mt-16 md:mt-24">
-            <FactCards facts={about.facts} />
+          <Reveal className="mt-28">
+            <AboutFacts facts={about.facts} />
           </Reveal>
         </Container>
       </Section>
 
-      <Separator />
+      <Section theme="muted" rhythm="lg" aria-labelledby="about-path-title">
+        <PathTimeline path={about.path} />
+      </Section>
 
-      <Section theme="light" aria-labelledby="about-path-title">
+      <Section theme="dark" rhythm="lg" aria-labelledby="about-outside-title">
         <Container>
-          <Reveal>
-            <Eyebrow as="h2">
-              <span id="about-path-title">{about.timelineLabel}</span>
-            </Eyebrow>
-          </Reveal>
-
-          <Reveal variant="fade" className="mt-8 md:mt-12">
-            <Timeline stops={timeline} />
-          </Reveal>
-
-          <Separator className="mt-16 md:mt-24" />
-
-          <Reveal className="mt-8">
-            <OutsideWork icon={about.outside.icon} text={about.outside.text} />
-          </Reveal>
+          <SectionOpener />
+          <Grid className="gap-y-10">
+            <Reveal className="col-span-12 flex flex-col gap-6 self-end md:col-span-5">
+              <Eyebrow as="h2">
+                <span id="about-outside-title">{outside.eyebrow}</span>
+              </Eyebrow>
+              <p className="max-w-[20ch] text-h2 text-balance">{outside.text}</p>
+            </Reveal>
+            <Reveal
+              variant="fade"
+              className="col-span-12 grid grid-cols-2 items-end gap-4 self-end md:col-span-6 md:col-start-7"
+            >
+              {outside.artworks.map((art) => (
+                <Media key={art.caption} media={ifPublished(art)} sizes="(min-width: 768px) 25vw, 50vw" />
+              ))}
+            </Reveal>
+          </Grid>
         </Container>
       </Section>
     </>

@@ -8,5 +8,15 @@
 
 /* Departures from the design system belong below this line, as a token
    redeclaration — never as a hard-coded value in a component.
-   e.g.  :root { --point: #6b7a8f; }   a different "you are here" colour
-   Nothing is redeclared yet. */
+   e.g.  :root { --point: #6b7a8f; }   a different "you are here" colour */
+
+/* White pages rather than the system's paper. The light section theme is
+   redeclared too, so a section that asks for "light" gets the same white
+   ground as one that inherits it. Muted bands and the dark block keep the
+   system's values. */
+:root,
+[data-section="light"] {
+  --background: #ffffff;
+  --card: #ffffff;
+  --popover: #ffffff;
+}

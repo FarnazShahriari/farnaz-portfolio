@@ -1,49 +1,29 @@
 # About page
 
-`/about`: short and visual, very little text. Built from the same type,
-borders, radius, Media and Reveal as the case studies.
+`/about`: short and visual. Rebuilt for portfolio v2; the shared rules
+(grounds, opener hairlines, eyebrows, photo tone) are in `portfolio-v2.md`.
 
 ## Content
 
-Everything is in `site/src/content/about.ts`, typed in `types.ts`:
-
-- `About`: `portrait`, `title`, `lead`, `facts`, `languages`,
-  `timelineLabel`, `timeline`, `outside`.
-- `AboutFact`: `icon` (lucide), `title`, `subtitle`.
-- `AboutLanguage`: `flag` (a square PNG under `public/about/flags/`),
-  `name`, `level`. Persian uses the Lion and Sun flag.
-- `TimelineStop`: optional `period` (in words, e.g. "2023 to now"),
-  `title`, `subtitle`, and either `logo` (a `MediaPlaceholder`) or `icon`.
-
-Images name where their file will go (`/about/portrait.webp`,
-`/about/logos/<name>.png`). `lib/public-file.ts` checks at build time
-whether the file is in `public/`; until it is, the slot is a grey
-placeholder. Adding the file is the whole change.
+Everything is in `site/src/content/about.ts`, typed in `types.ts` (`About`,
+`AboutFact`, `AboutLanguage`, `TimelineStop`).
 
 ## Page shape (`site/src/app/about/page.tsx`)
 
-1. **Hero** (light, large rhythm): the project pages' back link, then the
-   portrait (`Media`, 4:5, `photo`) in 5 columns and, in 7, the title in
-   `text-display`, the lead in muted `text-lead`, and the language pills.
-   On phones the portrait is on top.
-2. **Key facts**: three cards, hairline border, the system's radius. Icon
-   in a bordered square, bold `text-body` title, muted `text-sm` subtitle,
-   as in the case study facts. Stacked on phones.
-3. **Languages** (in the hero, under the lead): pills (`rounded-pill`,
-   hairline border) with the flag in a small circle, the name in bold and
-   the level muted. Wraps on phones.
-4. **Separator**, then **My path** (light, default rhythm): eyebrow, then
-   the timeline, newest first. From `md`, the line runs down the middle,
-   cards alternate sides, and each period sits on the line under its dot.
-   On phones, one column with the line on the left. Logos show in
-   greyscale in the same square as the icons.
-5. **Outside work**: a hairline, the brush icon in its square, one muted
-   line.
+1. **Intro** (white, `lg`): portrait at 4:5 in columns 1–4; in 6–12 the
+   eyebrow "About me", the title in `text-h1`, the lead in muted
+   `text-lead`, and the languages as one line ("Languages", a short rule,
+   "Norwegian, fluent"…). 112px below, four facts in a row, each behind a
+   hairline: label, value in `text-h4`, note. No back link: About is in the
+   nav.
+2. **My path** (muted, `lg`): eyebrow "Four countries", "My path", and the
+   scroll hint with Earlier / Later buttons. Below, full width, a horizontal
+   strip on a 3330 x 600 canvas: a dashed ground line, a line drawing per
+   city standing on it (`public/about/cities/`), milestones as dots, the
+   current stop (Stavanger) with the point. It opens on the current stop;
+   hovering a stop traces the path to it and quietens the others.
+3. **Outside work** (dark, `lg`): the line in `text-h2`, then a painting
+   (4:5) and a decorative object (1:1), placeholders until supplied.
 
-Every block reveals with the design system's `Reveal`, which respects
-reduced motion through the root `MotionProvider`.
-
-Components: `site/src/components/about/parts.tsx`. The old `Stub`
-component and `stubs.about` were removed, since nothing used them any more.
-
-Flags and logos, with where each came from: `assets/about/SOURCES.md`.
+The portrait and the artworks show as placeholders until their files are in
+`public/about/` (`lib/public-file.ts`).

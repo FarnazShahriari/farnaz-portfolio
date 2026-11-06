@@ -79,20 +79,27 @@ const n = {
   stepRow: (stage: number) => 3 + stage * 2,
 }
 
+// Designed cells are muted with a hairline; "nothing to design" cells are
+// the page ground with muted text; deferred ones add a dashed edge.
 const stepStyles: Record<BlueprintStepState, string> = {
-  active: "border-foreground/30 bg-foreground/5 text-foreground",
-  inactive: "border-border text-muted-foreground",
-  deferred: "border-dashed border-border text-muted-foreground",
+  active: "border-border bg-muted text-foreground",
+  inactive: "border-border bg-background text-muted-foreground",
+  deferred: "border-dashed border-border bg-background text-muted-foreground",
 }
 
-const tagStyles: Record<NonNullable<BlueprintLane["tag"]>["tone"], string> = {
-  strong: "border-transparent bg-primary text-primary-foreground",
-  soft: "border-transparent bg-foreground/10 text-foreground",
-  deferred: "border-dashed border-input bg-transparent text-muted-foreground",
+// A lane's scope, as the system's own badge variants.
+const tagVariants: Record<
+  NonNullable<BlueprintLane["tag"]>["tone"],
+  "default" | "secondary" | "outline"
+> = {
+  strong: "default",
+  soft: "secondary",
+  deferred: "outline",
 }
 
+// The interaction line is solid black; the others dashed and quiet.
 const lineStyles = (strong?: boolean) =>
-  strong ? "border-foreground" : "border-dashed border-input"
+  strong ? "border-foreground" : "border-dashed border-muted-foreground"
 
 const defaultLegend = {
   active: "Designed and tested in this round",
@@ -172,17 +179,17 @@ function LaneHeader({ lane, index }: { lane: BlueprintLane; index: number }) {
       {Icon ? (
         <span
           className={cn(
-            "flex size-8 shrink-0 items-center justify-center rounded-full @4xl:size-10",
-            lane.deferred ? "bg-muted text-muted-foreground" : "bg-foreground/10 text-foreground"
+            "flex size-8 shrink-0 items-center justify-center rounded-pill bg-muted @4xl:size-9",
+            lane.deferred ? "text-muted-foreground" : "text-foreground"
           )}
         >
-          <Icon aria-hidden="true" className="size-4 @4xl:size-5" />
+          <Icon aria-hidden="true" className="size-4 @4xl:size-4.5" />
         </span>
       ) : null}
       <div className="flex w-full min-w-0 flex-col items-start gap-1">
         <p
           className={cn(
-            "text-xs font-bold hyphens-auto wrap-break-word @xl:text-sm @4xl:text-base",
+            "text-xs font-bold hyphens-auto wrap-break-word @xl:text-sm @4xl:text-body @4xl:font-bold",
             lane.deferred && "text-muted-foreground"
           )}
         >
@@ -195,13 +202,13 @@ function LaneHeader({ lane, index }: { lane: BlueprintLane; index: number }) {
         ) : null}
         {lane.tag ? (
           <Badge
-            variant="outline"
+            variant={tagVariants[lane.tag.tone]}
             // Allowed to wrap: a narrow column can be thinner than the
             // label, and a two-line pill reads as a blob, so it squares off
             // until there is room for the pill.
             className={cn(
-              "mt-1 max-w-full rounded-sm whitespace-normal uppercase @4xl:rounded-full",
-              tagStyles[lane.tag.tone]
+              "mt-1 max-w-full whitespace-normal",
+              lane.tag.tone === "deferred" && "text-muted-foreground"
             )}
           >
             {lane.tag.label}
@@ -246,7 +253,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
   return (
     <figure data-slot="blueprint" aria-label={title} className="@container">
       <div
-        className="grid grid-cols-[var(--m-cols)] gap-y-2 @4xl:grid-cols-[minmax(0,0.85fr)_repeat(var(--stages),minmax(0,1fr))] @4xl:gap-x-6 @4xl:gap-y-0"
+        className="grid grid-cols-[var(--m-cols)] gap-y-2 @4xl:grid-cols-[--spacing(55)_repeat(var(--stages),minmax(0,1fr))] @4xl:gap-x-6 @4xl:gap-y-0"
         style={gridVars}
       >
         <div className="contents">
@@ -269,7 +276,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
               />
               <p
                 className={cn(
-                  "relative z-10 hidden w-fit self-center bg-background pr-2 text-xs tracking-wide uppercase @4xl:block",
+                  "relative z-10 hidden w-fit self-center bg-background pr-3 text-label @4xl:block",
                   divider.strong ? "text-foreground" : "text-muted-foreground",
                   placed
                 )}
@@ -291,7 +298,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
           <div key={s} className="contents">
             <h3
               className={cn(
-                "relative z-10 flex gap-2 rounded-md bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground @xl:text-sm @4xl:mb-6 @4xl:px-4 @4xl:py-2.5",
+                "relative z-10 flex items-center gap-3 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground @4xl:mb-6 @4xl:h-11 @4xl:px-4 @4xl:py-0 @4xl:text-meta @4xl:font-bold",
                 s > 0 && "mt-4 @4xl:mt-0",
                 placed
               )}
@@ -340,7 +347,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
                   {hasStep(lane, s) ? (
                     <div
                       className={cn(
-                        "relative min-w-0 rounded-md border p-2 text-xs hyphens-auto wrap-break-word @xl:p-3 @xl:text-sm @4xl:p-4 @4xl:text-pretty",
+                        "relative min-w-0 rounded-lg border p-2 text-xs hyphens-auto wrap-break-word @xl:p-3 @xl:text-sm @4xl:min-h-31.5 @4xl:px-4.5 @4xl:py-4 @4xl:text-body @4xl:text-pretty",
                         stepStyles[state],
                         placed
                       )}
@@ -399,7 +406,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
                         return (
                           <p
                             key={i}
-                            className="relative z-10 inline-flex items-center gap-1.5 bg-background py-0.5 text-xs text-muted-foreground @4xl:px-1.5 @4xl:py-0"
+                            className="relative z-10 inline-flex items-center gap-2 bg-background py-0.5 text-xs text-muted-foreground @4xl:pr-2.5 @4xl:text-sm"
                           >
                             <Narrow className="size-4 shrink-0 @4xl:hidden" />
                             <Wide className="hidden size-4 shrink-0 @4xl:block" />
@@ -416,7 +423,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
         ))}
       </div>
 
-      <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-6 text-xs text-muted-foreground @xl:text-sm @4xl:mt-10">
+      <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t pt-5 text-xs text-muted-foreground @xl:text-sm @4xl:mt-10">
         {(["active", "inactive", "deferred"] as const).map((state) =>
           used(state) ? (
             <li key={state} className="flex items-center gap-2">
@@ -450,7 +457,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
       </ul>
 
       {note ? (
-        <figcaption className="mt-4 text-xs text-muted-foreground @xl:text-sm">
+        <figcaption className="mt-4 max-w-[80ch] text-xs text-pretty text-muted-foreground @xl:text-sm">
           {note}
         </figcaption>
       ) : null}

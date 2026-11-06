@@ -4,15 +4,15 @@ import { ArrowRightIcon } from "lucide-react"
 import { Container } from "@farnazshahriari/design-system/ui/container"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 
+import { Eyebrow } from "@/components/case-study/parts"
+import { SectionOpener } from "@/components/ui/section-opener"
 import { site } from "@/content/site"
 import type { Skill } from "@/content/types"
 
 /**
  * The foot of a skill page: where to go next. The same block as
- * `NextProject`, without the image, since a skill has none.
- *
- * The whole block is one link, so there is no separate button competing
- * with it for the section's single call to action.
+ * `NextProject`, without the image, since a skill has none: one link,
+ * whose hairline draws across and whose arrow nudges right on hover.
  */
 export function NextSkill({ skill }: { skill: Skill | undefined }) {
   if (!skill) return null
@@ -24,13 +24,16 @@ export function NextSkill({ skill }: { skill: Skill | undefined }) {
           href={`/skills/${skill.slug}`}
           className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
-          <p className="text-meta text-muted-foreground">{site.skills.nextLabel}</p>
-
-          <div className="mt-4 flex items-center gap-5">
-            <h2 id="next-skill-title" className="text-h1 text-balance">
+          <SectionOpener wipe />
+          <div className="flex flex-col gap-5">
+            <Eyebrow>{site.skills.nextLabel}</Eyebrow>
+            <h2 id="next-skill-title" className="max-w-[24ch] text-h2 text-balance">
               {skill.title}
             </h2>
-            <ArrowRightIcon className="size-8 shrink-0 transition-transform duration-500 ease-out group-hover:translate-x-2 md:size-12" />
+            <ArrowRightIcon
+              aria-hidden="true"
+              className="size-7 transition-transform duration-500 ease-out group-hover:translate-x-2 motion-reduce:transition-none"
+            />
           </div>
         </Link>
       </Container>
