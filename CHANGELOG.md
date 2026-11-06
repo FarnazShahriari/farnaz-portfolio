@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-06 — Design system 3.0.0: paper, black and four type roles
+The portfolio moves to the "Calm. Bold." brand. The removed accent bands
+are now muted, the "next" teasers too (the black footer follows them),
+diagrams and the blueprint draw emphasis in black, eyebrows use
+`text-label` and body copy `text-body`. Guardrail skills re-copied.
+Related: project-docs/decisions/2026-11-06-design-system-3.md
+
 ## 2026-11-03 — About: a new line under the title
 The line under "Hi, I'm Farnaz" now names the fields and the countries:
 agriculture, safety and complex data, from Norway, Italy and Switzerland.

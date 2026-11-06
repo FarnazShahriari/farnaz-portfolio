@@ -23,7 +23,7 @@ incident Overview.
    project's `heroRatio` when the subject would be cut off (TryggDrift: 16:9).
    With `hideCaption`, no line under it.
 3. **The sections** — from the case study's content file, in order.
-4. **Next project** — accent band.
+4. **Next project** — muted band (the black footer follows it, so not dark).
 
 ## Section types (in `site/src/content/case-studies/<slug>.ts`)
 
@@ -33,7 +33,7 @@ Label and heading on the left (sticky on wide screens), text on the right.
 
 | Field | |
 | --- | --- |
-| `theme` | `light` (default), `dark`, `accent`, `muted`. Dark and accent get more air. |
+| `theme` | `light` (default), `muted`, `dark`. Dark is the page's one statement band and gets more air. |
 | `eyebrow` | Small uppercase label. |
 | `title` | Optional. Without it, the eyebrow is the heading. |
 | `body` | The right column, as a list of parts. Empty (`[]`) when `below` carries the section: the heading then takes the wider column. |
@@ -100,13 +100,13 @@ step per stage), optional `dividers` (the lines between lanes), `flows`
 - Keep handoffs between neighbouring lanes; in development a warning names
   any flow that skips a lane, points outside the grid, or a lane with the
   wrong number of steps. An empty step `text` leaves that cell blank.
-- Built for light and muted sections. In dark or accent sections the
-  accent pieces lose contrast until the design system declares an accent
-  for those grounds (an upstream change).
+- Emphasis is black on paper (`primary`, `foreground` and tints of it),
+  never a colour, so it reads on light and muted grounds and inverts on a
+  dark one.
 - **Limit:** this holds for up to 3 roles with short sentences (one line
   each, ~70 characters). A wordier blueprint, or 4+ roles, is too narrow
   as columns on a phone — split it, or shorten the steps.
-- A flow within one lane is "same person continues" (accent arrow, desktop
+- A flow within one lane is "same person continues" (solid black arrow, desktop
   only). A flow between lanes is a handoff, drawn on the line next to the
   step it arrives at, with its label.
 - Step `state`: `active` (default), `inactive` (greyed), `deferred`
@@ -120,7 +120,7 @@ it as SVG — but inline, as a component in
 registered in `diagrams/index.ts` and referenced by id. The designer's
 original export stays in `assets/<project>/` under the same name.
 
-- Colours become token classes (`fill-accent`, `stroke-border`,
+- Colours become token classes (`fill-primary`, `stroke-foreground`, `stroke-border`,
   `fill-muted-foreground`…); no hex, no white background rect, no drop
   shadows. Text uses `font-sans` and the type scale — `text-sm` for steps,
   `text-xs` for the rest. Inside an SVG a CSS pixel is a unit of the

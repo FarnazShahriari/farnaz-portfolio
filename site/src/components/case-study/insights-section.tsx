@@ -58,7 +58,7 @@ export function InsightsSection({ section }: { section: InsightsSectionData }) {
             <ul className="flex flex-col gap-8">
               {insights.map((insight) => (
                 <li key={insight.finding} className="flex flex-col gap-3">
-                  <p className="text-lg font-bold text-pretty">
+                  <p className="text-body font-bold text-pretty">
                     {insight.finding}
                   </p>
                   {insight.detail ? (
@@ -70,7 +70,7 @@ export function InsightsSection({ section }: { section: InsightsSectionData }) {
             </ul>
 
             {closing ? (
-              <p className="mt-2 text-lg font-bold">{closing}</p>
+              <p className="mt-2 text-body font-bold">{closing}</p>
             ) : null}
           </div>
         </Grid>

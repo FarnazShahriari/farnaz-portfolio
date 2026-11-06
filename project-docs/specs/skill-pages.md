@@ -31,7 +31,7 @@ because it uses the same blocks.
    (`noun="certificate"`, facts under each slide via `details`); fewer show
    as a plain row at a slide's width. Each image opens larger once it has a
    `src`. Its caption only names it in the enlarged view.
-5. **Next skill**, accent, like `NextProject` without an image. Wraps from
+5. **Next skill**, muted, like `NextProject` without an image. Wraps from
    the last skill to the first.
 
 ## Changes to shared blocks

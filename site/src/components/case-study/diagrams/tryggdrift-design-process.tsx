@@ -33,13 +33,13 @@ const DESCRIPTION =
 const pill = "fill-background stroke-border"
 const step = "fill-foreground text-sm font-bold"
 const note = "fill-muted-foreground text-xs"
-const chip = "fill-accent text-xs font-bold"
-const chipPill = "fill-background stroke-accent/30"
-const panel = "fill-accent/5 [rx:var(--radius)]"
+const chip = "fill-foreground text-xs font-bold"
+const chipPill = "fill-background stroke-foreground/30"
+const panel = "fill-foreground/5 [rx:var(--radius)]"
 const panelLabel = "fill-muted-foreground text-xs font-bold tracking-wide uppercase"
-const endTitle = "fill-accent-foreground text-sm font-bold"
-const endNote = "fill-accent-foreground/80 text-xs"
-const solid = "fill-none stroke-accent"
+const endTitle = "fill-primary-foreground text-sm font-bold"
+const endNote = "fill-primary-foreground/80 text-xs"
+const solid = "fill-none stroke-foreground"
 // The way back is quieter than the way forward, but still 3:1 or more.
 const dashed = "fill-none stroke-muted-foreground"
 
@@ -47,7 +47,7 @@ function Markers({ id }: { id: string }) {
   return (
     <defs>
       <marker id={`${id}-arrow`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
-        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-accent" />
+        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-foreground" />
       </marker>
       <marker id={`${id}-arrow-muted`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
         <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-muted-foreground" />
@@ -85,7 +85,7 @@ function Wide() {
       </text>
 
       {/* Entry */}
-      <circle cx="54" cy="58" r="46" className="fill-accent" />
+      <circle cx="54" cy="58" r="46" className="fill-primary" />
       <text x="54" y="55" textAnchor="middle" className={endTitle}>Kickoff</text>
       <text x="54" y="72" textAnchor="middle" className={endNote}>with NLR</text>
 
@@ -126,8 +126,8 @@ function Wide() {
       <path d="M646 399 H540" strokeWidth="1.8" markerEnd={arrow} className={solid} />
 
       {/* Findings, and the way back into the design */}
-      <path d="M460 351 L532 399 L460 447 L388 399 Z" strokeWidth="1.8" className="fill-background stroke-accent" />
-      <text x="460" y="404" textAnchor="middle" className="fill-accent text-sm font-bold">Findings</text>
+      <path d="M460 351 L532 399 L460 447 L388 399 Z" strokeWidth="1.8" className="fill-background stroke-foreground" />
+      <text x="460" y="404" textAnchor="middle" className="fill-foreground text-sm font-bold">Findings</text>
 
       <path d="M388 399 H350 V168 H389" strokeWidth="1.5" strokeDasharray="5 4" markerEnd={muted} className={dashed} />
       <text x="340" y="272" textAnchor="end" className={note}>findings, back</text>
@@ -147,7 +147,7 @@ function Wide() {
       <text x="726" y="576" textAnchor="middle" className={note}>check-ins and design review</text>
 
       <path d="M826 532 H900" strokeWidth="1.8" markerEnd={arrow} className={solid} />
-      <circle cx="952" cy="532" r="46" className="fill-accent" />
+      <circle cx="952" cy="532" r="46" className="fill-primary" />
       <text x="952" y="530" textAnchor="middle" className={endTitle}>Live</text>
       <text x="952" y="547" textAnchor="middle" className={endNote}>Jan 2026</text>
       <text x="952" y="598" textAnchor="middle" className={note}>as TryggDrift</text>
@@ -177,7 +177,7 @@ function Tall() {
       <Markers id={id} />
 
       {/* Entry */}
-      <circle cx="190" cy="50" r="46" className="fill-accent" />
+      <circle cx="190" cy="50" r="46" className="fill-primary" />
       <text x="190" y="47" textAnchor="middle" className={endTitle}>Kickoff</text>
       <text x="190" y="64" textAnchor="middle" className={endNote}>with NLR</text>
 
@@ -223,8 +223,8 @@ function Tall() {
       <path d="M190 644 V662" strokeWidth="1.8" markerEnd={arrow} className={solid} />
 
       {/* Findings, and the way back into the design, up the left side */}
-      <path d="M190 668 L252 700 L190 732 L128 700 Z" strokeWidth="1.8" className="fill-background stroke-accent" />
-      <text x="190" y="705" textAnchor="middle" className="fill-accent text-sm font-bold">Findings</text>
+      <path d="M190 668 L252 700 L190 732 L128 700 Z" strokeWidth="1.8" className="fill-background stroke-foreground" />
+      <text x="190" y="705" textAnchor="middle" className="fill-foreground text-sm font-bold">Findings</text>
 
       <path d="M128 700 H28 V248 H119" strokeWidth="1.5" strokeDasharray="5 4" markerEnd={muted} className={dashed} />
       <text x="36" y="662" className={note}>findings, back</text>
@@ -244,7 +244,7 @@ function Tall() {
       <text x="190" y="904" textAnchor="middle" className={note}>check-ins and design review</text>
 
       <path d="M190 912 V928" strokeWidth="1.8" markerEnd={arrow} className={solid} />
-      <circle cx="190" cy="980" r="46" className="fill-accent" />
+      <circle cx="190" cy="980" r="46" className="fill-primary" />
       <text x="190" y="978" textAnchor="middle" className={endTitle}>Live</text>
       <text x="190" y="995" textAnchor="middle" className={endNote}>Jan 2026</text>
       <text x="190" y="1044" textAnchor="middle" className={note}>as TryggDrift</text>

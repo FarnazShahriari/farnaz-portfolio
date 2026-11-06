@@ -343,7 +343,7 @@ export const ksl: CaseStudy = {
     },
     {
       type: "story",
-      theme: "accent",
+      theme: "muted",
       eyebrow: "Voted in the workshop, then built",
       title:
         "Leveraging the note field revisors already use to support deviation registration",

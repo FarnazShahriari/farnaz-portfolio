@@ -57,7 +57,7 @@ function CertificateDetails({ certificate }: { certificate: Certificate }) {
 
   return (
     <div className="mt-3 flex flex-col gap-1">
-      <p className="text-base font-bold text-pretty">{title}</p>
+      <p className="text-body font-bold text-pretty">{title}</p>
       <p className="text-sm text-muted-foreground">
         {issuer}, {year}
       </p>

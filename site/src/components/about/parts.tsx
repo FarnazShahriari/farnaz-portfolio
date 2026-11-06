@@ -14,7 +14,7 @@ import type {
  * The pieces of the About page.
  *
  * Built the way the case studies' parts are: type from the system's scale
- * (bold `text-base` over a muted `text-sm`, as in the case study facts),
+ * (bold `text-body` over a muted `text-sm`, as in the case study facts),
  * colour from the theme tokens, the system's near-square radius for cards
  * and `rounded-pill` for pills, and a hairline `border` throughout. Nothing
  * here has a size, colour or radius of its own.
@@ -81,7 +81,7 @@ function Card({
     <div className={cn("flex items-start gap-4 rounded-md border p-4 md:p-5", className)}>
       {mark}
       <div className="flex min-w-0 flex-col gap-1">
-        <p className="text-base font-bold text-pretty">{title}</p>
+        <p className="text-body font-bold text-pretty">{title}</p>
         <p className="text-sm text-pretty text-muted-foreground">{subtitle}</p>
       </div>
     </div>
@@ -163,7 +163,7 @@ export function Timeline({ stops }: { stops: TimelineStop[] }) {
           <div className="flex w-16 flex-col items-center gap-2 pt-6 md:col-start-2 md:row-start-1 md:w-28">
             <span
               aria-hidden="true"
-              className="size-3.5 shrink-0 rounded-pill border-2 border-accent bg-background"
+              className="size-3.5 shrink-0 rounded-pill border-2 border-foreground bg-background"
             />
             {stop.period ? (
               // On a background of its own, so the line runs behind the
@@ -194,7 +194,7 @@ export function OutsideWork({ icon, text }: { icon: LucideIcon; text: string }) 
   return (
     <div className="flex items-center gap-4">
       <IconMark icon={icon} />
-      <p className="text-lg text-pretty text-muted-foreground">{text}</p>
+      <p className="text-body text-pretty text-muted-foreground">{text}</p>
     </div>
   )
 }

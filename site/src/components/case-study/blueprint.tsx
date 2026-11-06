@@ -26,9 +26,9 @@ import type {
  * words are real text (searchable, selectable, read by screen readers), and
  * every colour is a theme token, so it follows the design system.
  *
- * Built for light and muted sections. In a dark or accent Section the
- * accent-coloured pieces lose contrast, because the design system does not
- * yet re-declare `--accent` for those grounds.
+ * The emphasis is black on paper (`primary`, `foreground` and tints of
+ * it), never a colour, so it reads the same on light and muted grounds and
+ * inverts on a dark one.
  *
  * One DOM, placed into a CSS grid two ways. The switch is a container query
  * on the figure's own width, not a page breakpoint, because what matters is
@@ -80,19 +80,19 @@ const n = {
 }
 
 const stepStyles: Record<BlueprintStepState, string> = {
-  active: "border-accent/30 bg-accent/5 text-foreground",
+  active: "border-foreground/30 bg-foreground/5 text-foreground",
   inactive: "border-border text-muted-foreground",
   deferred: "border-dashed border-border text-muted-foreground",
 }
 
 const tagStyles: Record<NonNullable<BlueprintLane["tag"]>["tone"], string> = {
-  strong: "border-transparent bg-accent text-accent-foreground",
-  soft: "border-transparent bg-accent/10 text-accent",
+  strong: "border-transparent bg-primary text-primary-foreground",
+  soft: "border-transparent bg-foreground/10 text-foreground",
   deferred: "border-dashed border-input bg-transparent text-muted-foreground",
 }
 
 const lineStyles = (strong?: boolean) =>
-  strong ? "border-accent" : "border-dashed border-input"
+  strong ? "border-foreground" : "border-dashed border-input"
 
 const defaultLegend = {
   active: "Designed and tested in this round",
@@ -173,7 +173,7 @@ function LaneHeader({ lane, index }: { lane: BlueprintLane; index: number }) {
         <span
           className={cn(
             "flex size-8 shrink-0 items-center justify-center rounded-full @4xl:size-10",
-            lane.deferred ? "bg-muted text-muted-foreground" : "bg-accent/10 text-accent"
+            lane.deferred ? "bg-muted text-muted-foreground" : "bg-foreground/10 text-foreground"
           )}
         >
           <Icon aria-hidden="true" className="size-4 @4xl:size-5" />
@@ -270,7 +270,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
               <p
                 className={cn(
                   "relative z-10 hidden w-fit self-center bg-background pr-2 text-xs tracking-wide uppercase @4xl:block",
-                  divider.strong ? "text-accent" : "text-muted-foreground",
+                  divider.strong ? "text-foreground" : "text-muted-foreground",
                   placed
                 )}
                 style={at({ col: 1, row: w.dividerRow(i) })}
@@ -291,7 +291,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
           <div key={s} className="contents">
             <h3
               className={cn(
-                "relative z-10 flex gap-2 rounded-md bg-accent px-3 py-1.5 text-xs font-bold text-accent-foreground @xl:text-sm @4xl:mb-6 @4xl:px-4 @4xl:py-2.5",
+                "relative z-10 flex gap-2 rounded-md bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground @xl:text-sm @4xl:mb-6 @4xl:px-4 @4xl:py-2.5",
                 s > 0 && "mt-4 @4xl:mt-0",
                 placed
               )}
@@ -372,7 +372,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
                       {drawArrow ? (
                         <ArrowRightIcon
                           aria-hidden="true"
-                          className="absolute top-1/2 -left-5 hidden size-4 -translate-y-1/2 text-accent @4xl:block"
+                          className="absolute top-1/2 -left-5 hidden size-4 -translate-y-1/2 text-foreground @4xl:block"
                         />
                       ) : null}
                     </div>
@@ -427,7 +427,7 @@ export function Blueprint({ blueprint }: { blueprint: BlueprintData }) {
         )}
         {continues.length ? (
           <li className="hidden items-center gap-2 @4xl:flex">
-            <ArrowRightIcon aria-hidden="true" className="size-4 shrink-0 text-accent" />
+            <ArrowRightIcon aria-hidden="true" className="size-4 shrink-0 text-foreground" />
             {legend.continues}
           </li>
         ) : null}

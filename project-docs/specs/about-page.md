@@ -27,7 +27,7 @@ placeholder. Adding the file is the whole change.
    `text-display`, the lead in muted `text-lead`, and the language pills.
    On phones the portrait is on top.
 2. **Key facts**: three cards, hairline border, the system's radius. Icon
-   in a bordered square, bold `text-base` title, muted `text-sm` subtitle,
+   in a bordered square, bold `text-body` title, muted `text-sm` subtitle,
    as in the case study facts. Stacked on phones.
 3. **Languages** (in the hero, under the lead): pills (`rounded-pill`,
    hairline border) with the flag in a small circle, the name in bold and

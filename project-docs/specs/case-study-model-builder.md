@@ -167,7 +167,7 @@ One change, to the group, the unit or how totals work, then goes to every select
 
 ---
 
-## Section 6 · story · theme `accent`
+## Section 6 · story · theme `muted` (was `accent` before design system 3.0.0)
 
 **eyebrow:** How it works
 **title:** Building a model by dragging and linking

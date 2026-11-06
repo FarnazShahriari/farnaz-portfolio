@@ -27,7 +27,7 @@ import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { captionStyle } from "@/components/ui/media"
 
-const card = "fill-background stroke-accent/30"
+const card = "fill-background stroke-foreground/30"
 const label = "fill-foreground text-xs font-bold"
 const note = "fill-muted-foreground text-xs"
 const bar = "fill-muted-foreground/25"
@@ -66,7 +66,7 @@ function Model() {
     <svg viewBox="0 0 340 150" aria-hidden="true" className="h-auto w-full max-w-sm font-sans">
       <defs>
         <marker id={`${id}-arrow`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
-          <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-accent" />
+          <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-foreground" />
         </marker>
       </defs>
       {[
@@ -81,15 +81,15 @@ function Model() {
             d={`M175 ${d.y + 24} L232 66`}
             strokeWidth="1.5"
             markerEnd={`url(#${id}-arrow)`}
-            className="fill-none stroke-accent"
+            className="fill-none stroke-foreground"
           />
         </g>
       ))}
       {/* A cube, as on the original slide */}
       <g transform="translate(272 66)">
-        <path d="M0 -30 L30 -15 L0 0 L-30 -15 z" className="fill-accent/30" />
-        <path d="M-30 -15 L0 0 L0 34 L-30 19 z" className="fill-accent/60" />
-        <path d="M30 -15 L0 0 L0 34 L30 19 z" className="fill-accent" />
+        <path d="M0 -30 L30 -15 L0 0 L-30 -15 z" className="fill-foreground/30" />
+        <path d="M-30 -15 L0 0 L0 34 L-30 19 z" className="fill-foreground/60" />
+        <path d="M30 -15 L0 0 L0 34 L30 19 z" className="fill-foreground" />
       </g>
       <text x="272" y="128" textAnchor="middle" className={label}>Gross sales</text>
     </svg>
@@ -109,7 +109,7 @@ function Answer() {
           width="28"
           height={h}
           rx="2"
-          className={k === 1 ? "fill-accent" : bar}
+          className={k === 1 ? "fill-foreground" : bar}
         />
       ))}
       <path d="M12 66 H208" strokeWidth="1" className="fill-none stroke-border" />
@@ -150,7 +150,7 @@ const PANELS: Panel[] = [
     text: "Reports and analysis read from the finished model.",
     drawing: (
       <>
-        <p className="max-w-sm rounded-lg border border-accent/30 bg-background px-4 py-3 text-sm text-pretty">
+        <p className="max-w-sm rounded-lg border border-foreground/30 bg-background px-4 py-3 text-sm text-pretty">
           “Which sales rep sold the most discounted skirts in April?”
         </p>
         <div className="mt-4">
@@ -172,7 +172,7 @@ export function ModelBuilderOverview({ caption }: { caption?: string }) {
             key={p.label}
             className={cn(
               "relative flex flex-col rounded-lg p-5 @4xl:row-span-3 @4xl:grid @4xl:grid-rows-subgrid",
-              p.strong ? "bg-accent/10" : "bg-accent/5"
+              p.strong ? "bg-foreground/10" : "bg-foreground/5"
             )}
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -184,8 +184,8 @@ export function ModelBuilderOverview({ caption }: { caption?: string }) {
                 className={cn(
                   "font-bold",
                   p.strong
-                    ? "border-transparent bg-accent text-accent-foreground"
-                    : "border-accent/30 bg-background text-accent"
+                    ? "border-transparent bg-primary text-primary-foreground"
+                    : "border-foreground/30 bg-background text-foreground"
                 )}
               >
                 {p.role}
@@ -204,11 +204,11 @@ export function ModelBuilderOverview({ caption }: { caption?: string }) {
               <>
                 <ArrowRightIcon
                   aria-hidden="true"
-                  className="absolute top-1/2 -right-6 hidden size-4 -translate-y-1/2 text-accent @4xl:block"
+                  className="absolute top-1/2 -right-6 hidden size-4 -translate-y-1/2 text-foreground @4xl:block"
                 />
                 <ArrowDownIcon
                   aria-hidden="true"
-                  className="absolute -bottom-6 left-1/2 size-4 -translate-x-1/2 text-accent @4xl:hidden"
+                  className="absolute -bottom-6 left-1/2 size-4 -translate-x-1/2 text-foreground @4xl:hidden"
                 />
               </>
             ) : null}

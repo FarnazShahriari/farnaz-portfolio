@@ -15,9 +15,9 @@
  * - screen readers get one image with a full text description (`<title>`
  *   and `<desc>`), since the meaning is in how the boxes connect.
  *
- * Built for light and muted sections. In a dark or accent Section the
- * accent pieces lose contrast, because the design system does not yet
- * re-declare `--accent` for those grounds.
+ * The emphasis is black on paper (`primary`, `foreground` and tints of
+ * it), never a colour, so it reads the same on light and muted grounds and
+ * inverts on a dark one.
  *
  * There are two drawings. Scaled down, the wide one's text shrinks with it,
  * so it only appears once the figure is `@5xl` (64rem) wide, where it draws
@@ -41,13 +41,13 @@ const DESCRIPTION =
 const pill = "fill-background stroke-border"
 const step = "fill-foreground text-sm font-bold"
 const note = "fill-muted-foreground text-xs"
-const chip = "fill-accent text-xs font-bold"
-const branch = "fill-accent text-xs font-bold"
-const panel = "fill-accent/5 [rx:var(--radius)]"
+const chip = "fill-foreground text-xs font-bold"
+const branch = "fill-foreground text-xs font-bold"
+const panel = "fill-foreground/5 [rx:var(--radius)]"
 const panelLabel = "fill-muted-foreground text-xs font-bold tracking-wide uppercase"
-const endTitle = "fill-accent-foreground text-sm font-bold"
-const endNote = "fill-accent-foreground/80 text-xs"
-const solid = "fill-none stroke-accent"
+const endTitle = "fill-primary-foreground text-sm font-bold"
+const endNote = "fill-primary-foreground/80 text-xs"
+const solid = "fill-none stroke-foreground"
 // The way back is quieter than the way forward, but still 3:1 or more.
 const dashed = "fill-none stroke-muted-foreground"
 
@@ -55,7 +55,7 @@ function Markers({ id }: { id: string }) {
   return (
     <defs>
       <marker id={`${id}-arrow`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
-        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-accent" />
+        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-foreground" />
       </marker>
       <marker id={`${id}-arrow-muted`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
         <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-muted-foreground" />
@@ -90,7 +90,7 @@ function Wide() {
       </text>
 
       {/* Entry */}
-      <circle cx="76" cy="58" r="46" className="fill-accent" />
+      <circle cx="76" cy="58" r="46" className="fill-primary" />
       <text x="76" y="55" textAnchor="middle" className={endTitle}>Kickoff</text>
       <text x="76" y="72" textAnchor="middle" className={endNote}>with the client</text>
 
@@ -117,16 +117,16 @@ function Wide() {
       <rect x="685" y="294" width="170" height="48" rx="24" className={pill} />
       <text x="770" y="323" textAnchor="middle" className={step}>Test with users</text>
 
-      <rect x="874" y="295" width="156" height="21" rx="10.5" className="fill-background stroke-accent/30" />
+      <rect x="874" y="295" width="156" height="21" rx="10.5" className="fill-background stroke-foreground/30" />
       <text x="888" y="310" className={chip}>round 1 · 5 revisors</text>
-      <rect x="874" y="321" width="156" height="21" rx="10.5" className="fill-background stroke-accent/30" />
+      <rect x="874" y="321" width="156" height="21" rx="10.5" className="fill-background stroke-foreground/30" />
       <text x="888" y="336" className={chip}>round 2 · 5 farmers</text>
 
       <path d="M685 318 H580" strokeWidth="1.8" markerEnd={arrow} className={solid} />
 
       {/* Findings, and the two ways back into the design */}
-      <path d="M500 270 L572 318 L500 366 L428 318 Z" strokeWidth="1.8" className="fill-background stroke-accent" />
-      <text x="500" y="323" textAnchor="middle" className="fill-accent text-sm font-bold">Findings</text>
+      <path d="M500 270 L572 318 L500 366 L428 318 Z" strokeWidth="1.8" className="fill-background stroke-foreground" />
+      <text x="500" y="323" textAnchor="middle" className="fill-foreground text-sm font-bold">Findings</text>
 
       <path d="M500 270 V198" strokeWidth="1.5" strokeDasharray="5 4" markerEnd={muted} className={dashed} />
       <text x="514" y="228" className={note}>small problems,</text>
@@ -152,7 +152,7 @@ function Wide() {
       <text x="720" y="510" textAnchor="middle" className={note}>GitHub for the developers</text>
 
       <path d="M835 450 H848" strokeWidth="1.8" markerEnd={arrow} className={solid} />
-      <circle cx="900" cy="450" r="46" className="fill-accent" />
+      <circle cx="900" cy="450" r="46" className="fill-primary" />
       <text x="900" y="448" textAnchor="middle" className={endTitle}>Live</text>
       <text x="900" y="465" textAnchor="middle" className={endNote}>Sept 2026</text>
     </svg>
@@ -181,7 +181,7 @@ function Tall() {
       <Markers id={id} />
 
       {/* Entry */}
-      <circle cx="190" cy="50" r="46" className="fill-accent" />
+      <circle cx="190" cy="50" r="46" className="fill-primary" />
       <text x="190" y="47" textAnchor="middle" className={endTitle}>Kickoff</text>
       <text x="190" y="64" textAnchor="middle" className={endNote}>with the client</text>
 
@@ -213,16 +213,16 @@ function Tall() {
         <rect x="112" y="420" width="156" height="40" rx="20" className={pill} />
         <text x="190" y="445" textAnchor="middle" className={step}>Test with users</text>
 
-        <rect x="108" y="468" width="164" height="22" rx="11" className="fill-background stroke-accent/30" />
+        <rect x="108" y="468" width="164" height="22" rx="11" className="fill-background stroke-foreground/30" />
         <text x="190" y="483" textAnchor="middle" className={chip}>round 1 · 5 revisors</text>
-        <rect x="108" y="494" width="164" height="22" rx="11" className="fill-background stroke-accent/30" />
+        <rect x="108" y="494" width="164" height="22" rx="11" className="fill-background stroke-foreground/30" />
         <text x="190" y="509" textAnchor="middle" className={chip}>round 2 · 5 farmers</text>
 
         <path d="M190 520 V538" strokeWidth="1.8" markerEnd={arrow} className={solid} />
 
         {/* Findings */}
-        <path d="M190 542 L252 574 L190 606 L128 574 Z" strokeWidth="1.8" className="fill-background stroke-accent" />
-        <text x="190" y="579" textAnchor="middle" className="fill-accent text-sm font-bold">Findings</text>
+        <path d="M190 542 L252 574 L190 606 L128 574 Z" strokeWidth="1.8" className="fill-background stroke-foreground" />
+        <text x="190" y="579" textAnchor="middle" className="fill-foreground text-sm font-bold">Findings</text>
 
         {/* Small problems: straight back to Sketch, up the left channel */}
         <path d="M128 574 H28" strokeWidth="1.5" strokeDasharray="5 4" className={dashed} />
@@ -252,7 +252,7 @@ function Tall() {
         <text x="190" y="871" textAnchor="middle" className={note}>GitHub for the developers</text>
 
         <path d="M190 880 V896" strokeWidth="1.8" markerEnd={arrow} className={solid} />
-        <circle cx="190" cy="946" r="46" className="fill-accent" />
+        <circle cx="190" cy="946" r="46" className="fill-primary" />
         <text x="190" y="944" textAnchor="middle" className={endTitle}>Live</text>
         <text x="190" y="961" textAnchor="middle" className={endNote}>Sept 2026</text>
       </g>

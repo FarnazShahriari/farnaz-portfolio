@@ -9,7 +9,7 @@
  * screen readers.
  *
  * A human-led step is a plain pill with an outlined tag; an AI-assisted
- * one is drawn in the accent, with a filled tag. The bracket under the
+ * one is drawn in black, with a filled tag. The bracket under the
  * AI-assisted steps is the check every one of them goes through.
  *
  * Built for light and muted sections. Two drawings, as there: the wide one
@@ -40,27 +40,27 @@ const steps: { name: string; lead: Lead; notes: [string, string?] }[] = [
 // Shared looks, the same as the KSL diagram's where they overlap.
 const pill: Record<Lead, string> = {
   human: "fill-background stroke-border",
-  ai: "fill-accent/5 stroke-accent",
+  ai: "fill-foreground/5 stroke-foreground",
 }
 const tag: Record<Lead, string> = {
   human: "fill-background stroke-border",
-  ai: "fill-accent",
+  ai: "fill-foreground",
 }
 const tagText: Record<Lead, string> = {
   human: "fill-foreground text-xs font-bold",
-  ai: "fill-accent-foreground text-xs font-bold",
+  ai: "fill-primary-foreground text-xs font-bold",
 }
 const tagLabel: Record<Lead, string> = { human: "Human-led", ai: "AI-assisted" }
 const step = "fill-foreground text-sm font-bold"
 const note = "fill-muted-foreground text-xs"
-const solid = "fill-none stroke-accent"
+const solid = "fill-none stroke-foreground"
 const dashed = "fill-none stroke-muted-foreground"
 
 function Markers({ id }: { id: string }) {
   return (
     <defs>
       <marker id={`${id}-arrow`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
-        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-accent" />
+        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-foreground" />
       </marker>
     </defs>
   )

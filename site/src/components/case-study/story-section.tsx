@@ -14,15 +14,15 @@ import type { StorySection as StorySectionData } from "@/content/types"
  * section's name in view while a long column scrolls past it. The `top`
  * clears the site's sticky nav.
  *
- * Dark and accent bands are emphasis, so they take the larger rhythm; on
- * a light ground the default is enough.
+ * A dark band is the page's one statement, so it takes the larger rhythm;
+ * on a light or muted ground the default is enough.
  *
  * With an empty `body` there is no right column: the heading takes the
  * wider column instead and is not sticky, since nothing scrolls past it.
  */
 export function StorySection({ section }: { section: StorySectionData }) {
   const { theme = "light", eyebrow, title, body, below } = section
-  const emphasised = theme === "dark" || theme === "accent"
+  const emphasised = theme === "dark"
   const hasBody = body.length > 0
 
   return (

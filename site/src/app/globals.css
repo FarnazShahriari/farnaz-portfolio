@@ -8,5 +8,5 @@
 
 /* Departures from the design system belong below this line, as a token
    redeclaration — never as a hard-coded value in a component.
-   e.g.  :root { --accent: #b4531f; }   this project runs warm
+   e.g.  :root { --point: #6b7a8f; }   a different "you are here" colour
    Nothing is redeclared yet. */

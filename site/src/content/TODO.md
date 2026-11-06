@@ -4,6 +4,11 @@ Every undecided string and image on the site, one line each. Delete a line
 when the real thing lands. Everything here renders as a bracketed note or a
 grey block, so nothing can ship by accident unnoticed.
 
+## Design system 3.0.0
+
+- [ ] Bump `site/package.json` to `"@farnazshahriari/design-system": "^3.0.0"` and regenerate the lockfile with `npm install`. The code already targets 3.0.0; this waits on a GitHub Packages token that works (classic PAT with `read:packages`)
+- [ ] Check the token Vercel uses still works before deploying
+
 ## Site-level — `site.ts`
 
 - [ ] Footer email address (`site.footer.email`, shows as "[email]")

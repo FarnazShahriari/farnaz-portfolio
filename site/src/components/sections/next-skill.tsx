@@ -18,7 +18,7 @@ export function NextSkill({ skill }: { skill: Skill | undefined }) {
   if (!skill) return null
 
   return (
-    <Section theme="accent" rhythm="lg" aria-labelledby="next-skill-title">
+    <Section theme="muted" rhythm="lg" aria-labelledby="next-skill-title">
       <Container>
         <Link
           href={`/skills/${skill.slug}`}
@@ -30,7 +30,7 @@ export function NextSkill({ skill }: { skill: Skill | undefined }) {
             <h2 id="next-skill-title" className="text-h1 text-balance">
               {skill.title}
             </h2>
-            <ArrowRightIcon className="size-8 shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 md:size-12" />
+            <ArrowRightIcon className="size-8 shrink-0 transition-transform duration-500 ease-out group-hover:translate-x-2 md:size-12" />
           </div>
         </Link>
       </Container>

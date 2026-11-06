@@ -88,7 +88,7 @@ export const aiAcrossTheDesignProcess: SkillPage = {
     },
     {
       type: "story",
-      theme: "accent",
+      theme: "muted",
       eyebrow: "Designing for AI",
       title: "Suggestions, with the revisor in control",
       body: [

@@ -122,7 +122,8 @@ function fadeBeforeReady(i: number, inViewMedium: number, inViewWide: number) {
   return "opacity-40"
 }
 
-const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
+// The system's one curve: Tailwind's `ease-out` is set to it in theme.css.
+const ease = "ease-out"
 
 /**
  * Screens of a flow as a row you can move through: three in view on wide

@@ -23,7 +23,8 @@ import { ratioSize } from "@/lib/media"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import type { MediaPlaceholder } from "@/content/types"
 
-const ease = "ease-[cubic-bezier(0.16,1,0.3,1)]"
+// The system's one curve: Tailwind's `ease-out` is set to it in theme.css.
+const ease = "ease-out"
 
 /**
  * The hero of a case study as a carousel of device mockups.

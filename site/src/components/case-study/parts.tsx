@@ -23,9 +23,9 @@ import type {
  * The small pieces every case-study section is built from.
  *
  * Nothing here sets a colour, size or radius of its own: type comes from
- * the system's scale (`text-meta`, `text-lead`, `text-h2`…), colour from
- * the theme tokens, and the badge is the system's Badge. Inside a dark or
- * accent Section all of it inverts on its own.
+ * the system's scale (`text-label`, `text-body`, `text-h2`…), colour from
+ * the theme tokens, and the badge is the system's Badge. Inside a dark
+ * Section all of it inverts on its own.
  *
  * Every image in a case study opens larger on click or tap (`enlarge`).
  */
@@ -43,7 +43,7 @@ export function Eyebrow({
   return (
     <Tag
       className={cn(
-        "text-meta tracking-wide text-muted-foreground uppercase",
+        "text-label text-muted-foreground",
         className
       )}
     >
@@ -53,14 +53,16 @@ export function Eyebrow({
 }
 
 export function Paragraph({ children }: { children: React.ReactNode }) {
-  return <p className="text-lg text-pretty">{children}</p>
+  return <p className="text-body text-pretty">{children}</p>
 }
 
 /** A quote with its source, set off by a rule on the left. */
 export function QuoteBlock({ quote }: { quote: Quote }) {
   return (
     <figure className="flex flex-col gap-1 border-l border-input pl-4">
-      <blockquote className="text-meta text-pretty">
+      {/* Body text, not `text-meta`: the label role's wide tracking is for
+          short labels, and spreads a sentence apart. */}
+      <blockquote className="text-body text-pretty">
         &ldquo;{quote.text}&rdquo;
       </blockquote>
       <figcaption className="text-xs text-muted-foreground">
@@ -82,7 +84,7 @@ export function Facts({ items }: { items: Fact[] }) {
           className="flex flex-col-reverse justify-end gap-2 border-t border-border pt-4"
         >
           <dt className="text-sm text-muted-foreground">{fact.label}</dt>
-          <dd className="text-base font-bold">{fact.value}</dd>
+          <dd className="text-body font-bold">{fact.value}</dd>
         </div>
       ))}
     </dl>
@@ -103,7 +105,7 @@ export function Links({ items }: { items: ExternalLink[] }) {
             href={link.href}
             target="_blank"
             rel="noreferrer noopener"
-            className="w-fit text-lg text-pretty"
+            className="w-fit text-body text-pretty"
           >
             {link.label}
           </LinkUnderline>

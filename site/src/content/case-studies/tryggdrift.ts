@@ -218,7 +218,7 @@ export const tryggdrift: CaseStudy = {
     },
     {
       type: "story",
-      theme: "accent",
+      theme: "muted",
       eyebrow: "What changed",
       title: "From findings to final screens",
       body: [

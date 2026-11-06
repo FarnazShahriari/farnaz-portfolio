@@ -115,7 +115,7 @@ Thomas, preparedness lead
 
 ## WHAT CHANGED
 
-*Section theme: accent, like KSL and TryggDrift.*
+*Section theme: muted, like KSL and TryggDrift (was accent before design system 3.0.0).*
 
 ### Making the missing things visible
 
@@ -171,7 +171,7 @@ Caption: "Incident evaluation: lessons learned, feedback from the people involve
 
 ## Structure
 
-Short version of the shared pattern: The project (facts) → The process (diagram) → Weekly design meetings → Testing with users (insights) → What changed (accent, carousel) → Where it landed. Six sections, against eight for TryggDrift and twelve for KSL.
+Short version of the shared pattern: The project (facts) → The process (diagram) → Weekly design meetings → Testing with users (insights) → What changed (muted, carousel) → Where it landed. Six sections, against eight for TryggDrift and twelve for KSL.
 
 ## Writing rules
 

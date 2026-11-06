@@ -22,12 +22,15 @@ import type { Project } from "@/content/types"
  *
  * The whole block is one link, so there is no separate button competing
  * with it for the section's single call to action.
+ *
+ * Muted, not dark: the footer under it is the black band, and two black
+ * bands in a row would read as one.
  */
 export function NextProject({ project }: { project: Project | undefined }) {
   if (!project) return null
 
   return (
-    <Section theme="accent" rhythm="lg" aria-labelledby="next-project-title">
+    <Section theme="muted" rhythm="lg" aria-labelledby="next-project-title">
       <Container>
         <Link
           href={`/work/${project.slug}`}
@@ -45,7 +48,7 @@ export function NextProject({ project }: { project: Project | undefined }) {
                 {project.title}
               </h2>
             </ViewTransition>
-            <ArrowRightIcon className="size-8 shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 md:size-12" />
+            <ArrowRightIcon className="size-8 shrink-0 transition-transform duration-500 ease-out group-hover:translate-x-2 md:size-12" />
           </div>
 
           {project.scene ? (

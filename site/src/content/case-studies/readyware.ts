@@ -207,7 +207,7 @@ export const readyware: CaseStudy = {
     },
     {
       type: "story",
-      theme: "accent",
+      theme: "muted",
       eyebrow: "What changed",
       title: "Making the missing things visible",
       body: [
