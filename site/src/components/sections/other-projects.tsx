@@ -9,7 +9,7 @@ import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-
 import { cn } from "@farnazshahriari/design-system/lib/utils"
 
 import { Eyebrow } from "@/components/case-study/parts"
-import { photoTone } from "@/components/ui/media"
+import { toneFor } from "@/components/ui/media"
 import { Placeholder } from "@/components/ui/placeholder"
 import { SectionOpener } from "@/components/ui/section-opener"
 import { ratioSize } from "@/lib/media"
@@ -105,7 +105,8 @@ function ProjectTile({ project }: { project: Project }) {
               alt={image.alt ?? ""}
               fill
               sizes="(min-width: 768px) 45vw, 100vw"
-              className={`object-cover ${photoTone}`}
+              quality={90}
+                    className={cn("object-cover", toneFor(image))}
             />
           ) : (
             <div className="absolute inset-0 grid place-items-center">
@@ -114,6 +115,7 @@ function ProjectTile({ project }: { project: Project }) {
                 alt={image.alt ?? ""}
                 {...ratioSize(image.ratio)}
                 sizes="(min-width: 768px) 40vw, 85vw"
+                quality={90}
                 className="h-auto w-41/50"
               />
             </div>

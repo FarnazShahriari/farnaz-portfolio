@@ -3,13 +3,14 @@ import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
 import { Container } from "@farnazshahriari/design-system/ui/container"
+import { cn } from "@farnazshahriari/design-system/lib/utils"
 import { Grid } from "@farnazshahriari/design-system/ui/grid"
 import { Section } from "@farnazshahriari/design-system/ui/section"
 import { ViewTransition } from "@farnazshahriari/design-system/motion/view-transition"
 import { projectTitleTransition } from "@farnazshahriari/design-system/lib/view-transition-names"
 
 import { Eyebrow } from "@/components/case-study/parts"
-import { photoTone } from "@/components/ui/media"
+import { toneFor } from "@/components/ui/media"
 import { Placeholder } from "@/components/ui/placeholder"
 import { SectionOpener } from "@/components/ui/section-opener"
 import { ratioSize } from "@/lib/media"
@@ -70,7 +71,8 @@ export function NextProject({ project }: { project: Project | undefined }) {
                     alt={image.alt ?? ""}
                     fill
                     sizes="(min-width: 768px) 55vw, 100vw"
-                    className={`object-cover ${photoTone}`}
+                    quality={90}
+                    className={cn("object-cover", toneFor(image))}
                   />
                 ) : (
                   // A screen sits on the muted ground at 82%, as on its card.
@@ -80,6 +82,7 @@ export function NextProject({ project }: { project: Project | undefined }) {
                       alt={image.alt ?? ""}
                       {...ratioSize(image.ratio)}
                       sizes="(min-width: 768px) 45vw, 85vw"
+                      quality={90}
                       className="h-auto max-h-[88%] w-auto max-w-[82%]"
                     />
                   </div>

@@ -100,6 +100,7 @@ export const fieldToInterface: SkillPage = {
               ratio: "3 / 4",
               caption: "TryggDrift: two of the five scenarios, and the prototype on a phone.",
               src: "/work/tryggdrift/scenario-cards-and-prototype-farmer-test.webp",
+      showsScreen: true,
               alt: "Two printed test scenarios in Norwegian on a table: 'Scenario 5: Opprette risikovurdering for kjemikalier' (creating a risk assessment for chemicals) and 'Scenario 4: Registrere avvik og følge det opp' (registering a deviation and following it up), each with tasks to solve. Beside them, a phone shows the prototype's start page for the farm 'Bjørndal Gård'.",
               photo: true,
             },

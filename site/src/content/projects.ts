@@ -60,6 +60,7 @@ export const projects: Project[] = [
       caption: "The TryggDrift start page on a phone, in a sheep pasture.",
       hideCaption: true,
       src: "/work/tryggdrift/hand-holding-app-in-sheep-pasture.webp",
+      showsScreen: true,
       alt: "A hand holds up a phone showing the TryggDrift start page for 'Bjørndal Gård': open deviations, a search field, and tiles for Beredskap, Oppgaver, Avvik, Arbeidsinstruks, Dokument, Vernerunde and Risikovurdering. Behind it, sheep graze on green hills in low evening sun.",
       photo: true,
     },

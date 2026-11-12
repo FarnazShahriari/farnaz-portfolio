@@ -106,6 +106,7 @@ export const tryggdrift: CaseStudy = {
             ratio: "3 / 4",
             caption: "Two of the five scenarios, and the prototype on a phone.",
             src: "/work/tryggdrift/scenario-cards-and-prototype-farmer-test.webp",
+      showsScreen: true,
             alt: "Two printed test scenarios in Norwegian on a table: 'Scenario 5: Opprette risikovurdering for kjemikalier' (creating a risk assessment for chemicals) and 'Scenario 4: Registrere avvik og følge det opp' (registering a deviation and following it up), each with tasks to solve. Beside them, a phone shows the prototype's start page for the farm 'Bjørndal Gård'.",
             photo: true,
           },
@@ -120,6 +121,7 @@ export const tryggdrift: CaseStudy = {
             ratio: "504 / 672",
             caption: "A farmer using the prototype on a phone.",
             src: "/work/tryggdrift/farmer-using-prototype-farmer-test.webp",
+      showsScreen: true,
             alt: "A man in a teal T-shirt sits at a table and looks down at a phone in his hands, with someone beside him at the edge of the photo. A paper cup stands in front of him, and a blackboard hangs on the wall behind.",
             photo: true,
           },
@@ -142,6 +144,7 @@ export const tryggdrift: CaseStudy = {
             caption:
               "A farmer working through a scenario, with a woman watching beside him.",
             src: "/work/tryggdrift/farmer-working-through-scenario-farmer-test.webp",
+      showsScreen: true,
             alt: "Over a man's shoulder: he holds a phone showing the prototype, and a woman beside him watches. On the table, an open laptop shows the same screen, next to papers and a bowl of cookies.",
             photo: true,
           },

@@ -8,7 +8,6 @@ grey block, so nothing can ship by accident unnoticed.
 
 `package.json` and the lockfile are on 3.0.0. Still open:
 
-- [ ] The GitHub Packages token saved on the "Farnaz portfolio" cloud environment is rejected (401). Replace it with a classic PAT with `read:packages` so a fresh cloud session can install
 - [ ] Check the token Vercel uses still works, if a deploy fails at install
 
 ## Site-level — `site.ts`

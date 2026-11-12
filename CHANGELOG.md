@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-12 — Screens keep their true colours
+The photo tone now skips any photo with a screen in it (`showsScreen`), so
+the TryggDrift phone and the test photos show the UI as designed. Screens
+and mockups load at quality 90. Pure photos and the blurred backdrop keep
+the tone.
+Related: project-docs/specs/portfolio-v2.md
+
 ## 2026-11-12 — The site now installs design system 3.0.0
 `package.json` and the lockfile move to 3.0.0, so deploys get the brand the
 pages were built for. Until now they still installed 2.1.0, which has no

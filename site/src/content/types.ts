@@ -102,6 +102,12 @@ export type MediaPlaceholder = {
    */
   frame?: boolean
   /**
+   * A photo with a screen in it (a phone in a hand, a prototype on a
+   * table): it keeps its true colours, so the UI reads as designed, rather
+   * than taking the photo tone.
+   */
+  showsScreen?: boolean
+  /**
    * Opened larger, it takes the full width even though it is not a wide
    * shape. For a tall or square image that already runs full width in the
    * page, which the narrower enlarged view would show smaller.

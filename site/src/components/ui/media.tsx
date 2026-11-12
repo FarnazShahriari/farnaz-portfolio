@@ -16,6 +16,11 @@ export const captionStyle = "mt-3 text-sm text-pretty text-muted-foreground"
  */
 export const photoTone = "saturate-35"
 
+/** The photo tone, for a photo with no screen in it; nothing otherwise. */
+export function toneFor(media: MediaPlaceholder) {
+  return media.photo && !media.showsScreen ? photoTone : undefined
+}
+
 /**
  * An image slot: the real picture once `media.src` is set, the grey
  * placeholder until then.
@@ -88,7 +93,8 @@ export function Media({
         fill
         sizes={sizes}
         preload={priority}
-        className={cn("object-cover", media.photo && photoTone, imageClassName)}
+        quality={media.photo && !media.showsScreen ? undefined : 90}
+        className={cn("object-cover", toneFor(media), imageClassName)}
       />
       {media.frame ? (
         <span

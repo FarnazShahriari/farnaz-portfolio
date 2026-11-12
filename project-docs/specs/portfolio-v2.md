@@ -39,7 +39,9 @@ page.
 
 - Every image slot takes the system radius (`rounded-lg`).
 - **Photo tone:** a `photo: true` image gets `saturate-35` (`photoTone` in
-  `components/ui/media.tsx`); screens and mockups stay in full colour.
+  `components/ui/media.tsx`); screens and mockups stay in full colour,
+  and so does a photo with a screen in it (`showsScreen: true`), so the UI
+  is never toned. Screens load at quality 90.
 - **Frame:** a screenshot or board with a white edge sets `frame: true` and
   gets a hairline over its edge, so it does not dissolve into the page.
 - A screen on a card or teaser sits centred at 82% on the muted ground.
