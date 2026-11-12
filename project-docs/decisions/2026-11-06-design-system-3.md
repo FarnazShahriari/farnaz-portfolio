@@ -45,4 +45,5 @@ other surface (Claude Design prototypes, the showcase) moves to the brand.
 ## Status
 
 Confirmed. The guardrail skills in `.claude/skills/` were re-copied from
-3.0.0.
+3.0.0. The dependency itself moved to `^3.0.0` on 2026-11-12; the lockfile
+entry was checked against the checksum printed by the 3.0.0 publish run.

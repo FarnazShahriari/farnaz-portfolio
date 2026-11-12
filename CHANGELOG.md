@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-12 — The site now installs design system 3.0.0
+`package.json` and the lockfile move to 3.0.0, so deploys get the brand the
+pages were built for. Until now they still installed 2.1.0, which has no
+`point` colour, `text-label` or `text-body`: the About timeline lost
+Stavanger's line and the labels their style. Also drops "as a test before
+moving" from the Norwegian milestone.
+Related: project-docs/decisions/2026-11-06-design-system-3.md
+
 ## 2026-11-06 — Portfolio v2: Home, About and the KSL case study
 The three pages follow the v2 design: white pages, a hairline opening every
 section, an eyebrow above every heading, quietened photos, a new nav with a

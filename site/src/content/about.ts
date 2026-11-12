@@ -132,7 +132,7 @@ export const about: About = {
         id: "norwegian",
         milestone: true,
         period: "2021 to 2023",
-        what: "Learned Norwegian alongside work, as a test before moving",
+        what: "Learned Norwegian alongside work",
         x: 2360,
         ww: 270,
       },
