@@ -50,8 +50,8 @@ placeholder; the visuals are decided later. Sources are listed in
 `project-docs/specs/case-study-design-system.md`.
 
 - [ ] Hero: the same screen in KSL, Nyt Norge, Spesialitet and Lokalmat (status report p. 7)
-- [ ] The starting point: the same kinds of elements from each platform (deck p. 3 to 7)
-- [ ] The structure: how theming works, e.g. Figma variables or one component in four brands
+- [ ] The starting point: in, cropped from deck slides 3 and 4 at 1400px. Swap for 2x exports of the same slides for a sharper image
+- [ ] The structure: how theming works. The deck's colour scheme (slide 19) is bound to the NorskMat variables, so it can be exported once per brand mode
 - [ ] How it works: six slides, components in four brands and the KSL alignment (Storybook, report p. 5)
 - [ ] Building with AI: one image or a pair, e.g. Storybook, the rules, or a Claude Design screen
 - [ ] Remove real names, emails, addresses and org numbers from every image (deck p. 22)

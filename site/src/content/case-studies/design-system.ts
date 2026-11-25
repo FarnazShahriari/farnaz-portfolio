@@ -74,10 +74,30 @@ export const designSystem: CaseStudy = {
       title: "Buttons scattered across Figma files",
       intro:
         "Before designing a system, I put the platforms' screens side by side to see what they shared. The answer was almost nothing.",
-      // Source: the old screens on deck pages 3 to 7.
+      // Cropped from slides 3 and 4 of the pitch deck, rendered at 1400px
+      // wide (`assets/design-system/`). Only Netpower test accounts show,
+      // too small to read. Swap for 2x exports when they exist.
       media: {
-        ratio: "4 / 3",
         caption: "The same kinds of elements, as each platform had drawn them.",
+        stacked: true,
+        items: [
+          {
+            ratio: "1150 / 346",
+            caption:
+              "Screens from four Norsk Mat platforms before the design system, from KSL on the left to Spesialitet on the right.",
+            src: "/work/design-system/old-screens-four-platforms.webp",
+            alt: "Four screens from different Norsk Mat platforms, overlapping. The KSL farmer portal with a green side menu and small green buttons. Lokalmat's product page with a red logo, a green banner and a map. A case handling portal with a dark blue side menu and a table. Spesialitet's producer page on a beige ground, with a black header and three numbered steps. Each has its own colours, type, navigation and buttons.",
+            frame: true,
+          },
+          {
+            ratio: "1010 / 342",
+            caption:
+              "Button sheets from two of the platforms: the same element in different colours, shapes and sizes.",
+            src: "/work/design-system/old-button-sheets-two-platforms.webp",
+            alt: "Two component sheets side by side. On the left, on white: small red and green buttons, toggles, links, notifications in red and yellow, and serif titles. On the right, on beige: rounded buttons with an arrow in gold, light brown and dark grey, filled and outlined, in two sizes.",
+            frame: true,
+          },
+        ],
       },
       insightsLabel: "What I found",
       insights: [
