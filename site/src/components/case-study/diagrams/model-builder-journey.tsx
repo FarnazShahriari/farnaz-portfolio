@@ -35,9 +35,9 @@ const sub = "fill-muted-foreground text-xs font-medium"
 const painText = "fill-foreground text-xs font-medium"
 const zoneLabel = "text-xs font-bold tracking-wide uppercase"
 const zoneOutside = "fill-none stroke-muted-foreground/60 [rx:var(--radius)]"
-const zoneTool = "fill-accent/5 [rx:var(--radius)]"
+const zoneTool = "fill-foreground/5 [rx:var(--radius)]"
 const loopLabel = "fill-destructive text-xs font-bold"
-const statNumber = "fill-accent text-2xl font-bold tracking-tight"
+const statNumber = "fill-foreground text-2xl font-bold tracking-tight"
 const statNote = "fill-muted-foreground text-xs font-medium"
 
 type Step = { title: string[]; subs: string[] }
@@ -92,7 +92,7 @@ function Markers({ id }: { id: string }) {
   return (
     <defs>
       <marker id={`${id}-arrow`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
-        <path d="M0 0 L10 5 L0 10 z" className="fill-accent" />
+        <path d="M0 0 L10 5 L0 10 z" className="fill-foreground" />
       </marker>
       <marker id={`${id}-arrow-pain`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
         <path d="M0 0 L10 5 L0 10 z" className="fill-destructive" />
@@ -108,7 +108,7 @@ function RolePill({ cx, y, label }: { cx: number; y: number; label: string }) {
   return (
     <>
       <rect x={x} y={y} width={w} height="26" rx="13" className="fill-background stroke-border" />
-      <circle cx={x + 14} cy={y + 13} r="4" className="fill-accent" />
+      <circle cx={x + 14} cy={y + 13} r="4" className="fill-primary" />
       <text x={x + w / 2 + 7} y={y + 17.5} textAnchor="middle" className="fill-foreground text-xs font-bold">
         {label}
       </text>
@@ -171,7 +171,7 @@ function Journey({ id }: { id: string }) {
       <rect x="14" y="120" width="232" height="395" className={zoneOutside} strokeDasharray="4 4" />
       <text x="30" y="146" className={`fill-muted-foreground ${zoneLabel}`}>Before the tool</text>
       <rect x="254" y="120" width="592" height="395" className={zoneTool} />
-      <text x="270" y="146" className={`fill-accent ${zoneLabel}`}>In the Model Builder tool</text>
+      <text x="270" y="146" className={`fill-foreground ${zoneLabel}`}>In the Model Builder tool</text>
       <rect x="854" y="120" width="238" height="395" className={zoneOutside} strokeDasharray="4 4" />
       <text x="870" y="146" className={`fill-muted-foreground ${zoneLabel}`}>Delivered</text>
 
@@ -201,14 +201,14 @@ function Journey({ id }: { id: string }) {
           d={`M${cx(i) + 12} ${track} H${cx(i + 1) - 15}`}
           strokeWidth="3"
           markerEnd={`url(#${id}-arrow)`}
-          className="fill-none stroke-accent"
+          className="fill-none stroke-foreground"
         />
       ))}
       {STEPS.map((s, i) =>
         i === STEPS.length - 1 ? (
-          <circle key={s.title.join(" ")} cx={cx(i)} cy={track} r="12" className="fill-accent" />
+          <circle key={s.title.join(" ")} cx={cx(i)} cy={track} r="12" className="fill-primary" />
         ) : (
-          <circle key={s.title.join(" ")} cx={cx(i)} cy={track} r="9" strokeWidth="3" className="fill-background stroke-accent" />
+          <circle key={s.title.join(" ")} cx={cx(i)} cy={track} r="9" strokeWidth="3" className="fill-background stroke-foreground" />
         )
       )}
 

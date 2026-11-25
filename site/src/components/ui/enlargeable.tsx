@@ -56,7 +56,7 @@ export function Enlargeable({
       >
         <span
           aria-hidden="true"
-          className="absolute right-3 bottom-3 flex size-8 items-center justify-center rounded-pill bg-background/90 text-foreground opacity-0 transition-opacity duration-150 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-focus-within:opacity-100 pointer-coarse:opacity-100"
+          className="absolute right-3 bottom-3 flex size-8 items-center justify-center rounded-pill bg-background/90 text-foreground opacity-0 transition-opacity duration-150 ease-out group-hover:opacity-100 group-focus-within:opacity-100 pointer-coarse:opacity-100"
         >
           <MaximizeIcon className="size-4" />
         </span>

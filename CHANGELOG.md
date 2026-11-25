@@ -11,12 +11,97 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
-## 2026-10-23 — The design system case study, first version
+## 2026-11-25 — The design system case study, final text
 Slot 3 is now the Norsk Mat design system, replacing the `project-three`
-placeholder: seven sections from the agreed outline, a new structure
-diagram, and grey placeholders for every image still to make. Gaps in the
-text stay in [brackets] until they are filled in.
+placeholder, from v3 of the outline: seven sections with the final text,
+the approved plan as a new diagram, and grey placeholders for every image,
+to be chosen later. "How it works" is muted, as the accent bands became
+with design system 3.0.0. The AI skill page now links to it.
 Related: project-docs/specs/case-study-design-system.md
+
+## 2026-11-12 — Screens keep their true colours
+The photo tone now skips any photo with a screen in it (`showsScreen`), so
+the TryggDrift phone and the test photos show the UI as designed. Screens
+and mockups load at quality 90. Pure photos and the blurred backdrop keep
+the tone.
+Related: project-docs/specs/portfolio-v2.md
+
+## 2026-11-12 — The site now installs design system 3.0.0
+`package.json` and the lockfile move to 3.0.0, so deploys get the brand the
+pages were built for. Until now they still installed 2.1.0, which has no
+`point` colour, `text-label` or `text-body`: the About timeline lost
+Stavanger's line and the labels their style. Also drops "as a test before
+moving" from the Norwegian milestone.
+Related: project-docs/decisions/2026-11-06-design-system-3.md
+
+## 2026-11-06 — Portfolio v2: Home, About and the KSL case study
+The three pages follow the v2 design: white pages, a hairline opening every
+section, an eyebrow above every heading, quietened photos, a new nav with a
+scroll line and a light footer. The homepage gets staggered project cards
+and a hover list for How I work; About a horizontal timeline with city
+drawings; the case study a new header, hero carousel, insights layout,
+screen strip, diagram and blueprint. The pattern lives in shared components,
+so the other case studies and skill pages follow it too. The site name is
+now "Farnaz Shahriari Norheim".
+Related: project-docs/specs/portfolio-v2.md
+
+## 2026-11-06 — Design system 3.0.0: paper, black and four type roles
+The portfolio moves to the "Calm. Bold." brand. The removed accent bands
+are now muted, the "next" teasers too (the black footer follows them),
+diagrams and the blueprint draw emphasis in black, eyebrows use
+`text-label` and body copy `text-body`. Guardrail skills re-copied.
+Related: project-docs/decisions/2026-11-06-design-system-3.md
+
+## 2026-11-03 — About: a new line under the title
+The line under "Hi, I'm Farnaz" now names the fields and the countries:
+agriculture, safety and complex data, from Norway, Italy and Switzerland.
+Related: project-docs/specs/about-page.md
+
+## 2026-10-26 — Homepage copy, projects first, no track record
+Nav, intro, section titles, buttons and footer have their real copy, and
+the site name is "Farnaz S. Norheim" (the full name in the page title for
+search). The homepage now runs intro, hero project, more projects, how I
+work. The track record strip is gone. Only the footer email is still a
+placeholder on the homepage, besides project three and the images.
+Related: project-docs/decisions/2026-10-26-projects-first-no-track-record.md
+
+## 2026-10-26 — About: languages under the intro, flags and two logos
+The language pills now sit under the intro line, with flags instead of
+codes; Persian uses the Lion and Sun flag. Politecnico di Milano and
+University of Tehran logos are in; Netpower, Piratech and Spentys are still
+placeholders. Sources are in `assets/about/SOURCES.md`.
+Related: project-docs/specs/about-page.md
+
+## 2026-10-26 — The About page
+`/about` is no longer a stub: portrait and the big line, three key-fact
+cards, the languages as pills, a timeline of the path so far that
+alternates sides on desktop, and one line about painting. Content is in
+`about.ts`; the portrait and five logos are placeholders until their files
+are in `public/about/`.
+Related: project-docs/specs/about-page.md
+
+## 2026-10-26 — Nyt Norge workshop, shorter, with three images
+The section is cut to two short paragraphs and the steps. Under it, the room,
+the scenario 1 sticky notes and the impact and effort map sit side by side,
+cropped to one shape. "Tools" in the facilitation facts is now "Workspace":
+FigJam remote, sticky notes on site.
+Related: project-docs/specs/skill-pages.md
+
+## 2026-10-26 — Nyt Norge workshop on the facilitation page
+The facilitation page opens its workshops with Nyt Norge: users from Coop
+and Nortura worked through product scenarios in the current portal, turned
+what goes wrong into how might we questions, and voted; Netpower then
+mapped each problem by impact and effort. The two workshop photos are
+converted from HEIC to PNG in `assets/nyt-norge/`.
+Related: project-docs/specs/skill-pages.md
+
+## 2026-10-26 — Skills section and three skill pages
+The homepage skills list has its real titles and descriptions, and each
+skill has a page built from the case study blocks: header, story sections,
+the projects that show it, courses and certificates, and the next skill.
+AI page gets a new `ai-design-process` diagram. Certificates are grey
+placeholders; open facts are in TODO.md.
+Related: project-docs/specs/skill-pages.md
 
 ## 2026-10-20 — TryggDrift's farm up front, Readyware's card illustrated
 The farm part of TryggDrift's map now sits under its key facts, smaller,

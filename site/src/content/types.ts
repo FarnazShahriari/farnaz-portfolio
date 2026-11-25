@@ -20,7 +20,11 @@ export type NavItem = {
 export type Project = {
   slug: string
   title: string
-  /** One line, shown under the title in the grid. */
+  /** The short name on a project card, e.g. "TryggDrift". */
+  name: string
+  /** Who it was for, on the card beside the summary, e.g. "NLR". */
+  client?: string
+  /** One line on what the project is, on its card. */
   summary: string
   /** Longer, shown only on the hero. */
   blurb?: string
@@ -44,12 +48,6 @@ export type Project = {
   heroRatio?: string
   /** Blurred behind `image` on the homepage hero, as a ground for it. */
   backdrop?: MediaPlaceholder
-  /**
-   * A photo of the setting behind `image` on the homepage card (and the
-   * "next project" teaser), with the screen in front of it. Only the
-   * screen morphs into the project page; the photo stays behind.
-   */
-  scene?: MediaPlaceholder
   tags?: string[]
 }
 
@@ -58,6 +56,21 @@ export type Skill = {
   title: string
   /** Revealed when the accordion row opens. */
   description: string
+}
+
+/**
+ * A course or certificate on a skill page: its image, and the line of
+ * facts under it.
+ */
+export type Certificate = {
+  /** The certificate itself. Opens larger on click, like a case study image. */
+  image: MediaPlaceholder
+  title: string
+  /** Who gave it, e.g. a school or a company. */
+  issuer: string
+  year: string
+  /** The credential online, when there is one. */
+  href?: string
 }
 
 export type MediaPlaceholder = {
@@ -83,6 +96,18 @@ export type MediaPlaceholder = {
    */
   photo?: boolean
   /**
+   * A screenshot or board with a white edge: drawn with a hairline frame so
+   * it does not dissolve into the white page. Not for photos or device
+   * mockups, which have edges of their own.
+   */
+  frame?: boolean
+  /**
+   * A photo with a screen in it (a phone in a hand, a prototype on a
+   * table): it keeps its true colours, so the UI reads as designed, rather
+   * than taking the photo tone.
+   */
+  showsScreen?: boolean
+  /**
    * Opened larger, it takes the full width even though it is not a wide
    * shape. For a tall or square image that already runs full width in the
    * page, which the narrower enlarged view would show smaller.
@@ -90,9 +115,88 @@ export type MediaPlaceholder = {
   openWide?: boolean
 }
 
-export type TrackRecordEntry = {
-  /** A client, employer, publication or award. Name only — no prose. */
+/* ------------------------------------------------------------------ */
+/* About                                                               */
+/* ------------------------------------------------------------------ */
+
+/** One of the four facts under the About intro. */
+export type AboutFact = {
+  /** The small label, e.g. "Based in". */
+  label: string
+  /** The fact itself, e.g. "Sandnes, Norway". */
+  value: string
+  /** One muted line under it. */
+  note: string
+}
+
+export type AboutLanguage = {
   name: string
+  /** Lower case, read after the name: "Norwegian, fluent". */
+  level: string
+}
+
+/**
+ * One stop on the About timeline, oldest first. The strip is drawn on a
+ * fixed canvas, so a stop carries its own position: `x` is where its
+ * column starts, in px, and it runs to the next stop's `x`.
+ *
+ * A city stop has a line drawing standing on the ground line; a milestone
+ * (`milestone`) is a dot on the line with no city. The `current` stop is
+ * marked with the point.
+ */
+export type TimelineStop = {
+  id: string
+  /** The city, e.g. "Milan". Left out for a milestone. */
+  city?: string
+  /** Under the city, e.g. the country. */
+  sub?: string
+  /** In words, e.g. "2012 to 2016". */
+  period: string
+  /** What happened there. */
+  what: string
+  /** Where the column starts, in px from the canvas's left edge. */
+  x: number
+  /** The line drawing, as a path under `public/`, and its size and place. */
+  art?: string
+  artW?: number
+  artH?: number
+  /** The drawing's left edge, in px from the column's start. */
+  artL?: number
+  /** How wide the "what" text may run, in px. */
+  ww: number
+  milestone?: boolean
+  current?: boolean
+}
+
+export type About = {
+  /** The page's name in the browser tab and in search results. */
+  pageTitle: string
+  /** Shown as the placeholder until the file at `src` exists. */
+  portrait: MediaPlaceholder
+  eyebrow: string
+  /** The big line. */
+  title: string
+  /** One muted line under it. */
+  lead: string
+  languagesLabel: string
+  languages: AboutLanguage[]
+  facts: AboutFact[]
+  path: {
+    eyebrow: string
+    title: string
+    /** Beside the scroll buttons. */
+    hint: string
+    /** After the end of the line. */
+    next: string
+    /** Oldest first. */
+    stops: TimelineStop[]
+  }
+  outside: {
+    eyebrow: string
+    text: string
+    /** A painting at 4:5 and a decorative object at 1:1. */
+    artworks: MediaPlaceholder[]
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -195,7 +299,8 @@ export type DiagramId =
   | "readyware-incident-cycle"
   | "model-builder-overview"
   | "model-builder-journey"
-  | "design-system-structure"
+  | "ai-design-process"
+  | "design-system-plan"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */
@@ -336,6 +441,11 @@ export type CaseStudySection = StorySection | InsightsSection
 export type CaseStudy = {
   slug: string
   /**
+   * Where the project stands now, beside the title: a small label and one
+   * line, e.g. "Live" / "Across Norway, September 2026".
+   */
+  status?: { label: string; value: string }
+  /**
    * Device mockups shown as a carousel in place of the single hero image.
    * Leave out to keep the project's `image`.
    */
@@ -345,4 +455,20 @@ export type CaseStudy = {
     slides: MediaPlaceholder[]
   }
   sections: CaseStudySection[]
+}
+
+/**
+ * The body of a skill page. The title comes from the skill itself, so it
+ * is written once and shared with the homepage list.
+ */
+export type SkillPage = {
+  slug: string
+  /** One large line under the title. */
+  statement: string
+  /** Drawn by the same blocks as a case study. */
+  sections: CaseStudySection[]
+  /** Project slugs, in the order the cards show. */
+  projects: string[]
+  /** Three or more show as a carousel, fewer as a row. */
+  certificates: Certificate[]
 }

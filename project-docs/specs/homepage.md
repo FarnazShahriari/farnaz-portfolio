@@ -1,26 +1,35 @@
 # Homepage spec
 
-Implements: decisions/2026-09-17-homepage-information-architecture.md
+Implements: decisions/2026-09-17-homepage-information-architecture.md,
+with the order and blocks changed by
+decisions/2026-10-26-projects-first-no-track-record.md.
 
-All text and images on this page are placeholders. Placeholders must describe what
-belongs there, so the intent survives until the real content is written.
+The copy is in `content/site.ts`. What is still a placeholder (the footer
+email, the portrait) is listed in `content/TODO.md`, and
+describes what belongs there, so the intent survives until it is written.
+
+Restyled for portfolio v2: see `portfolio-v2.md` for the shared rules. In
+short, the intro has an eyebrow and a text link instead of a button, the hero
+project drops its bordered card, the other projects are staggered cards with
+a meta row, and How I work is a list of links that open on hover, not an
+accordion.
 
 ## Page blocks, in order
 
 ### 1. Top navigation
-- Sticky. Site name on the left, links on the right.
-- Links: one per top-level page, plus contact.
+- Sticky. "Farnaz Shahriari Norheim" on the left, links on the right: Projects,
+  How I work, About me, Contact.
 - Collapses to a menu on small screens.
 
 ### 2. Intro
-- Portrait image, one short statement, one button.
+- Portrait image, one short statement, one button ("More about me").
 - Button goes to the about page.
 
 ### 3. Hero project
 - A dark band holding two parts: a bordered card, then a row of media.
 - The card carries a small eyebrow (client, discipline), the title, and one
-  button. No summary — the title is the whole claim here, and the explaining
-  belongs on the case study.
+  button ("Read the case study"). No summary: the title is the whole claim
+  here, and the explaining belongs on the case study.
 - The media row is the photograph of the work in its real setting beside the
   interface itself, the interface lifted off a blurred frame of the same
   landscape so it reads as an object rather than a cut-out.
@@ -30,26 +39,27 @@ belongs there, so the intent survives until the real content is written.
 - Button goes to that project's page.
 - Visually the largest block on the page.
 
-### 4. Other projects
-- Up to three items in a grid.
+### 4. More projects
+- Titled "More projects". The other projects in a grid.
 - Each item: image, title, one line, links to its project page.
 - Deliberately smaller than block 3.
 
-### 5. Skills
-- A vertical list of collapsed rows.
+### 5. How I work
+- Titled "How I work". A vertical list of collapsed rows, one per skill.
 - Each row: a title, a chevron, and hidden content.
-- Clicking a row expands it to reveal a short description and one button.
-- The button goes to that skill's own page.
+- Clicking a row expands it to reveal a short description and one button
+  ("See it in practice"), which goes to that skill's own page.
 - One row open at a time. All rows closed on load.
 - Keyboard accessible, and each row is a real link target.
-- Assume three rows. The count must be driven by content, not hardcoded.
+- The count is driven by content, not hardcoded.
 
-### 6. Track record strip
-- A single horizontal row: one short line plus a set of names or logos.
-- No button, no expansion. The smallest block on the page.
+### 6. Footer
+- Contact details and external links only (LinkedIn, CV). No prose.
 
-### 7. Footer
-- Contact details and external links only. No prose.
+## Grounds
+
+Light, dark, light, muted, then the dark footer: no two neighbours share a
+ground. If that changes, a `Divider` or another theme goes between them.
 
 ## Placeholder rules
 
@@ -65,6 +75,5 @@ belongs there, so the intent survives until the real content is written.
 
 ## Out of scope for this build
 
-- Final copy, section titles, skill names, project names.
-- Visual design system beyond neutral defaults.
-- Animation and transitions beyond the accordion open and close.
+- Animation and transitions beyond the accordion, the reveals and the
+  project morphs.

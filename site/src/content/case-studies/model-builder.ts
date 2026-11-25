@@ -208,7 +208,7 @@ export const modelBuilder: CaseStudy = {
     },
     {
       type: "story",
-      theme: "accent",
+      theme: "muted",
       eyebrow: "How it works",
       title: "Building a model by dragging and linking",
       body: [

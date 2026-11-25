@@ -1,7 +1,8 @@
 # Homepage information architecture
 
 Date: 2026-09-17
-Status: confirmed
+Status: confirmed. Block order and the track record strip superseded by
+`2026-10-26-projects-first-no-track-record.md`.
 
 ## Decision
 

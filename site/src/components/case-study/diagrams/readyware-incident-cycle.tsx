@@ -33,15 +33,15 @@ const DESCRIPTION =
 // Shared looks, the same as the other diagrams'.
 const step = "fill-foreground text-sm font-bold"
 const note = "fill-muted-foreground text-xs"
-const number = "fill-accent text-2xl font-bold"
-const chip = "fill-accent text-xs font-bold"
-const chipPill = "fill-background stroke-accent/30"
-const chipStrong = "fill-accent-foreground text-xs font-bold"
-const panel = "fill-accent/5 [rx:var(--radius)]"
+const number = "fill-foreground text-2xl font-bold"
+const chip = "fill-foreground text-xs font-bold"
+const chipPill = "fill-background stroke-foreground/30"
+const chipStrong = "fill-primary-foreground text-xs font-bold"
+const panel = "fill-foreground/5 [rx:var(--radius)]"
 // The emergency itself, a shade stronger than the phases around it.
-const panelStrong = "fill-accent/10 [rx:var(--radius)]"
+const panelStrong = "fill-foreground/10 [rx:var(--radius)]"
 const panelLabel = "fill-muted-foreground text-xs font-bold tracking-wide uppercase"
-const solid = "fill-none stroke-accent"
+const solid = "fill-none stroke-foreground"
 // The way back is quieter than the way forward, but still 3:1 or more.
 const dashed = "fill-none stroke-muted-foreground"
 
@@ -64,7 +64,7 @@ function Markers({ id }: { id: string }) {
   return (
     <defs>
       <marker id={`${id}-arrow`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
-        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-accent" />
+        <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-foreground" />
       </marker>
       <marker id={`${id}-arrow-muted`} markerWidth="9" markerHeight="9" refX="6.4" refY="3.2" orient="auto">
         <path d="M0 0 L6.4 3.2 L0 6.4 z" className="fill-muted-foreground" />
@@ -79,7 +79,7 @@ function RoleChip({ x, y, role }: { x: number; y: number; role: Step["role"] }) 
   const w = team ? 104 : 62
   return (
     <>
-      <rect x={x} y={y} width={w} height="21" rx="10.5" className={team ? "fill-accent" : chipPill} />
+      <rect x={x} y={y} width={w} height="21" rx="10.5" className={team ? "fill-foreground" : chipPill} />
       <text x={x + w / 2} y={y + 15} textAnchor="middle" className={team ? chipStrong : chip}>
         {role}
       </text>
@@ -147,7 +147,7 @@ function Wide() {
             <text x={x0} y="136" className={step}>{s.title}</text>
             <text x={x0} y="162" className={note}>{s.lines[0]}</text>
             <text x={x0} y="178" className={note}>{s.lines[1]}</text>
-            <circle cx={cx(i)} cy={track} r="5" className="fill-accent" />
+            <circle cx={cx(i)} cy={track} r="5" className="fill-primary" />
           </g>
         )
       })}

@@ -12,6 +12,8 @@ export const projects: Project[] = [
   {
     slug: "ksl",
     title: "Redesigning KSL around how audits really happen",
+    name: "KSL",
+    client: "Norsk Mat",
     summary:
       "How Norwegian farms are audited for food safety, animal welfare and HMS.",
     blurb:
@@ -47,7 +49,9 @@ export const projects: Project[] = [
   {
     slug: "tryggdrift",
     title: "TryggDrift: connecting a farm's safety work in one app",
-    summary: "A mobile app for keeping a Norwegian farm's HMS work in one place.",
+    name: "TryggDrift",
+    client: "NLR",
+    summary: "Connecting a farm's safety work in one app",
     // The card on the homepage (4:3) and the page's full-bleed header
     // (16:9, so the phone is not cut off) are the same picture, so the two
     // morph into each other.
@@ -56,6 +60,7 @@ export const projects: Project[] = [
       caption: "The TryggDrift start page on a phone, in a sheep pasture.",
       hideCaption: true,
       src: "/work/tryggdrift/hand-holding-app-in-sheep-pasture.webp",
+      showsScreen: true,
       alt: "A hand holds up a phone showing the TryggDrift start page for 'Bjørndal Gård': open deviations, a search field, and tiles for Beredskap, Oppgaver, Avvik, Arbeidsinstruks, Dokument, Vernerunde and Risikovurdering. Behind it, sheep graze on green hills in low evening sun.",
       photo: true,
     },
@@ -64,29 +69,28 @@ export const projects: Project[] = [
   },
   {
     slug: "design-system",
-    title: "Norsk Mat design system: one system, four brands",
+    title: "Norsk Mat design system: one library, a theme for every brand",
+    name: "Design system",
+    client: "Norsk Mat",
     summary:
-      "One shared design system for Norsk Mat's platforms, each in its own brand.",
-    // Will be the hero carousel's first slide (KSL theme, tablet mockup),
-    // so the two morph into each other, in front of a `scene` like
-    // Readyware's and Model Builder's: four stacked glass layers in soft
-    // brand tints. Both are still to make, so for now a 4:3 placeholder,
-    // the card's final shape.
+      "One component library for Norsk Mat's platforms, with a theme for each brand.",
+    // Likely the hero carousel's first slide later, so the card morphs
+    // into the page. Still to decide, so for now a 4:3 placeholder.
     image: {
       ratio: "4 / 3",
-      caption:
-        "One screen from the library, KSL theme, on a tablet, in front of four stacked glass layers in soft brand tints.",
+      caption: "[Card image to decide: likely hero slide 1, the screen in the KSL brand.]",
     },
     tags: ["Case study", "Design system", "Norsk Mat"],
   },
   {
     slug: "readyware",
     title: "Readyware: from chaos to control when an incident hits",
-    summary:
-      "An incident management tool, designed weekly with the developers and tested with experts.",
+    name: "Readyware",
+    client: "Netpower",
+    summary: "From chaos to control when an incident hits",
     // The same screen the case study's hero carousel opens on, so the two
     // morph into each other.
-    // The mockup is 4:3 already. On the card it sits in front of `scene`.
+    // The mockup is 4:3 already. On its card it sits on the muted ground.
     image: {
       ratio: "2272 / 1704",
       caption:
@@ -95,23 +99,14 @@ export const projects: Project[] = [
       src: "/work/readyware/incident-overview-tablet.webp",
       alt: "The Overview of a test incident, 'Fire at Sjøberg school', on a tablet: a blue test banner across the top, the key roles, what has happened with a situation map, and the latest logs.",
     },
-    // Behind the screen on the card only: the screen morphs into the
-    // page's hero carousel, the illustration stays on the homepage. From
-    // `assets/readyware/card-scene-illustration-original.webp`, blurred
-    // slightly (1.5px Gaussian, in the file) so the focus is on the screen.
-    scene: {
-      ratio: "4 / 3",
-      caption: "An illustrated incident map in glass, with warning lights.",
-      src: "/work/readyware/card-scene-incident-illustration.webp",
-      alt: "Behind it, an illustration of glass roads and panels with small orange and blue warning lights, shields and first-aid signs.",
-    },
     tags: ["Case study", "Readyware", "Netpower"],
   },
   {
     slug: "model-builder",
     title: "Model Builder: making a complex data tool feel simple",
-    summary:
-      "The first version of a tool for building complex business data models.",
+    name: "Model Builder",
+    client: "Natzka",
+    summary: "Making a complex data tool feel simple",
     // The same screen the case study's hero carousel opens on, so the two
     // morph into each other.
     image: {
@@ -120,16 +115,6 @@ export const projects: Project[] = [
       hideCaption: true,
       src: "/work/model-builder/multi-select-cubes-model-builder-tablet.webp",
       alt: "The Model Builder on a tablet: cubes in a list with checkboxes, a canvas of dimensions and cube cards, and the selected cube's settings.",
-    },
-    // Behind the screen on the card only, like Readyware's: the screen
-    // morphs into the page's hero carousel, the picture stays on the
-    // homepage. A 4:3 crop of `assets/model-builder/card-scene-original.webp`,
-    // centred on the glowing cube; it is soft already, so no extra blur.
-    scene: {
-      ratio: "4 / 3",
-      caption: "Glowing data cubes on a soft blue grid.",
-      src: "/work/model-builder/card-scene-glowing-data-cubes.webp",
-      alt: "Behind it, an illustration of glowing glass cubes linked on a soft blue grid.",
     },
     tags: ["Case study", "Model Builder", "Natzka"],
   },
