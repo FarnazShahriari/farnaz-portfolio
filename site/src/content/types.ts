@@ -300,6 +300,7 @@ export type DiagramId =
   | "model-builder-overview"
   | "model-builder-journey"
   | "ai-design-process"
+  | "design-system-plan"
 
 /* ------------------------------------------------------------------ */
 /* Blueprint                                                           */

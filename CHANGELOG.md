@@ -24,6 +24,22 @@ and three links (mail app, LinkedIn, CV). The footer is left off that page
 only. The email is now farnzsh@gmail.com, in the footer too.
 Related: project-docs/specs/contact-page.md
 
+## 2026-11-25 — The design system's starting point gets its images
+"The starting point" now shows the old screens from four platforms and the
+button sheets from two, cropped from the pitch deck (slides 3 and 4). The
+other deck slides were left out: they hold real names and contact details,
+industry statistics, or only one brand. The crops are 1400px renders, so
+2x exports would be sharper.
+Related: project-docs/specs/case-study-design-system.md
+
+## 2026-11-25 — The design system case study, final text
+Slot 3 is now the Norsk Mat design system, replacing the `project-three`
+placeholder, from v3 of the outline: seven sections with the final text,
+the approved plan as a new diagram, and grey placeholders for every image,
+to be chosen later. "How it works" is muted, as the accent bands became
+with design system 3.0.0. The AI skill page now links to it.
+Related: project-docs/specs/case-study-design-system.md
+
 ## 2026-11-12 — Screens keep their true colours
 The photo tone now skips any photo with a screen in it (`showsScreen`), so
 the TryggDrift phone and the test photos show the UI as designed. Screens

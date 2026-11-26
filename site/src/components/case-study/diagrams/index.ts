@@ -3,6 +3,7 @@ import type { ComponentType } from "react"
 import type { DiagramId } from "@/content/types"
 
 import { AiDesignProcess } from "./ai-design-process"
+import { DesignSystemPlan } from "./design-system-plan"
 import { KslDesignProcess } from "./ksl-design-process"
 import { ModelBuilderJourney } from "./model-builder-journey"
 import { ModelBuilderOverview } from "./model-builder-overview"
@@ -23,4 +24,5 @@ export const diagrams: Record<DiagramId, ComponentType<{ caption?: string }>> = 
   "model-builder-overview": ModelBuilderOverview,
   "model-builder-journey": ModelBuilderJourney,
   "ai-design-process": AiDesignProcess,
+  "design-system-plan": DesignSystemPlan,
 }

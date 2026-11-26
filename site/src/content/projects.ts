@@ -68,17 +68,19 @@ export const projects: Project[] = [
     tags: ["Case study", "TryggDrift", "NLR"],
   },
   {
-    // Reserved for how the design system was made.
-    slug: "project-three",
-    title: "[Design system project title]",
-    name: "[Design system project]",
-    client: "[Client]",
-    summary: "[One line on what it was. ~12 words.]",
+    slug: "design-system",
+    title: "Norsk Mat design system: one library, a theme for every brand",
+    name: "Design system",
+    client: "Norsk Mat",
+    summary:
+      "One component library for Norsk Mat's platforms, with a theme for each brand.",
+    // Likely the hero carousel's first slide later, so the card morphs
+    // into the page. Still to decide, so for now a 4:3 placeholder.
     image: {
       ratio: "4 / 3",
-      caption: "Project thumbnail, 4:3, roughly 1200×900",
+      caption: "[Card image to decide: likely hero slide 1, the screen in the KSL brand.]",
     },
-    tags: ["[Role]"],
+    tags: ["Case study", "Design system", "Norsk Mat"],
   },
   {
     slug: "readyware",

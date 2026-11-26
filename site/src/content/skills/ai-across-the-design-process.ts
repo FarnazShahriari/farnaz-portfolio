@@ -116,7 +116,7 @@ export const aiAcrossTheDesignProcess: SkillPage = {
       ],
     },
   ],
-  projects: ["ksl", "tryggdrift", "project-three"],
+  projects: ["ksl", "tryggdrift", "design-system"],
   certificates: [
     certificatePlaceholder(certificate),
     certificatePlaceholder(certificate),

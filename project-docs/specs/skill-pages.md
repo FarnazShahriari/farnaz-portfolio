@@ -49,7 +49,7 @@ because it uses the same blocks.
 | --- | --- | --- |
 | `field-to-interface` | ksl, tryggdrift, readyware, model-builder | |
 | `facilitation` | ksl, model-builder, readyware | Opens with the Nyt Norge workshop, which has no case study: a gallery of the room, the scenario 1 notes and the impact and effort map, all cropped to the map's shape. Web copies in `public/work/nyt-norge/`, originals (PNG, and the map as webp) in `assets/nyt-norge/` |
-| `ai-across-the-design-process` | ksl, tryggdrift, project-three | Two `[confirm]` items in TODO.md |
+| `ai-across-the-design-process` | ksl, tryggdrift, design-system | Two `[confirm]` items in TODO.md |
 
 Facts are taken from `content/case-studies/*.ts`. Where the brief and a case
 study differ, the case study wins (KSL: the field study followed one

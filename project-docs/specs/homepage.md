@@ -5,7 +5,7 @@ with the order and blocks changed by
 decisions/2026-10-26-projects-first-no-track-record.md.
 
 The copy is in `content/site.ts`. What is still a placeholder (the footer
-email, the portrait, project three) is listed in `content/TODO.md`, and
+email, the portrait) is listed in `content/TODO.md`, and
 describes what belongs there, so the intent survives until it is written.
 
 Restyled for portfolio v2: see `portfolio-v2.md` for the shared rules. In
