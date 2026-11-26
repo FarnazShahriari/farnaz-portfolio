@@ -12,8 +12,9 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 ---
 
 ## 2026-11-26 — Contact is a page like the others
-Contact is now a plain nav link, like About me, not a button. The footer
-shows on `/contact` again, and a project suggestion (KSL) sits before it.
+Contact is now a plain nav link, like About me, not a button. A project
+suggestion (KSL) ends the page. The footer stays off `/contact`, since it
+would repeat the page's details.
 Related: project-docs/specs/contact-page.md
 
 ## 2026-11-26 — A contact page

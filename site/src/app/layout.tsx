@@ -5,6 +5,7 @@ import { ThemeProvider } from "@farnazshahriari/design-system"
 import { MotionProvider } from "@farnazshahriari/design-system/motion/motion-provider"
 import { TooltipProvider } from "@farnazshahriari/design-system/ui/tooltip"
 
+import { FooterGate } from "@/components/layout/footer-gate"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteNav } from "@/components/layout/site-nav"
 
@@ -59,7 +60,9 @@ export default function RootLayout({
 
               <SiteNav />
               <main id="main">{children}</main>
-              <SiteFooter />
+              <FooterGate>
+                <SiteFooter />
+              </FooterGate>
             </TooltipProvider>
           </MotionProvider>
         </ThemeProvider>
