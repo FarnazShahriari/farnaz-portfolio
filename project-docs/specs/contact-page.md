@@ -23,6 +23,9 @@ One `Section` (inherit, `lg`), one block filling at least 640px from `md`:
 
 - Copy in `site.contactPage`; the address, place and LinkedIn come from
   `site.footer`, so each lives in one place.
-- The nav's Contact button goes to `/contact` and shows the point there.
-- `FooterGate` leaves the footer off `/contact` only; elsewhere it keeps
-  `id="contact"`, so old `/#contact` links still land on it.
+- Contact is a plain nav link like the others (no button), with the point
+  when you are on `/contact`.
+- The page is like any other: the footer shows, with `id="contact"`, so
+  old `/#contact` links still land on it.
+- Before the footer, `NextProject` suggests the lead project (KSL) under
+  "Meanwhile, see a project" (`site.contactPage.projectLabel`).

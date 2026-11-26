@@ -27,7 +27,14 @@ import type { Project } from "@/content/types"
  * so clicking morphs them into that page rather than fading one page out
  * and another in.
  */
-export function NextProject({ project }: { project: Project | undefined }) {
+export function NextProject({
+  project,
+  label = site.work.nextLabel,
+}: {
+  project: Project | undefined
+  /** The eyebrow above the title; "Next project" by default. */
+  label?: string
+}) {
   if (!project) return null
   const { image } = project
 
@@ -41,7 +48,7 @@ export function NextProject({ project }: { project: Project | undefined }) {
           <SectionOpener wipe />
           <Grid className="gap-y-10">
             <div className="col-span-12 flex flex-col gap-5 self-end md:col-span-4">
-              <Eyebrow>{site.work.nextLabel}</Eyebrow>
+              <Eyebrow>{label}</Eyebrow>
               <ViewTransition
                 name={projectTitleTransition(project.slug)}
                 share="morph"

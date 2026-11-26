@@ -19,10 +19,8 @@ export const site = {
     { label: "Projects", href: "/#work" },
     { label: "How I work", href: "/#skills" },
     { label: "About me", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
-
-  /** The nav's one button, after the links. */
-  contact: { label: "Contact", href: "/contact" } satisfies NavItem,
 
   intro: {
     portrait: {
@@ -87,6 +85,8 @@ export const site = {
     copiedHint: "Copied. Paste it into any mail app.",
     chipCopy: "Copy",
     chipCopied: "Copied",
+    /** Above the project suggested at the foot of the page. */
+    projectLabel: "Meanwhile, see a project",
     links: [
       { label: "Mail app", text: "Write an email", kind: "mail" },
       {

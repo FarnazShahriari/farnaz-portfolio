@@ -25,7 +25,6 @@ import { site } from "@/content/site"
  * homepage marks none (the point sits before the name instead).
  */
 function currentHref(pathname: string) {
-  if (pathname === site.contact.href) return site.contact.href
   if (pathname.startsWith("/work/")) return "/#work"
   if (pathname.startsWith("/skills/")) return "/#skills"
   return site.nav.find((item) => item.href === pathname)?.href
@@ -111,7 +110,7 @@ export function SiteNav() {
           </Link>
 
           {/* Desktop */}
-          <div className="hidden items-center gap-10 md:flex">
+          <div className="hidden items-center md:flex">
             <ul className="flex list-none items-center gap-8 p-0">
               {site.nav.map((item) => (
                 <li key={item.href} className="flex items-center gap-2.5">
@@ -126,17 +125,6 @@ export function SiteNav() {
                 </li>
               ))}
             </ul>
-            <div className="flex items-center gap-2.5">
-              {current === site.contact.href ? <Point /> : null}
-              <Button asChild variant="outline">
-                <Link
-                  href={site.contact.href}
-                  aria-current={current === site.contact.href ? "page" : undefined}
-                >
-                  {site.contact.label}
-                </Link>
-              </Button>
-            </div>
           </div>
 
           {/* Mobile */}
@@ -151,7 +139,7 @@ export function SiteNav() {
                 <SheetTitle>{site.name}</SheetTitle>
               </SheetHeader>
               <ul className="flex list-none flex-col gap-6 p-6 pt-2">
-                {[...site.nav, site.contact].map((item) => (
+                {site.nav.map((item) => (
                   <li key={item.href} className="flex items-center gap-2.5">
                     {current === item.href ? <Point /> : null}
                     <LinkUnderline

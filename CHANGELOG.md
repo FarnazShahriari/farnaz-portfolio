@@ -11,6 +11,11 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-26 — Contact is a page like the others
+Contact is now a plain nav link, like About me, not a button. The footer
+shows on `/contact` again, and a project suggestion (KSL) sits before it.
+Related: project-docs/specs/contact-page.md
+
 ## 2026-11-26 — A contact page
 The nav's Contact button now opens `/contact`: the email as the page's one
 statement (click to copy, with a cursor chip), the local time in Sandnes,
