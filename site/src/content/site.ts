@@ -22,7 +22,7 @@ export const site = {
   ] satisfies NavItem[],
 
   /** The nav's one button, after the links. */
-  contact: { label: "Contact", href: "/#contact" } satisfies NavItem,
+  contact: { label: "Contact", href: "/contact" } satisfies NavItem,
 
   intro: {
     portrait: {
@@ -69,11 +69,34 @@ export const site = {
     location: "Sandnes, Norway",
     contactLabel: "Contact",
     elsewhereLabel: "Elsewhere",
-    email: "[email]",
+    email: "farnzsh@gmail.com",
     links: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/farnazsh" },
       // The file is not in `public/` yet; see TODO.md.
       { label: "CV", href: "/cv.pdf" },
     ] satisfies NavItem[],
+  },
+
+  /**
+   * The contact page. The address, place and links come from `footer`, so
+   * each lives in one place.
+   */
+  contactPage: {
+    eyebrow: "Contact",
+    copyHint: "Click the address to copy it.",
+    copiedHint: "Copied. Paste it into any mail app.",
+    chipCopy: "Copy",
+    chipCopied: "Copied",
+    links: [
+      { label: "Mail app", text: "Write an email", kind: "mail" },
+      {
+        label: "LinkedIn",
+        text: "linkedin.com/in/farnazsh",
+        href: "https://www.linkedin.com/in/farnazsh",
+        kind: "external",
+      },
+      // The file is not in `public/` yet; see TODO.md.
+      { label: "CV", text: "Download PDF", href: "/cv.pdf", kind: "download" },
+    ],
   },
 } as const

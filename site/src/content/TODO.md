@@ -12,8 +12,7 @@ grey block, so nothing can ship by accident unnoticed.
 
 ## Site-level — `site.ts`
 
-- [ ] Footer email address (`site.footer.email`, shows as "[email]")
-- [ ] CV file at `site/public/cv.pdf` (the footer's CV link points there)
+- [ ] CV file at `site/public/cv.pdf` (the footer's CV link and the contact page's "Download PDF" point there)
 - [ ] Homepage portrait image, 4:5, ~800×1000
 
 ## Projects — `projects.ts`

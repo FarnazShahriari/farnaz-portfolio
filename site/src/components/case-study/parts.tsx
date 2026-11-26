@@ -34,7 +34,7 @@ export function Eyebrow({
   className,
   children,
 }: {
-  as?: "p" | "h2" | "h3"
+  as?: "p" | "h1" | "h2" | "h3"
   className?: string
   children: React.ReactNode
 }) {

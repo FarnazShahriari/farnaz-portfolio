@@ -25,6 +25,7 @@ import { site } from "@/content/site"
  * homepage marks none (the point sits before the name instead).
  */
 function currentHref(pathname: string) {
+  if (pathname === site.contact.href) return site.contact.href
   if (pathname.startsWith("/work/")) return "/#work"
   if (pathname.startsWith("/skills/")) return "/#skills"
   return site.nav.find((item) => item.href === pathname)?.href
@@ -125,9 +126,17 @@ export function SiteNav() {
                 </li>
               ))}
             </ul>
-            <Button asChild variant="outline">
-              <Link href={site.contact.href}>{site.contact.label}</Link>
-            </Button>
+            <div className="flex items-center gap-2.5">
+              {current === site.contact.href ? <Point /> : null}
+              <Button asChild variant="outline">
+                <Link
+                  href={site.contact.href}
+                  aria-current={current === site.contact.href ? "page" : undefined}
+                >
+                  {site.contact.label}
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile */}

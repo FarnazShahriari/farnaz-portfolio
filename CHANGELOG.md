@@ -11,6 +11,13 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-26 — A contact page
+The nav's Contact button now opens `/contact`: the email as the page's one
+statement (click to copy, with a cursor chip), the local time in Sandnes,
+and three links (mail app, LinkedIn, CV). The footer is left off that page
+only. The email is now farnzsh@gmail.com, in the footer too.
+Related: project-docs/specs/contact-page.md
+
 ## 2026-11-12 — Screens keep their true colours
 The photo tone now skips any photo with a screen in it (`showsScreen`), so
 the TryggDrift phone and the test photos show the UI as designed. Screens
