@@ -177,5 +177,6 @@ export const fieldToInterface: SkillPage = {
     courses.uiDesignPatterns,
     courses.accessibility,
     courses.emotionalDesign,
+    courses.arAndVrDesign,
   ],
 }

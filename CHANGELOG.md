@@ -12,11 +12,12 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 ---
 
 ## 2026-11-27 — Interaction Design Foundation courses on the skill pages
-Fourteen of the fifteen IxDF courses are now placed by skill. Field study to
+All fifteen IxDF courses are now placed by skill. Field study to
 interface: usability testing, quantitative research, HCI, perception and
-memory, mobile UX and UI, UI patterns, accessibility, emotional design.
+memory, mobile UX and UI, UI patterns, accessibility, emotional design,
+AR and VR.
 Facilitation: agile, service design, journey mapping, Design for a Better
-World. AI: AI for Designers. AR/VR is left out; it backs none of the three.
+World. AI: AI for Designers.
 All courses now live in one file, `courses.ts`.
 Related: project-docs/specs/skill-pages.md
 

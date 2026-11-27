@@ -56,8 +56,7 @@ export const courses = {
   claudeCodeInAction: anthropic("Claude Code in Action", "claude-code-in-action", "d77du732z9yk"),
   introductionToClaudeCowork: anthropic("Introduction to Claude Cowork", "introduction-to-claude-cowork", "y4fbytzgzbis"),
 
-  // Interaction Design Foundation. "How to Design for Augmented and
-  // Virtual Reality" (2022) is left out: it backs none of the skills.
+  // Interaction Design Foundation
   aiForDesigners: ixdf("AI for Designers", "ai-for-designers", "2024", "41e30850-8670-471d-88c4-76d7114aec2a"),
   conductingUsabilityTesting: ixdf("Conducting Usability Testing", "conducting-usability-testing", "2022", "61b088de-663c-475a-8d70-52636bd5a2eb"),
   dataDrivenDesign: ixdf("Data-Driven Design: Quantitative Research for UX", "data-driven-design", "2025", "fcb63409-b8ff-490a-a698-51662db98af5"),
@@ -67,6 +66,7 @@ export const courses = {
   mobileUiDesign: ixdf("Mobile UI Design", "mobile-ui-design", "2024", "809e59f4-4fd4-4261-bde6-24cd2c037228"),
   uiDesignPatterns: ixdf("UI Design Patterns for Successful Software", "ui-design-patterns", "2023", "98c518bc-4974-43a8-92f9-668255c86bbb"),
   accessibility: ixdf("Accessibility: How to Design for All", "accessibility", "2024", "be9ea93e-4048-4526-89a1-965b6a28cdf3"),
+  arAndVrDesign: ixdf("How to Design for Augmented and Virtual Reality", "ar-and-vr-design", "2022", "dea391f7-ce00-41a5-bd8c-8b0388307cd1"),
   emotionalDesign: ixdf("Emotional Design: How to Make Products People Will Love", "emotional-design", "2024", "e69a93fb-fd69-449d-acd9-d4d601c792ee"),
   agileMethods: ixdf("Agile Methods for UX Design", "agile-methods-for-ux-design", "2023", "32fedb7a-23cd-4ae8-8a71-795af87e063b"),
   serviceDesign: ixdf("Service Design: How to Design Integrated Service Experiences", "service-design", "2025", "b387480f-5b23-458c-b88a-26b9ad2c4c36"),
