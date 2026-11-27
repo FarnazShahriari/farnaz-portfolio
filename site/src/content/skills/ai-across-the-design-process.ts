@@ -10,9 +10,22 @@
  */
 
 import type { SkillPage } from "../types"
-import { certificatePlaceholder } from "./placeholders"
 
-const certificate = "[Certificate: Anthropic course name, year]"
+/** An Anthropic Academy course, with its certificate and credential. */
+function anthropicCourse(title: string, file: string, credential: string) {
+  return {
+    image: {
+      ratio: "62 / 47",
+      caption: title,
+      src: `/skills/ai/certificate-${file}.webp`,
+      alt: `Anthropic certificate of completion for ${title}, issued to Farnaz Shahriari.`,
+    },
+    title,
+    issuer: "Anthropic",
+    year: "2026",
+    href: `https://verify.skilljar.com/c/${credential}`,
+  }
+}
 
 export const aiAcrossTheDesignProcess: SkillPage = {
   slug: "ai-across-the-design-process",
@@ -118,8 +131,12 @@ export const aiAcrossTheDesignProcess: SkillPage = {
   ],
   projects: ["ksl", "tryggdrift", "design-system"],
   certificates: [
-    certificatePlaceholder(certificate),
-    certificatePlaceholder(certificate),
-    certificatePlaceholder(certificate),
+    anthropicCourse("AI Capabilities and Limitations", "ai-capabilities-and-limitations", "twuajuvtguwf"),
+    anthropicCourse("AI Fluency for Creative Work", "ai-fluency-for-creative-work", "u2rfn6d8a5xa"),
+    anthropicCourse("AI Fluency: Framework & Foundations", "ai-fluency-framework-and-foundations", "tpsrmsny4zye"),
+    anthropicCourse("Claude 101", "claude-101", "ekwgqek2hn9d"),
+    anthropicCourse("Claude Code 101", "claude-code-101", "rf2pwgh4nmvd"),
+    anthropicCourse("Claude Code in Action", "claude-code-in-action", "d77du732z9yk"),
+    anthropicCourse("Introduction to Claude Cowork", "introduction-to-claude-cowork", "y4fbytzgzbis"),
   ],
 }

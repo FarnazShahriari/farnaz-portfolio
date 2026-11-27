@@ -11,6 +11,14 @@ Related: project-docs/{insights|decisions|specs}/filename.md
 
 ---
 
+## 2026-11-27 — The AI skill page shows its seven courses
+"Courses and certificates" on the AI page now holds the seven Anthropic
+courses, with the real certificate images (white frame cropped). Clicking a
+certificate or its name opens the credential on Skilljar in a new tab,
+instead of opening the image larger. The other two skill pages still have
+placeholders.
+Related: project-docs/specs/skill-pages.md
+
 ## 2026-11-26 — Contact is a page like the others
 Contact is now a plain nav link, like About me, not a button. A project
 suggestion (KSL) ends the page. The footer stays off `/contact`, since it

@@ -56,8 +56,11 @@ export const site = {
     projectsTitle: "Seen in these projects",
     /** Above the courses and certificates on a skill page. */
     certificatesTitle: "Courses and certificates",
-    /** Under a certificate that links to its credential online. */
-    credentialLabel: "[See the credential]",
+    /**
+     * Read out on a certificate image that links to its credential online,
+     * after the course name.
+     */
+    credentialLabel: "view the credential",
     /** Sits above the next skill's name at the foot of a skill page. */
     nextLabel: "[Next skill]",
   },

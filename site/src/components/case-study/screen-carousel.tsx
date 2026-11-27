@@ -48,7 +48,8 @@ const number = (i: number) => String(i + 1).padStart(2, "0")
  * Every card is numbered, with its caption under it, and opens larger in
  * the shared enlarge dialog on click; focus goes back to it on close.
  * `details` adds something under a card's caption, such as a
- * certificate's title and issuer.
+ * certificate's title and issuer. A card with an entry in `links` opens
+ * that page in a new tab instead, such as a certificate's credential.
  */
 export function ScreenCarousel({
   items,
@@ -56,6 +57,7 @@ export function ScreenCarousel({
   device = "tablet",
   noun = "screen",
   details,
+  links,
 }: {
   items: MediaPlaceholder[]
   /** Names the strip for screen readers, e.g. "The notes field as built". */
@@ -65,6 +67,11 @@ export function ScreenCarousel({
   noun?: string
   /** Anything to show under each card, in the same order as `items`. */
   details?: React.ReactNode[]
+  /**
+   * A page to open instead of the enlarged image, in the same order as
+   * `items`. `label` names the link for screen readers.
+   */
+  links?: ({ href: string; label: string } | undefined)[]
 }) {
   const reducedMotion = usePrefersReducedMotion()
   const strip = React.useRef<HTMLUListElement>(null)
@@ -128,7 +135,25 @@ export function ScreenCarousel({
       >
         {items.map((media, i) => (
           <li key={media.src ?? i} className={cn("flex shrink-0 grow-0 snap-start flex-col gap-3.5", widths[device])}>
-            {media.src ? (
+            {media.src && links?.[i] ? (
+              <a
+                href={links[i].href}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={links[i].label}
+                className="relative block w-full focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ring"
+              >
+                <Image
+                  src={media.src}
+                  // The link carries the name.
+                  alt=""
+                  {...ratioSize(media.ratio)}
+                  sizes={sizes[device]}
+                  quality={90}
+                  className="h-auto w-full"
+                />
+              </a>
+            ) : media.src ? (
               <button
                 ref={(el) => {
                   buttons.current[i] = el

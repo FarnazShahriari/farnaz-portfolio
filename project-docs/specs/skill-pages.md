@@ -29,14 +29,17 @@ because it uses the same blocks.
    `backdrop` (KSL) uses the backdrop as its scene at 4:3.
 4. **Courses and certificates**, light: three or more use `ScreenCarousel`
    (`noun="certificate"`, facts under each slide via `details`); fewer show
-   as a plain row at a slide's width. Each image opens larger once it has a
-   `src`. Its caption only names it in the enlarged view.
+   as a plain row at a slide's width. A certificate with an `href` links to
+   its credential in a new tab, from both the image and the course name.
+   One without an `href` opens larger on click instead. Certificate images
+   live in `site/public/skills/<skill>/`.
 5. **Next skill**, muted, like `NextProject` without an image. Wraps from
    the last skill to the first.
 
 ## Changes to shared blocks
 
-- `ScreenCarousel`: optional `noun` and `details`, and it respects
+- `ScreenCarousel`: optional `noun`, `details` and `links` (a card with a
+  link opens that page instead of the enlarged image), and it respects
   `hideCaption`. Existing carousels are unchanged.
 - `Gallery`: fewer than three items keep the size of a row of three,
   centred, instead of filling the row. No case study used a gallery yet.
