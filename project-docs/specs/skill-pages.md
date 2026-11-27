@@ -31,8 +31,10 @@ because it uses the same blocks.
    (`noun="certificate"`, facts under each slide via `details`); fewer show
    as a plain row at a slide's width. A certificate with an `href` links to
    its credential in a new tab, from both the image and the course name.
-   One without an `href` opens larger on click instead. Certificate images
-   live in `site/public/skills/<skill>/`.
+   One without an `href` opens larger on click instead. Every course is
+   declared once in `site/src/content/skills/courses.ts`; a skill page
+   lists the ones that back it. Images live in
+   `site/public/certificates/<issuer>/`.
 5. **Next skill**, muted, like `NextProject` without an image. Wraps from
    the last skill to the first.
 

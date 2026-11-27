@@ -24,8 +24,6 @@ grey block, so nothing can ship by accident unnoticed.
 Titles, descriptions, slugs and the three pages are in. Still open:
 
 - [ ] "Next skill" label above the next skill's name (`site.skills.nextLabel`)
-- [ ] Certificates, field study to interface: three images, course name, issuer, year, credential link
-- [ ] Certificates, facilitation: three images, course name, issuer, year, credential link
 - [ ] [confirm] AI page, "Where I use it": the design system built in code with Claude Code and versioned on GitHub. No case study to check it against yet
 - [ ] [confirm] AI page, "Designing for AI": confirm the question suggestion is AI-driven. `ksl.ts` only says "the system suggests"
 - [ ] Facilitation page, Nyt Norge: check the people in the workshop photo are fine with being shown, and that Norsk Mat, Coop and Nortura can be named

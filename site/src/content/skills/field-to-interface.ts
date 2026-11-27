@@ -10,9 +10,7 @@
  */
 
 import type { SkillPage } from "../types"
-import { certificatePlaceholder } from "./placeholders"
-
-const certificate = "[Certificate: course name, issuer, year]"
+import { courses } from "./courses"
 
 export const fieldToInterface: SkillPage = {
   slug: "field-to-interface",
@@ -170,8 +168,14 @@ export const fieldToInterface: SkillPage = {
   ],
   projects: ["ksl", "tryggdrift", "readyware", "model-builder"],
   certificates: [
-    certificatePlaceholder(certificate),
-    certificatePlaceholder(certificate),
-    certificatePlaceholder(certificate),
+    courses.conductingUsabilityTesting,
+    courses.dataDrivenDesign,
+    courses.humanComputerInteraction,
+    courses.perceptionAndMemory,
+    courses.mobileUxDesign,
+    courses.mobileUiDesign,
+    courses.uiDesignPatterns,
+    courses.accessibility,
+    courses.emotionalDesign,
   ],
 }

@@ -10,9 +10,7 @@
  */
 
 import type { SkillPage } from "../types"
-import { certificatePlaceholder } from "./placeholders"
-
-const certificate = "[Certificate: course name, issuer, year]"
+import { courses } from "./courses"
 
 export const facilitation: SkillPage = {
   slug: "facilitation",
@@ -168,8 +166,9 @@ export const facilitation: SkillPage = {
   ],
   projects: ["ksl", "model-builder", "readyware"],
   certificates: [
-    certificatePlaceholder(certificate),
-    certificatePlaceholder(certificate),
-    certificatePlaceholder(certificate),
+    courses.agileMethods,
+    courses.serviceDesign,
+    courses.journeyMapping,
+    courses.designForABetterWorld,
   ],
 }
